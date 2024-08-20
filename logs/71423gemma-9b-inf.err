@@ -1,0 +1,8 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:09<00:28,  9.65s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:17<00:16,  8.31s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:25<00:08,  8.52s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:34<00:00,  8.59s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:34<00:00,  8.62s/it]
+
+slurmstepd: error: *** JOB 71423 ON gpu40-3 CANCELLED AT 2024-07-26T03:49:59 DUE TO TIME LIMIT ***
