@@ -16,15 +16,15 @@ from pathlib import Path
 module_path = Path(os.path.abspath("")).parent
 print(module_path)
 sys.path.append(str(module_path))
-from data_processing.filter_reviews import filter_reviews
-from data_processing.semantic_segmentation import split_paragraph
+from notebooks.data_processing.filter_reviews import filter_reviews
+from notebooks.data_processing.semantic_segmentation import split_paragraph
 
 
 import pandas as pd
 from prompts import PROMPTS
 from tqdm import tqdm
-reviews = pd.read_csv("../../data/reviewer2_ARR_2022_reviews.csv")
-split_reviews = pd.read_csv("../../data/reviewer2_ARR_2022_split_reviews.csv")
+import ast
+split_reviews = pd.read_csv("/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/peerq-generation/data/all_reviews.csv")
 tokenizer = llm.get_tokenizer()
 sampling_params = SamplingParams(
     temperature=0.0, top_p=1, max_tokens=32,
@@ -39,18 +39,17 @@ sampling_params = SamplingParams(
 
 aspects = ['Actionability','Politeness','Verifiability','Specificity']
 cnt = 0
-for i, row in split_reviews.iterrows():#tqdm(split_reviews.iterrows(), total=split_reviews.shape[0]):
+for i, row in split_reviews.sample(500).iterrows():     #split_reviews.iterrows():#tqdm(split_reviews.iterrows(), total=split_reviews.shape[0]):
+    
 
     cur_split_review = row['split_review']
-    cur_split_review = cur_split_review.split('$$$')    
-    num_of_points = len(cur_split_review)
+    points = ast.literal_eval(row['split_review'])
+    num_of_points = len(points)
     for aspect in aspects:
         aspect_desc = PROMPTS[aspect]
-        print('evaluting aspect:', aspect)
-        aspect_score = 0
-        for j,review in enumerate(cur_split_review):
-            print(f'evaluting review:{j} out of {num_of_points}')
-
+        # print('evaluting aspect:', aspect)
+        aspect_score = []
+        for j,review in enumerate(points):
 
             prompt = PROMPTS['binary_score_prompt'].format(aspect=aspect, aspect_description =aspect_desc, review=review)
 
@@ -67,14 +66,13 @@ for i, row in split_reviews.iterrows():#tqdm(split_reviews.iterrows(), total=spl
             inputs = [c]
             outputs = llm.generate(inputs, sampling_params, use_tqdm= False)[0].outputs[0].text.strip()
 
-            if outputs != '0' or outputs != '1':
+            if outputs not in ['0','1','-1']:
                 outputs = 0
             outputs = int(outputs)
-            aspect_score += outputs
+            aspect_score.append(outputs)
 
-        reviews.at[i, aspect] = aspect_score / num_of_points
+        split_reviews.at[i, aspect] = aspect_score
 
-    cnt += 1
-    print(cnt)
-reviews.to_csv("../../data/reviewer2_ARR_2022_reviews_gemma2.csv", index=False)
+
+split_reviews.to_csv("../../data/all_reviews_annotated.csv", index=False)
 

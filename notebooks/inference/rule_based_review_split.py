@@ -1,8 +1,19 @@
+import os
+import sys
+from pathlib import Path
+import pandas as pd
+from tqdm import tqdm
+import re
+import importlib
+module_path = Path(os.path.abspath("")).parent.parent
+print(module_path)
+sys.path.append(str(module_path))
+
+
 import re
 import pandas as pd
-from utils import filter_reviews
+from notebooks.inference.utils import filter_reviews, merge_short_sentences
 from tqdm import tqdm
-from semantic_segmentation import merge_short_sentences
 
 
 ############ This has a limitation for the cases when the point enumeration becomes more than 9
@@ -95,23 +106,32 @@ def split_into_points_new(text):
                 else:
                     splits_positions.append(word_beging_possitions[i])
 
+            ## match (W123) or (w123)
+            if re.match(r'\([w|W]\d+\)',word):
+                splits_positions.append(word_beging_possitions[i])
+
+
             ## Match if this is a number, and not preceeded by a word that is a section or figure or table
             ## this matches the cases when we have NUM,  that is not a section or figure or table
             # This also make sure that we are not in the middle of a sentence
             if word.isnumeric():
                 if i and words[i-1].replace('.','').replace(':','') \
-                    not in ['tab','fig', 'table', 'figure', 'sec', 'section','al']\
+                    not in ['tab','fig', 'table', 'figure', 'sec', 'section','al', 'eqn', 'equation' ,'']\
                     and words[i-1][-1] in ['.','!','?']:
 
                     splits_positions.append(word_beging_possitions[i])
                 elif not i:
                     splits_positions.append(word_beging_possitions[i])
             
+
+    
+
             # This matches the cases when we have NUM that is followed by a '.' or ':' or ')'
             # This also make sure that we are not in the middle of a sentence
-            if re.match(r"[a-zA-z]*\d+[.:)]", word):
+            # make sure this is not a NUM.NUM
+            if re.match(r"[a-zA-z]*\d+[.:)]", word) and not re.match(r"\d+.\d+", word):
 
-                if i and (words[i-1][-1] in ['.','!','?', ':']):
+                if i and (words[i-1][-1] in ['.','!','?', ':',';']):
                     splits_positions.append(word_beging_possitions[i])
                 elif not i:
                     splits_positions.append(word_beging_possitions[i])               
@@ -119,6 +139,8 @@ def split_into_points_new(text):
                 # if this has a closed parantheses, then we add a dummy ones, so we don't mess the count
                 if ')' in word:
                     open_parantheses += word.count(')')
+            
+            
          
         # keep track for the parantheses
         open_parantheses += word.count('(')
@@ -140,27 +162,28 @@ def split_into_points_new(text):
 # Example usage:
 if __name__ == "__main__":
     paragraph = '''
-- This is the (n+1)st paper on discussing biases in models and datasets and it's not clear to me whether this specific bias hasn't been discovered before - not a single 2021 paper cited - models investigated (ESIM, etc.) are a bit old, no novel model is included - the explanation via probing is a bit trivial (this probing has been criticized btw., as unreliable [1]); it's also not clear to me why BERT performs best in the probing, but is least prone to the length diversion bias, questioning the apparent explanation - in l.237, authors write "except for one combination", but there are quite a few negative signs in Table 3, indicating that adversarial training is less often helpful - the losses from length bias are often small, e.g., 1 percentage point for BERT [1] https://aclanthology.org/2020.conll-1.8.pdf 
-- Textual matching is also relevant for evaluation metrics [2], where similar biases (e.g., lexical overlap) are discovered. It would be interesting to extend this analysis and also consider models from such communities [2] https://aclanthology.org/2021.emnlp-main.701/ 
+Weaknesses:
+(W1) When it comes to the proposed searching methodology and implications for the broader NAS research, the paper does not include any significantly novel parts -- pretty much every single element or insights has been already proposed/made (see details), however not necessarily in the context of (w2) the proposed system is not trivial in the sense that I can imagine putting everything together and achieving strong results was a lot of work, th
 '''
     points = split_into_points_new(paragraph)
     for i, point in enumerate(points, 1):
         print(f"Point {i}: {point}")
 
     
-    df = pd.read_csv('../../data/reviewer2_ARR_2022_reviews_gemma2.csv')
+    # df = pd.read_csv('/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/peerq-generation/data/processed/nips_reviews.csv')
+    # df['focused_review'] = df['focused_review'].astype(str)
 
-    df = filter_reviews(df,'focused_review')
+    # df = filter_reviews(df,'focused_review')
 
-    new_col = []
-    with open('/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/peerq-generation/outputs/test_new_spliting.txt','w')as f:
+    # new_col = []
+    # with open('/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/peerq-generation/outputs/test_spliting.txt','w')as f:
 
-        for i,r in tqdm(df.iterrows(),total=len(df)):
-            focused_review = re.sub(r'\s+', ' ', r['focused_review'])
-            splitted_reviews = split_into_points_new(focused_review)
-            splitted_reviews = merge_short_sentences(splitted_reviews)
+    #     for i,r in tqdm(df.iterrows(),total=len(df)):
+    #         focused_review = re.sub(r'\s+', ' ', r['focused_review'])
+    #         splitted_reviews = split_into_points_new(focused_review)
+    #         splitted_reviews = merge_short_sentences(splitted_reviews)
 
-            f.write(f'Focused review:\n\n{r["focused_review"]}\n\n')
-            for sr in splitted_reviews:
-                f.write(f'Review Point: {sr}\n')
-            f.write('='*50 + '\n\n')
+    #         f.write(f'Focused review:\n\n{r["focused_review"]}\n\n')
+    #         for sr in splitted_reviews:
+    #             f.write(f'Review Point: {sr}\n')
+    #         f.write('='*50 + '\n\n')
