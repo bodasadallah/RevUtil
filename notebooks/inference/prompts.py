@@ -25,15 +25,16 @@ Give a score of 0 if you think this aspect is not relevant to this review.
 
 ASPECT: {aspect}
 ASPECT DESCRIPTION: {aspect_description}
-REVIEW: {review}
+REVIEW POINT: {review}
 
-Reason step by step whether this aspect is relative to this review, and then if the aspect is followed or not. Then give the corresponding score, using the format:
- Score: [SCORE]
+Reason step by step whether this aspect is relative to this review point, and then if the aspect is followed or not. At the end, give the corresponding score, using the format:
+
+The aspect score is: [SCORE]
 
 
 ''',
 
-'Actionability' : '''Refers to the extent to which the feedback provided in the review includes specific, clear, and practical suggestions that the author can use to improve their paper. Actionable comments go beyond identifying issues; they offer concrete steps or recommendations that guide the author in addressing those issues.
+'actionability' : '''Refers to the extent to which the feedback provided in the review includes specific, clear, and practical suggestions that the author can use to improve their paper. Actionable comments go beyond identifying issues; they offer concrete steps or recommendations that guide the author in addressing those issues.
 Actionability enhances the usefulness of a review by providing the author with a clear path for revision.
 
 A score of 1, means that this feedback should be actionable, and it directs, hints, or suggests steps or edits that should be made.
@@ -57,7 +58,7 @@ Examples of feedback that are not relevant for Actionability, corresponding to a
 
 
 
-'Politeness' : '''Refers to the manner in which feedback is delivered, focusing on being helpful, respectful, and encouraging. Polite feedback maintains a respectful and professional tone, ensuring that the author feels motivated and supported in their revision process. 
+'politeness' : '''Refers to the manner in which feedback is delivered, focusing on being helpful, respectful, and encouraging. Polite feedback maintains a respectful and professional tone, ensuring that the author feels motivated and supported in their revision process. 
 
 A score of 1, means that this feedback should be polite and positive.
 A score of -1, means that this feedback should be polite and positive, but instead, the tone of the review is negative or aggressive.
@@ -78,7 +79,7 @@ Examples of feedback that are not relevant for Politeness, corresponding to a SC
 - The size of the explanatory dataset (used in one of the experiments) is 25, which is very small.
 - The paper doesn't show how tertiary claim classes and visual claim classes can help in fake news detection.  So it leads to the question, why do we care about the proposed label classes in claim detection? 
 ''',
-'Verifiability': '''
+'verifiability': '''
 Refers to the extent to which the feedback provided in the review is supported by references to external sources, references to parts of the paper, or logical reasoning that can be independently verified. Verifiable feedback ensures that the reviewer’s claims and suggestions can be checked against external sources or through logical validation.
 
 A score of 1, means that this feedback imposes a certain claim, and then supports it using internal references from the paper, or citing external work. 
@@ -100,7 +101,7 @@ Examples of feedback that are not relevant for Verifiability in feedback, corres
 - The dataset for wordplay type detection consists of only 25 samples. This small sample size can significantly impact accuracy, as even one incorrect answer can alter the accuracy by 4%. Increasing the dataset size to a few hundred samples would provide a more reliable basis for conclusions.
 - The dataset has conflicts in annotated data. Why not add more annotators?
 ''',
-'Specificity' : '''Specificity in a review refers to the extent to which the feedback is detailed and directly relevant to the content of the draft. Specific comments make it clear which sections, statements, or elements in the paper are addressed. Specificity ensures that the feedback is tailored to the content of the paper, and not a general comment for any scientific document.
+'specificity' : '''Specificity in a review refers to the extent to which the feedback is detailed and directly relevant to the content of the draft. Specific comments make it clear which sections, statements, or elements in the paper are addressed. Specificity ensures that the feedback is tailored to the content of the paper, and not a general comment for any scientific document.
 
 A score of 1, means that this feedback addresses a certain point or design decision in the paper, so it should be specific, and the feedback manages to mention some parts of the paper specifically.
 A score of -1, means that this feedback should be specific, but the review doesn't mention specific parts or methods in the paper.

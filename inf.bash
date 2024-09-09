@@ -16,4 +16,6 @@ echo "starting Inf......................."
 
 cd notebooks/inference
 
+# CUDA_VISIBLE_DEVICES=0
+# echo $CUDA_VISIBLE_DEVICES
 python vllm_inf.py
