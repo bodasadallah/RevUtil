@@ -44,7 +44,7 @@ def add_args(parser: argparse.ArgumentParser):
     parser.add_argument(
         "--output_path",
         type=str,
-        required=True,
+        required=False,
         help="Output path",)
     parser.add_argument(
         "--input_path",
@@ -81,6 +81,16 @@ def add_args(parser: argparse.ArgumentParser):
         '--statistics_path',
         type=str,
         default=None
+    )
+    parser.add_argument(
+        '--chatgpt_key',
+        type=str,
+        default=None
+    )
+    parser.add_argument(
+        '--output_dir',
+        type=str,
+        default='outputs'
     )
 
     

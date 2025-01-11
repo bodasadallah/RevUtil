@@ -6,14 +6,14 @@ from tqdm import tqdm
 import re
 import importlib
 from similarity.normalized_levenshtein import NormalizedLevenshtein
-module_path = Path(os.path.abspath("")).parent.parent
+module_path = Path(os.path.abspath("")).parent
 print(module_path)
 sys.path.append(str(module_path))
 
 
 import re
 import pandas as pd
-from notebooks.inference.utils import filter_reviews, merge_short_sentences
+from utils import filter_reviews, merge_short_sentences, clean_text
 from tqdm import tqdm
 
 
@@ -139,14 +139,23 @@ CONFERENCES = ['AAAI', 'AAMAS', 'ACL', 'ACMMM', 'ASPLOS', 'CAV', 'CCS', 'CHI', '
  'HASE', 'HICSS', 'HLT', 'HPCN', 'HPSR', 'IAAI', 'ICA3PP', 'ICAIL']
 
 SKIP_WORDS = ['tab','fig', 'table', 'figure', 'sec', 'section','al', 'eqn', 'equation' , 'figs', 'eq', 'vol', 'volume', 'chap', 'chapter']
-POINT_DELIMITERS = ['.', '-', '*', '•', '+']
+POINT_DELIMITERS = ['.', '-', '*', '•','_']
 SENTENCE_ENDINGS = ['.','!','?', ':',';']
 
 def split_into_points_new(text):
     splits_positions = []
     open_parantheses = 0
     # Remove extra spaces
-    text = re.sub(r'\s+', ' ', text)  
+    # text = re.sub(r'\s+', ' ', text) 
+
+    text = clean_text(text) 
+
+    ## remove post-rebuttal text 
+    post_rebuttal_phrases = ['post-rebuttal', 'post rebuttal', 'postrebuttal','After reading the response']
+    for phrase in post_rebuttal_phrases:
+        if phrase in text:
+            text = text.split(phrase)[0]
+
 
     word_beging_possitions = word_begging_postition(text)
     new_line_positions = [i for i, char in enumerate(text) if char == '\n']
@@ -154,20 +163,30 @@ def split_into_points_new(text):
     words = [words.lower() for words in words]
     for i, word in enumerate(words):
 
-        if open_parantheses == 0:
+
+        ## Custom case to split for General Discission
+        
+        if  (i < len(words) -1 ) and ('general' in word)   and ('discussion' in words[i+1]):
+            splits_positions.append(word_beging_possitions[i])
+            continue
+
+        if open_parantheses <= 0:
             if word in POINT_DELIMITERS:
                 if i > 0:
                     # make sure this point is preceded by a sentence ending or new line
                     word_begin_pos = word_beging_possitions[i]
                     # check if the word is at the begining of a new line or the last words ended with a sentence ending.
-                    if  ( (word_begin_pos -1) in new_line_positions ) or  ( words[i-1][-1] in ['.','!','?', ':'] ):
+                    if  ( (word_begin_pos -1) in new_line_positions  or  (word_begin_pos -1) == '\n') or  ( words[i-1][-1] in SENTENCE_ENDINGS ):
                         splits_positions.append(word_beging_possitions[i])
+                        continue
                 else:
                     splits_positions.append(word_beging_possitions[i])
+                    continue
 
             ## match (W123) or (w123)
             if re.match(r'\([w|W]\d+\)',word):
                 splits_positions.append(word_beging_possitions[i])
+                continue
 
 
             ## Match if this is a number, and not preceeded by a word that is a section or figure or table
@@ -179,8 +198,10 @@ def split_into_points_new(text):
                     and words[i-1][-1] in SENTENCE_ENDINGS:
 
                     splits_positions.append(word_beging_possitions[i])
+                    continue
                 elif not i:
                     splits_positions.append(word_beging_possitions[i])
+                    continue
             
 
     
@@ -193,6 +214,10 @@ def split_into_points_new(text):
                 if i and (words[i-1][-1] in SENTENCE_ENDINGS):
                     splits_positions.append(word_beging_possitions[i])
                 elif not i:
+                    splits_positions.append(word_beging_possitions[i])
+
+                ### special case if we have NUM) then we don't need to be in the begin of a sentence
+                elif ')' in word:
                     splits_positions.append(word_beging_possitions[i])               
 
                 # if this has a closed parantheses, then we add a dummy ones, so we don't mess the count
@@ -256,13 +281,48 @@ def only_bullet_points(points):
 
 
 
+################### Still unfinished ##################
+def split_with_llm(points, client):
+    points = []
+
+    prompt = '''The following is a review of a scientific paper. Read it carefully, and decide if there are multiple coherent points in this review, and if they can be split into more than one point.  Don't change anything in the text. write the text as is. Output the different points in the format: 
+POINT#: [point]
+Review: 
+{review_point}
+'''
+
+    for point in points:
+        
+        current_point = prompt.format(review_point = point)
+        completion = client.chat.completions.create(
+        messages=[ 
+        {"role": "user", "content": current_point}],)
+        response = completion.choices[0].message.content.lower().strip()
+
+        pattern = r'POINT\d+'
+        matches = re.findall(pattern, response)
+
+
+
+def remove_post_rebuttal(points):
+    remove_list = ['------','******','======','______', 'rebuttal']
+    clean_points = []
+    for point in points:
+        if any([x in point for x in remove_list]):
+            continue
+        clean_points.append(point)
+    return clean_points
+
+
 def split_and_filter(df,
                     review_key,
                     filter_short_reviews=True, 
                     do_filter_typos=True, 
                     consider_only_bullet_points=True,
-                    exclude_short = True,
-                    exclude_long = False):
+                    exclude_short = False,
+                    exclude_long = False,
+                    split_with_llm = False,
+                    llm_client = None):
 
     all_cnt = 0
     cnt_after_typos_bullet_points = 0
@@ -290,6 +350,8 @@ def split_and_filter(df,
         splitted_reviews = split_into_points_new(focused_review)
         splitted_reviews = merge_short_sentences(splitted_reviews)
 
+        if split_with_llm:
+            splitted_reviews = split_with_llm(splitted_reviews, llm_client)
 
 
         ####################### Removing reviews with one point #######################
@@ -300,11 +362,15 @@ def split_and_filter(df,
 
         all_cnt += len(splitted_reviews)
 
+
+        ## remove reviews that are post rebuttal
+
         if filter_short_reviews:
         ########## Filter short reviews  ###################
             for review in list(splitted_reviews):
                 if len(review.split()) < 10: 
                     splitted_reviews.remove(review)
+
 
         if do_filter_typos:
             splitted_reviews = filter_typos(splitted_reviews)
@@ -313,6 +379,11 @@ def split_and_filter(df,
             splitted_reviews = only_bullet_points(splitted_reviews)
 
         cnt_after_typos_bullet_points += len(splitted_reviews)
+        
+
+        ############ Remove reviews with post-rebuttal text ################
+        splitted_reviews =  remove_post_rebuttal(splitted_reviews)
+
 
 
         split_review_column.append(splitted_reviews)
@@ -339,41 +410,4 @@ def split_and_filter(df,
 
 # Example usage:
 if __name__ == "__main__":
-#     paragraph = '''
-# Weaknesses:
-# (W1) When it comes to the proposed searching methodology and implications for the broader NAS research, the paper does not include any significantly novel parts -- pretty much every single element or insights has been already proposed/made (see details), however not necessarily in the context of (w2) the proposed system is not trivial in the sense that I can imagine putting everything together and achieving strong results was a lot of work, th
-# '''
-#     points = split_into_points_new(paragraph)
-#     for i, point in enumerate(points, 1):
-#         print(f"Point {i}: {point}")
-
-    
-    df = pd.read_csv('/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/review_rewrite/data/all_reviews.csv')
-    df['focused_review'] = df['focused_review'].astype(str)
-
-    # df = filter_reviews(df,'focused_review')
-
-
-    cnt1 = 0
-    cnt2 = 0
-    new_col = []
-    with open('/fsx/homes/Abdelrahman.Sadallah@mbzuai.ac.ae/mbzuai/review_rewrite/outputs/test_filtering.txt','w')as f:
-
-        for i,r in tqdm(df.iterrows(),total=len(df)):
-            focused_review = re.sub(r'\s+', ' ', r['focused_review'])
-            splitted_reviews = split_into_points_new(focused_review)
-            splitted_reviews = merge_short_sentences(splitted_reviews)
-
-            cnt1 += len(splitted_reviews)
-            cnt2 += len(filter_review_points(splitted_reviews))
-            # if splitted_reviews != filter_review_points(splitted_reviews):
-            #     f.write(f'Original Review: {r["focused_review"]}\n\n')
-            #     f.write(f'Splitted Review: {splitted_reviews}\n\n')
-            #     f.write(f'Filtered Review: {filter_review_points(splitted_reviews)}\n\n')
-            #     f.write('='*50)
-
-            # f.write(f'Focused review:\n\n{r["focused_review"]}\n\n')
-            # for sr in splitted_reviews:
-            #     f.write(f'Review Point: {sr}\n')
-            # f.write('='*50 + '\n\n')
-    print(cnt1,cnt2)
+    print('Running the example usage')

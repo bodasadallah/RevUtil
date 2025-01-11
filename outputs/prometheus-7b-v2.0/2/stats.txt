@@ -1,0 +1,71 @@
+Number of points: 300
+Number of reviews: 238
+Number of reviews with LLM labels: 50
+Number of reviews with human labels: 100
+Number of reviews with both human and LLM labels: 50
+----------------------------------------------------------------------------------------------------
+
+Stats for actionability aspect
+LLM labels: 50
+Human labels: 100
+Number of points that have labels for both human and LLM: 50
+LLM -1 labels: 47
+LLM 0 labels: 2
+LLM 1 labels: 1
+Human -1 labels: 15
+Human 0 labels: 24
+Human 1 labels: 11
+Kappa score for actionability aspect: 0.04953917050691237
+F1 score for actionability aspect: 0.34
+Confusion matrix for LLM labels:
+[[15,  0,  0],
+ [23,  1,  0],
+ [ 9,  1,  1]]
+Stats for politeness aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for politeness aspect: nan
+F1 score for politeness aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+Stats for verifiability aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for verifiability aspect: nan
+F1 score for verifiability aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+Stats for specificity aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for specificity aspect: nan
+F1 score for specificity aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]

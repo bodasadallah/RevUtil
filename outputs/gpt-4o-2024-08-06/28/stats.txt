@@ -1,0 +1,75 @@
+Number of points: 300
+Number of reviews: 238
+Number of reviews with LLM labels: 0
+Number of reviews with human labels: 100
+Number of reviews with both human and LLM labels: 0
+----------------------------------------------------------------------------------------------------
+
+Stats for actionability aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for actionability aspect: nan
+Linear Kappa score for actionability aspect: nan
+F1 score for actionability aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+Stats for politeness aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for politeness aspect: nan
+Linear Kappa score for politeness aspect: nan
+F1 score for politeness aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+Stats for verifiability aspect
+LLM labels: 50
+Human labels: 100
+Number of points that have labels for both human and LLM: 50
+LLM -1 labels: 32
+LLM 0 labels: 12
+LLM 1 labels: 6
+Human -1 labels: 26
+Human 0 labels: 10
+Human 1 labels: 14
+Kappa score for verifiability aspect: 0.45355191256830607
+Linear Kappa score for verifiability aspect: 0.37137330754352027
+F1 score for verifiability aspect: 0.68
+Confusion matrix for LLM labels:
+[[22,  2,  2],
+ [ 2,  8,  0],
+ [ 8,  2,  4]]
+Stats for specificity aspect
+LLM labels: 0
+Human labels: 100
+Number of points that have labels for both human and LLM: 0
+LLM -1 labels: 0
+LLM 0 labels: 0
+LLM 1 labels: 0
+Human -1 labels: 0
+Human 0 labels: 0
+Human 1 labels: 0
+Kappa score for specificity aspect: nan
+Linear Kappa score for specificity aspect: nan
+F1 score for specificity aspect: 0.0
+Confusion matrix for LLM labels:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]

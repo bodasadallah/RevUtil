@@ -1,0 +1,35 @@
+model_name: gpt-4o-2024-08-06
+max_new_tokens: 1024
+temperature: 0.0
+top_p: 1
+batch_size: 1
+prompt: ternary_score_prompt
+output_path: None
+input_path: data/manually_annotated_review_points.csv
+review_field: review_point
+total_points: 100
+aspect: verifiability
+run_statistics: True
+compare_to_human: True
+statistics_path: None
+chatgpt_key: GPT4_KEY
+output_dir: outputs/gpt-4o-2024-08-06
+Prompt: 
+
+###Task Description:
+A review point, an aspect, and an evaluation criteria are given.
+1. Write detailed feedback that assesses the quality of the review point strictly based on the given score rubric, not evaluating it in general.
+2.  This review point is addressed to the authors of the paper, who have full knowledge of their paper content.
+3. After writing feedback, write a score that is an integer number that is either -1, 0, or 1. You should refer to the score criteria.
+4. The output format should look as follows: "(write a feedback for criteria). score: [SCORE] (an integer number that is either -1, 0, or 1)"
+5. Please do not generate any other opening, closing, and explanations.
+
+###Review point: {review}
+
+###Aspect: {aspect}
+###Evaluation Criteria: {aspect_description}
+
+###Feedback:
+
+
+

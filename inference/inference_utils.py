@@ -1,15 +1,14 @@
 import os
 from vllm import LLM, SamplingParams
 from openai import OpenAI, AsyncOpenAI
+from dotenv import load_dotenv
+from prompts import PROMPTS
 
-
-
-os.environ["VLLM_ATTENTION_BACKEND"] = "FLASHINFER"
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
 def prepare_vllm_inference(model_name, temperature, top_p, max_new_tokens,) :
 
+    os.environ["VLLM_ATTENTION_BACKEND"] = "FLASHINFER"
     llm = LLM(
     model=model_name,
     gpu_memory_utilization=0.9,
@@ -27,15 +26,28 @@ def prepare_vllm_inference(model_name, temperature, top_p, max_new_tokens,) :
     return llm, tokenizer, sampling_params
 
 
-def vllm_inference(model, tokenizer, input_prompts, sampling_params):
+def vllm_inference(model,model_name, tokenizer, input_prompts, sampling_params):
 
     inputs = []
     for prompt in input_prompts:
-        conversation = [
+                   
+                
+        ## gemma doesn't support system prompt
+        role = 'system' if 'gemma' not in model_name else 'user'
+
+        conversation = {"role": role, "content": PROMPTS['system_prompt']}
+
+        #### Instruct models like gemma, don't need system prompt, so we add it to the user prompt
+        if 'gemma' in model_name:
+            prompt =  PROMPTS['system_prompt']+ '\n' + prompt
+            conversation = []
+
+        conversation.append(
             {
                 'role': 'user', 'content': prompt
             }
-        ]
+        )
+        
         c = tokenizer.apply_chat_template(
             conversation,
             tokenize=False,
@@ -51,18 +63,35 @@ def vllm_inference(model, tokenizer, input_prompts, sampling_params):
 
     return outputs
 
+def prepare_openai_inference(chatgpt_key):
 
-def chatgpt_inference(model, inputs, temp, top_p, max_new_tokens):
+    load_dotenv()
+    if chatgpt_key:
+
+        print('Using chatgpt key from environment')
+        key = os.getenv(chatgpt_key)
+
+        if not key:
+            print('Key not found in environment')
+            return None
+   
+        # key = os.environ.get("OPENAI_API_KEY")
+
+    client = OpenAI(api_key=key)
+    return client
+
+def chatgpt_inference(client, model, inputs, temp, top_p, max_new_tokens):
 
     outputs = []
 
+        
     for input in inputs:
-        # print(f'Input: {input}')
-        message = {"role": "user", "content": input}
         completion = client.chat.completions.create(
         model=model,
         messages=[
-            message
+            {"role": "system", "content": PROMPTS['system_prompt']},
+            {"role": "user", "content": input}
+            
         ],
         temperature=temp,
         top_p= top_p,

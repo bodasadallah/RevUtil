@@ -1,0 +1,75 @@
+Number of points: 300
+Number of reviews: 238
+Number of reviews with LLM labels: 100
+Number of reviews with human labels: 100
+Number of reviews with both human and LLM labels: 100
+----------------------------------------------------------------------------------------------------
+
+Stats for actionability aspect
+LLM labels: 100
+Human labels: 100
+Number of points that have labels for both human and LLM: 100
+LLM -1 labels: 26
+LLM 0 labels: 59
+LLM 1 labels: 15
+Human -1 labels: 25
+Human 0 labels: 45
+Human 1 labels: 30
+Kappa score for actionability aspect: 0.5036028823058447
+Linear Kappa score for actionability aspect: 0.5675675675675675
+F1 score for actionability aspect: 0.69
+Confusion matrix for LLM labels:
+[[19,  5,  1],
+ [ 7, 37,  1],
+ [ 0, 17, 13]]
+Stats for politeness aspect
+LLM labels: 100
+Human labels: 100
+Number of points that have labels for both human and LLM: 100
+LLM -1 labels: 0
+LLM 0 labels: 96
+LLM 1 labels: 4
+Human -1 labels: 1
+Human 0 labels: 86
+Human 1 labels: 13
+Kappa score for politeness aspect: 0.17257683215130037
+Linear Kappa score for politeness aspect: 0.17452830188679247
+F1 score for politeness aspect: 0.86
+Confusion matrix for LLM labels:
+[[ 0,  1,  0],
+ [ 0, 84,  2],
+ [ 0, 11,  2]]
+Stats for verifiability aspect
+LLM labels: 100
+Human labels: 100
+Number of points that have labels for both human and LLM: 100
+LLM -1 labels: 75
+LLM 0 labels: 19
+LLM 1 labels: 6
+Human -1 labels: 63
+Human 0 labels: 21
+Human 1 labels: 16
+Kappa score for verifiability aspect: 0.5606694560669456
+Linear Kappa score for verifiability aspect: 0.49669707455174583
+F1 score for verifiability aspect: 0.79
+Confusion matrix for LLM labels:
+[[59,  3,  1],
+ [ 6, 15,  0],
+ [10,  1,  5]]
+Stats for specificity aspect
+LLM labels: 100
+Human labels: 100
+Number of points that have labels for both human and LLM: 100
+LLM -1 labels: 15
+LLM 0 labels: 19
+LLM 1 labels: 66
+Human -1 labels: 8
+Human 0 labels: 13
+Human 1 labels: 79
+Kappa score for specificity aspect: 0.38900203665987776
+Linear Kappa score for specificity aspect: 0.5107632093933463
+F1 score for specificity aspect: 0.73
+Confusion matrix for LLM labels:
+[[ 6,  2,  0],
+ [ 6,  4,  3],
+ [ 3, 13, 63]]

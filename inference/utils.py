@@ -3,24 +3,40 @@ import numpy as np
 import ast
 from tqdm import tqdm
 import pandas as pd
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score,cohen_kappa_score
 import numpy as np
+# from prompts import PROMPTS
+import re
 
 
 
 
-
-
-def extract_label(text):
-    text = text.replace('*','').lower()
+# def extract_label(text):
+#     text = text.replace('*','').lower()
     
 
-    for l in text.split('\n'):
-        if 'the aspect score is:' in l:
-            for w in l.split():
-                if w in ['0','1','-1']:
-                    return str(w)
-    return 'NO_LABEL'
+#     for l in text.split('\n'):
+#         if 'the aspect score is:' in l:
+#             for w in l.split():
+#                 if w in ['0','1','-1']:
+#                     return str(w)
+#     return 'NO_LABEL'
+
+def extract_label(output):
+
+    output = output.lower()
+    # Extract feedback using a regular expression to capture everything before 'Score:'
+    feedback_match = re.search(r'^(.*)score:', output, re.DOTALL)
+    feedback = feedback_match.group(1).strip() if feedback_match else None
+    
+    # Extract score by finding the integer after 'Score:'
+    score_match = re.search(r'score:\s*(-?\d)', output)
+    score = int(score_match.group(1)) if score_match else None
+
+    if score and not(-1 <= score <= 1):  # Ensure the result is within the valid range
+        score = None
+
+    return   feedback, str(score),
 
 def labels_stats(df,compare_to_human = False, stats_path = None):
     aspects = ['actionability','politeness','verifiability','specificity']
@@ -58,6 +74,8 @@ def labels_stats(df,compare_to_human = False, stats_path = None):
         print('Number of reviews with both human and LLM labels:', len(df.loc[df['llm_actionability'].isin(['0','1','-1']) & df['human_actionability'].isin(['0','1','-1'])]))
         f.write(f'Number of reviews with both human and LLM labels: {len(df.loc[df["llm_actionability"].isin(["0","1","-1"]) & df["human_actionability"].isin(["0","1","-1"])])}\n')
 
+        print('-'*100)
+        f.write('-'*100 + '\n')
         for aspect in aspects:
             
             human_labels = []
@@ -69,6 +87,8 @@ def labels_stats(df,compare_to_human = False, stats_path = None):
             aspect_human_labels = len(df.loc[df[human_key].isin(['0','1','-1'])])
             labels = ['-1', '0', '1']
 
+            print('\n')
+            f.write('\n')
             print(f'Stats for {aspect} aspect\n')
             f.write(f'Stats for {aspect} aspect\n')
 
@@ -102,7 +122,20 @@ def labels_stats(df,compare_to_human = False, stats_path = None):
 
                 ## Calcualte the F1 score
 
-                f1 = f1_score(curr_df[human_key], curr_df[llm_key], labels=labels, average='macro')
+                f1 = f1_score(curr_df[human_key], curr_df[llm_key], labels=labels, average='micro')
+                kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key])
+                linear_kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key],weights='linear')
+                quadratic_kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key],weights='quadratic')
+
+                print(f'Kappa score for {aspect} aspect:', kappa_score)
+                f.write(f'Kappa score for {aspect} aspect: {kappa_score}\n')
+
+                print(f'Linear Kappa score for {aspect} aspect:', linear_kappa_score)
+                f.write(f'Linear Kappa score for {aspect} aspect: {linear_kappa_score}\n')
+                
+                print(f'Quadratic Kappa score for {aspect} aspect:', quadratic_kappa_score)
+                f.write(f'Quadratic Kappa score for {aspect} aspect: {quadratic_kappa_score}\n')
+
                 print(f'F1 score for {aspect} aspect:', f1)
                 f.write(f'F1 score for {aspect} aspect: {f1}\n')
 
@@ -156,7 +189,8 @@ def filter_reviews(df, review_field, exclude_short = True, exclude_long = False)
     print('Number of the review points before filtering:', num_points)
     lengths = np.array(lengths)
     mean, std = np.mean(lengths.astype(int)), np.std(lengths.astype(int))
-    min_length, max_length = mean-std, mean+std
+
+    min_length, max_length = mean- 1*std, mean+ 1*std
     print('mean:', mean, 'std:', std, 'min:', min_length, 'max:', max_length)
 
 
@@ -222,7 +256,19 @@ def prepare_df_to_annotation(df, output_path, total_points = 150):
 
 
 def clean_text(text):
+
+    # Remove these words if they occur in the beginning of the text "Weaknesses, Strengths, Comments, Suggestions, Feedback" these can be followed by : , and can be lowe case
+    text = re.sub(r'^(weaknesses|strengths|comments|suggestions|feedback)[:]*', '', text, flags=re.IGNORECASE)
+
+
+    # Replace multiple spaces with a single space
+    text = re.sub(r'[ ]{2,}', ' ', text)
+    # Replace multiple newlines with a single newline
+    text = re.sub(r'\n{2,}', '\n', text)
+    # Strip leading and trailing spaces/newlines from each line
+    text = '\n'.join(line.strip() for line in text.splitlines())
     text = text.replace('  ',' ')
+
 
     lines = text.split('\n')
     new_lines = []
@@ -234,13 +280,99 @@ def clean_text(text):
                 new_lines.append(l)
             
     text = '\n'.join(new_lines)
+    
     return text
 
 
 
+def convert_ternay_prompt_to_prometheus_prompt(aspect):
 
+    prompt = PROMPTS['ternary_score_prompt']
+    instruction = prompt.split('ASPECT:')[0]
+    criteria = aspect + ':' + PROMPTS[aspect].split('A score of 1,')[0]
+    neg_one_desc = ''
+    zero_desc = ''
+    one_desc = ''
+
+    for l in PROMPTS[aspect].split('\n'):
+        if 'A score of -1' in l:
+            neg_one_desc = l
+        if 'A score of 0' in l:
+            zero_desc = l
+        if 'A score of 1' in l:
+            one_desc = l
+    
+    rubric_data = {
+        "criteria":criteria,
+        "score_one_description":one_desc,
+        "score_zero_description":zero_desc,
+        "score_negone_description":neg_one_desc
+    }
+
+    return instruction, rubric_data
 
 
 # df = pd.read_csv('/home/abdelrahman.sadallah/mbzuai/review_rewrite/outputs/test_output.csv')
 
 # labels_stats(df,compare_to_human = True, stats_path = '/home/abdelrahman.sadallah/mbzuai/review_rewrite/outputs/stats.txt')
+
+
+
+import random
+import string
+
+import random
+import string
+
+def generate_username_password_list(n, username_length=8, password_length=12):
+    """
+    Generates a list of N usernames and passwords.
+
+    :param n: Number of usernames and passwords to generate
+    :param username_length: Length of each username (default 8)
+    :param password_length: Length of each password (default 12)
+    :return: A list of dictionaries with 'username' and 'password' keys
+    """
+    user_list = []
+
+    for _ in range(n):
+        # Generate a random username without commas
+        username = ''.join(random.choices(string.ascii_letters + string.digits, k=username_length))
+        
+        # Generate a random password without commas
+        password_characters = string.ascii_letters + string.digits + ''.join(c for c in string.punctuation if c != ',')
+        password = ''.join(random.choices(password_characters, k=password_length))
+
+        user_list.append({"username": username, "password": password})
+
+    return user_list
+
+
+def save_to_file(user_list, filename="user_credentials.txt"):
+    """
+    Saves the list of usernames and passwords to a file.
+
+    :param user_list: List of dictionaries with 'username' and 'password' keys
+    :param filename: Name of the file to save the data (default 'user_credentials.txt')
+    """
+    with open(filename, "w") as file:
+        for user in user_list:
+            file.write(f"{user['username']}, {user['password']}\n")
+
+
+
+def read_from_file(filename="user_credentials.txt"):
+    """
+    Reads the list of usernames and passwords from a file.
+
+    :param filename: Name of the file to read the data from (default 'user_credentials.txt')
+    :return: A list of dictionaries with 'username' and 'password' keys
+    """
+    user_list = []
+    with open(filename, "r") as file:
+        for line in file:
+            parts = line.strip().split(", ")
+            username = parts[0].strip()
+            password = parts[1].strip()
+            user_list.append({"username": username, "password": password})
+    return user_list
