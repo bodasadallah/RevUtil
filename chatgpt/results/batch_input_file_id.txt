@@ -1,0 +1,4 @@
+aspect: actionability 
+prompt_type: definitions_incontext_learning 
+batch_input_file_id: file-Cuzq9Z9idmkS2imNAMZMLC 
+batch_file_path: results/batch_input.jsonl 

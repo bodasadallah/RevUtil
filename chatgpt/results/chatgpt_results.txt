@@ -1,0 +1,10 @@
+Agreement Statistics for actionability
+ Total number of samples: 47
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.53
+ Kappa Score: 0.41
+ Linear Kappa Score: 0.66
+ Quadratic Kappa Score: 0.82
+ Spearman Correlation: 0.88
+--------------------------------------------------
+==================================================
