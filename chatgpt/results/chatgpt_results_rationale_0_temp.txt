@@ -1,0 +1,66 @@
+Agreement Statistics for actionability
+ Total number of samples: 47
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.51
+ Kappa Score: 0.39
+ Linear Kappa Score: 0.59
+ Quadratic Kappa Score: 0.74
+ Spearman Correlation: 0.79
+Confusion Matrix
+[[ 5  6  5  1  0]
+ [ 0  0  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  5  1  1]
+ [ 0  0  4  1 12]]
+--------------------------------------------------
+==================================================
+Agreement Statistics for grounding_specificity
+ Total number of samples: 49
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.63
+ Kappa Score: 0.51
+ Linear Kappa Score: 0.66
+ Quadratic Kappa Score: 0.78
+ Spearman Correlation: 0.80
+Confusion Matrix
+[[ 7  2  0  1  0]
+ [ 4  2  1  2  1]
+ [ 2  0  5  0  4]
+ [ 0  0  0  1  0]
+ [ 0  0  0  1 16]]
+--------------------------------------------------
+==================================================
+Agreement Statistics for verifiability
+ Total number of samples: 56
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.51
+ Kappa Score: 0.35
+ Linear Kappa Score: 0.45
+ Quadratic Kappa Score: 0.52
+ Spearman Correlation: 0.56
+ F1 Score for X: 0.58
+Confusion Matrix
+[[11  1  1  1  0  1]
+ [ 0  0  0  0  0  0]
+ [ 2  0  2  0  0  0]
+ [ 0  0  2  2  0  0]
+ [ 3  1  5  2  4  2]
+ [ 3  0  1  1  0 11]]
+--------------------------------------------------
+==================================================
+Agreement Statistics for helpfulness
+ Total number of samples: 75
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.33
+ Kappa Score: 0.16
+ Linear Kappa Score: 0.42
+ Quadratic Kappa Score: 0.62
+ Spearman Correlation: 0.74
+Confusion Matrix
+[[ 0 11  4  1  0]
+ [ 1  1  4  2  0]
+ [ 0  2 11  4  0]
+ [ 0  0  3 13  1]
+ [ 0  0  1 16  0]]
+--------------------------------------------------
+==================================================

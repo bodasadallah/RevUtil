@@ -1,0 +1,7 @@
+{
+    "batch_id": "batch_67a498c3780081908e1c30c681095677",
+    "aspect": "actionability",
+    "prompt_type": "chain_of_thoughts",
+    "batch_input_file_id": "file-JCTnMXKS5YrptHLg3XFjwb",
+    "batch_file_path": "batch_data/actionability_batch_input.jsonl"
+}
