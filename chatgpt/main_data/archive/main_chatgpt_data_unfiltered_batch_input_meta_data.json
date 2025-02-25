@@ -1,0 +1,6 @@
+{
+    "batch_id": "batch_67add443e26c8190a6d82c9a0b19e24b",
+    "data_pth": "/home/abdelrahman.sadallah/mbzuai/review_rewrite/chatgpt/main_data/unfiltered_main_chatgpt_data.csv",
+    "batch_input_file_id": "file-CUt14KJ5cwpNqqgF6U1ADk",
+    "batch_file_path": "main_data/main_chatgpt_data_unfiltered_batch_input.jsonl"
+}

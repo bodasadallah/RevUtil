@@ -2,9 +2,11 @@ import os
 from vllm import LLM, SamplingParams
 from openai import OpenAI, AsyncOpenAI
 from dotenv import load_dotenv
-from prompts import PROMPTS
 
 
+## TODO: once we have the trained models, we can adapt this to extract the predictions
+def extract_predictions(output):
+    return output.outputs[0].text.strip()
 
 def prepare_vllm_inference(model_name, temperature, top_p, max_new_tokens,) :
 

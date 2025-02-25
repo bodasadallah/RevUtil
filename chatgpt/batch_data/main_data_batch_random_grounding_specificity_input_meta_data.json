@@ -1,0 +1,7 @@
+{
+    "batch_id": "batch_67bc646e9d288190a4f71d37b3b68f98",
+    "aspect": "grounding_specificity",
+    "batch_input_file_id": "file-9hUMBWrTLPmzEfnnsNhovX",
+    "batch_file_path": "batch_data/main_data_batch_random_grounding_specificity_input.jsonl",
+    "batch": "random"
+}

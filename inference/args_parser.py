@@ -10,12 +10,32 @@ def get_args():
     return args
 
 def add_args(parser: argparse.ArgumentParser):
-
     parser.add_argument(
-        "--model_name",
+        "--tokenizer_name",
         type=str,
-        default="google/gemma-2-9b-it",
+        default="allenai/tulu-2-dpo-70b",
+        help="Tokenizer name",)
+    parser.add_argument(
+        "--base_model_name",
+        type=str,
+        default="allenai/scitulu-7b",
         help="Model name",)
+    parser.add_argument(
+        "--finetune_model_name",
+        type=str,
+        default="/l/users/abdelrahman.sadallah/review_evaluation/actionability/checkpoint-33/",
+        help="Model name",)
+    parser.add_argument(
+        "--dataset_name",
+        type=str,
+        default="boda/review_evaluation_fine_tuning",
+        help="Dataset name",)
+    parser.add_argument(
+        "--dataset_config",
+        type=str,
+        default="actionability",
+        help="Aspect",)
+    
     parser.add_argument(
         "--max_new_tokens",
         type=int,
@@ -37,62 +57,15 @@ def add_args(parser: argparse.ArgumentParser):
         default=1,
         help="Batch size",)
     parser.add_argument(
-        "--prompt",
-        type=str,
-        default="ternary_score_prompt",
-        help="Prompt",)
-    parser.add_argument(
         "--output_path",
         type=str,
         required=False,
         help="Output path",)
     parser.add_argument(
-        "--input_path",
-        type=str,
-        required=True,
-        help="Input path",)
-    parser.add_argument(
-        "--review_field",
-        type=str,
-        default="review_point",
-        help="Review field",)
-    parser.add_argument(
-        "--total_points",
-        type=int,
-        default=0,
-        help="Total points to evaluate, if zero, then it will be set to the len of the dataframe",)
-    parser.add_argument(
         '--aspect',
         type=str,
         default='all',
         help='Aspect to evaluate',)
-    
-    parser.add_argument(
-        '--run_statistics',
-        type=bool,
-        default=False
-    )
-    parser.add_argument(
-        '--compare_to_human',
-        type=bool,
-        default=False
-    )
-    parser.add_argument(
-        '--statistics_path',
-        type=str,
-        default=None
-    )
-    parser.add_argument(
-        '--chatgpt_key',
-        type=str,
-        default=None
-    )
-    parser.add_argument(
-        '--output_dir',
-        type=str,
-        default='outputs'
-    )
-
     
 
     

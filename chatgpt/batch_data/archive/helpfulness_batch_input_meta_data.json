@@ -1,7 +1,0 @@
-{
-    "batch_id": "batch_67a33f866df8819092a273eee450defd",
-    "aspect": "helpfulness",
-    "prompt_type": "chain_of_thoughts",
-    "batch_input_file_id": "file-X6gztYQXYgJJkBxx1rjHqj",
-    "batch_file_path": "batch_data/helpfulness_batch_input.jsonl"
-}

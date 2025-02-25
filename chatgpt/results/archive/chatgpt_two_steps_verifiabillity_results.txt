@@ -1,0 +1,18 @@
+Agreement Statistics for verifiability
+ Total number of samples: 55
+ Agreement Statistics for definitions_incontext_learning
+ F1 Score: 0.35
+ Kappa Score: 0.22
+ Linear Kappa Score: 0.50
+ Quadratic Kappa Score: 0.68
+ Spearman Correlation: 0.86
+ F1 Score for X: 0.56
+Confusion Matrix
+[[11  2  0  0  0  1]
+ [ 0  0  0  0  0  0]
+ [ 0  3  2  0  0  0]
+ [ 0  0  4  0  0  0]
+ [ 0  2  6  7  0  1]
+ [ 2  0  3  1  0 10]]
+--------------------------------------------------
+==================================================

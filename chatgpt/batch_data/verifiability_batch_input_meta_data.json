@@ -1,7 +1,0 @@
-{
-    "batch_id": "batch_67a498c759088190aa3c8d8672e8983b",
-    "aspect": "verifiability",
-    "prompt_type": "chain_of_thoughts",
-    "batch_input_file_id": "file-Hr9W5xYUwtghCbg4cCR5DM",
-    "batch_file_path": "batch_data/verifiability_batch_input.jsonl"
-}

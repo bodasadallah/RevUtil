@@ -1,0 +1,8 @@
+{
+    "batch_id": "batch_67b9d3c200748190877cbb18d930e05c",
+    "aspect": "verifiability_verification",
+    "prompt_type": "definitions_incontext_learning",
+    "batch_input_file_id": "file-5K1jEfESJByz1Et1n2i1rD",
+    "batch_file_path": "batch_data/verifiability_verification_gold_batch_input.jsonl",
+    "data_type": "gold"
+}

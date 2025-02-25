@@ -1,7 +1,0 @@
-{
-    "batch_id": "batch_67a498c589408190918e90a8ef650106",
-    "aspect": "grounding_specificity",
-    "prompt_type": "chain_of_thoughts",
-    "batch_input_file_id": "file-QbQ8RrBqVnkBTMcjMK2qoJ",
-    "batch_file_path": "batch_data/grounding_specificity_batch_input.jsonl"
-}
