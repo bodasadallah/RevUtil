@@ -41,6 +41,7 @@ from alignment import (
     get_quantization_config,
     get_tokenizer,
 )
+from alignment.data import DEFAULT_CHAT_TEMPLATE
 from trl import SFTTrainer, setup_chat_format
 
 
@@ -97,6 +98,14 @@ def main():
         configs=data_args.dataset_configs,
         columns_to_keep=[ "prompt"],
     )
+
+
+    print("################ DATASET LENGTH ################")
+    print(len(raw_datasets["train"]))
+    print("################ PROMPT ################")
+    print(raw_datasets["train"][0]["prompt"])
+
+
     logger.info(
         f"Training on the following datasets and their proportions: {[split + ' : ' + str(dset.num_rows) for split, dset in raw_datasets.items()]}"
     )
@@ -106,6 +115,8 @@ def main():
     # Load tokenizer
     ################
     tokenizer = get_tokenizer(model_args, data_args)
+    ### Set the chat template ###
+    tokenizer.chat_template = DEFAULT_CHAT_TEMPLATE
 
     #######################
     # Load pretrained model
@@ -152,6 +163,12 @@ def main():
     # Decontaminate benchmarks
     ##########################
     num_raw_train_samples = len(raw_datasets["train"])
+
+    print("################ DATASET LENGTH ################")
+    print(num_raw_train_samples)
+    print("################ PROMPT ################")
+    print(raw_datasets["train"][0]["text"])
+
     raw_datasets = raw_datasets.filter(decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1)
     num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
     logger.info(

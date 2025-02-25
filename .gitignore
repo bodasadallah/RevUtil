@@ -1,9 +1,9 @@
 
 data
 logs
-
-
-
+wandb
+myenv
+review_evaluation_checkpoints 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -40,40 +40,39 @@ ASPECT_DEFINITIONS = {
 ''',
 
 
-"grounding_specificity": '''
+"grounding_specificity" : """
+**Grounding Specificity**  
 
-# Grounding Specificity
+**Definition:** Measures how explicitly a review comment refers to a specific part of the paper and how clearly it identifies the issue with that part. This helps authors understand what needs revision and why. Grounding specificity has two key components:  
 
-This aspect measures how explicitly a review comment is based on a part of the paper. This is important so the authors know which part of their paper causes the issue and needs revision. It also assesses how specifically the comment identifies what is the issue with this part of the paper. This aspect has two dimensions: 
-1. What part of the paper does this comment address?
-2. What is wrong with this part?
+1. **Grounding:** How well the authors can identify the specific part of the paper being addressed.  
+   - **Weak Grounding:** The author can make an educated guess but cannot precisely identify the referenced part.  
+   - **Full Grounding:** The author can accurately pinpoint the section, table, figure, or unique aspect being addressed. This can be achieved through:  
+     - Literal mentions of sections, tables, figures, etc.  
+     - Discussion of unique elements of the paper.  
+     - General comments that clearly imply the relevant parts without explicitly naming them.  
 
-## Definitions
+2. **Specificity:** How clearly the comment details what is wrong or missing in the referenced part. If external work is mentioned, it also evaluates whether specific examples are provided.  
 
-### Grounding:
-Measures how well the authors can identify what is being addressed by the comment. This can be categorized as no grounding, weak grounding, or full grounding.
-- **Weak grounding**: The author can’t precisely identify the part of the paper being addressed by the point, but they have some hint or guess about it.
-- **Full grounding**: The authors can accurately identify which part is being addressed. This can be done by:
-  - Making literal mentions of sections, tables, figures, etc.
-  - Discussing something unique to the paper that the authors can identify.
-  - Giving general comments that do not need to mention specific parts of the paper, but the authors can easily infer which parts are addressed.
+**Importance:** A well-grounded and specific comment helps authors quickly locate issues and understand what needs to be improved.  
 
-### Specificity:
-Measures how much the reviewer detailed what is wrong/missing in this area. If the comment mentions some external work, it also measures whether it mentions specific examples.
+**Grounding Specificity Scale (1-5):**  
 
-### Grounding and Specificity Scale (1-5):
+1. **1: Not Grounded**  
+   - **Definition:** The comment is completely ungrounded, meaning it does not refer to a specific part of the paper. It is also highly unspecific.  
 
-1. **Not Grounded**
-   - **Definition**: This comment is not grounded at all. It does not identify a specific area in the paper. The comment is highly unspecific.
-2. **Weakly Grounded and Not Specific**
-   - **Definition**: The authors cannot confidently determine which part the comment addresses. Further, the comment does not specify what needs to be addressed in this part.
-3. **Weakly Grounded and Specific**
-   - **Definition**: The authors cannot confidently determine which part the comment addresses. However, the comment clearly specifies what needs to be addressed in this part.
-4. **Fully Grounded and Under-Specific**
-   - **Definition**: The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.
-5. **Fully Grounded and Specific**
-   - **Definition**: The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.
-''',
+2. **2: Weakly Grounded and Not Specific**  
+   - **Definition:** The comment does not clearly indicate which part of the paper it refers to. Additionally, it lacks specific details about what needs to be improved.  
+
+3. **3: Weakly Grounded and Specific**  
+   - **Definition:** The comment does not allow authors to confidently identify the relevant part of the paper. However, it provides clear details on what needs to be improved.  
+
+4. **4: Fully Grounded and Under-Specific**  
+   - **Definition:** The comment explicitly or obviously refers to a specific part of the paper, but it lacks detail on what exactly is wrong or missing.  
+
+5. **5: Fully Grounded and Specific**  
+   - **Definition:** The comment explicitly refers to a specific part of the paper, and it clearly details what needs to be improved. Authors can easily understand both the location of the issue and the nature of the problem.  
+""",
 
     
 "verifiability":  

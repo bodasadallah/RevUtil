@@ -1,7 +1,7 @@
 # Model arguments
 model_name_or_path: allenai/scitulu-7b
 model_revision: main
-tokenizer_name_or_path: allenai/tulu-2-dpo-70b
+tokenizer_name_or_path: allenai/scitulu-7b
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
 
@@ -44,7 +44,7 @@ gradient_accumulation_steps: 2
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: false
-hub_model_id: boda/review_evaluation_actionability
+hub_model_id: boda/review_evaluation_all
 hub_strategy: every_save
 learning_rate: 2.0e-04
 log_level: info
@@ -54,7 +54,8 @@ lr_scheduler_type: cosine
 max_seq_length: 2048
 max_steps: -1
 num_train_epochs: 3
-output_dir: /l/users/abdelrahman.sadallah/review_evaluation
+output_dir: review_evaluation_checkpoints
+# output_dir: /l/users/abdelrahman.sadallah/review_evaluation
 overwrite_output_dir: true
 per_device_eval_batch_size: 4
 per_device_train_batch_size: 2

@@ -13,16 +13,25 @@
 ##SBATCH --nodelist=ws-l6-017
 
 
-export TRITON_CACHE_DIR="/l/users/$USER/"
-export HF_CACHE_DIR="/l/users/$USER/hugging_face"
-export CUDA_VISIBLE_DEVICES=2,3
-## get the number of gpus from the CUDA_VISIBLE_DEVICES and put it into variable GPUS
-IFS=',' read -ra GPUS <<< "$CUDA_VISIBLE_DEVICES"
+# ###### CSCC PATHS ######
+# export TRITON_CACHE_DIR="/l/users/$USER/"
+# export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 
+export TRITON_CACHE_DIR="/home/$USER/"
+export HF_CACHE_DIR="/home/$USER/hugging_face"
+export CUDA_VISIBLE_DEVICES=0,1
 
+# get the number of GPUs and store them into variable
+GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
 
-SAVEDIR="/l/users/$USER/UWFE-mixtral-explicit-errors"
+echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
+echo "GPUS: $GPUS"
+
 ACCELERATE_LOG_LEVEL=info accelerate launch \
 --config_file deepspeed_zero3.yaml --num_processes=$GPUS \
 run_sft.py \
 config_full.yaml
+
+# accelerate launch \
+# --config_file deepspeed_zero3.yaml \
+# run_sft.py \
