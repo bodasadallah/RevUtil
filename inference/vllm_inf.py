@@ -19,7 +19,9 @@ DEFAULT_CHAT_TEMPLATE = "{% for message in messages %}\n{% if message['role'] ==
 if __name__ == "__main__":
 
     args = get_args()
-    save_dir = os.path.join(args.output_path, args.dataset_config)
+
+    model_name = args.base_model_name.split('/')[-1]
+    save_dir = os.path.join(args.output_path,model_name, args.dataset_config)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
@@ -44,7 +46,8 @@ if __name__ == "__main__":
 
     llm = LLM(model=args.base_model_name,
             enable_lora=enable_lora,
-            tensor_parallel_size = args.tensor_parallel_size,)
+            tensor_parallel_size = args.tensor_parallel_size,
+            gpu_memory_utilization=0.9)
 
     sampling_params = SamplingParams(
     temperature=args.temperature,

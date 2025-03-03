@@ -20,25 +20,34 @@
 
 echo "starting Inf......................."
 
-# cd inference
 export VLLM_LOGGING_LEVEL=DEBUG
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 
+GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
 export CUDA_LAUNCH_BLOCKING=1
-echo $CUDA_VISIBLE_DEVICES
-echo $CONDA_PREFIX
+echo "GPUS: $GPUS"
 # FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full_training/all/checkpoint-109"
-FULL_MODEL_NAME="allenai/scitulu-7b"
-FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/actionability/checkpoint-141"
-ASPECT="actionability"
+
+# "meta-llama/Llama-3.1-8B"
+# "allenai/scitulu-7b"
+# "Uni-SMART/SciLitLLM"
+# FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/all/checkpoint-134/".
+FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full/SciLitLLM/all/"
+FINE_TUNED_MODEL_PATH=""
+
+
+
+ASPECT="all"
 WRITE_PATH="evalute_outputs"
 
 ## If FINE_TUNED_MODEL_PATH is not set, then set the path to the full model1
 if [ -z "$FINE_TUNED_MODEL_PATH" ]; then
     WRITE_PATH="$WRITE_PATH/full_model"
+    echo "FINE_TUNED_MODEL_PATH is not set, using full model"
 else
     WRITE_PATH="$WRITE_PATH/adapters"
+    echo "FINE_TUNED_MODEL_PATH is set, using adapters"
 fi
 
 python  vllm_inf.py \
@@ -49,4 +58,4 @@ python  vllm_inf.py \
 --temperature 0.1 \
 --dataset_config $ASPECT \
 --dataset_name "boda/review_evaluation_automatic_labels" \
---finetune_model_name $FINE_TUNED_MODEL_PATH \
+# --finetune_model_name $FINE_TUNED_MODEL_PATH \

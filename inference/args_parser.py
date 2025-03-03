@@ -28,7 +28,8 @@ def add_args(parser: argparse.ArgumentParser):
     parser.add_argument(
         "--finetune_model_name",
         type=str,
-        help="Model name",)
+        help="Model name",
+        default=None,)
     parser.add_argument(
         "--dataset_name",
         type=str,

@@ -1,0 +1,34 @@
+********************actionability********************
+accuracy: 0.571
+f1: 0.571
+kappa: 0.425
+kappa_linear: 0.591
+kappa_quadratic: 0.721
+spearman: SignificanceResult(statistic=0.727558992809976, pvalue=5.727810687180939e-158)
+--------------------------------------------------
+********************grounding_specificity********************
+accuracy: 0.648
+f1: 0.648
+kappa: 0.447
+kappa_linear: 0.554
+kappa_quadratic: 0.655
+spearman: SignificanceResult(statistic=0.6403770386559517, pvalue=3.1767303683737977e-111)
+--------------------------------------------------
+********************verifiability********************
+accuracy: 0.62
+f1: 0.62
+kappa: 0.395
+kappa_linear: 0.519
+kappa_quadratic: 0.62
+spearman: SignificanceResult(statistic=0.6278579897110327, pvalue=9.252347751350295e-80)
+accuracy_X: 0.58
+f1_X: 0.58
+--------------------------------------------------
+********************helpfulness********************
+accuracy: 0.572
+f1: 0.572
+kappa: 0.354
+kappa_linear: 0.504
+kappa_quadratic: 0.666
+spearman: SignificanceResult(statistic=0.6569611790338006, pvalue=6.463058191221525e-119)
+--------------------------------------------------

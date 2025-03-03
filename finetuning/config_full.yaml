@@ -1,9 +1,9 @@
 # Model arguments
 # meta-llama/Llama-3.1-8B
-model_name_or_path: Uni-SMART/SciLitLLM
-tokenizer_name_or_path: Uni-SMART/SciLitLLM
-# model_name_or_path: allenai/scitulu-7b
-# tokenizer_name_or_path: allenai/scitulu-7b
+# model_name_or_path: Uni-SMART/SciLitLLM
+# tokenizer_name_or_path: Uni-SMART/SciLitLLM
+model_name_or_path: allenai/scitulu-7b
+tokenizer_name_or_path: allenai/scitulu-7b
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2

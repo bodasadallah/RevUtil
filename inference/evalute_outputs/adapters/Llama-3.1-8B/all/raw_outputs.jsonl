@@ -1,0 +1,954 @@
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The authors should provide more details about the experimental settings. For example, how many nodes are used for training and testing"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: -General Discussion: [Added after author response] Despite the weaknesses, I find the topic of the paper very relevant and also novel"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - **Lack of ablation studies**: The authors only compare the proposed method with the baseline method. It would be interesting to"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. **Weaknesses and Limitations:** While the proposed approach demonstrates promising results, it has several weaknesses and limitations that"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The authors should provide more details about the proposed method. For example, how to determine the number of groups? How to determine"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2) The authors should provide more details about the training process. For example, how many epochs are used for training? How"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The necessity of transforming a partial label constraint to a propositional logic formula is unclear, why?"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors should provide more details about the implementation of the proposed method. For example, how do they select the number"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a detailed discussion on the computational complexity of the proposed approach. It is unclear how the proposed approach scales"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper does not provide a clear definition of the problem. The authors should define the problem and the objective of the paper."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors should provide more details about the training process. For example, how many epochs are used for training? What is the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is not very well written. The authors should consider rewriting it. The paper is not well written. The authors should"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The authors should provide more details on the training and inference time of the proposed method. It is unclear how much time is required"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '4'} Review Point: 5. **Limitations and Future Work**: The paper could be strengthened by discussing potential limitations of the proposed method, such as"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The authors have done a good job in presenting the results. The paper is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - Theorem 5 should be replaced by a concrete result concerning deep ConvNets and Transformers rather than the actual theorem followed by"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The paper is well-written and easy to follow. The experiments are also well-designed. The paper is well-written and easy to"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The paper is well-written and easy to follow. The authors should consider adding a discussion section to the paper, where"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The authors claim that the proposed method is the first to use LLMs for ECG analysis. However, there"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The proposed method may be hard to reproduce. Since the proposed method is a multi-pass method, I feel that the sensitivity to"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The authors should provide more details about the proposed method. For example, how to choose the number of clusters? How"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper claims that the proposed method is the first to consider the adaptive data collection setting. However, the paper does"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and the experiments are well-conducted. The proposed method is novel and the results are promising. However"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: -General Discussion: Finally, I will make one speculative suggestion to the authors regarding the analysis of the data. As I said earlier"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The experiments are not convincing. The authors only show the results on one dataset, and the results are not very impressive"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: * The paper's novelty is somewhat limited, as it combines SAM with FedRep (Liang et al.), which is a straightforward"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is very well written and easy to follow. The experiments are also well designed and the results are presented clearly. The"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is not well-written. The authors should improve the writing to make the paper more readable. 2."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2. The paper is not well written. The paper is not well written. The authors should improve the writing. The paper"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is not clear on the motivation of the proposed method. Why is it necessary to use the proposed method? What is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2) The paper is not very clear on the motivation of the proposed method. It is not clear why the proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 35. No.03. 2020. The authors should consider including a discussion on the limitations of the proposed method."}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '4'} Review Point: 3. **Weak Baselines**: The paper's choice of baselines is limited, as it only compares GeoDP to the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - 1.c. It would be helpful to clearly state, for example at the end of the first paragraph under Section 4"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. Lack of ablation study. The authors only evaluated the proposed method on FixMatch. It would be helpful if the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 3. The authors should provide more details on the data used for the experiments. For example, what is the size of the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed. The paper is a good contribution to the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The proposed method is not novel. The proposed method is similar to the previous work [1]. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - p14, you may add a remark - p15, l458: the number of switches can be upper-bounded by"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The model exit mechanism seems rather ad-hoc. It would be useful to provide an ablation study showing that the different components"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - **Lack of Comparison with Existing VQA Benchmarks**: The proposed benchmark is compared with only two datasets, VQA-"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 5. Page 5, please explain why you use the same number of layers for all the models. It is not clear"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is not well written. The authors should improve the writing. The paper is not well written. The authors should improve"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The authors should provide more details about the implementation of the proposed method. For example, how to choose the hyperparameters"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The authors are using the same dataset for training and testing. This is not a good practice. The authors should use"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is not well written. The paper is not well written. The authors should improve the writing. The paper"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 384 - 52x --> 52 times? This number does not seem to be a valid measurement. The method of collection"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors should also compare their method with the previous work on adversarial training, such as [1]. [1"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is not very clear on the definition of the \u201cfew-shot\u201d setting. The paper mentions that \u201cwe"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - Pattern B: perturbations in later layers have a smaller impact on the final classifier accuracy. This is similar to how,"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors claim that the proposed method is the first to enforce equivariance in capsule networks. However, the authors do"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors should provide more details about the training process of the discriminator. For example, how many epochs are used for"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2). The proposed method is not a general method, but a method for a specific task. It is not clear whether the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The paper does not provide any theoretical analysis. The authors should provide some theoretical analysis to support the proposed method. The"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2) the paper does not provide any ablation study on the effect of the number of layers in the network. It is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The claim about ROCK handling missing annotations modalities is unclear. The MLT dataset needs to be described in Sec 4."}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '4'} Review Point: \u2022 The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The paper is well"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 8. The paper is well-written and easy to follow. The experiments are also well-designed. The only concern is that the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The author claims that the proposed method is the first to combine the advantages of CSER and QSparse-local-SGD"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: * **Clarity issues.** Other missing information / self-contradiction / errors are listed as follows, with the more"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. The proposed method is based on the idea of using the attention map to generate the mask. However, the attention map"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3) The paper is not well written. The authors should improve the writing. The paper is not well written. The authors"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - p6: The terminology \u00e2\u0080\u009crate\u00e2\u0080\u009d, \u00e2\u0080\u009crelative distance\u00e2\u0080\u009d, and notation H"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper lacks a detailed discussion of the limitations of the proposed method. For example, the paper does not discuss the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 4. The authors should provide more details about the training process. For example, how many iterations are used in the training process"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The authors should provide more details on the training process. For example, how many epochs are used for training? What is the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The relation works section is incomplete. Further, regarding the problem definition methodology, the authors also need to describe which view of the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The main comparison I'd really like to see is a comparison to smaller fixed-size models, ideally of different sizes. If the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The paper is well"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The technique contribution is limited or incremental. The authors claimed that their major contribution is \"Our work expands the applicability of this"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors claim that the proposed method is the first to address the problem of data attribution. However, there are several"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': 'X', 'helpfulness_label': '2'} Review Point: 5)The paper is not well written. The authors should improve the writing. The paper is not well written. The authors"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors should provide more details about the implementation of the proposed method. For example, how are the attributes selected?"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a clear definition of visual knowledge. The authors only give a vague definition of visual knowledge, which is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed. However, the paper lacks a theoretical analysis"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 1) The novelty of this paper is limited. The authors only study the partially labeled attribute case. The authors claim that the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: \u2022 The authors should provide more details on the implementation of the proposed method. For example, how the token reweighting is implemented"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed. However, the paper lacks a theoretical analysis"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1) The paper is not well-written. The authors should improve the writing style. For example, the authors should use the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '4'} Review Point: 3: The authors claim that the proposed method can be applied to any network architecture. However, the proposed method is only applied"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3) The paper is well-written and easy to follow. The experiments are also well-designed. The paper is well-written and"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The authors should discuss the limitations of the proposed method. For example, the proposed method is not suitable for the tasks"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: -General Discussion: I like to read the paper and would be pleased to see it accepted. I would like to know how the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 6. Since the approximation quality is measured by the uniform norm, it seems not reasonable to measure the mean squared error. Me"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The context prior is actually help to improve the prediction of the pseudo lables. Another interesting baseline is to refine the predicted semantic"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The proposed method is based on the assumption that the data is balanced. However, in real-world applications, the data is often"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - page 1, lines 93-96: please provide a reference for this passage: \"This approach achieves huge success in"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The effect of different captioning models: The authors only consider the effect of different captioning models on the performance of"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper is not very clear on the motivation for the proposed method. The authors claim that the proposed method is motivated"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The proposed method incorporates prior knowledge in the form of a known GRN (NicheNet) to limit the space of possible"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The authors provide a clear description of the proposed method and its advantages. The"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The authors should provide more details about the proposed method. For example, how do they select the number of clusters? How do"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors could try to add some analysis on why this method works. [1]Cohen J, Rosenfeld"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors should provide more details about the implementation of the proposed method. For example, how do they compute the gradient of the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. **Weaknesses in the Evaluation Methodology**: The paper's evaluation methodology has several weaknesses that limit its effectiveness."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors should provide more details about the implementation of the proposed method. For example, how to choose the number of"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: \u2022 The paper is well-written and easy to follow. The experiments are also well-designed. The paper is highly recommended for publication."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 4. The paper is not well written. The paper is not well written. The paper is not well written. The paper"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a clear motivation for the proposed method. The authors claim that the proposed method is motivated by the fact"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors claim that the proposed method can be used to generate paraphrases with different styles. However, the experiments only"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is well-written and easy to follow. The authors have done a good job of explaining the proposed method and"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The approach presented is quite heuristic it would be desirable if the authors could discuss some theoretical grounding for the proposed ideas. This is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The proposed method is not novel. The authors claim that the proposed method is novel, but it is not. The"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2) On the Choice of Target Structure in Table 2 It\u2019s unclear why the authors chose only one target structure (281"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is not well written. The paper is not well written. The authors should improve the writing. The paper"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2) The paper does not discuss the computational complexity of the proposed method. It is not clear how the proposed method scales with"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper lacks a clear motivation for the proposed method. While the authors argue that existing benchmarks do not capture the complexity"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The reinforcement learning search of objects in the scene will stop when an object is found. To find all objects in the scene it"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 3. The proposed method is not very novel. The proposed method is similar to the method in the paper \"Rubi:"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2) The authors claimed that the proposed method is more efficient than the classic random features. However, the authors did not provide"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 8. The authors claim that the method is designed to accomplish effective and efficient image super-resolution, but did not include a complexity"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - equation 1: how v_G is fused from V_I? please specify."}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper lacks a clear explanation of the motivation behind the proposed method. While the authors claim that the proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 7) The authors should provide more details on the implementation of the proposed method. For example, how are the parameters of the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors claim that the proposed model is more memory-efficient than the baselines. However, the proposed model takes more"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is not well written. The authors should improve the writing. The paper is not well written. The authors"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: * No references to Table 3 in Section 5.2. Why Reddit is chosen to perform ablation while DialyDialog"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The results are rather noisy and would benefit from increasing the number of trials (which is currently only 5). I would recommend"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The paper does not provide a clear definition of the term \"weakly supervised\" in the context of the proposed method"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': 'X', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors focused on evaluation of LM loss throughout the paper. I think this is fine for style and topics, but factual knowledge"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - In Section 4.2 Paragraph \"Evaluation Conclusion\", the authors concluded that \"Machine models results show that even state-of-the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. Lack of Analysis: The paper lacks a comprehensive analysis of the proposed method. For example, how does the proposed method"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The proposed method is not well motivated. The authors claim that the proposed method is motivated by the fact that the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2) The paper is not well-written. The authors should be more careful in writing the paper. For example, the authors"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors should provide more details on the training process of the language encoder. For example, how many parameters are used for the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The proposed method is not novel. The proposed method is a combination of the existing methods. The proposed method is not"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The method is only applicable to regression problems. (Or at least the authors only discussed the method in terms of regression.) -"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2) The authors claim that the proposed method is scalable to large graphs. However, the proposed method is based on solving a"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The authors have done a good job of explaining the problem and the proposed approach"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * I think a paper that really leaned into this SC --> SCI contribution and included qualitative/quantitative analysis of what/how these models"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '2', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 13: \"Gradient penalty pushes the gradient of some parameters and inputs to approach zero,\". How does the proposed approach evades"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper does not provide a clear definition of the problem. The paper does not provide a clear definition of the problem"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed and the results are convincing. The only thing"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. The proposed method is not novel. The authors should compare their method with the existing methods, such as the method in"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. The proposed method is based on the assumption that the input image is a single object. However, in practice, the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - l.266-268: The authors are surprised about the fact that the contribution of the KD with parallel corpus is greater than"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The proposed method is not a generative model. It is a generative model that is trained on a specific dataset"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 8 annotators were used but only the roles of 6 annotators are described. Was there any hierarchical annotation role? Liv"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 1. The paper is not well written. The authors should consider rewriting the paper to make it more readable. The paper is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '5'} Review Point: - The paper is well-written and the experiments are convincing. However, I am not sure if the proposed method is really necessary."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2. The second stage in this paper is to learn a classifier from the partial label examples and unlabeled examples. This is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors should provide more details about the human evaluation. In particular, they should describe the process of recruiting annotators, how"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The authors should provide more details about the training process. For example, how many iterations are used for each step? How many"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The proposed algorithms are not novel. The proposed algorithms are not novel. The proposed algorithms are not novel. The proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The paper is not well written. The authors should consider rewriting the paper to make it more readable. The paper is not well"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The proposed method is not novel. The proposed method is a simple combination of the existing methods. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'} Review Point: 2. The paper does not provide a clear definition of plausibility. The authors only give a vague definition of plaus"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is well-written and easy to follow. The experiments are also well-designed and the results are convincing. The"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and the experiments are well-designed. The paper is well-written and the experiments are well-designed. The"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3) The authors claim that their model is the first to use a transformer-based architecture for multimodal sentiment analysis. However,"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3) The proposed method is not compared with other data augmentation methods. It is not clear how the proposed method is better than"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3) The authors should provide more details on the experimental setup. For example, how many trucks are used in the experiments?"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 1. The paper is not well written. The authors should improve the writing. The paper is not well written. The authors"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The proposed method is simple and effective. The experiments are well-designed and the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 15: \"The proposed method is not limited to the specific task of image classification, but can be applied to other tasks as"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The authors have done a good job of explaining the proposed method. The experimental"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The proposed method is not compared with the state-of-the-art methods for matrix square root. The authors should compare the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The proposed method is not novel. The authors claim that the proposed method is the first to combine diversity and consistency in"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2) The paper is not well written. The authors should consider rewriting the paper to make it more readable. For example,"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: * The paper is well-written and easy to follow. The experiments are also well-designed. However, the theoretical analysis is not very"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper does not discuss the computational complexity of the proposed method. It is not clear how the proposed method scales with"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The convergence result in Section 4.2 requires strong assumptions on both the problem class and the a decreasing perturbation radius $\\"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - What is the goal? (Distribution learning, but no specific metric or way of measuring performance was described, nor were baselines"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1), the corresponding prose is quite dense and more difficult to get through than it should be. Further, the core factorization"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The proposed method is not well motivated. The authors should provide more details about the motivation of the proposed method. For"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is well-written and easy to follow. The authors have done a good job of explaining the proposed method and"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors should provide more details on the training process and the hyperparameters used. For example, how many epochs were used for"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2) The authors claim that the augmenting neurons are not a form of regularization. However, the augmenting neurons are added"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '1', 'helpfulness_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3)The proposed method is not a general solution to the problem of OOD detection. It is only applicable to the specific"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 8) In L672 should provide examples of such \"specialized word embeddings\" and how they are different than the general purpose"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 5. The paper is well-written and easy to follow. The authors have done a good job in explaining the proposed method."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper does not provide any analysis of the performance of the proposed method on the test set. It is unclear whether"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1) The authors should provide a more detailed description of the proposed method. The paper is not clear enough to understand the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'} Review Point: * The paper is not well written. The authors should improve the writing. The paper is not well written. The authors should improve"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1) The paper is not well-written. The authors should consider rewriting the paper to make it more readable. [ADDRESSED"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - Line 250: regarding \u2018the observed phrase just completed\u2019, it not clear to me how words are trained in the joint model"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The metric should measure how different the explanations are before and after adversarial manipulation. It does this indirectly by measuring losses that capture"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 5) The paper is well-written and easy to follow. The authors should consider adding more examples to illustrate the theoretical results."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '5'} Review Point: * **Lack of detailed discussion on the exact cost of data generation via A\\* search**. A\\* search can"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. The authors should provide more details on the implementation of the proposed method. For example, how is the latent space size"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - Limited to multi-class topical text categorization, which is while important, is ultimately just one task - Fair amount of repetition,"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The proposed upsampling operation uses a transposed convolution layer. I wonder whether the transposed convs can be replaced by other"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The authors should provide more details on the implementation of the proposed method. For example, how do they implement the graph transformer?"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The paper does not provide a clear motivation for the proposed method. What is the purpose of the proposed method? What is the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper is well-written and easy to follow. The experiments are also well-designed. However, the paper lacks a"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: * The proposed method is not novel. The proposed method is similar to the video tracking method. The proposed method is not novel."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. The paper is well-written and easy to follow. The authors provide a clear explanation of the proposed method and its theoretical"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. Incorporating few-shot learning, especially for null labels, and implementing contrastive learning could enhance the results. Consider making"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The writing quality of this paper is not satisfying. This paper used several important terms without clear definition, e.g., fairness gap"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: * The above weakness could be mitigated via numerical experiments which demonstrate similar deficiencies in softmax Transformers. However, the experiments are limited to"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The proposed method is not scalable to large-scale datasets. The authors should provide more details on how to scale the proposed"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a discussion on the limitations of the proposed method. For example, the proposed method is not robust to"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The proposed method is simple and effective. The experimental results are convincing. The"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper's **motivation lacks clarity and appears misguided.** The authors claim that current diffusion-native watermarking methods degrade image"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed and the results are convincing. The only thing"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - Benefit of the proposed method is not super clear in Table 2. Given the variance of different methods, efficacy of the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 4) section 4.2 -- when referring to figures and results the sentences are often awkward to the reader.."}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - *Important:* There are multiple sentences saying that \"constrained by the limited capacity of smaller language models, they can only address"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 4. The paper lacks a clear explanation of the motivation for the proposed method. The authors should provide a more detailed discussion of"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: \u2022 The paper is not well written. The authors should improve the writing. The paper is not well written. The authors should improve"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 4) Line 115: The authors should provide more details about the specific types of errors that are not handled by the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 5. The paper is well-written and easy to follow. The experiments are also well-designed and the results are convincing. The"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The authors claim that the proposed method is the first to use attention mechanisms for counting. However, the authors do not"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2. The proposed method is not novel. The idea of using meta-learning to learn a generalizable model is not new."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors claim that the proposed method can be used to solve the problem of missing data in the context of the multi"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '4'} Review Point: 5. The author's expression is inconsistent. In the first paragraph of the Introduction, the author states that the exemplars theory"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2.(2).a. Ask questions you would like answered by the authors to help you clarify your understanding of the paper and"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed method is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: \u2022 \"since it is known to encapsulate the spatial fingerprint for each sound source\", I assume when you say source you imply a"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: \u2022 The paper is well-written and easy to follow. The authors have done a good job in presenting the results. The paper is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper is not well-written. The authors should have provided more details on the proposed method. For example, the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The authors should provide more details about the training process. For example, how many epochs are used for training? What are the"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is dense, so it took a while to disambiguate if the main body of the paper provides sufficient detail"}
+{"generated_text": "{'actionability_label': '2', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 3. The paper is not well written. The authors should consider rewriting the paper to make it more readable. The paper is"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - \u201cIn addition, the generalized softmax function we propose\u2026.\u201d Generalized softmax function might be misleading, it more sounds like the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The authors claim that the proposed method is the first to use the concept of \"locality\" in the context of"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a clear motivation for the proposed method. The authors claim that the proposed method can improve the performance of"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors should provide more details on the implementation of the proposed method. For example, how to generate the training data"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: * The paper is not well written. The paper is not well written. The paper is not well written. The paper is not"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1) The paper is not clear on the motivation for the proposed method. The authors claim that the proposed method is motivated by"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. Theoretical analysis The authors claim that the theoretical analysis is provided in the appendix. However, the appendix does not contain"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'} Review Point: * The writeup for the contributions of the paper does not clearly outline what part of the architecture is new."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The paper is well"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 3. The paper lacks a clear motivation for the proposed method. The authors should provide a more detailed explanation of why the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - Minor point: please give more clues on the choice of hyper-parameters, such as k (just like KNN is sensitive"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper lacks a comprehensive discussion of the limitations of the proposed method. While the authors acknowledge that the method is limited"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is generally well-written and easy to follow, but the definition of personal memory was quite ambiguous and not fully defined."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2) The authors claim that the proposed method is the first to use the \"full\" graph structure, but the paper by"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The authors try to avoid comparisons with content-aware representations, claiming those representations have direct access to the text and focus more on content"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '4', 'helpfulness_label': '5'} Review Point: 1. The paper is not well-written. The authors should consider rewriting the paper to make it more readable. --- [1"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - Does this method scale? The NC function seems to require an entire training dataset to produce the scalar generalization gap which can be"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is well-written and the contributions are clearly described. The theoretical perspective for fairness estimation with missing data for graph"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 3. The authors claim that the proposed method can generate more diverse and coherent stories. However, the experimental results do not fully"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 6. The authors should provide more details on the implementation of the proposed method. For example, how are the parameters of the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - L198-205: It is not clear how exactly the FSA is constructed. Do you select 3 labels out of"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: - The paper is well-written and easy to follow. The authors provide a clear explanation of the proposed method and its advantages. The"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The authors should provide more details about the implementation of the proposed method. For example, how is the KV cache size"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: * (Moderate) Section 2 contains some confusing statements about prior work. Details in questions."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: * The authors in many places talk about capturing 'uncertainty', but only ever use MSE / prediction error as proxy, which in"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: * The paper is not very well written. The authors should be more careful with their writing. For example, the authors should not"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is well-written and easy to follow. The authors provide a clear explanation of the proposed method and its theoretical"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3) The authors should provide more details about the implementation of the proposed method. For example, how the authors choose the hyper"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper is not well written. The authors should consider rewriting the paper to make it more readable. The paper is"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2. The authors claim that the capsule networks are equivariant to the group of transformations. However, the paper does not provide"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The author claims that the proposed method is the first to consider the problem of identifying the underlying graph structure from the minimum"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 4. The authors should provide more details about the training process. For example, how many epochs are used for training? What"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'} Review Point: 2 is much harder to implement and tune than a vanilla ZO-ES, I would expect a substantial performance boost to justify"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': 'X', 'helpfulness_label': '3'} Review Point: 2. The paper lacks a clear motivation for the proposed method. The authors should provide a more detailed explanation of why the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: * The paper does not provide any analysis of the computational complexity of the proposed method. This is a significant omission, as the proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is not very well written. It is not clear what the main contribution is. The paper is not well structured."}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 6) It would be great to see a comparison to your method, but with additional synthetic trajectories simulated by your learned model."}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper lacks a comparison with other rehearsal methods. The authors only compare with the baseline method (i.e., no"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is not well written. The authors should spend more time on writing. For example, the introduction is not"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2) The authors claim that the proposed method is the first to consider the ternary random features. However, the authors did"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 2. In section 4.5, the bi-LSTM is used for the regularizers. Is bi-LSTM used"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors should provide more details on the implementation of the proposed method. For example, how are the parameters of the"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'} Review Point: 2. The paper lacks a clear explanation of the proposed method. The authors do not provide a detailed description of the proposed method"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is well-written and easy to follow. The experiments are also well-designed. The paper is a good contribution"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 1. The paper lacks a clear motivation for the proposed method. The authors should provide a more detailed explanation of why the proposed"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The approach looks like it's using a very simple spherical UV mapping as was done in CMR. For human body shpa"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper is well-written and easy to follow. The authors have done a good job in explaining the proposed method."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - The paper is not very well written. It is not clear what the main contribution is. The paper is not well organized."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are convincing. The paper is well-written and easy to follow."}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 2. The paper lacks a clear motivation for the proposed method. The authors should provide a more detailed explanation of why the proposed"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors should provide more details on the implementation of the proposed method. For example, how do they choose the number"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors may argue that their method uses the implicit reward gap as a data selection metric, instead of only using the"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: 5. Since the proposed approach targets to mine the progress of diseases to generate better results. Such intermediate results (the disease progress"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - The paper is well-written and easy to follow. The experiments are also well-designed. The only thing I would like to see"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'} Review Point: - Some annotation protocals and their encessities are not explained. E.g., line 223-224 and line "}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 7: The caption and the text imply that you'd provide correlations, but this is missing. Also, I don't see"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'}"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: - Sec. 3.2 desribes global and local features in detail. But it is unclear or there is no detailed"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '3', 'verifiability_label': 'X', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The authors need to demonstrate their methods actually works in empirical settings. More concretely, the author should apply their"}
+{"generated_text": "{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 1. The paper is well-written and easy to follow. The experiments are also well-designed. The proposed method is novel and"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '5', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is well-written and easy to follow. The experiments are well-designed and the results are convincing. The proposed"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '1', 'helpfulness_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '4'} Review Point: 3. The paper is not clear on the exact hardware implementation of the proposed method. The authors mention that the proposed method is"}
