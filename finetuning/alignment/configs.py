@@ -221,6 +221,19 @@ class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
+    prompt_type: Optional[str] = field(
+        default="chat",
+        metadata={"help": "Whether to use Instruction Prompting or Chat Prompting"},
+    )
+    generation_type: Optional[str] = field(
+    default="score_only",
+    metadata={"help": "Whether to only output scores, or also output rationales."},
+    )
+
+    task: Optional[str] = field(
+    default="train",
+    metadata={"help": "Whether to train or evaluate the model."},
+    )
 
     chat_template: Optional[str] = field(default=None, metadata={"help": "The chat template to use."})
     dataset_mixer: Optional[Dict[str, float]] = field(

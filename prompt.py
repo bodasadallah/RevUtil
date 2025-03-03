@@ -296,6 +296,18 @@ SCORE_AND_RATIONALE_PROMPT_TAIL = '''
 Evaluate the review based on the given definitions of the aspect(s) above. Output the score and rationale for the score.
 Review Point: {review_point}'''
 
+INSTRUCTION_SCORE_ONLY_PROMPT_TAIL = '''
+###Instruction:
+Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
+###Review Point:
+{review_point}'''
+
+INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL = '''
+###Instruction:
+Evaluate the review based on the given definitions of the aspect(s) above. Output the score and rationale for the score.
+###Review Point:
+{review_point}'''
+
 
 ASPECTS_NO_EXAMPLES = {
 "actionability": 

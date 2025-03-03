@@ -17,6 +17,7 @@
 Supervised fine-tuning script for decoder language models.
 """
 
+
 import logging
 import random
 import sys
@@ -44,6 +45,10 @@ from alignment import (
 from alignment.data import DEFAULT_CHAT_TEMPLATE
 from trl import SFTTrainer, setup_chat_format
 from dataclasses import asdict
+import os
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+sys.path.append(parent_dir)
+import utils
 
 
 logger = logging.getLogger(__name__)
@@ -54,8 +59,12 @@ def main():
     model_args, data_args, training_args = parser.parse()
 
     aspect = model_args.aspect
+    generation_type = data_args.generation_type
+    prompt_type = data_args.prompt_type
     model = model_args.model_name_or_path.split("/")[-1]
-    training_args.output_dir = f"{training_args.output_dir}/{model}/{aspect}"
+    training_args.output_dir = f"{training_args.output_dir}/{model}/{generation_type}/{prompt_type}/{aspect}"
+    print("################ OUTPUT DIR ################")
+    print(training_args.output_dir)
 
 
     wandb.init(project=model_args.wandb_project,name=aspect)
@@ -94,11 +103,14 @@ def main():
     ###############
     # Load datasets
     ###############
+    
     raw_datasets = get_datasets(
         data_args,
         splits=data_args.dataset_splits,
         configs=data_args.dataset_configs,
-        columns_to_keep=[ "prompt"],
+        # columns_to_keep=["prompt"],
+        columns_to_keep=[],
+
     )
 
 
@@ -148,19 +160,38 @@ def main():
         model_kwargs = None
 
     #####################
-    # Apply chat template
+    # Apply chat template Or Build the Instruction dataset
     #####################
-    raw_datasets = raw_datasets.map(
-        apply_chat_template,
-        fn_kwargs={
-            "tokenizer": tokenizer,
-            "task": "sft",
-            "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
-        },
-        num_proc=data_args.preprocessing_num_workers,
-        remove_columns=column_names,
-        desc="Applying chat template",
-    )
+
+    if data_args.prompt_type == 'chat':
+        raw_datasets = raw_datasets.map(
+            apply_chat_template,
+            fn_kwargs={
+                "tokenizer": tokenizer,
+                "task": "sft",
+                "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
+            },
+            num_proc=data_args.preprocessing_num_workers,
+            remove_columns=column_names,
+            desc="Applying chat template",
+        )
+    elif data_args.prompt_type == 'instruction':
+
+        logger.info("Applying instruction template")
+        raw_datasets = raw_datasets.map(
+            utils.get_prompt,
+            fn_kwargs={
+                "aspect": aspect,
+                "task": data_args.task,
+                "generation_type": data_args.generation_type,
+                "prompt_type": "instruction",
+            },
+            num_proc=data_args.preprocessing_num_workers,
+            remove_columns=column_names,
+            desc="Applying instruction template",
+        )
+
+            
 
     ##########################
     # Decontaminate benchmarks
@@ -172,11 +203,11 @@ def main():
     # print("################ PROMPT ################")
     # print(raw_datasets["train"][0]["text"])
 
-    raw_datasets = raw_datasets.filter(decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1)
-    num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
-    logger.info(
-        f"Decontaminated {num_filtered_train_samples} ({num_filtered_train_samples/num_raw_train_samples * 100:.2f}%) samples from the training set."
-    )
+    # raw_datasets = raw_datasets.filter(decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1)
+    # num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
+    # logger.info(
+    #     f"Decontaminated {num_filtered_train_samples} ({num_filtered_train_samples/num_raw_train_samples * 100:.2f}%) samples from the training set."
+    # )
 
     train_dataset = raw_datasets["train"]
     eval_dataset = raw_datasets["test"]
@@ -206,6 +237,15 @@ def main():
     )
 
 
+    train_dataloader = trainer.get_train_dataloader()
+    first_batch = next(iter(train_dataloader))
+    print(first_batch['input_ids'][0])
+
+    input_ids_batch = first_batch["input_ids"] 
+    decoded_texts = [tokenizer.decode(input_ids, skip_special_tokens=False) for input_ids in input_ids_batch].
+    print('############################# DECODED TEXTS #############################')
+    print(decoded_texts)
+
     ############# To use FSDP #############
     if trainer.is_fsdp_enabled: 
         trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT") 
@@ -223,9 +263,6 @@ def main():
 
     print("---------------------- checkpoint",checkpoint)
 
-
-    checkpoint = None
-    
     train_result = trainer.train(resume_from_checkpoint=checkpoint)
     metrics = train_result.metrics
     metrics["train_samples"] = len(train_dataset)

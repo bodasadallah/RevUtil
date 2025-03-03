@@ -67,7 +67,7 @@ annotators_unique_id_batch_id_map_inv ={
 
 
 ## Create a prompt for each row in the dataset
-def get_prompt(row,aspect= 'all',task='train', evaluation_type='score_only'):
+def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat'):
     aspects = [ 'actionability', 'grounding_specificity', 'verifiability', 'helpfulness']
     review_point = row['review_point']
 
@@ -79,32 +79,7 @@ def get_prompt(row,aspect= 'all',task='train', evaluation_type='score_only'):
             considered_aspects = [aspect]
     else:
         considered_aspects = aspect
-    prompt = []
 
-
-    ################### SYSTEM CONTENT ###################
-
-    SYSTEM_CONTENT = PROMPT_HEADER
-
-    DEFINITIONS = ''
-    for aspect in considered_aspects:
-        aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
-        DEFINITIONS += f'''Aspect: {aspect}\n{aspect_definition}'''
-
-    SYSTEM_CONTENT += DEFINITIONS
-    prompt.append({'role': 'system', 'content': SYSTEM_CONTENT})
-
-
-
-    ################### USER CONTENT ###################
-    if evaluation_type == 'score_only':
-        USER_CONTENT = SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
-    else:
-        USER_CONTENT = SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
-    prompt.append({'role': 'user', 'content': USER_CONTENT})
-
-
-    ################### LABEL CONTENT ###################
     if task == 'train':
         labels_dict = {}
         for aspect in considered_aspects:
@@ -115,22 +90,79 @@ def get_prompt(row,aspect= 'all',task='train', evaluation_type='score_only'):
             if aspect_label != 'X':
                 aspect_label = str(int(aspect_label))
             labels_dict[f'{aspect}_label'] = aspect_label
-
-            if evaluation_type != 'score_only':
+            if generation_type != 'score_only':
                 aspect_rationale = row[aspect_rationale_key]
                 aspect_rationale_key = f'chatgpt_{aspect}_rationale'
                 labels_dict[f'{aspect}_rationale'] = aspect_rationale
-        prompt.append({'role': 'assistant', 'content': str(labels_dict)})
 
 
-    return prompt
+
+    if prompt_type == 'chat':
+        prompt = []
+        ################## SYSTEM CONTENT ###################
+        SYSTEM_CONTENT = PROMPT_HEADER
+        DEFINITIONS = ''
+        for aspect in considered_aspects:
+            aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
+            DEFINITIONS += f'''Aspect: {aspect}\n{aspect_definition}'''
+
+        SYSTEM_CONTENT += DEFINITIONS
+        prompt.append({'role': 'system', 'content': SYSTEM_CONTENT})
+
+        ################### USER CONTENT ###################
+        if generation_type == 'score_only':
+            USER_CONTENT = SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+        else:
+            USER_CONTENT = SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+        prompt.append({'role': 'user', 'content': USER_CONTENT})
+
+        ################### LABEL CONTENT ###################
+        if task == 'train':
+            prompt.append({'role': 'assistant', 'content': str(labels_dict)})
+
+        return prompt
+
+
+    ####### If we want to generate instruction prompt, we need to return in in the text column
+    elif prompt_type == 'instruction':
+        prompt_header = PROMPT_HEADER
+        aspect_definitions = ''
+        for aspect in considered_aspects:
+            aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
+            aspect_definitions += f'''Aspect: {aspect}\n{aspect_definition}\n'''
+
+        
+
+        prompt = f'''###Task Description:
+{prompt_header}
+
+{aspect_definitions}
+'''
+        if generation_type == 'score_only':
+            prompt += INSTRUCTION_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+        else:
+            prompt += INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
+        prompt += '''\n###Output:\n'''
+        
+        if task == 'train':
+            prompt += str(labels_dict)
+
+        row['text'] = prompt
+        return row
+
+    
 
 row = {'review_point': 'I think the author should provide more examples to support their argument.', 'chatgpt_actionability_score': 1.0, 'chatgpt_actionability_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_grounding_specificity_score': 1.0, 'chatgpt_grounding_specificity_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_verifiability_score': 1.0, 'chatgpt_verifiability_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_helpfulness_score': 1.0, 'chatgpt_helpfulness_rationale': 'The author should provide more examples to support their argument.'}
-pr = get_prompt(row,aspect= 'all',task='train', evaluation_type='score_only')
+pr = get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type = 'instruction')
 
 with open('prompt.txt', 'w') as f:
-    for item in pr:
-        f.write("%s\n" % item)
+    if isinstance(pr, list):
+        for item in pr:
+            f.write("%s\n" % item)
+    else:
+        f.write(pr['text'])
+
 
 def extract_output(batch):    
     outputs = []

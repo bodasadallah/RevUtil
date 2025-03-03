@@ -161,7 +161,6 @@ Aspect: helpfulness
 ###Instruction:
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
 ###Review Point:
-1) In the beginning of the paper, authors often mention that previous works lack the flexibility compared to their work. It is not clear what does it mean and thus makes it harder to understand their explanation.
+I think the author should provide more examples to support their argument.
 ###Output:
-{'actionability_label': '2', 'grounding_specificity_label': '2', 'verifiability_label': '1', 'helpfulness_label': '3'}
-
+{'actionability_label': '1', 'grounding_specificity_label': '1', 'verifiability_label': '1', 'helpfulness_label': '1'}

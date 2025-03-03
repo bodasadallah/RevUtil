@@ -43,7 +43,7 @@ fi
 
 
 ## Use adapter or full model tuning
-USE_PEFT=false
+USE_PEFT=true
 ### 
 
 ## if USE_PEFT is true, then append "adapters" to the output path

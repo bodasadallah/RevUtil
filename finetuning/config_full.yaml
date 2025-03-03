@@ -22,6 +22,9 @@ dataset_configs:
 preprocessing_num_workers: 12
 packing: false
 
+prompt_type: instruction
+generation_type: score_only
+task: train
 
 ### PUSH TO HUB ###
 push_to_hub: false

@@ -36,7 +36,7 @@ if __name__ == "__main__":
     #### Process the dataset to get the prompts
     processed_data = []
     for row in tqdm(raw_data):
-        prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',  evaluation_type='score_only')
+        prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',  generation_type='score_only')
 
         processed_data.append(prompt)
 

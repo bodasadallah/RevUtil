@@ -220,8 +220,9 @@ def mix_datasets(
                 # If not, check local dataset
                 dataset = load_from_disk(os.path.join(ds, split))
 
-            # Remove redundant columns to avoid schema conflicts on load
-            dataset = dataset.remove_columns([col for col in dataset.column_names if col not in columns_to_keep])
+            if columns_to_keep:
+                # Remove redundant columns to avoid schema conflicts on load
+                dataset = dataset.remove_columns([col for col in dataset.column_names if col not in columns_to_keep])
             if "train" in split:
                 raw_train_datasets.append(dataset)
             elif "test" in split:
