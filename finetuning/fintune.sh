@@ -14,24 +14,57 @@
 
 
 # ###### CSCC PATHS ######
-# export TRITON_CACHE_DIR="/l/users/$USER/"
-# export HF_CACHE_DIR="/l/users/$USER/hugging_face"
+export TRITON_CACHE_DIR="/l/users/$USER/"
+export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 
-export TRITON_CACHE_DIR="/home/$USER/"
-export HF_CACHE_DIR="/home/$USER/hugging_face"
-export CUDA_VISIBLE_DEVICES=0,1
+########## NLP WORKSTATION PATHS ##########
+# export TRITON_CACHE_DIR="/home/$USER/"
+# export HF_CACHE_DIR="/home/$USER/hugging_face"
+
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 # get the number of GPUs and store them into variable
 GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
-
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
 echo "GPUS: $GPUS"
+
+
+##################### TRAINING CONF ################
+# Get the hostname
+HOSTNAME=$(hostname)
+# Check if "ws" is in the hostname
+if [[ "$HOSTNAME" == *ws* ]]; then
+    OUTPUTPATH="../review_evaluation_checkpoints"
+else
+    OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
+fi
+
+
+
+
+## Use adapter or full model tuning
+USE_PEFT=true
+### 
+
+## if USE_PEFT is true, then append "adapters" to the output path
+if [ "$USE_PEFT" = true ]; then
+    OUTPUTPATH="$OUTPUTPATH/adapters"
+    echo "Using adapters"
+else
+    OUTPUTPATH="$OUTPUTPATH/full"
+    echo "Using full model"
+fi
+
+echo "OUTPUTPATH is set to: $OUTPUTPATH"
+
 
 ACCELERATE_LOG_LEVEL=info accelerate launch \
 --config_file deepspeed_zero3.yaml --num_processes=$GPUS \
 run_sft.py \
-config_full.yaml
+config_full.yaml \
+--output_dir=$OUTPUTPATH \
+--use_peft=$USE_PEFT 
 
-# accelerate launch \
-# --config_file deepspeed_zero3.yaml \
-# run_sft.py \
+
+# --config_file fsdp.yaml \
+# --config_file multi_gpu.yaml \

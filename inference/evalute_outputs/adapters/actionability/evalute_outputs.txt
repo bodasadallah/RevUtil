@@ -1,0 +1,8 @@
+********************actionability********************
+accuracy: 0.467
+f1: 0.467
+kappa: 0.264
+kappa_linear: 0.391
+kappa_quadratic: 0.505
+spearman: SignificanceResult(statistic=0.5131234911253943, pvalue=2.952170501042362e-68)
+--------------------------------------------------

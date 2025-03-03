@@ -2,107 +2,81 @@ import os
 from vllm import LLM, SamplingParams
 from openai import OpenAI, AsyncOpenAI
 from dotenv import load_dotenv
+import json
+
+import re
 
 
-## TODO: once we have the trained models, we can adapt this to extract the predictions
-def extract_predictions(output):
-    return output.outputs[0].text.strip()
-
-def prepare_vllm_inference(model_name, temperature, top_p, max_new_tokens,) :
-
-    os.environ["VLLM_ATTENTION_BACKEND"] = "FLASHINFER"
-    llm = LLM(
-    model=model_name,
-    gpu_memory_utilization=0.9,
-    max_model_len=2048)
-
-    tokenizer = llm.get_tokenizer()
-
-    sampling_params = SamplingParams(
-        temperature=temperature, top_p=top_p, max_tokens=max_new_tokens,
-        stop_token_ids=[tokenizer.eos_token_id, tokenizer.convert_tokens_to_ids("<|eot_id|>")]
-    )
+import re
+import ast
 
 
-
-    return llm, tokenizer, sampling_params
-
-
-def vllm_inference(model,model_name, tokenizer, input_prompts, sampling_params):
-
-    inputs = []
-    for prompt in input_prompts:
-                   
-                
-        ## gemma doesn't support system prompt
-        role = 'system' if 'gemma' not in model_name else 'user'
-
-        conversation = {"role": role, "content": PROMPTS['system_prompt']}
-
-        #### Instruct models like gemma, don't need system prompt, so we add it to the user prompt
-        if 'gemma' in model_name:
-            prompt =  PROMPTS['system_prompt']+ '\n' + prompt
-            conversation = []
-
-        conversation.append(
-            {
-                'role': 'user', 'content': prompt
-            }
-        )
+def extract_dict(text):
+    match = re.search(r'\{[^{}]*\}', text)  # Extract only the first {...} block
+    if match:
+        dict_str = match.group()  # Get extracted dictionary string
         
-        c = tokenizer.apply_chat_template(
-            conversation,
-            tokenize=False,
-            add_generation_prompt=True
-        )
-        inputs.append(c)
-
-    outputs = model.generate(inputs, sampling_params, use_tqdm= False)
-    outputs = [output.outputs[0].text.strip() for output in outputs]
-
-    # outputs = ['0' for _ in range(len(input_prompts))]
-
-
-    return outputs
-
-def prepare_openai_inference(chatgpt_key):
-
-    load_dotenv()
-    if chatgpt_key:
-
-        print('Using chatgpt key from environment')
-        key = os.getenv(chatgpt_key)
-
-        if not key:
-            print('Key not found in environment')
+        try:
+            return ast.literal_eval(dict_str)  # Convert to Python dictionary safely
+        except (SyntaxError, ValueError) as e:
+            print(f"Parsing error: {e}\nProblematic string: {dict_str}")
             return None
-   
-        # key = os.environ.get("OPENAI_API_KEY")
+    
+    return None  # Return None if no dictionary found
 
-    client = OpenAI(api_key=key)
-    return client
 
-def chatgpt_inference(client, model, inputs, temp, top_p, max_new_tokens):
+print(extract_dict("{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}'} \n <|system|>\nYou are an expert in evaluating peer review comments with respect to" ))
+def extract_predictions(model_outputs):
+    """
+    Parses a list of model-generated texts to extract labels and returns a dictionary.
+    
+    :param model_outputs: List of strings containing model-generated text with labels.
+    :return: List of dictionaries with extracted labels.
+    """
+    extracted_data = []
+    
+    for text in model_outputs:
 
-    outputs = []
+        text = text.outputs[0].text
+        extracted_dict = extract_dict(text)
+        if  not extracted_dict:
+            extracted_data.append({
+                'actionability_label': None,
+                'grounding_specificity_label': None,
+                'verifiability_label': None,
+                'helpfulness_label': None
+            })
+            continue
 
-        
-    for input in inputs:
-        completion = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": PROMPTS['system_prompt']},
-            {"role": "user", "content": input}
-            
-        ],
-        temperature=temp,
-        top_p= top_p,
-        max_tokens=max_new_tokens,
-        )
-        response = completion.choices[0].message.content.lower().strip()
-        
-        outputs.append(response)
+        parsed_result = {
+            'actionability_label': extracted_dict.get('actionability_label', None),
+            'grounding_specificity_label': extracted_dict.get('grounding_specificity_label', None),
+            'verifiability_label': extracted_dict.get('verifiability_label', None),
+            'helpfulness_label': extracted_dict.get('helpfulness_label', None)
+        }
 
-    return outputs
-        
+        extracted_data.append(parsed_result)
+    
+    return extracted_data
+
+aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness']
+def get_gold_labels(raw_data, dataset_config,aspect_row_name='chatgpt_ASPECT_score'):
+    
+    gold_labels = []
+    dataset_config = aspects if dataset_config == 'all' else dataset_config
+    if type(dataset_config) == str:
+        dataset_config = [dataset_config]
+    
+    for row in raw_data:
+        row_data = {}
+        for aspect in dataset_config:
+            row_name = aspect_row_name.replace('ASPECT', aspect)
+            if row_name in row:
+                row_data[aspect] = row[row_name]
+            else:
+                row_data[aspect] = None
+        gold_labels.append(row_data)
+
+    return gold_labels
+
 

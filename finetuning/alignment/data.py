@@ -235,6 +235,7 @@ def mix_datasets(
     if len(raw_train_datasets) > 0:
         train_subsets = []
         for dataset, frac in zip(raw_train_datasets, fracs):
+
             train_subset = dataset.select(range(int(frac * len(dataset))))
             train_subsets.append(train_subset)
         if shuffle:
@@ -252,5 +253,4 @@ def mix_datasets(
         raise ValueError(
             f"Dataset {dataset_mixer} not recognized with splits {splits}. Check the dataset has been correctly formatted."
         )
-
     return raw_datasets

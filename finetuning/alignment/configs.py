@@ -110,6 +110,17 @@ class ModelArguments:
     """
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune.
     """
+
+
+    model_name: str = field(
+        default="review_evaluation",
+        metadata={"help": "The name of the model to use."}
+    )
+    dataset_name: str = field(
+        default="review_evaluation_automatic_labels",
+        metadata={"help": "The name of the dataset to use."}
+    )
+
     wandb_project: Optional[str] = field(
         default=None, metadata={"help": "Weights and Biases project name"}
     )

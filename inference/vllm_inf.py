@@ -12,6 +12,10 @@ from utils import get_prompt, get_stats
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 from inference_utils import extract_predictions
+import json
+
+DEFAULT_CHAT_TEMPLATE = "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
+
 if __name__ == "__main__":
 
     args = get_args()
@@ -36,9 +40,11 @@ if __name__ == "__main__":
 
 
     ### Load the model
-    llm = LLM(model=args.base_model_name, enable_lora=True)
-    
-    chat_template = '''{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}'''
+    enable_lora = True if args.finetune_model_name is not None else False
+
+    llm = LLM(model=args.base_model_name,
+            enable_lora=enable_lora,
+            tensor_parallel_size = args.tensor_parallel_size,)
 
     sampling_params = SamplingParams(
     temperature=args.temperature,
@@ -46,37 +52,39 @@ if __name__ == "__main__":
 
     if args.finetune_model_name is not None:
        
-        print('Loading a lora finetuned model')
+        print('*' * 20,'Loading a lora finetuned model', '*' * 20)
         outputs = llm.chat(
         messages=processed_data,
-        chat_template=chat_template,
+        chat_template=DEFAULT_CHAT_TEMPLATE,
         sampling_params=sampling_params,
         use_tqdm=True,
         lora_request=LoRARequest("my_adapter", 1, args.finetune_model_name))
 
 
     else:
-        print('Evaluating the base model')
-        outputs = llm.generate(
-        processed_data,
-        chat_template=chat_template,
-        sampling_params=sampling_params,)
+        print('*' * 20, 'Evaluating the base model', '*' * 20)
+        outputs = llm.chat(
+        messages=processed_data,
+        chat_template=DEFAULT_CHAT_TEMPLATE,
+        sampling_params=sampling_params,
+        use_tqdm=True,)
 
-    ########### Extract model predeicitons #############33
-    predictions = extract_predictions(outputs)
-
-    gold_labels = raw_data[f'{args.dataset_config}_label']
-
-    assert len(predictions) == len(gold_labels), 'The number of predictions and gold labels should be the same'
-
-    agreements_dict = get_stats(predictions, gold_labels, args.dataset_config)
 
     ### save the model outputs in file named raw_outputs.txt
-    with open(os.path.join(save_dir, 'raw_outputs.txt'), 'w') as f:
+    with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:
         for output in outputs:
             generated_text = output.outputs[0].text
-            prompt = output.prompt
-            f.write(prompt + '\n')
-            f.write(generated_text + '\n')
+            # prompt = output.prompt
+            # f.write(prompt + '\n')
+            raw_pred = {'generated_text': generated_text}
+            f.write(json.dumps(raw_pred) + '\n')
+
+    ########## Extract model predeicitons #############33
+    predictions = extract_predictions(outputs)
+    ### Save the model predictions to a jsonl file
+    with open(os.path.join(save_dir, 'predictions.jsonl'), 'w') as f:
+        for prediction in predictions:
+            f.write(json.dumps(prediction) + "\n")
+            
 
    

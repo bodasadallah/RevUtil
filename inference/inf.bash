@@ -22,17 +22,31 @@ echo "starting Inf......................."
 
 # cd inference
 export VLLM_LOGGING_LEVEL=DEBUG
+
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+
 export CUDA_LAUNCH_BLOCKING=1
 echo $CUDA_VISIBLE_DEVICES
 echo $CONDA_PREFIX
-# CUDA_VISIBLE_DEVICES=3
+# FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full_training/all/checkpoint-109"
+FULL_MODEL_NAME="allenai/scitulu-7b"
+FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/actionability/checkpoint-141"
+ASPECT="actionability"
+WRITE_PATH="evalute_outputs"
 
+## If FINE_TUNED_MODEL_PATH is not set, then set the path to the full model1
+if [ -z "$FINE_TUNED_MODEL_PATH" ]; then
+    WRITE_PATH="$WRITE_PATH/full_model"
+else
+    WRITE_PATH="$WRITE_PATH/adapters"
+fi
 
 python  vllm_inf.py \
---model_name  "$FULL_MODEL_NAME" \
---output_path "evalute_outputs" \
+--base_model_name  $FULL_MODEL_NAME \
+--tensor_parallel_size 4 \
+--output_path $WRITE_PATH \
 --max_new_tokens 64 \
 --temperature 0.1 \
---finetune_model_name "/l/users/abdelrahman.sadallah/review_evaluation/actionability/checkpoint-33/" \
---dataset_config "actionability" \
---dataset_name "boda/review_evaluation_fine_tuning" \
+--dataset_config $ASPECT \
+--dataset_name "boda/review_evaluation_automatic_labels" \
+--finetune_model_name $FINE_TUNED_MODEL_PATH \

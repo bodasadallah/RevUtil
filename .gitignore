@@ -4,7 +4,9 @@ logs
 wandb
 myenv
 review_evaluation_checkpoints 
-
+batch_data
+batch_output
+main_data
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

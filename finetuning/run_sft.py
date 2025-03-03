@@ -43,6 +43,7 @@ from alignment import (
 )
 from alignment.data import DEFAULT_CHAT_TEMPLATE
 from trl import SFTTrainer, setup_chat_format
+from dataclasses import asdict
 
 
 logger = logging.getLogger(__name__)
@@ -53,7 +54,8 @@ def main():
     model_args, data_args, training_args = parser.parse()
 
     aspect = model_args.aspect
-    training_args.output_dir = f"{training_args.output_dir}/{aspect}"
+    model = model_args.model_name_or_path.split("/")[-1]
+    training_args.output_dir = f"{training_args.output_dir}/{model}/{aspect}"
 
 
     wandb.init(project=model_args.wandb_project,name=aspect)
@@ -102,8 +104,9 @@ def main():
 
     print("################ DATASET LENGTH ################")
     print(len(raw_datasets["train"]))
-    print("################ PROMPT ################")
-    print(raw_datasets["train"][0]["prompt"])
+    print(raw_datasets)
+    # print("################ PROMPT ################")
+    # print(raw_datasets["train"][0]["prompt"])
 
 
     logger.info(
@@ -166,8 +169,8 @@ def main():
 
     print("################ DATASET LENGTH ################")
     print(num_raw_train_samples)
-    print("################ PROMPT ################")
-    print(raw_datasets["train"][0]["text"])
+    # print("################ PROMPT ################")
+    # print(raw_datasets["train"][0]["text"])
 
     raw_datasets = raw_datasets.filter(decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1)
     num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
@@ -178,30 +181,34 @@ def main():
     train_dataset = raw_datasets["train"]
     eval_dataset = raw_datasets["test"]
 
-    with training_args.main_process_first(desc="Log a few random samples from the processed training set"):
-        for index in random.sample(range(len(raw_datasets["train"])), 3):
-            logger.info(f"Sample {index} of the processed training set:\n\n{raw_datasets['train'][index]['text']}")
+    with open("prompt.txt", "w") as f:
+        with training_args.main_process_first(desc="Log a few random samples from the processed training set"):
+            for index in random.sample(range(len(raw_datasets["train"])), 1):
+                logger.info(f"Sample {index} of the processed training set:\n\n{raw_datasets['train'][index]['text']}")
+                f.write(f"{raw_datasets['train'][index]['text']}\n\n")
+
+
 
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
     training_args.model_init_kwargs = model_kwargs
     training_args.dataset_text_field = "text"
-    training_args.packing = True
+    training_args.packing = training_args.packing
     ########################
     # Initialize the Trainer
     ########################
     trainer = SFTTrainer(
         model=model,
-        # model_init_kwargs=model_kwargs,
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
-        # dataset_text_field="text",
-        # max_seq_length=training_args.max_seq_length,
         tokenizer=tokenizer,
-        # packing=True,
         peft_config=get_peft_config(model_args),
-        # dataset_kwargs=training_args.dataset_kwargs,
     )
+
+
+    ############# To use FSDP #############
+    if trainer.is_fsdp_enabled: 
+        trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT") 
 
     ###############
     # Training loop
@@ -212,6 +219,13 @@ def main():
         checkpoint = training_args.resume_from_checkpoint
     elif last_checkpoint is not None:
         checkpoint = last_checkpoint
+        print("----------------- last_checkpoint",last_checkpoint)
+
+    print("---------------------- checkpoint",checkpoint)
+
+
+    checkpoint = None
+    
     train_result = trainer.train(resume_from_checkpoint=checkpoint)
     metrics = train_result.metrics
     metrics["train_samples"] = len(train_dataset)
@@ -228,10 +242,12 @@ def main():
 
     # Save everything else on main process
     kwargs = {
-        # "dataset": list(data_args.dataset_mixer.keys()),
-        # "dataset_tags": list(data_args.dataset_mixer.keys()),
-        
+        "model_name" : model_args.model_name_or_path,
+        "dataset_name" : aspect,
     }
+    # for arg in [model_args, data_args, training_args]:
+    #     kwargs.update(asdict(arg))
+
     if trainer.accelerator.is_main_process:
         trainer.create_model_card(**kwargs)
         # Restore k,v cache for fast inference

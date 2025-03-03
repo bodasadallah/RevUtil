@@ -1,7 +1,10 @@
 # Model arguments
-model_name_or_path: allenai/scitulu-7b
+# meta-llama/Llama-3.1-8B
+model_name_or_path: Uni-SMART/SciLitLLM
+tokenizer_name_or_path: Uni-SMART/SciLitLLM
+# model_name_or_path: allenai/scitulu-7b
+# tokenizer_name_or_path: allenai/scitulu-7b
 model_revision: main
-tokenizer_name_or_path: allenai/scitulu-7b
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
 
@@ -17,10 +20,18 @@ dataset_splits:
 dataset_configs:
 - all
 preprocessing_num_workers: 12
+packing: false
+
+
+### PUSH TO HUB ###
+push_to_hub: false
+model_name: review_evaluation
+dataset_name: review_evaluation_automatic_labels
+
 
 # LoRA arguments
 load_in_4bit: false
-use_peft: true
+# use_peft: true
 lora_r: 16
 lora_alpha: 16
 lora_dropout: 0.05
@@ -43,7 +54,7 @@ eval_strategy: epoch
 gradient_accumulation_steps: 2
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
-  use_reentrant: false
+  use_reentrant: true
 hub_model_id: boda/review_evaluation_all
 hub_strategy: every_save
 learning_rate: 2.0e-04
@@ -51,21 +62,23 @@ log_level: info
 logging_steps: 5
 logging_strategy: steps
 lr_scheduler_type: cosine
-max_seq_length: 2048
+max_seq_length: 3072
 max_steps: -1
-num_train_epochs: 3
-output_dir: review_evaluation_checkpoints
-# output_dir: /l/users/abdelrahman.sadallah/review_evaluation
+num_train_epochs: 1
+# output_dir: review_evaluation_checkpoints
+# output_dir: /l/users/abdelrahman.sadallah/review_evaluation/adapters
 overwrite_output_dir: true
+## Auto find batch size
+auto_find_batch_size: false
 per_device_eval_batch_size: 4
-per_device_train_batch_size: 2
-push_to_hub: true
+per_device_train_batch_size: 4
 remove_unused_columns: true
 report_to:
 - wandb
 wandb_project: review_evaluation
-save_strategy: "steps"
+save_strategy: "epoch"
 save_steps: 100
 save_total_limit: 1
 seed: 42
 warmup_ratio: 0.1
+

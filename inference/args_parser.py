@@ -11,6 +11,11 @@ def get_args():
 
 def add_args(parser: argparse.ArgumentParser):
     parser.add_argument(
+    "--tensor_parallel_size",
+    type=int,
+    default="1",
+    help="Tensor parallel size",)
+    parser.add_argument(
         "--tokenizer_name",
         type=str,
         default="allenai/tulu-2-dpo-70b",
@@ -23,7 +28,6 @@ def add_args(parser: argparse.ArgumentParser):
     parser.add_argument(
         "--finetune_model_name",
         type=str,
-        default="/l/users/abdelrahman.sadallah/review_evaluation/actionability/checkpoint-33/",
         help="Model name",)
     parser.add_argument(
         "--dataset_name",
