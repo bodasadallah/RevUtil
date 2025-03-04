@@ -20,11 +20,15 @@ dataset_splits:
 dataset_configs:
 - all
 preprocessing_num_workers: 12
-packing: false
 
 prompt_type: instruction
 generation_type: score_only
 task: train
+
+### Do we only train on completion? ###
+train_on_completion_only: true
+packing: false
+
 
 ### PUSH TO HUB ###
 push_to_hub: false

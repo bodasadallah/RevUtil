@@ -110,7 +110,10 @@ class ModelArguments:
     """
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune.
     """
-
+    train_on_completion_only: bool = field(
+        default=True,
+        metadata={"help": ("Whether to use only train on completion or not.")},
+    )
 
     model_name: str = field(
         default="review_evaluation",

@@ -43,7 +43,7 @@ from alignment import (
     get_tokenizer,
 )
 from alignment.data import DEFAULT_CHAT_TEMPLATE
-from trl import SFTTrainer, setup_chat_format
+from trl import SFTTrainer, setup_chat_format, DataCollatorForCompletionOnlyLM
 from dataclasses import asdict
 import os
 parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
@@ -219,6 +219,15 @@ def main():
                 f.write(f"{raw_datasets['train'][index]['text']}\n\n")
 
 
+    ########### Train on Completion only ################
+    if model_args.train_on_completion_only:
+        if data_args.prompt_type == 'chat':
+            response_template = "<|assistant|>\n"
+        elif data_args.prompt_type == 'instruction':
+            response_template = "\n###Output:\n"
+
+        collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+
 
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
     training_args.model_init_kwargs = model_kwargs
@@ -234,6 +243,7 @@ def main():
         eval_dataset=eval_dataset,
         tokenizer=tokenizer,
         peft_config=get_peft_config(model_args),
+        data_collator=collator if model_args.train_on_completion_only else None,
     )
 
 
@@ -242,7 +252,7 @@ def main():
     print(first_batch['input_ids'][0])
 
     input_ids_batch = first_batch["input_ids"] 
-    decoded_texts = [tokenizer.decode(input_ids, skip_special_tokens=False) for input_ids in input_ids_batch].
+    decoded_texts = [tokenizer.decode(input_ids, skip_special_tokens=False) for input_ids in input_ids_batch]
     print('############################# DECODED TEXTS #############################')
     print(decoded_texts)
 
