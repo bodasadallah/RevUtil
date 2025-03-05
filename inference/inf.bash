@@ -22,6 +22,8 @@ echo "starting Inf......................."
 
 export VLLM_LOGGING_LEVEL=DEBUG
 
+export VLLM_WORKER_MULTIPROC_METHOD=spawn
+
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
@@ -32,14 +34,17 @@ echo "GPUS: $GPUS"
 # "meta-llama/Llama-3.1-8B"
 # "allenai/scitulu-7b"
 # "Uni-SMART/SciLitLLM"
-# FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/all/checkpoint-134/".
-FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full/scitulu-7b/all/"
-FINE_TUNED_MODEL_PATH=""
+
+FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full/SciLitLLM/score_only/instruction/all"
+# FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/scitulu-7b/score_only/instruction/all"
 
 
-
+GENERATION_TYPE="score_only"
 ASPECT="all"
 WRITE_PATH="evalute_outputs"
+PROMPT_TYPE="instruction"
+
+
 
 ## If FINE_TUNED_MODEL_PATH is not set, then set the path to the full model1
 if [ -z "$FINE_TUNED_MODEL_PATH" ]; then
@@ -51,8 +56,10 @@ else
 fi
 
 python  vllm_inf.py \
+--prompt_type $PROMPT_TYPE \
+--generation_type $GENERATION_TYPE \
 --base_model_name  $FULL_MODEL_NAME \
---tensor_parallel_size 4 \
+--tensor_parallel_size $GPUS \
 --output_path $WRITE_PATH \
 --max_new_tokens 64 \
 --temperature 0.1 \

@@ -20,8 +20,15 @@ if __name__ == "__main__":
 
     args = get_args()
 
-    model_name = args.base_model_name.split('/')[-1]
-    save_dir = os.path.join(args.output_path,model_name, args.dataset_config)
+    if args.finetune_model_name is not None:
+        model_name = args.base_model_name.split('/')[-1]
+    else:
+        ## get the part that has 'sci' in it
+        for part in args.base_model_name.lower().split('/'):
+            if 'sci' in part:
+                model_name = part
+                break
+    save_dir = os.path.join(args.output_path,model_name,args.generation_type,args.prompt_type, args.dataset_config, 'label_loss')
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
@@ -36,10 +43,13 @@ if __name__ == "__main__":
     #### Process the dataset to get the prompts
     processed_data = []
     for row in tqdm(raw_data):
-        prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',  generation_type='score_only')
+        prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
 
-        processed_data.append(prompt)
+        processed_data.append(prompt['text'])
 
+
+    print('Total number of prompts:', len(processed_data))
+    print('Example prompt:', processed_data[0])
 
     ### Load the model
     enable_lora = True if args.finetune_model_name is not None else False
@@ -54,24 +64,25 @@ if __name__ == "__main__":
     max_tokens=args.max_new_tokens,)
 
     if args.finetune_model_name is not None:
-       
         print('*' * 20,'Loading a lora finetuned model', '*' * 20)
+    else:
+        print('*' * 20, 'Evaluating the base model', '*' * 20)
+
+    if args.prompt_type == 'chat':
         outputs = llm.chat(
         messages=processed_data,
         chat_template=DEFAULT_CHAT_TEMPLATE,
         sampling_params=sampling_params,
         use_tqdm=True,
-        lora_request=LoRARequest("my_adapter", 1, args.finetune_model_name))
-
+        lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
 
     else:
-        print('*' * 20, 'Evaluating the base model', '*' * 20)
-        outputs = llm.chat(
-        messages=processed_data,
-        chat_template=DEFAULT_CHAT_TEMPLATE,
-        sampling_params=sampling_params,
-        use_tqdm=True,)
-
+        outputs = llm.generate(
+            prompts=processed_data,
+            sampling_params=sampling_params,
+            use_tqdm=True,
+            lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
+        
 
     ### save the model outputs in file named raw_outputs.txt
     with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:

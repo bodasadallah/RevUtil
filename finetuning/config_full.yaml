@@ -1,9 +1,9 @@
 # Model arguments
 # meta-llama/Llama-3.1-8B
-# model_name_or_path: Uni-SMART/SciLitLLM
-# tokenizer_name_or_path: Uni-SMART/SciLitLLM
-model_name_or_path: allenai/scitulu-7b
-tokenizer_name_or_path: allenai/scitulu-7b
+model_name_or_path: Uni-SMART/SciLitLLM
+tokenizer_name_or_path: Uni-SMART/SciLitLLM
+# model_name_or_path: allenai/scitulu-7b
+# tokenizer_name_or_path: allenai/scitulu-7b
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
@@ -19,7 +19,7 @@ dataset_splits:
 - test
 dataset_configs:
 - all
-preprocessing_num_workers: 12
+preprocessing_num_workers: 24
 
 prompt_type: instruction
 generation_type: score_only
@@ -56,22 +56,22 @@ bf16: true
 dataset_kwargs:
   add_special_tokens: false  # We already wrap <bos> and <eos> in the chat template
   append_concat_token: false # No need to add <eos> across samples
-do_eval: true
-eval_strategy: epoch
-gradient_accumulation_steps: 2
+do_eval: false
+eval_strategy: no
+gradient_accumulation_steps: 4
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: true
 hub_model_id: boda/review_evaluation_all
 hub_strategy: every_save
-learning_rate: 2.0e-04
+learning_rate: 2.0e-05
 log_level: info
-logging_steps: 5
+logging_steps: 10
 logging_strategy: steps
 lr_scheduler_type: cosine
 max_seq_length: 3072
 max_steps: -1
-num_train_epochs: 1
+num_train_epochs: 2
 # output_dir: review_evaluation_checkpoints
 # output_dir: /l/users/abdelrahman.sadallah/review_evaluation/adapters
 overwrite_output_dir: true

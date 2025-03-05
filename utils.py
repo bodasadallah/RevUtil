@@ -2,6 +2,8 @@
 from datasets import load_dataset, load_from_disk
 import re
 
+import wandb
+
 from prompt import *
 import pandas as pd
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score,cohen_kappa_score, accuracy_score
@@ -14,9 +16,11 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score,c
 import numpy as np
 # from prompts import PROMPTS
 import re
-
+from transformers.integrations import WandbCallback
 import random
 import string
+from transformers import GenerationConfig
+import torch
 
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
@@ -143,7 +147,7 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         else:
             prompt += INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
 
-        prompt += '''\n###Output:\n'''
+        prompt += '''\n\n###Output:\n'''
         
         if task == 'train':
             prompt += str(labels_dict)
@@ -164,11 +168,38 @@ with open('prompt.txt', 'w') as f:
         f.write(pr['text'])
 
 
-def extract_output(batch):    
-    outputs = []
 
-    return outputs
-            
+#### Callback to log samples during training
+class LLMSampleCB(WandbCallback):
+    def __init__(self, trainer, test_dataset, num_samples=10, max_new_tokens=256, log_model="checkpoint"):
+        "A CallBack to log samples a wandb.Table during training"
+        super().__init__()
+        self._log_model = log_model
+        self.sample_dataset = test_dataset.select(range(num_samples))
+        self.model, self.tokenizer = trainer.model, trainer.tokenizer
+        self.gen_config = GenerationConfig.from_pretrained(trainer.model.name_or_path,
+                                                            max_new_tokens=max_new_tokens)
+    def generate(self, prompt):
+        tokenized_prompt = self.tokenizer(prompt, return_tensors='pt')['input_ids'].cuda()
+        with torch.inference_mode():
+            output = self.model.generate(tokenized_prompt, generation_config=self.gen_config)
+        return self.tokenizer.decode(output[0][len(tokenized_prompt[0]):], skip_special_tokens=True)
+
+    def samples_table(self, examples):
+        "Create a wandb.Table to store the generations"
+        records_table = wandb.Table(columns=["prompt", "generation"] + list(self.gen_config.to_dict().keys()))
+        for example in tqdm(examples, leave=False):
+            prompt = example["text"]
+            generation = self.generate(prompt=prompt)
+            records_table.add_data(prompt, generation, *list(self.gen_config.to_dict().values()))
+        return records_table
+        
+    def on_evaluate(self, args, state, control,  **kwargs):
+        "Log the wandb.Table after calling trainer.evaluate"
+        super().on_evaluate(args, state, control, **kwargs)
+        records_table = self.samples_table(self.sample_dataset)
+        self._wandb.log({"sample_predictions":records_table})
+
 
 
 def get_stats(pred, gold, aspect):

@@ -66,7 +66,6 @@ def main():
     print("################ OUTPUT DIR ################")
     print(training_args.output_dir)
 
-
     wandb.init(project=model_args.wandb_project,name=aspect)
     # Set seed for reproducibility
     set_seed(training_args.seed)
@@ -163,6 +162,8 @@ def main():
     # Apply chat template Or Build the Instruction dataset
     #####################
 
+
+
     if data_args.prompt_type == 'chat':
         raw_datasets = raw_datasets.map(
             apply_chat_template,
@@ -174,49 +175,52 @@ def main():
             num_proc=data_args.preprocessing_num_workers,
             remove_columns=column_names,
             desc="Applying chat template",
+            load_from_cache_file = False,
+
         )
+        train_dataset = raw_datasets["train"]
+        eval_dataset = raw_datasets["test"]
+
     elif data_args.prompt_type == 'instruction':
 
         logger.info("Applying instruction template")
-        raw_datasets = raw_datasets.map(
+        train_dataset = raw_datasets["train"].map(
             utils.get_prompt,
             fn_kwargs={
                 "aspect": aspect,
-                "task": data_args.task,
+                "task": "train",
                 "generation_type": data_args.generation_type,
                 "prompt_type": "instruction",
             },
             num_proc=data_args.preprocessing_num_workers,
             remove_columns=column_names,
             desc="Applying instruction template",
+            load_from_cache_file = False,
         )
-
+        eval_dataset = raw_datasets["test"].map(
+            utils.get_prompt,
+            fn_kwargs={
+                "aspect": aspect,
+                "task": 'evaluation',
+                "generation_type": data_args.generation_type,
+                "prompt_type": "instruction",
+            },
+            num_proc=data_args.preprocessing_num_workers,
+            remove_columns=column_names,
+            desc="Applying instruction template",
+            load_from_cache_file = False,
+        )
             
 
-    ##########################
-    # Decontaminate benchmarks
-    ##########################
-    num_raw_train_samples = len(raw_datasets["train"])
-
-    print("################ DATASET LENGTH ################")
-    print(num_raw_train_samples)
-    # print("################ PROMPT ################")
-    # print(raw_datasets["train"][0]["text"])
-
-    # raw_datasets = raw_datasets.filter(decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1)
-    # num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
-    # logger.info(
-    #     f"Decontaminated {num_filtered_train_samples} ({num_filtered_train_samples/num_raw_train_samples * 100:.2f}%) samples from the training set."
-    # )
-
-    train_dataset = raw_datasets["train"]
-    eval_dataset = raw_datasets["test"]
 
     with open("prompt.txt", "w") as f:
         with training_args.main_process_first(desc="Log a few random samples from the processed training set"):
-            for index in random.sample(range(len(raw_datasets["train"])), 1):
-                logger.info(f"Sample {index} of the processed training set:\n\n{raw_datasets['train'][index]['text']}")
-                f.write(f"{raw_datasets['train'][index]['text']}\n\n")
+            for index in random.sample(range(len(train_dataset)), 1):
+                logger.info(f"Sample {index} of the processed training set:\n\n{train_dataset[index]['text']}")
+                f.write(f"{train_dataset[index]['text']}\n\n")
+            for index in random.sample(range(len(eval_dataset)), 1):
+                logger.info(f"Sample {index} of the processed evaluation set:\n\n{eval_dataset[index]['text']}")
+                f.write(f"{eval_dataset[index]['text']}\n\n")
 
 
     ########### Train on Completion only ################
@@ -224,9 +228,16 @@ def main():
         if data_args.prompt_type == 'chat':
             response_template = "<|assistant|>\n"
         elif data_args.prompt_type == 'instruction':
-            response_template = "\n###Output:\n"
+            response_template = "\n\n###Output:\n"
+        
+        ## convert the response template to token ids
+        response_template = tokenizer(response_template)['input_ids'][2:]
 
         collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
+
+
+
+    
 
 
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
@@ -245,6 +256,10 @@ def main():
         peft_config=get_peft_config(model_args),
         data_collator=collator if model_args.train_on_completion_only else None,
     )
+
+    ####### callback for logging samples to wandb ##########
+    # wandb_callback = utils.LLMSampleCB(trainer, eval_dataset, num_samples=5, max_new_tokens=256)
+    # trainer.add_callback(wandb_callback)
 
 
     train_dataloader = trainer.get_train_dataloader()
@@ -271,7 +286,10 @@ def main():
         checkpoint = last_checkpoint
         print("----------------- last_checkpoint",last_checkpoint)
 
+
+    checkpoint = None
     print("---------------------- checkpoint",checkpoint)
+
 
     train_result = trainer.train(resume_from_checkpoint=checkpoint)
     metrics = train_result.metrics
@@ -316,7 +334,7 @@ def main():
         trainer.push_to_hub(**kwargs)
 
     logger.info("*** Training complete ***")
-
+    wandb.finish()
 
 if __name__ == "__main__":
     main()

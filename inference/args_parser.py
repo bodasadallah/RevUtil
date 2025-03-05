@@ -9,7 +9,22 @@ def get_args():
     # args = parser.parse_args()
     return args
 
+
 def add_args(parser: argparse.ArgumentParser):
+
+
+    parser.add_argument(
+        "--generation_type",
+        type=str,
+        default="score_only",
+        help="Whether to only output scores, or also output rationales.",)
+    parser.add_argument(
+        "--prompt_type",
+        type=str,
+        default="chat",
+        help="Whether to use Instruction Prompting or Chat Prompting")
+
+
     parser.add_argument(
     "--tensor_parallel_size",
     type=int,
