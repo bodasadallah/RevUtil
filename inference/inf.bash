@@ -35,7 +35,7 @@ echo "GPUS: $GPUS"
 # "allenai/scitulu-7b"
 # "Uni-SMART/SciLitLLM"
 
-FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full/SciLitLLM/score_only/instruction/all"
+FULL_MODEL_NAME="/l/users/abdelrahman.sadallah/review_evaluation/full/SciLitLLM/score_only/instruction/all/checkpoint-268"
 # FINE_TUNED_MODEL_PATH="/l/users/abdelrahman.sadallah/review_evaluation/adapters/scitulu-7b/score_only/instruction/all"
 
 

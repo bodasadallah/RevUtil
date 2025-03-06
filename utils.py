@@ -219,6 +219,9 @@ def get_stats(pred, gold, aspect):
         new_pred_X = []
         new_gold_X = []
         for x, y in zip(pred, gold):
+            x = str(x)
+            y = str(y)
+            
             if x in ['X', 'x', 'NO CLAIM']: x = 'X'
             if y in ['X', 'x', 'NO CLAIM']: y = 'X'
 

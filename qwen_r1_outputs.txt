@@ -1,0 +1,33 @@
+********************actionability********************
+number of samples: 227
+f1: 0.537
+kappa: 0.328
+kappa_linear: 0.578
+kappa_quadratic: 0.744
+spearman: 0.78
+--------------------------------------------------
+********************grounding_specificity********************
+number of samples: 286
+f1: 0.759
+kappa: 0.404
+kappa_linear: 0.607
+kappa_quadratic: 0.748
+spearman: 0.672
+--------------------------------------------------
+********************helpfulness********************
+number of samples: 187
+f1: 0.241
+kappa: 0.093
+kappa_linear: 0.238
+kappa_quadratic: 0.369
+spearman: 0.554
+--------------------------------------------------
+********************verifiability_verification********************
+number of samples: 144
+f1: 0.297
+kappa: 0.153
+kappa_linear: 0.342
+kappa_quadratic: 0.505
+spearman: 0.609
+f1_X: 0.0
+--------------------------------------------------
