@@ -33,24 +33,6 @@ if __name__ == "__main__":
         os.makedirs(save_dir)
 
 
-    ### Load the data
-    raw_data = datasets.load_dataset(args.dataset_name, args.dataset_config)
-    if 'test' in raw_data.keys():
-        raw_data = raw_data['test']
-    else:
-        raw_data = raw_data['train']
-    
-    #### Process the dataset to get the prompts
-    processed_data = []
-    for row in tqdm(raw_data):
-        prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
-
-        processed_data.append(prompt['text'])
-
-
-    print('Total number of prompts:', len(processed_data))
-    print('Example prompt:', processed_data[0])
-
     ### Load the model
     enable_lora = True if args.finetune_model_name is not None else False
 
@@ -68,37 +50,106 @@ if __name__ == "__main__":
     else:
         print('*' * 20, 'Evaluating the base model', '*' * 20)
 
-    if args.prompt_type == 'chat':
-        outputs = llm.chat(
-        messages=processed_data,
-        chat_template=DEFAULT_CHAT_TEMPLATE,
-        sampling_params=sampling_params,
-        use_tqdm=True,
-        lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
 
-    else:
-        outputs = llm.generate(
-            prompts=processed_data,
-            sampling_params=sampling_params,
-            use_tqdm=True,
-            lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
-        
 
-    ### save the model outputs in file named raw_outputs.txt
-    with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:
-        for output in outputs:
-            generated_text = output.outputs[0].text
-            # prompt = output.prompt
-            # f.write(prompt + '\n')
-            raw_pred = {'generated_text': generated_text}
-            f.write(json.dumps(raw_pred) + '\n')
-
-    ########## Extract model predeicitons #############33
-    predictions = extract_predictions(outputs)
-    ### Save the model predictions to a jsonl file
-    with open(os.path.join(save_dir, 'predictions.jsonl'), 'w') as f:
-        for prediction in predictions:
-            f.write(json.dumps(prediction) + "\n")
+    configs = args.dataset_config.split(',')
+    splits = args.dataset_split.split(',')
+    label_dict = {}
+    for config in configs:
+        for split in splits:
             
+            print('Evaluating the model on', config, 'aspect and', split, 'split')
+            print('*' * 20, 'loading the dataset', '*' * 20)
 
-   
+
+
+            ### Load the data
+            raw_data = datasets.load_dataset(args.dataset_name, args.dataset_config, split=args.dataset_split)
+
+            #### Process the dataset to get the prompts
+            processed_data = []
+            for row in tqdm(raw_data):
+                prompt = get_prompt(row, aspect=args.dataset_config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
+                processed_data.append(prompt['text'])
+
+
+            print('Total number of prompts:', len(processed_data))
+            print('Example prompt:', processed_data[0])
+
+            if args.prompt_type == 'chat':
+                outputs = llm.chat(
+                messages=processed_data,
+                chat_template=DEFAULT_CHAT_TEMPLATE,
+                sampling_params=sampling_params,
+                use_tqdm=True,
+                lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
+
+            else:
+                outputs = llm.generate(
+                    prompts=processed_data,
+                    sampling_params=sampling_params,
+                    use_tqdm=True,
+                    lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
+
+
+
+            
+            raw_outputs_name = os.path.join(save_dir, f'raw_outputs_{config}_{split}.jsonl') 
+            with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:
+                for output in outputs:
+                    generated_text = output.outputs[0].text
+                    # prompt = output.prompt
+                    # f.write(prompt + '\n')
+                    raw_pred = {'generated_text': generated_text}
+                    f.write(json.dumps(raw_pred) + '\n')
+
+            try:
+
+                ########## Extract model predeicitons #############33
+                predictions = extract_predictions(outputs)
+                ### Save the model predictions to a jsonl file
+
+                label_dict[f'{config}_{split}'] = []    
+                aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if split == 'all' else [split]
+                for aspect in aspects:
+                    gold_data_name = args.gold_label_format.replace('ASPECT', aspect)
+                    gold_data = raw_data[gold_data_name]
+                    preds = [p[f'{aspect}_label'] for p in predictions]
+                    assert len(preds) == len(gold_data), 'The number of predictions and gold labels do not match'
+
+                    label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, aspect: aspect})
+
+                predictions_name = os.path.join(save_dir, f'predictions_{config}_{split}.jsonl')
+                with open(os.path.join(save_dir, 'predictions.jsonl'), 'w') as f:
+                    for prediction in predictions:
+                        f.write(json.dumps(prediction) + "\n")
+
+                ### Get the stats
+            except:
+                print('Could not extract predictions, you need to do the evaluation manually')
+
+
+    ######################### Save the results to a file #######################
+    results_file_name = os.path.join(save_dir, f'results_{config}_{split}.txt')
+    with open(results_file_name, 'w') as f:
+        ########## Get stats for all items in the dict
+        for key in label_dict:
+            for d in label_dict[key]:
+
+                gold = d['gold']
+                preds = d['preds']
+                aspect = d['aspect']
+                stats = get_stats(gold, preds, aspect)
+                stat_dict = get_stats(preds, gold, aspect)
+                f.write('*' * 20 + f'{aspect}'+ '*' * 20 + '\n')
+                ## remove the acc from the dict, and for spearman, only include the correlation
+                for k,v in stat_dict.items():
+                    if 'accuracy' in k:
+                        continue
+                    if 'spearman' in k:
+                        v = v[0]
+                    ## round the values
+                    if isinstance(v, float):
+                        v = round(v, 3)
+                    f.write(f'{k}: {v}\n')
+                f.write('-'*50+'\n')

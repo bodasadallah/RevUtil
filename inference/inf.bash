@@ -64,5 +64,7 @@ python  vllm_inf.py \
 --max_new_tokens 64 \
 --temperature 0.1 \
 --dataset_config $ASPECT \
+--dataset_split "gold" \
+--gold_label_format "ASPECT_label" \
 --dataset_name "boda/review_evaluation_automatic_labels" \
 # --finetune_model_name $FINE_TUNED_MODEL_PATH \

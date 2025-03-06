@@ -50,6 +50,19 @@ def add_args(parser: argparse.ArgumentParser):
         type=str,
         default="boda/review_evaluation_fine_tuning",
         help="Dataset name",)
+    
+    parser.add_argument(
+        "--dataset_split",
+        type=str,
+        default="actionability",
+        help="Aspect",)
+    
+    parser.add_argument(
+        "--gold_label_format",
+        type=str,
+        default='chatgpt_ASPECT_score',
+        help="format for the gold label",)
+
     parser.add_argument(
         "--dataset_config",
         type=str,
