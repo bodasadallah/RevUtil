@@ -71,7 +71,7 @@ logging_steps: 10
 logging_strategy: steps
 lr_scheduler_type: cosine
 max_seq_length: 3072
-truncation: false
+# truncation: false
 max_steps: -1
 num_train_epochs: 3
 # output_dir: review_evaluation_checkpoints

@@ -215,6 +215,15 @@ def main():
         )
 
 
+    #### get the max number of tokens in the dataset. get the tallest sample and then encode it
+    longest_sample = max(train_dataset, key=lambda x: len(x['text']))
+    max_tokens = len(tokenizer(longest_sample['text'])['input_ids'])
+    print("################ MAX TOKENS ################")
+    print(max_tokens)
+
+
+
+
     with open("prompt.txt", "w") as f:
         with training_args.main_process_first(desc="Log a few random samples from the processed training set"):
             for index in random.sample(range(len(train_dataset)), 1):

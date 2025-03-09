@@ -20,13 +20,22 @@ export WANDB_LOG_MODEL=false
 HOSTNAME=$(hostname)
 # Check if "ws" is in the hostname
 if [[ "$HOSTNAME" == *ws* ]]; then
+
     OUTPUTPATH="/mnt/data/users/boda/review_rewrite_chekpoints"
+    ## if the output path don't exist, create it
+    if [ ! -d "$OUTPUTPATH" ]; then
+        mkdir -p $OUTPUTPATH
+    fi
     export TRITON_CACHE_DIR="/mnt/data/users/boda/"
     export HF_CACHE_DIR="/mnt/data/users/boda/huggingface"
     export HF_HOME="/mnt/data/users/boda/huggingface"
     export CUDA_VISIBLE_DEVICES=0,1
 else
     OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
+        ## if the output path don't exist, create it
+    if [ ! -d "$OUTPUTPATH" ]; then
+        mkdir -p $OUTPUTPATH
+    fi
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
     export CUDA_VISIBLE_DEVICES=0,1,2,3
