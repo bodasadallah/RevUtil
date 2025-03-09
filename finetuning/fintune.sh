@@ -13,38 +13,36 @@
 ##SBATCH --nodelist=ws-l6-017
 
 
-# ###### CSCC PATHS ######
-export TRITON_CACHE_DIR="/l/users/$USER/"
-export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 
-########## NLP WORKSTATION PATHS ##########
-# export TRITON_CACHE_DIR="/home/$USER/"
-# export HF_CACHE_DIR="/home/$USER/hugging_face"
+export WANDB_LOG_MODEL=false
+##################### TRAINING CONF ################
+# Get the hostname
+HOSTNAME=$(hostname)
+# Check if "ws" is in the hostname
+if [[ "$HOSTNAME" == *ws* ]]; then
+    OUTPUTPATH="/mnt/data/users/boda/review_rewrite_chekpoints"
+    export TRITON_CACHE_DIR="/mnt/data/users/boda/"
+    export HF_CACHE_DIR="/mnt/data/users/boda/huggingface"
+    export HF_HOME="/mnt/data/users/boda/huggingface"
+    export CUDA_VISIBLE_DEVICES=0,1
+else
+    OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
+    export TRITON_CACHE_DIR="/l/users/$USER/"
+    export HF_CACHE_DIR="/l/users/$USER/hugging_face"
+    export CUDA_VISIBLE_DEVICES=0,1,2,3
+fi
 
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+
 
 # get the number of GPUs and store them into variable
 GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
 echo "GPUS: $GPUS"
 
-
-##################### TRAINING CONF ################
-# Get the hostname
-HOSTNAME=$(hostname)
-# Check if "ws" is in the hostname
-if [[ "$HOSTNAME" == *ws* ]]; then
-    OUTPUTPATH="../review_evaluation_checkpoints"
-else
-    OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
-fi
-
-
-export WANDB_LOG_MODEL=false
-
 ## Use adapter or full model tuning
-USE_PEFT=false
+USE_PEFT=true
 ### 
+
 
 ## if USE_PEFT is true, then append "adapters" to the output path
 if [ "$USE_PEFT" = true ]; then
@@ -64,7 +62,3 @@ run_sft.py \
 config_full.yaml \
 --output_dir=$OUTPUTPATH \
 --use_peft=$USE_PEFT 
-
-
-# --config_file fsdp.yaml \
-# --config_file multi_gpu.yaml \
