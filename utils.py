@@ -210,6 +210,20 @@ class LLMSampleCB(WandbCallback):
 def get_stats(pred, gold, aspect):
     stats_dict = {}
 
+    original_len = len(pred)
+    ### Filter out the labels that are not in the possible labels
+    possible_labels = [ '1', '2', '3', '4', '5', 'X']
+    filtered_pred = []
+    filtered_gold = []
+    for i in range(len(pred)):
+        if pred[i] in possible_labels and gold[i] in possible_labels:
+            filtered_pred.append(pred[i])
+            filtered_gold.append(gold[i])
+    pred = filtered_pred
+    gold = filtered_gold
+
+    filtered_len = len(pred)
+
     if aspect in ['actionability', 'grounding_specificity', 'helpfulness']:
         stats_dict['accuracy'] = accuracy_score(pred, gold)
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
@@ -252,6 +266,9 @@ def get_stats(pred, gold, aspect):
     elif aspect in ["professional_tone", 'valid_point', 'addressed_to_author']:
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
 
+    stats_dict['original_len'] = original_len
+    stats_dict['filtered_len'] = filtered_len
+    
     return stats_dict
 
 

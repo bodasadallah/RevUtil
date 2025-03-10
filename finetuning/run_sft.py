@@ -235,7 +235,11 @@ def main():
     ########### Train on Completion only ################
     if model_args.train_on_completion_only:
         if data_args.prompt_type == 'chat':
-            response_template = "<|assistant|>\n"
+            if "R1" in model_args.model_name_or_path:
+                response_template = "<｜Assistant｜>"
+            else:
+                response_template = "<|assistant|>\n"
+
         elif data_args.prompt_type == 'instruction':
             response_template = "\n\n###Output:\n"
         
