@@ -331,10 +331,12 @@ def main():
     ##########
     # Evaluate
     ##########
-    ## set padding side to right for for flashattention error
-    trainer.tokenizer.padding_side='right'
+
     if training_args.do_eval:
         logger.info("*** Evaluate ***")
+        ## set padding side to right for for flashattention error
+        trainer.tokenizer.padding_side='right'
+        trainer.model.config.use_cache=False
         metrics = trainer.evaluate()
         metrics["eval_samples"] = len(eval_dataset)
         trainer.log_metrics("eval", metrics)
