@@ -46,7 +46,10 @@ def apply_chat_template(
     auto_insert_empty_system_msg: bool = True,
 ):
     if task in ["sft", "generation"]:
-        messages = example["prompt"]
+        if "prompt" in example.keys():
+            messages = example["prompt"]
+        else:
+            messages = example["text"]
         # We add an empty system message if there is none
         if auto_insert_empty_system_msg:
             maybe_insert_system_message(messages, tokenizer)

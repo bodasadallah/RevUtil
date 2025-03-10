@@ -166,7 +166,7 @@ def main():
         },
         num_proc=data_args.preprocessing_num_workers,
         remove_columns=column_names,
-        desc="Applying instruction template",
+        desc=f"Applying {prompt_type} prompt template",
         load_from_cache_file = False,
     )
     eval_dataset = raw_datasets["test"].map(
@@ -179,7 +179,7 @@ def main():
         },
         num_proc=data_args.preprocessing_num_workers,
         remove_columns=column_names,
-        desc="Applying instruction template",
+        desc=f"Applying {prompt_type} prompt template",
         load_from_cache_file = False,
     )
 
@@ -195,7 +195,6 @@ def main():
                 "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
             },
             num_proc=data_args.preprocessing_num_workers,
-            remove_columns=column_names,
             desc="Applying chat template",
             load_from_cache_file = False,
 
@@ -208,7 +207,6 @@ def main():
                 "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
             },
             num_proc=data_args.preprocessing_num_workers,
-            remove_columns=column_names,
             desc="Applying chat template",
             load_from_cache_file = False,
 

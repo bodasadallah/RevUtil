@@ -124,7 +124,7 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         if task == 'train':
             prompt.append({'role': 'assistant', 'content': str(labels_dict)})
 
-        return prompt
+
 
 
     ####### If we want to generate instruction prompt, we need to return in in the text column
@@ -152,8 +152,9 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         if task == 'train':
             prompt += str(labels_dict)
 
-        row['text'] = prompt
-        return row
+    
+    row['text'] = prompt
+    return row
 
     
 
