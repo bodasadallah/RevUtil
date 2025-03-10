@@ -89,15 +89,21 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         for aspect in considered_aspects:
             aspect_score_key = f'chatgpt_{aspect}_score'
             aspect_rationale_key = f'chatgpt_{aspect}_rationale'
+
+            ## Add Rationale 
+            if generation_type != 'score_only':
+                aspect_rationale = row[aspect_rationale_key]
+                aspect_rationale_key = f'chatgpt_{aspect}_rationale'
+                labels_dict[f'{aspect}_rationale'] = aspect_rationale
+              
+            ## Add Score
             aspect_label = row[aspect_score_key]
             aspect_rationale = row[aspect_rationale_key]
             if aspect_label != 'X':
                 aspect_label = str(int(aspect_label))
             labels_dict[f'{aspect}_label'] = aspect_label
-            if generation_type != 'score_only':
-                aspect_rationale = row[aspect_rationale_key]
-                aspect_rationale_key = f'chatgpt_{aspect}_rationale'
-                labels_dict[f'{aspect}_rationale'] = aspect_rationale
+
+
 
 
 

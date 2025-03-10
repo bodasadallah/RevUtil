@@ -114,11 +114,7 @@ def add_args(parser: argparse.ArgumentParser):
         type=str,
         required=False,
         help="Output path",)
-    parser.add_argument(
-        '--aspect',
-        type=str,
-        default='all',
-        help='Aspect to evaluate',)
+
     
 
     

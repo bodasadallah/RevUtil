@@ -58,8 +58,8 @@ if __name__ == "__main__":
         model_name,
         args.generation_type,
         args.prompt_type,
-        dataset_name,
-        args.dataset_config,)
+        dataset_name,)
+    
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
 
             raw_outputs_name = os.path.join(save_dir, f'raw_outputs_{config}_{split}.jsonl') 
-            with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:
+            with open(raw_outputs_name, 'w') as f:
                 for output in outputs:
                     generated_text = output.outputs[0].text
                     # prompt = output.prompt
@@ -136,7 +136,7 @@ if __name__ == "__main__":
                     f.write(json.dumps(raw_pred) + '\n')
 
             outputs = []
-            with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'r') as f:
+            with open(raw_outputs_name, 'r') as f:
                 for line in f:
                     outputs.append(json.loads(line))
 
@@ -161,7 +161,7 @@ if __name__ == "__main__":
                     label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, 'aspect': aspect})
 
                 predictions_name = os.path.join(save_dir, f'predictions_{config}_{split}.jsonl')
-                with open(os.path.join(save_dir, 'predictions.jsonl'), 'w') as f:
+                with open(predictions_name, 'w') as f:
                     for prediction in predictions:
                         f.write(json.dumps(prediction) + "\n")
 
