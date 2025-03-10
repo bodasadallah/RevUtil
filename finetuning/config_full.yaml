@@ -1,8 +1,8 @@
 # Model arguments
 # meta-llama/Llama-3.1-8B
 # model_name_or_path: Uni-SMART/SciLitLLM
-model_name_or_path: allenai/scitulu-7b
-# model_name_or_path: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+# model_name_or_path: allenai/scitulu-7b
+model_name_or_path: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
@@ -20,7 +20,7 @@ dataset_configs:
 - all
 preprocessing_num_workers: 24
 
-prompt_type: instruction
+prompt_type: chat
 generation_type: score_rationale
 task: train
 
@@ -69,7 +69,7 @@ log_level: info
 logging_steps: 10
 logging_strategy: steps
 lr_scheduler_type: cosine
-max_seq_length: 3072
+max_seq_length: 4096
 # truncation: false
 max_steps: -1
 num_train_epochs: 3
