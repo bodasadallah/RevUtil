@@ -333,6 +333,8 @@ def main():
     ##########
     # Evaluate
     ##########
+    ## set padding side to right for for flashattention error
+    trainer.tokenizer.padding_side='right'
     if training_args.do_eval:
         logger.info("*** Evaluate ***")
         metrics = trainer.evaluate()

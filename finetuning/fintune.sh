@@ -21,15 +21,24 @@ HOSTNAME=$(hostname)
 # Check if "ws" is in the hostname
 if [[ "$HOSTNAME" == *ws* ]]; then
 
-    OUTPUTPATH="/mnt/data/users/boda/review_rewrite_chekpoints"
+    ### if the machine name is ws006601 then set the parent path to  /home/abdelrahman.sadallah
+    if [[ "$HOSTNAME" == "ws006601" ]]; then
+        PARENT_PATH="/home/abdelrahman.sadallah"
+    else 
+        PARENT_PATH="/mnt/data/users/boda"
+    fi
+
+    OUTPUTPATH="$PARENT_PATH/review_rewrite_chekpoints"  # You can change this default if needed
+    
     ## if the output path don't exist, create it
     if [ ! -d "$OUTPUTPATH" ]; then
         mkdir -p $OUTPUTPATH
     fi
-    export TRITON_CACHE_DIR="/mnt/data/users/boda/"
-    export HF_CACHE_DIR="/mnt/data/users/boda/huggingface"
-    export HF_HOME="/mnt/data/users/boda/huggingface"
+    export TRITON_CACHE_DIR=$PARENT_PATH
+    export HF_CACHE_DIR=$PARENT_PATH/huggingface
+    export HF_HOME=$PARENT_PATH/huggingface
     export CUDA_VISIBLE_DEVICES=0,1
+
 else
     OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
         ## if the output path don't exist, create it

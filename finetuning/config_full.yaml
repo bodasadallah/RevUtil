@@ -1,9 +1,7 @@
 # Model arguments
 # meta-llama/Llama-3.1-8B
 # model_name_or_path: Uni-SMART/SciLitLLM
-# tokenizer_name_or_path: Uni-SMART/SciLitLLM
 model_name_or_path: allenai/scitulu-7b
-tokenizer_name_or_path: allenai/scitulu-7b
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
@@ -80,7 +78,7 @@ overwrite_output_dir: true
 ## Auto find batch size
 auto_find_batch_size: false
 per_device_eval_batch_size: 4
-per_device_train_batch_size: 4
+per_device_train_batch_size: 8
 remove_unused_columns: true
 report_to:
 - wandb
