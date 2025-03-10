@@ -59,9 +59,9 @@ WRITE_PATH="evalute_outputs"
 # "Uni-SMART/SciLitLLM"
 
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+FULL_MODEL_NAME="Uni-SMART/SciLitLLM"
 GENERATION_TYPE="score_only"
-PROMPT_TYPE="chat"
+PROMPT_TYPE="instruction"
 STEP="843"
 FINETUNING_TYPE="adapters"
 ####### DATA CONFIG ########

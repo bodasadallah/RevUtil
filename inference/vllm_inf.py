@@ -56,8 +56,10 @@ if __name__ == "__main__":
 
     llm = LLM(BASE_MODEL,
             enable_lora=enable_lora,
-            tensor_parallel_size = args.tensor_parallel_size,
-            gpu_memory_utilization=0.9)
+            tensor_parallel_size = 1,
+            # tensor_parallel_size = args.tensor_parallel_size,
+            gpu_memory_utilization=0.95,
+            max_num_seqs=1)
 
     sampling_params = SamplingParams(
     temperature=args.temperature,
@@ -73,8 +75,6 @@ if __name__ == "__main__":
             
             print('Evaluating the model on', config, 'aspect and', split, 'split')
             print('*' * 20, 'loading the dataset', '*' * 20)
-
-
 
             ### Load the data
             raw_data = datasets.load_dataset(args.dataset_name, args.dataset_config, split=args.dataset_split)
@@ -99,6 +99,7 @@ if __name__ == "__main__":
 
             else:
                 outputs = llm.generate(
+                   
                     prompts=processed_data,
                     sampling_params=sampling_params,
                     use_tqdm=True,
