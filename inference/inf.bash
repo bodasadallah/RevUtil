@@ -92,7 +92,7 @@ python  vllm_inf.py \
 --full_model_name  $FULL_MODEL_NAME \
 --tensor_parallel_size $GPUS \
 --output_path $WRITE_PATH \
---max_new_tokens 64 \
+--max_new_tokens 1024 \
 --temperature 0.1 \
 --dataset_config $ASPECT \
 --dataset_split $DATASET_SPLIT \
