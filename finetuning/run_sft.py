@@ -66,7 +66,8 @@ def main():
     print("################ OUTPUT DIR ################")
     print(training_args.output_dir)
 
-    wandb.init(project=model_args.wandb_project,name=aspect)
+    WANDB_RUN_NAME = f"{model}_{generation_type}_{prompt_type}_{aspect}"
+    wandb.init(project=model_args.wandb_project,name=WANDB_RUN_NAME)
     # Set seed for reproducibility
     set_seed(training_args.seed)
 
@@ -113,13 +114,6 @@ def main():
     )
 
 
-    print("################ DATASET LENGTH ################")
-    print(len(raw_datasets["train"]))
-    print(raw_datasets)
-    # print("################ PROMPT ################")
-    # print(raw_datasets["train"][0]["prompt"])
-
-
     logger.info(
         f"Training on the following datasets and their proportions: {[split + ' : ' + str(dset.num_rows) for split, dset in raw_datasets.items()]}"
     )
@@ -158,14 +152,42 @@ def main():
         model, tokenizer = setup_chat_format(model, tokenizer)
         model_kwargs = None
 
+
+
+    logger.info("Applying Prompt Template")
+
+    train_dataset = raw_datasets["train"].map(
+        utils.get_prompt,
+        fn_kwargs={
+            "aspect": aspect,
+            "task": "train",
+            "generation_type": data_args.generation_type,
+            "prompt_type": prompt_type,
+        },
+        num_proc=data_args.preprocessing_num_workers,
+        remove_columns=column_names,
+        desc=f"Applying {prompt_type} prompt template",
+        load_from_cache_file = False,
+    )
+    eval_dataset = raw_datasets["test"].map(
+        utils.get_prompt,
+        fn_kwargs={
+            "aspect": aspect,
+            "task": 'evaluation',
+            "generation_type": data_args.generation_type,
+            "prompt_type": prompt_type,
+        },
+        num_proc=data_args.preprocessing_num_workers,
+        remove_columns=column_names,
+        desc=f"Applying {prompt_type} prompt template",
+        load_from_cache_file = False,
+    )
+
     #####################
     # Apply chat template Or Build the Instruction dataset
-    #####################
-
-
-
+    ##################### 
     if data_args.prompt_type == 'chat':
-        raw_datasets = raw_datasets.map(
+        train_dataset = train_dataset.map(
             apply_chat_template,
             fn_kwargs={
                 "tokenizer": tokenizer,
@@ -173,44 +195,31 @@ def main():
                 "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
             },
             num_proc=data_args.preprocessing_num_workers,
-            remove_columns=column_names,
             desc="Applying chat template",
             load_from_cache_file = False,
 
         )
-        train_dataset = raw_datasets["train"]
-        eval_dataset = raw_datasets["test"]
-
-    elif data_args.prompt_type == 'instruction':
-
-        logger.info("Applying instruction template")
-        train_dataset = raw_datasets["train"].map(
-            utils.get_prompt,
+        eval_dataset = eval_dataset.map(
+            apply_chat_template,
             fn_kwargs={
-                "aspect": aspect,
-                "task": "train",
-                "generation_type": data_args.generation_type,
-                "prompt_type": "instruction",
+                "tokenizer": tokenizer,
+                "task": "sft",
+                "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
             },
             num_proc=data_args.preprocessing_num_workers,
-            remove_columns=column_names,
-            desc="Applying instruction template",
+            desc="Applying chat template",
             load_from_cache_file = False,
+
         )
-        eval_dataset = raw_datasets["test"].map(
-            utils.get_prompt,
-            fn_kwargs={
-                "aspect": aspect,
-                "task": 'evaluation',
-                "generation_type": data_args.generation_type,
-                "prompt_type": "instruction",
-            },
-            num_proc=data_args.preprocessing_num_workers,
-            remove_columns=column_names,
-            desc="Applying instruction template",
-            load_from_cache_file = False,
-        )
-            
+
+
+    #### get the max number of tokens in the dataset. get the tallest sample and then encode it
+    longest_sample = max(train_dataset, key=lambda x: len(x['text']))
+    max_tokens = len(tokenizer(longest_sample['text'])['input_ids'])
+    print("################ MAX TOKENS ################")
+    print(max_tokens)
+
+
 
 
     with open("prompt.txt", "w") as f:
@@ -269,7 +278,7 @@ def main():
     input_ids_batch = first_batch["input_ids"] 
     decoded_texts = [tokenizer.decode(input_ids, skip_special_tokens=False) for input_ids in input_ids_batch]
     print('############################# DECODED TEXTS #############################')
-    print(decoded_texts)
+    print(decoded_texts[0])
 
     ############# To use FSDP #############
     if trainer.is_fsdp_enabled: 
@@ -322,8 +331,12 @@ def main():
     ##########
     # Evaluate
     ##########
+
     if training_args.do_eval:
         logger.info("*** Evaluate ***")
+        ## set padding side to right for for flashattention error
+        trainer.tokenizer.padding_side='right'
+        trainer.model.config.use_cache=False
         metrics = trainer.evaluate()
         metrics["eval_samples"] = len(eval_dataset)
         trainer.log_metrics("eval", metrics)

@@ -1,9 +1,8 @@
 # Model arguments
 # meta-llama/Llama-3.1-8B
-model_name_or_path: Uni-SMART/SciLitLLM
-tokenizer_name_or_path: Uni-SMART/SciLitLLM
+# model_name_or_path: Uni-SMART/SciLitLLM
 # model_name_or_path: allenai/scitulu-7b
-# tokenizer_name_or_path: allenai/scitulu-7b
+model_name_or_path: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
@@ -21,7 +20,7 @@ dataset_configs:
 - all
 preprocessing_num_workers: 24
 
-prompt_type: instruction
+prompt_type: chat
 generation_type: score_only
 task: train
 
@@ -54,10 +53,11 @@ lora_target_modules:
 # SFT trainer config
 bf16: true
 dataset_kwargs:
-  add_special_tokens: false  # We already wrap <bos> and <eos> in the chat template
-  append_concat_token: false # No need to add <eos> across samples
+  add_special_tokens: true  # We already wrap <bos> and <eos> in the chat template
+  append_concat_token: true # No need to add <eos> across samples
+
 do_eval: false
-eval_strategy: no
+eval_strategy: epoch
 gradient_accumulation_steps: 4
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
@@ -70,8 +70,9 @@ logging_steps: 10
 logging_strategy: steps
 lr_scheduler_type: cosine
 max_seq_length: 3072
+# truncation: false
 max_steps: -1
-num_train_epochs: 2
+num_train_epochs: 3
 # output_dir: review_evaluation_checkpoints
 # output_dir: /l/users/abdelrahman.sadallah/review_evaluation/adapters
 overwrite_output_dir: true
@@ -85,7 +86,7 @@ report_to:
 wandb_project: review_evaluation
 save_strategy: "epoch"
 save_steps: 100
-save_total_limit: 1
+save_total_limit: 3
 seed: 42
 warmup_ratio: 0.1
 
