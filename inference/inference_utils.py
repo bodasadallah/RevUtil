@@ -37,7 +37,11 @@ def extract_predictions(model_outputs):
     
     for text in model_outputs:
 
-        text = text.outputs[0].text
+        if 'outputs' in text.keys():
+            text = text.outputs[0].text
+        elif 'generated_text' in text.keys():
+            text = text['generated_text']
+
         extracted_dict = extract_dict(text)
         if  not extracted_dict:
             extracted_data.append({
@@ -49,10 +53,10 @@ def extract_predictions(model_outputs):
             continue
 
         parsed_result = {
-            'actionability_label': extracted_dict.get('actionability_label', None),
-            'grounding_specificity_label': extracted_dict.get('grounding_specificity_label', None),
-            'verifiability_label': extracted_dict.get('verifiability_label', None),
-            'helpfulness_label': extracted_dict.get('helpfulness_label', None)
+            'actionability_label': str(extracted_dict.get('actionability_label', None)),
+            'grounding_specificity_label':  str(extracted_dict.get('grounding_specificity_label', None)),
+            'verifiability_label':  str(extracted_dict.get('verifiability_label', None)),
+            'helpfulness_label':  str(extracted_dict.get('helpfulness_label', None))
         }
 
         extracted_data.append(parsed_result)

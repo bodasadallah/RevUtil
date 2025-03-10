@@ -65,10 +65,19 @@ PROMPT_TYPE="instruction"
 STEP="843"
 FINETUNING_TYPE="adapters"
 ####### DATA CONFIG ########
-ASPECT="all"
-DATASET_SPLIT="test"
-GOLD_LABEL_FORMAT="ASPECT_label"
-DATASET_NAME="boda/review_evaluation_automatic_labels"
+# DATASET_NAME="boda/review_evaluation_automatic_labels"
+# DATASET_SPLIT="test"
+# ASPECT="all"
+DATASET_NAME="boda/review_evaluation_human_annotation"
+DATASET_SPLIT="gold"
+TRAINING_aspects="all"
+ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+### if dataset name have automatic labels then the gold label format should be "chatgpt_ASPECT_score", else "ASPECT_label"
+if [[ "$DATASET_NAME" == *"automatic"* ]]; then
+    GOLD_LABEL_FORMAT="chatgpt_ASPECT_score"
+else
+    GOLD_LABEL_FORMAT="ASPECT_label"
+fi
 
 
 ## Determine the write path based on the finetuning type
@@ -85,6 +94,7 @@ fi
 
 python  vllm_inf.py \
 --step $STEP \
+--training_aspects $TRAINING_aspects \
 --finetuning_type $FINETUNING_TYPE \
 --checkpoint_parent_path $CHECKPOINT_PARENT_PATH \
 --prompt_type $PROMPT_TYPE \

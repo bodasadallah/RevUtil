@@ -6,13 +6,18 @@ import datasets
 import os
 import sys
 from tqdm import tqdm
-parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
 from utils import get_prompt, get_stats
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 from inference_utils import extract_predictions
 import json
+
+### get dataaset token from .env
+from dotenv import load_dotenv
+load_dotenv()
+HF_TOKEN = os.getenv('HF_TOKEN')
 
 DEFAULT_CHAT_TEMPLATE = "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
 
@@ -32,7 +37,7 @@ if __name__ == "__main__":
             args.finetuning_type,
             model_name,args.generation_type,
             args.prompt_type, 
-            args.dataset_config, 
+            args.training_aspects, 
             'checkpoint-'+args.step)
 
     if args.finetuning_type =='full':
@@ -45,10 +50,25 @@ if __name__ == "__main__":
     elif args.finetuning_type == 'base':
         print('*' * 20,'Loading the base model', '*' * 20)
 
+    dataset_name = args.dataset_name.split('/')[-1]
 
-    save_dir = os.path.join(args.output_path,model_name,args.generation_type,args.prompt_type, args.dataset_config)
+
+    save_dir = os.path.join(
+        args.output_path,
+        model_name,
+        args.generation_type,
+        args.prompt_type,
+        dataset_name,
+        args.dataset_config,)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+
+    ### create metadata json file, and put all args in it
+    metadata = {}
+    for arg in vars(args):
+        metadata[arg] = getattr(args, arg)
+    with open(os.path.join(save_dir, 'metadata.json'), 'w') as f:
+        json.dump(metadata, f)
 
 
 
@@ -77,7 +97,7 @@ if __name__ == "__main__":
             print('*' * 20, 'loading the dataset', '*' * 20)
 
             ### Load the data
-            raw_data = datasets.load_dataset(args.dataset_name, args.dataset_config, split=args.dataset_split)
+            raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
 
             #### Process the dataset to get the prompts
             processed_data = []
@@ -106,8 +126,6 @@ if __name__ == "__main__":
                     lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
 
 
-
-            
             raw_outputs_name = os.path.join(save_dir, f'raw_outputs_{config}_{split}.jsonl') 
             with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'w') as f:
                 for output in outputs:
@@ -117,21 +135,30 @@ if __name__ == "__main__":
                     raw_pred = {'generated_text': generated_text}
                     f.write(json.dumps(raw_pred) + '\n')
 
+            outputs = []
+            with open(os.path.join(save_dir, 'raw_outputs.jsonl'), 'r') as f:
+                for line in f:
+                    outputs.append(json.loads(line))
+
             try:
 
                 ########## Extract model predeicitons #############33
                 predictions = extract_predictions(outputs)
                 ### Save the model predictions to a jsonl file
 
+                print(predictions[0])
+
                 label_dict[f'{config}_{split}'] = []    
-                aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if split == 'all' else [split]
+                aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if config == 'all' else [config]
                 for aspect in aspects:
                     gold_data_name = args.gold_label_format.replace('ASPECT', aspect)
                     gold_data = raw_data[gold_data_name]
+                    ## convert the gold data to string
+                    gold_data = [str(g) for g in gold_data]
                     preds = [p[f'{aspect}_label'] for p in predictions]
                     assert len(preds) == len(gold_data), 'The number of predictions and gold labels do not match'
 
-                    label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, aspect: aspect})
+                    label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, 'aspect': aspect})
 
                 predictions_name = os.path.join(save_dir, f'predictions_{config}_{split}.jsonl')
                 with open(os.path.join(save_dir, 'predictions.jsonl'), 'w') as f:

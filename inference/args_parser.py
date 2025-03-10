@@ -11,6 +11,13 @@ def get_args():
 
 
 def add_args(parser: argparse.ArgumentParser):
+
+    parser.add_argument(
+    "--training_aspects",
+    type=str,
+    default="all",
+    help="Whether to only output scores, or also output rationales.",)
+
     parser.add_argument(
         "--finetuning_type",
         type=str,
