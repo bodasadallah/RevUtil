@@ -135,8 +135,6 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
             aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
             aspect_definitions += f'''Aspect: {aspect}\n{aspect_definition}\n'''
 
-        
-
         prompt = f'''###Task Description:
 {prompt_header}
 
@@ -152,7 +150,7 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         if task == 'train':
             prompt += str(labels_dict)
 
-    
+
     row['text'] = prompt
     return row
 

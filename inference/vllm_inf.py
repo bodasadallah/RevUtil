@@ -20,23 +20,41 @@ if __name__ == "__main__":
 
     args = get_args()
 
-    if args.finetune_model_name is not None:
-        model_name = args.base_model_name.split('/')[-1]
-    else:
-        ## get the part that has 'sci' in it
-        for part in args.base_model_name.lower().split('/'):
-            if 'sci' in part:
-                model_name = part
-                break
-    save_dir = os.path.join(args.output_path,model_name,args.generation_type,args.prompt_type, args.dataset_config, 'label_loss')
+    LORA_PATH = None
+    enable_lora = False
+
+    model_name = args.full_model_name.split('/')[-1]
+    checkpoint_parent_path = args.checkpoint_parent_path
+
+    BASE_MODEL = args.full_model_name
+    checkpoint_path = os.path.join(
+            checkpoint_parent_path,
+            args.finetuning_type,
+            model_name,args.generation_type,
+            args.prompt_type, 
+            args.dataset_config, 
+            'checkpoint-'+args.step)
+
+    if args.finetuning_type =='full':
+        BASE_MODEL = checkpoint_path
+        print('*' * 20,'Loading the full model', '*' * 20)
+    elif args.finetuning_type == 'adapters':
+        enable_lora = True
+        LORA_PATH = checkpoint_path
+        print('*' * 20,'Loading a model with adapters', '*' * 20)
+    elif args.finetuning_type == 'base':
+        print('*' * 20,'Loading the base model', '*' * 20)
+
+
+    save_dir = os.path.join(args.output_path,model_name,args.generation_type,args.prompt_type, args.dataset_config)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
 
-    ### Load the model
-    enable_lora = True if args.finetune_model_name is not None else False
 
-    llm = LLM(model=args.base_model_name,
+
+
+    llm = LLM(BASE_MODEL,
             enable_lora=enable_lora,
             tensor_parallel_size = args.tensor_parallel_size,
             gpu_memory_utilization=0.9)
@@ -44,11 +62,6 @@ if __name__ == "__main__":
     sampling_params = SamplingParams(
     temperature=args.temperature,
     max_tokens=args.max_new_tokens,)
-
-    if args.finetune_model_name is not None:
-        print('*' * 20,'Loading a lora finetuned model', '*' * 20)
-    else:
-        print('*' * 20, 'Evaluating the base model', '*' * 20)
 
 
 
@@ -79,17 +92,17 @@ if __name__ == "__main__":
             if args.prompt_type == 'chat':
                 outputs = llm.chat(
                 messages=processed_data,
-                chat_template=DEFAULT_CHAT_TEMPLATE,
+                chat_template=DEFAULT_CHAT_TEMPLATE if model_name == 'scitulu-7b' else None,
                 sampling_params=sampling_params,
                 use_tqdm=True,
-                lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
+                lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
 
             else:
                 outputs = llm.generate(
                     prompts=processed_data,
                     sampling_params=sampling_params,
                     use_tqdm=True,
-                    lora_request= LoRARequest("my_adapter", 1, args.finetune_model_name) if enable_lora else None,)
+                    lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
 
 
 
