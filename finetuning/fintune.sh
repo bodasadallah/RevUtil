@@ -13,7 +13,7 @@
 ##SBATCH --nodelist=ws-l6-017
 
 
-
+export NCCL_P2P_LEVEL=NVL
 export WANDB_LOG_MODEL=false
 ##################### TRAINING CONF ################
 # Get the hostname

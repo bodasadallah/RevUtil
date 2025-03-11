@@ -55,6 +55,10 @@ logger = logging.getLogger(__name__)
 
 
 def main():
+
+    ## Set CUDA_VISIBLE_DEVICES = int(os.environ[“LOCAL_RANK”]) in your main worker function
+    # os.environ["CUDA_VISIBLE_DEVICES"] = str(int(os.environ["LOCAL_RANK"]))
+
     parser = H4ArgumentParser((ModelArguments, DataArguments, SFTConfig))
     model_args, data_args, training_args = parser.parse()
 

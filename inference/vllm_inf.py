@@ -80,7 +80,8 @@ if __name__ == "__main__":
             # tensor_parallel_size = 1,
             tensor_parallel_size = args.tensor_parallel_size,
             # gpu_memory_utilization=0.95,
-            max_num_seqs=1)
+            # max_num_seqs=1
+            )
 
     sampling_params = SamplingParams(
     temperature=args.temperature,
@@ -100,7 +101,6 @@ if __name__ == "__main__":
 
             ### if the raw outputs file already exists, skip the evaluation
             if  not os.path.exists(raw_outputs_name):
-                print('The raw outputs file already exists, skipping the predictions generation')
                 
 
                 ### Load the data
@@ -134,6 +134,9 @@ if __name__ == "__main__":
                         # f.write(prompt + '\n')
                         raw_pred = {'generated_text': generated_text}
                         f.write(json.dumps(raw_pred) + '\n')
+
+            else:
+                print('The raw outputs file already exists, skipping the predictions generation')
 
                 
 

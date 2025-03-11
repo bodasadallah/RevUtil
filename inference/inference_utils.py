@@ -40,7 +40,7 @@ def extract_dict(text):
     text = text.replace("\n", " ")  # Remove newlines
     text = text.replace("'", '"')  # Replace single quotes with double quotes
     text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
-    print(text)
+
 
     match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
     if match:

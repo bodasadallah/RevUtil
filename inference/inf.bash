@@ -20,7 +20,7 @@ echo "starting Inf......................."
 
 export VLLM_LOGGING_LEVEL=DEBUG
 export VLLM_WORKER_MULTIPROC_METHOD=spawn
-
+export NCCL_P2P_LEVEL=NVL
 
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == *ws* ]]; then
@@ -34,7 +34,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
         PARENT_PATH="/mnt/data/users/boda"
     fi
     CHECKPOINT_PARENT_PATH="$CHECKPOINT_PARENT_PATH/review_rewrite_chekpoints"
-    export CUDA_VISIBLE_DEVICES=0,1
+    export CUDA_VISIBLE_DEVICES=0
     export TRITON_CACHE_DIR=$PARENT_PATH
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
@@ -59,10 +59,10 @@ WRITE_PATH="evalute_outputs"
 # "Uni-SMART/SciLitLLM"
 
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME="Uni-SMART/SciLitLLM"
-GENERATION_TYPE="score_rationale"
+FULL_MODEL_NAME="allenai/scitulu-7b"
+GENERATION_TYPE="score_only"
 PROMPT_TYPE="instruction"
-STEP="420"
+STEP="843"
 FINETUNING_TYPE="adapters"
 ####### DATA CONFIG ########
 DATASET_NAME="boda/review_evaluation_automatic_labels"

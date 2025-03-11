@@ -1,0 +1,37 @@
+********************actionability********************
+f1: 0.614
+kappa: 0.484
+kappa_linear: 0.644
+kappa_quadratic: 0.766
+spearman: 0.773
+original_len: 1000
+filtered_len: 1000
+--------------------------------------------------
+********************grounding_specificity********************
+f1: 0.708
+kappa: 0.547
+kappa_linear: 0.635
+kappa_quadratic: 0.708
+spearman: 0.7
+original_len: 1000
+filtered_len: 1000
+--------------------------------------------------
+********************verifiability********************
+f1: 0.627
+kappa: 0.417
+kappa_linear: 0.563
+kappa_quadratic: 0.681
+spearman: 0.683
+f1_X: 0.614
+original_len: 1000
+filtered_len: 1000
+--------------------------------------------------
+********************helpfulness********************
+f1: 0.67
+kappa: 0.493
+kappa_linear: 0.605
+kappa_quadratic: 0.729
+spearman: 0.728
+original_len: 1000
+filtered_len: 1000
+--------------------------------------------------
