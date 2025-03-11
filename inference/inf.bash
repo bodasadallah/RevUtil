@@ -40,7 +40,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     export HF_HOME=$PARENT_PATH/huggingface
 else
     CHECKPOINT_PARENT_PATH="/l/users/abdelrahman.sadallah/review_evaluation"
-    export CUDA_VISIBLE_DEVICES=0,1,2,3
+    export CUDA_VISIBLE_DEVICES=2,3
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 fi
@@ -60,18 +60,21 @@ WRITE_PATH="evalute_outputs"
 
 ###### MODEL CONFIG ########
 FULL_MODEL_NAME="Uni-SMART/SciLitLLM"
-GENERATION_TYPE="score_only"
+GENERATION_TYPE="score_rationale"
 PROMPT_TYPE="instruction"
-STEP="843"
+STEP="420"
 FINETUNING_TYPE="adapters"
 ####### DATA CONFIG ########
-# DATASET_NAME="boda/review_evaluation_automatic_labels"
-# DATASET_SPLIT="test"
-# ASPECT="all"
-DATASET_NAME="boda/review_evaluation_human_annotation"
-DATASET_SPLIT="gold"
+DATASET_NAME="boda/review_evaluation_automatic_labels"
+DATASET_SPLIT="test"
+ASPECT="all"
 TRAINING_aspects="all"
-ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+
+# DATASET_NAME="boda/review_evaluation_human_annotation"
+# DATASET_SPLIT="gold"
+# TRAINING_aspects="all"
+# ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+
 ### if dataset name have automatic labels then the gold label format should be "chatgpt_ASPECT_score", else "ASPECT_label"
 if [[ "$DATASET_NAME" == *"automatic"* ]]; then
     GOLD_LABEL_FORMAT="chatgpt_ASPECT_score"

@@ -94,6 +94,9 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
             if generation_type != 'score_only':
                 aspect_rationale = row[aspect_rationale_key]
                 aspect_rationale_key = f'chatgpt_{aspect}_rationale'
+
+                # if the rationale has double quotes, escpae them
+                aspect_rationale = aspect_rationale.replace('"', '\\"')
                 labels_dict[f'{aspect}_rationale'] = aspect_rationale
               
             ## Add Score

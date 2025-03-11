@@ -11,21 +11,55 @@ import re
 import ast
 
 
+import re
+import json
+
+
+known_keys = ['actionability_rationale', 'actionability_label', 'grounding_specificity_rationale' 'grounding_specificity_label', 'verifiability_rationale', 'verifiability_label', 'helpfulness_rationale', 'helpfulness_label']
+
+def escape_inner_quotes(text):
+    """Finds specified rationale fields and escapes only internal double quotes."""
+    fields = [
+        "actionability_rationale",
+        "grounding_specificity_rationale",
+        "verifiability_rationale",
+        "helpfulness_rationale"
+    ]
+    
+    for field in fields:
+        pattern = fr'("{field}"\s*:\s*")(.*?)("[\}},])'  # Escape closing brace
+        matches = list(re.finditer(pattern, text, re.DOTALL))  # Find all matches first
+        
+        for match in reversed(matches):  # Process from last to first to avoid index shifting
+            before, rationale, after = match.groups()
+            escaped_rationale = rationale.replace('"', '\\"')  # Escape only inner quotes
+            text = text[:match.start(2)] + escaped_rationale + text[match.end(2):]
+    
+    return text
 def extract_dict(text):
-    match = re.search(r'\{[^{}]*\}', text)  # Extract only the first {...} block
+    text = text.replace("\n", " ")  # Remove newlines
+    text = text.replace("'", '"')  # Replace single quotes with double quotes
+    text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
+    print(text)
+
+    match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
     if match:
         dict_str = match.group()  # Get extracted dictionary string
         
         try:
-            return ast.literal_eval(dict_str)  # Convert to Python dictionary safely
-        except (SyntaxError, ValueError) as e:
+            return json.loads(dict_str)  # Convert to Python dictionary safely
+        except json.JSONDecodeError as e:
             print(f"Parsing error: {e}\nProblematic string: {dict_str}")
             return None
     
     return None  # Return None if no dictionary found
 
+# # Example usage
+# input_text = """{"actionability_rationale": "The review comment suggests that the authors should show the gradient conflicts ratio for AlphaNets trained with alpha-divergence in "Table 8" to provide insights. While the action is explicit, it lacks concrete guidance on how to implement this suggestion, such as specifying which parts of the paper should include this information or how to present the gradient conflicts ratio. The authors are given a clear direction but without detailed instructions on execution, making the comment somewhat actionable.", "actionability_label": "3"}"""
+# print(extract_dict(input_text))
 
-print(extract_dict("{'actionability_label': '3', 'grounding_specificity_label': '3', 'verifiability_label': '3', 'helpfulness_label': '3'}'} \n <|system|>\nYou are an expert in evaluating peer review comments with respect to" ))
+
+
 def extract_predictions(model_outputs):
     """
     Parses a list of model-generated texts to extract labels and returns a dictionary.

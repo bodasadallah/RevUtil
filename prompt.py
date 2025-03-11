@@ -293,7 +293,7 @@ SCORE_ONLY_PROMPT_TAIL = '''
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
 Review Point: {review_point}'''
 SCORE_AND_RATIONALE_PROMPT_TAIL = '''
-Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score.
+Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale.
 Review Point: {review_point}'''
 
 INSTRUCTION_SCORE_ONLY_PROMPT_TAIL = '''
@@ -304,7 +304,7 @@ Evaluate the review based on the given definitions of the aspect(s) above. Outpu
 
 INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL = '''
 ###Instruction:
-Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score.
+Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale.
 ###Review Point:
 {review_point}'''
 

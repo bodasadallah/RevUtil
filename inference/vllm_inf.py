@@ -77,9 +77,9 @@ if __name__ == "__main__":
 
     llm = LLM(BASE_MODEL,
             enable_lora=enable_lora,
-            tensor_parallel_size = 1,
-            # tensor_parallel_size = args.tensor_parallel_size,
-            gpu_memory_utilization=0.95,
+            # tensor_parallel_size = 1,
+            tensor_parallel_size = args.tensor_parallel_size,
+            # gpu_memory_utilization=0.95,
             max_num_seqs=1)
 
     sampling_params = SamplingParams(
@@ -93,48 +93,49 @@ if __name__ == "__main__":
     label_dict = {}
     for config in configs:
         for split in splits:
-            
+
+            raw_outputs_name = os.path.join(save_dir, f'raw_outputs_{config}_{split}.jsonl') 
             print('Evaluating the model on', config, 'aspect and', split, 'split')
             print('*' * 20, 'loading the dataset', '*' * 20)
 
-            ### Load the data
-            raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
+            ### if the raw outputs file already exists, skip the evaluation
+            if  not os.path.exists(raw_outputs_name):
+                print('The raw outputs file already exists, skipping the predictions generation')
+                
 
-            #### Process the dataset to get the prompts
-            processed_data = []
-            for row in tqdm(raw_data):
-                prompt = get_prompt(row, aspect=config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
-                processed_data.append(prompt['text'])
+                ### Load the data
+                raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
 
+                #### Process the dataset to get the prompts
+                processed_data = []
+                for row in tqdm(raw_data):
+                    prompt = get_prompt(row, aspect=config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
+                    processed_data.append(prompt['text'])
 
-            print('Total number of prompts:', len(processed_data))
-            print('Example prompt:', processed_data[0])
-
-            if args.prompt_type == 'chat':
-                outputs = llm.chat(
-                messages=processed_data,
-                chat_template=DEFAULT_CHAT_TEMPLATE if model_name == 'scitulu-7b' else None,
-                sampling_params=sampling_params,
-                use_tqdm=True,
-                lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
-
-            else:
-                outputs = llm.generate(
-                   
-                    prompts=processed_data,
+                print('Total number of prompts:', len(processed_data))
+                print('Example prompt:', processed_data[0])
+                if args.prompt_type == 'chat':
+                    outputs = llm.chat(
+                    messages=processed_data,
+                    chat_template=DEFAULT_CHAT_TEMPLATE if model_name == 'scitulu-7b' else None,
                     sampling_params=sampling_params,
                     use_tqdm=True,
                     lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
+                else:
+                    outputs = llm.generate(
+                        prompts=processed_data,
+                        sampling_params=sampling_params,
+                        use_tqdm=True,
+                        lora_request= LoRARequest("my_adapter", 1, LORA_PATH) if enable_lora else None,)
+                with open(raw_outputs_name, 'w') as f:
+                    for output in outputs:
+                        generated_text = output.outputs[0].text
+                        # prompt = output.prompt
+                        # f.write(prompt + '\n')
+                        raw_pred = {'generated_text': generated_text}
+                        f.write(json.dumps(raw_pred) + '\n')
 
-
-            raw_outputs_name = os.path.join(save_dir, f'raw_outputs_{config}_{split}.jsonl') 
-            with open(raw_outputs_name, 'w') as f:
-                for output in outputs:
-                    generated_text = output.outputs[0].text
-                    # prompt = output.prompt
-                    # f.write(prompt + '\n')
-                    raw_pred = {'generated_text': generated_text}
-                    f.write(json.dumps(raw_pred) + '\n')
+                
 
             outputs = []
             with open(raw_outputs_name, 'r') as f:
