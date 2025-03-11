@@ -21,7 +21,7 @@ import random
 import string
 from transformers import GenerationConfig
 import torch
-
+import json
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
     "6158bb338b6122275bc191e3": ["TxZsPCly"],
@@ -96,8 +96,8 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
                 aspect_rationale_key = f'chatgpt_{aspect}_rationale'
 
                 # if the rationale has double quotes, escpae them
-                aspect_rationale = aspect_rationale.replace('"', '\"')
-                labels_dict[f"{aspect}_rationale"] = f"{aspect_rationale}"
+                # aspect_rationale = aspect_rationale.replace('"', '\\"')
+                labels_dict[f'{aspect}_rationale'] = aspect_rationale
               
             ## Add Score
             aspect_label = row[aspect_score_key]
@@ -106,7 +106,8 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
                 aspect_label = str(int(aspect_label))
             labels_dict[f'{aspect}_label'] = aspect_label
 
-
+        
+        labels_dict = json.dumps(labels_dict, indent=4)
 
 
 
