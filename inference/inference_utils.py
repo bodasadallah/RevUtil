@@ -38,7 +38,10 @@ def escape_inner_quotes(text):
     return text
 def extract_dict(text):
     text = text.replace("\n", " ")  # Remove newlines
-    text = text.replace("'", '"')  # Replace single quotes with double quotes
+    text = text.replace("\\'", "'")  # Fix incorrectly escaped single quotes
+    text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
+    text = text.replace("\\\\'", "\\\"")
+    text = text.replace("'", '"')
     text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
 
 

@@ -59,8 +59,8 @@ WRITE_PATH="evalute_outputs"
 # "Uni-SMART/SciLitLLM"
 
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME="allenai/scitulu-7b"
-GENERATION_TYPE="score_only"
+FULL_MODEL_NAME="Uni-SMART/SciLitLLM"
+GENERATION_TYPE="score_rationale"
 PROMPT_TYPE="instruction"
 STEP="843"
 FINETUNING_TYPE="adapters"
