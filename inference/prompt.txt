@@ -159,18 +159,14 @@ Aspect: helpfulness
 
 
 ###Instruction:
-Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale.
+Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
 ###Review Point:
-I think the author "should" provide more examples to "support" their argument.
+I think the author should provide more examples to support their argument.
 
 ###Output:
 {
-    "actionability_rationale": "The author should provide more examples \"to\" support their argument.",
     "actionability_label": "1",
-    "grounding_specificity_rationale": "The author should provide more examples to support their argument.",
     "grounding_specificity_label": "1",
-    "verifiability_rationale": "The author should provide more examples to support their argument.",
     "verifiability_label": "1",
-    "helpfulness_rationale": "The author should provide more examples to support their argument.",
     "helpfulness_label": "1"
 }

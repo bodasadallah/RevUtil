@@ -99,13 +99,13 @@ if __name__ == "__main__":
             print('Evaluating the model on', config, 'aspect and', split, 'split')
             print('*' * 20, 'loading the dataset', '*' * 20)
 
+            ### Load the data
+            raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
+
+
             ### if the raw outputs file already exists, skip the evaluation
             if  not os.path.exists(raw_outputs_name):
-                
-
-                ### Load the data
-                raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
-
+                print('The raw outputs file does not exist, generating the predictions')
                 #### Process the dataset to get the prompts
                 processed_data = []
                 for row in tqdm(raw_data):
@@ -156,23 +156,29 @@ if __name__ == "__main__":
                 label_dict[f'{config}_{split}'] = []    
                 aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if config == 'all' else [config]
                 for aspect in aspects:
+                    print('Extracting predictions for', aspect)
                     gold_data_name = args.gold_label_format.replace('ASPECT', aspect)
                     gold_data = raw_data[gold_data_name]
                     ## convert the gold data to string
                     gold_data = [str(g) for g in gold_data]
+                    print('Total number of gold labels:', len(gold_data))
                     preds = [p[f'{aspect}_label'] for p in predictions]
+                    print('Total number of predictions:', len(preds))
                     assert len(preds) == len(gold_data), 'The number of predictions and gold labels do not match'
 
                     label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, 'aspect': aspect})
 
                 predictions_name = os.path.join(save_dir, f'predictions_{config}_{split}.jsonl')
                 with open(predictions_name, 'w') as f:
+                    print('Saving the predictions to', predictions_name)
                     for prediction in predictions:
                         f.write(json.dumps(prediction) + "\n")
 
                 ### Get the stats
-            except:
+            except Exception as e:
                 print('Could not extract predictions, you need to do the evaluation manually')
+                print(e)
+                print(label_dict.keys())
 
 
     ######################### Save the results to a file #######################

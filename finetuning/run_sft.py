@@ -127,8 +127,9 @@ def main():
     # Load tokenizer
     ################
     tokenizer = get_tokenizer(model_args, data_args)
-    ### Set the chat template ###
-    tokenizer.chat_template = DEFAULT_CHAT_TEMPLATE
+    # Set chat template if not already set
+    if tokenizer.chat_template is None:
+        tokenizer.chat_template = DEFAULT_CHAT_TEMPLATE
 
     #######################
     # Load pretrained model
