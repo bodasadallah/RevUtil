@@ -1,0 +1,295 @@
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Vague'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'vague_label': '0'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1', 'explicit_implicit_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '2', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'explicit_label': '5', 'implicit_label': '1', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'completeness_label': '5', 'impact_label': '3', 'relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '2', 'vague_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'scale_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'clarity_label': '5', 'detail_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Concrete'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'completeness_label': '5', 'impact_label': '3', 'relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Vague'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '2', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '5', 'clarity_label': '5', 'completeness_label': '5', 'impact_label': '4', 'relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'method_label': '1', 'pattern_label': '1', 'clarity_label': '1', 'detail_label': '1', 'grammar_label': '1', 'spelling_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2', 'concrete_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'specificity_label': '3', ' relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'vague_label': '1', 'explicit_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '3', 'complexity_label': '1', 'clarity_label': '3', 'detail_label': '3', 'grammar_label': '1', 'relevance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'clarity_label': '5', 'detail_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'scale_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'detail_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2', 'concrete_label': '2', 'vague_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '2', 'vague_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '2', 'vague_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'scale_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5', 'explicit_label': '5', 'implicit_label': '1', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'clarity_label': '5', 'detail_label': '5', 'duplicate_label': '0', 'english_label': '5', 'method_label': '3', 'motivation_label': '5', 'relevance_label': '5', 'structure_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5', 'concrete_label': '3', 'explicit_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'explicit_label': '3', 'concrete_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'explicit_label': '3', 'implicit_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '3', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'scientific_rigor_label': '3', 'clarity_label': '3', 'completeness_label': '3', 'grammar_label': '3', 'valuation_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'scalar_value': 5}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Vague'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '3', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'completeness_label': '5', 'impact_label': '3', 'relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Concrete'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Explicit', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Explicit'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Concrete'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'explicit_label': '5', 'implicit_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'clarity_label': '5', 'completeness_label': '5', 'impact_label': '3', 'relevance_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'explicit_implicit_label': 'Implicit'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'explicit_label': '5'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '4', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '4', 'importance_label': '4'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'method_label': '1', 'impact_label': '1', 'quality_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'vague_label': '1', 'concrete_label': '5'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Concrete'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '1', 'importance_label': '1', 'explicit_label': '1', 'implicit_label': '1', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2', 'concrete_label': '1', 'vague_label': '1'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'concrete_label': '5', 'vague_label': '5'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2', 'explicit_implicit_label': 'Explicit', 'concrete_vague_label': 'Vague'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '3', 'concrete_label': '3', 'vague_label': '3'}"}
+{"generated_text": "{'actionability_label': '5', 'importance_label': '5', 'other_labels': {'score': 5}}"}
+{"generated_text": "{'actionability_label': '2', 'importance_label': '2'}"}
+{"generated_text": "{'actionability_label': '3', 'importance_label': '5', 'concrete_label': '3', 'explicit_label': '5'}"}

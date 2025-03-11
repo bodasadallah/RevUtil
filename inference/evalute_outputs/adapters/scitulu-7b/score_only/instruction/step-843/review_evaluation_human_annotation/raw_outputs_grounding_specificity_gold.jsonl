@@ -1,0 +1,402 @@
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Important', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Important', 'importance_scale': 'Important'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.', 'grounding_specificity_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 4}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': ''}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'grounding_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_text': 'The comment explicitly mentions which part of the paper it addresses (Table 1) and it is obvious to the authors. The comment specifies what needs to be addressed in this part (rename column).'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'general_comment_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': '3', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': 'The comment explicitly mentions which part of the paper it addresses.', 'specificity_label': '3', 'specificity_detail_label': 'The comment clearly specifies what needs to be addressed in this part.', 'importance_label': '5', 'importance_detail_label': 'It\\u0027s more important for the comment to be grounded than to be specific.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale_int': '5', 'grounding_specificity_scale_ext': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.', 'importance_label': '5', 'importance_scale_int': '5', 'importance_scale_ext': 'It\\u0027s more important for the comment to be grounded than to be specific.', 'will_improve_label': 'Yes', 'will_improve_scale_int': '1', 'will_improve_scale_ext': 'Will this review point help authors improve their draft?'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3, 'relevance_label': '5', 'relevance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '1', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '5', 'grounding_relevance_label': '5', 'specificity_label': '1', 'specificity_detail_label': '1', 'specificity_relevance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3, 'overall_label': '3', 'overall_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': '3', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '3', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'grounding_general_label': '3', 'grounding_general_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_clarity_label': '5', 'specificity_label': '3', 'specific_detail_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '2', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_clarity_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'grounding_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale_label': '1', 'grounding_specificity_message': 'Not Grounded'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_detail_label': '5', 'grounding_relevance_label': '5', 'specificity_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': 'High'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'grounding_specificity_message': 'The comment is weakly grounded and specific. The comment is grounded in the general sense, but it is not clear which specific part of the paper it is referring to.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'grounding_specificity_reasons': ['The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.']}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Grounding Specificity', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': ''}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': '5', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 3, 'quality_label': 'Medium', 'quality_score': 4}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '4', 'general_specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'general_comment_label': '1', 'specific_issue_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 3, 'quality_label': 'Medium', 'quality_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '4', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_detail_label': '1', 'grounding_ground_label': '1', 'specificity_label': '1', 'specificity_detail_label': '1', 'specificity_examples_label': '0'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': '5', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_general_label': '1', 'grounding_general_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Weakly Grounded and Specific'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_text': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': '3', 'grounding_specificity_reasons': 'The comment does not explicitly mention which part of the paper it addresses. However, it should be obvious to the authors.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': '5', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Important', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': '5', 'importance_label': '1', 'importance_score': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '2', 'grounding_specificity_scale': '3', 'grounding_general_label': '3', 'grounding_general_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': '5', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_detail_label': '5', 'grounding_clarity_label': '5', 'specificity_label': '4', 'specificity_detail_label': '3', 'example_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_general_label': '1', 'grounding_general_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'grounding_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'importance_label': '3', 'grounding_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_reasoning': 'The comment does not explicitly mention which part of the paper it addresses.'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Important', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'grounding_general_label': '3', 'grounding_general_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'scientific_insight_label': '3', 'emergent_behavior_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': 'Mandatory', 'importance_score': 4}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'grounding_specificity_message': 'The comment is weakly grounded and specific.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_detail_label': '5', 'grounding_clarity_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Not Applicable', 'importance_scale': ''}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_general_label': '1', 'grounding_general_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 2}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'general_evaluation_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Not Important'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3, 'quality_label': '5', 'quality_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale_int': '3', 'grounding_specificity_scale_ext': ''}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_general_label': '1', 'grounding_general_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_clarity_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Important'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': 5, 'importance_label': '5', 'importance_score': 5}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_reason': 'The comment does not mention any specific part of the paper.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3, 'quality_label': '3', 'quality_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 4}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Important', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1, 'grounding_specificity_reasons': ['The comment does not explicitly mention which part of the paper it addresses.']}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Not Important'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'importance_label': '3', 'grounding_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'importance_label': '3', 'grounding_detail_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'grounding_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_specificity_message': 'Not Grounded'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'importance_label': '3', 'grounding_detail_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_relevance_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'grounding_general_label': '1', 'grounding_general_scale': '1', 'general_feedback_label': '1', 'general_feedback_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '1', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '1', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'grounding_specificity_message': 'The comment does not explicitly mention which part of the paper it addresses.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_relevance_label': '5', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'grounding_general_label': '5', 'grounding_general_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': ''}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'importance_label': '3', 'grounding_label': '3', 'specificity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_score': '5', 'importance_label': '5', 'importance_score': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'importance_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': '3', 'importance_label': '3', 'importance_score': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'importance_label': '5', 'grounding_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_definition_label': 'Fully Grounded and Specific', 'grounding_specificity_key': 'grounding_specificity'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_detail_label': '5', 'grounding_relevance_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '1', 'importance_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'importance_label': 'Important', 'importance_scale': 'Important'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': '5', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses (Section 5), and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_context_label': '3', 'specificity_label': '3', 'specificity_detail_label': '3', 'specificity_context_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'High', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': 'Fully Grounded and Under-Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, or it should be obvious to the authors. However, this comment does not specify what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3, 'motivation_label': '1', 'motivation_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'importance_label': 'Not Applicable', 'importance_scale': 'Not Applicable'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_clarity_label': '3', 'specificity_label': '3', 'specific_detail_label': '2', 'specific_clarity_label': '2'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'importance_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': 'High', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_score': 3, 'importance_label': '3', 'importance_score': 3}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '3', 'specificity_label': '3', 'importance_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_general_label': '5', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '5', 'importance_scale': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_specificity_scale': 'Fully Grounded and Specific', 'grounding_specificity_message': 'The comment explicitly mentions which part of the paper it addresses, and it is obvious to the authors. The comment specifies what needs to be addressed in this part.'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_general_label': '1', 'specificity_label': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_relevance_label': '5', 'specificity_label': '3', 'importance_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_detail_label': '3', 'grounding_relevance_label': '3', 'specificity_label': '1', 'specificity_detail_label': '1', 'specificity_relevance_label': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_scale': '1', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_detail_label': '5', 'specificity_label': '5'}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '4'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '3', 'importance_scale': '3'}"}
+{"generated_text": "{'grounding_specificity_label': '3', 'grounding_specificity_scale': '3', 'importance_label': '1', 'importance_scale': '1'}"}
+{"generated_text": "{'grounding_specificity_label': '1', 'grounding_specificity_score': 1, 'importance_label': '1', 'importance_score': 1}"}
+{"generated_text": "{'grounding_specificity_label': '5', 'grounding_general_label': '5', 'specificity_label': '3'}"}

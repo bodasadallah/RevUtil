@@ -1,0 +1,133 @@
+{"generated_text": "{'aspect_name': 'verifiability', 'score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3, 'other_labels': ['presentation'], 'other_scores': {'presentation': 5}}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_rating': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'subjectivity_label': '1', 'quality_label': '5', 'relevance_label': '5'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'other_labels': {'suggestions_label': '1', 'criticism_label': '1', 'clarifications_label': '1'}}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_rating': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '5', 'other_labels': ['X']}"}
+{"generated_text": "{'Aspect Score': '4', 'Verifiability Score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'aspect_name': 'verifiability', 'justification': 'The review comment contains a claim.', 'score_verifiability': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '5'}"}
+{"generated_text": "{'Aspect Score': '4', 'Verifiability Score': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 5}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'category_id_1': '1', 'category_id_2': '1', 'verifiability_reason_code': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '1', 'other_labels': ['other'], 'other_scores': {'other': '1'}}"}
+{"generated_text": "{'Aspect Score': {'verifiability': 4}}"}
+{"generated_text": "{'verifiability_label': '3', 'other_labels': {'question_for_authors': ''}}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3, 'other_labels': {'other_comments': \"The comment is well-supported but has minor gaps in explanation or references.\"}}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'subjectivity_label': '1', 'methodology_label': '1', 'quality_label': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '5', 'other_labels': ['normal_statement'], 'other_scores': {'normal_statement': '5'}}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': '1', 'technicality_label': '1', 'contribution_label': '1', 'grammar_label': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_value': '3', 'subjectivity_label': '1', 'subjectivity_scale_value': '1', 'methodology_label': '1', 'methodology_scale_value': '1', 'quality_label': '1', 'quality_scale_value': '1'}"}
+{"generated_text": "{'over-parametrization': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '2', 'helpful_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3', 'other_labels': ['X'], 'other_scale_labels': []}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '5', 'opinion_label': 'X', 'opinion_score': '3', 'suggestion_label': '3', 'suggestion_score': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '1', 'complexity_label': '1', 'complexity_score': '1'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale_label': '1'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'failure_cases_and_related_discussion': 5}"}
+{"generated_text": "{'Aspect Score': '4', 'Verifiability': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_scale_label': '2', 'other_labels': ['advice'], 'other_scale_labels': []}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_score': '5'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'other_labels': {'normal_statements': ['The authors discuss how certain methods are significantly different from others, yet no significance testing is done to support these claims. For example, in line 486 the authors write \\u201cThe conversational ability of ChatGPT and GPT-4 significantly boosts translation quality and discourse awareness\\u201d -- the difference between zh->en ChatGPT (17.4 d-BLEU; 2.8/2.9 humeval) and GPT-4 (18.8 d-BLEU; 2.6/2.8 humeval) and the scores for FeedME-2 (16.1 d-BLEU; 2.2/2.3 humeval) and PPO (17.2 d-BLEU; 2.6/2.7 humeval) is minimal and it\\u0027s hard to say whether it is significant without proper testing (including checking the distribution and accounting for multiple comparisons).']}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale_label': '1'}"}
+{"generated_text": "{'aspect_name': 'verifiability', 'justification': '', 'scale': '3', 'label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'other_labels': {'duplicate': '3', 'method_missing': '3', 'method_not_implemented': '3', 'implementation_problems': '3', 'unclear_due_to_missing_implementations': '3'}}"}
+{"generated_text": "{'verifiability_label': '2', 'helpful_label': '3', 'clarity_label': '3', 'specificity_label': '3', 'relevance_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'method_label': '2', 'quality_label': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': None}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_scale_rating': '5'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_rating': '3'}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_scale_value': '5'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'Aspect Score': 2, 'Verifiability Score': 3}"}
+{"generated_text": "{'total_complexity_emerging_convolutions': 1}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_score': '5'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_score': '1', 'other_labels': ['other'], 'other_scores': {'other': '2'}}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 5}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'subjectivity_label': 'X', 'technical_label': '3', 'relevance_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3', 'other_labels': ['subjective_opinion'], 'other_scores': {'subjective_opinion': '1'}}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_score': '5', 'other_scores': {'polarity': '0', 'clarity': '5', 'relevance': '5'}}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_scale': '1'}"}
+{"generated_text": "{'Aspect Score': 3, 'Verifiability Score': 3}"}
+{"generated_text": "{'Originality Concerns': 4}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '5', 'claim_label': 'X', 'claim_score': '5'}"}
+{"generated_text": "{'verifiability_label': '2', 'other_labels': {'duplicate': '1', 'grammar': '2', 'clarity': '3', 'relevance': '3', 'specificity': '3', 'content': '3'}}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'Aspect': 'verifiability', 'Score': '3'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale': '1'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '5'}"}
+{"generated_text": "{'aspect_name': 'verifiability', 'justification': '', 'label': '3', 'weightage': 1}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': '1', 'other_labels': ['normal statement'], 'other_scores': {'normal statement': '1'}}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_scale_label': '2', 'subjectivity_label': '1', 'subjectivity_scale_label': '1', 'evaluation_label': '3'}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_scale_label': '2', 'subjectivity_label': '1', 'subjectivity_scale_label': '1'}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale_label': '1'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3', 'other_labels': ['comment'], 'other_scores': {'normal_statements': 'X'}}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_rating': '3'}"}
+{"generated_text": "{'aspect_name': 'verifiability', 'justification': 'The comment contains a claim without any supporting evidence or justification.', 'score': 1}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': None}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_label': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_scale_rating': '3'}"}
+{"generated_text": "{'verifiability_label': '3', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_score': '5', 'other_labels': ['other'], 'other_scores': {'other': '1'}}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '1', 'verifiability_scale_rating': '1'}"}
+{"generated_text": "{'Aspect': 'verifiability', 'Score': 3}"}
+{"generated_text": "{'Aspect Score': '3', 'Verifiability Score': '3'}"}
+{"generated_text": "{'verifiability_label': '5', 'verifiability_score': '3'}"}
+{"generated_text": "{'verifiability_label': 'X', 'verifiability_score': 3}"}
+{"generated_text": "{'verifiability_label': '2', 'verifiability_score': '3'}"}
+{"generated_text": "{'aspect_name': 'verifiability', 'scale_value': '3', 'label': 'borderline verifiable'}"}

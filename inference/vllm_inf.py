@@ -109,11 +109,13 @@ if __name__ == "__main__":
                 #### Process the dataset to get the prompts
                 processed_data = []
                 for row in tqdm(raw_data):
-                    prompt = get_prompt(row, aspect=config,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
+                    prompt = get_prompt(row, aspect=args.training_aspects,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
                     processed_data.append(prompt['text'])
 
                 print('Total number of prompts:', len(processed_data))
                 print('Example prompt:', processed_data[0])
+
+
                 if args.prompt_type == 'chat':
                     outputs = llm.chat(
                     messages=processed_data,
@@ -180,9 +182,9 @@ if __name__ == "__main__":
                 print(e)
                 print(label_dict.keys())
 
-
+    configs_name= '_'.join(configs)
     ######################### Save the results to a file #######################
-    results_file_name = os.path.join(save_dir, f'results_{config}_{split}.txt')
+    results_file_name = os.path.join(save_dir, f'results_{configs_name}_{split}.txt')
     with open(results_file_name, 'w') as f:
         ########## Get stats for all items in the dict
         for key in label_dict:
