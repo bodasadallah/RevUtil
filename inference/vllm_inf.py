@@ -79,7 +79,7 @@ if __name__ == "__main__":
             enable_lora=enable_lora,
             # tensor_parallel_size = 1,
             tensor_parallel_size = args.tensor_parallel_size,
-            gpu_memory_utilization=0.90,
+            gpu_memory_utilization=0.95,
             max_num_seqs=args.max_num_seqs,
             )
 
