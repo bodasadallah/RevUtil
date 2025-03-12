@@ -47,7 +47,7 @@ if __name__ == "__main__":
         enable_lora = True
         LORA_PATH = checkpoint_path
         print('*' * 20,'Loading a model with adapters', '*' * 20)
-    elif args.finetuning_type == 'base':
+    elif args.finetuning_type == 'baseline':
         print('*' * 20,'Loading the base model', '*' * 20)
 
     dataset_name = args.dataset_name.split('/')[-1]
@@ -79,7 +79,7 @@ if __name__ == "__main__":
             enable_lora=enable_lora,
             # tensor_parallel_size = 1,
             tensor_parallel_size = args.tensor_parallel_size,
-            # gpu_memory_utilization=0.95,
+            gpu_memory_utilization=0.90,
             # max_num_seqs=1
             )
 
@@ -109,7 +109,13 @@ if __name__ == "__main__":
                 #### Process the dataset to get the prompts
                 processed_data = []
                 for row in tqdm(raw_data):
-                    prompt = get_prompt(row, aspect=args.training_aspects,task='evaluation',generation_type=args.generation_type, prompt_type=args.prompt_type)
+                    prompt = get_prompt(row, 
+                                        aspect=args.training_aspects,
+                                        task='evaluation',
+                                        generation_type=args.generation_type, 
+                                        prompt_type=args.prompt_type,
+                                        finetuning_type=args.finetuning_type)
+                    
                     processed_data.append(prompt['text'])
 
                 print('Total number of prompts:', len(processed_data))
@@ -132,8 +138,6 @@ if __name__ == "__main__":
                 with open(raw_outputs_name, 'w') as f:
                     for output in outputs:
                         generated_text = output.outputs[0].text
-                        # prompt = output.prompt
-                        # f.write(prompt + '\n')
                         raw_pred = {'generated_text': generated_text}
                         f.write(json.dumps(raw_pred) + '\n')
 

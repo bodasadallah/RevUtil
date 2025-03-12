@@ -160,6 +160,7 @@ Aspect: helpfulness
 
 ###Instruction:
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
+
 ###Review Point:
 I think the author should provide more examples to support their argument.
 

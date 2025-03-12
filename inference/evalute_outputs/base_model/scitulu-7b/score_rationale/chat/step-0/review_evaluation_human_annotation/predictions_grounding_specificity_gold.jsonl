@@ -1,0 +1,402 @@
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "5", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2: Borderline Grounded", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "Helpful"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "2  2", "helpfulness_label": "1  1"}
+{"actionability_label": "5", "grounding_specificity_label": "None", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "Somewhat Grounded, Somewhat Specific", "verifiability_label": "Not Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "2  2", "helpfulness_label": "3  2"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "3", "helpfulness_label": "5"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "None", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "X", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounding Specificity", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Weakly Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "Weak Grounding", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1: Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "3", "helpfulness_label": "4"}
+{"actionability_label": "5", "grounding_specificity_label": "None", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "1", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "X", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "4", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "5", "grounding_specificity_label": "None", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "Somewhat Grounded and Specific", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounding Specific", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "Not Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "3: Somewhat Grounded and Not Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounded and Specific", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "Actionable", "grounding_specificity_label": "Grounded but Not Specific", "verifiability_label": "Partially Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "Not Actionable", "grounding_specificity_label": "1", "verifiability_label": "Not Verifiable", "helpfulness_label": "Not Helpful"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "Helpful"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "Not Actionable", "grounding_specificity_label": "1", "verifiability_label": "Not Verifiable", "helpfulness_label": "Not Helpful"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Subjective Opinion", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "2"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "None", "verifiability_label": "X", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "Actionable", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiability 3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "Not Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "5", "grounding_specificity_label": "4", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "2  2", "helpfulness_label": "1  1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "None", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "Somewhat Grounded", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "X", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "Helpful"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "Implicit", "grounding_specificity_label": "2", "verifiability_label": "X", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "X", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2: Weakly Grounded", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5: Highly Grounded and Specific", "verifiability_label": "3", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "1", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "Implicit", "grounding_specificity_label": "Somewhat", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "X", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "4", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "1 (1)", "grounding_specificity_label": "2 (2)", "verifiability_label": "1 (1)", "helpfulness_label": "1 (1)"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Subjective Opinion", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "Weak Grounding", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "2  2", "helpfulness_label": "1  1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "2  2", "grounding_specificity_label": "2  2", "verifiability_label": "2  2", "helpfulness_label": "1  1"}
+{"actionability_label": "5", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "Moderately Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "Grounded and Specific", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounding Specific", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "Implicitly Actionable", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded, Somewhat Specific", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "Weak Grounding", "verifiability_label": "2  2", "helpfulness_label": "2  2"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounding Specific", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "X", "helpfulness_label": "2"}
+{"actionability_label": "5", "grounding_specificity_label": "None", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "4", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "5", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "None", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded and Not Specific", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "Somewhat Grounded and Not Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounded and Specific", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Weakly Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "4", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "4", "helpfulness_label": "5"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Not Verifiable", "helpfulness_label": "5"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "Implicit", "grounding_specificity_label": "Weak Grounding", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Highly Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Weakly Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2: Borderline Grounded and Not Specific", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2: Borderline Grounded and Specific", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiability", "helpfulness_label": "Helpfulness"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "X", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Subjective Opinion", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": null, "grounding_specificity_label": null, "verifiability_label": null, "helpfulness_label": null}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "5", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "Weakly Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "5", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "2"}
+{"actionability_label": "2", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "3", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "1", "grounding_specificity_label": "1", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "Helpful"}
+{"actionability_label": "3", "grounding_specificity_label": "Grounded Specific", "verifiability_label": "Verifiable", "helpfulness_label": "Helpful"}
+{"actionability_label": "2", "grounding_specificity_label": "Somewhat Grounded and Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "3", "helpfulness_label": "5"}
+{"actionability_label": "5", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "4"}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded, Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "4", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded and Not Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded, Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "3: Somewhat Grounded, Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "1"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "3  Weakly Verifiable", "helpfulness_label": "1  1"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "5", "verifiability_label": "Verifiable", "helpfulness_label": "5"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "5", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "X", "helpfulness_label": "2"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "Weakly Grounded and Somewhat Specific", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "3"}
+{"actionability_label": "1", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "1", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "3: Somewhat Grounded", "verifiability_label": "3", "helpfulness_label": "3"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "Verifiable", "helpfulness_label": "2"}
+{"actionability_label": "1  1", "grounding_specificity_label": "2  2", "verifiability_label": "1  1", "helpfulness_label": "1  1"}
+{"actionability_label": "2", "grounding_specificity_label": "3", "verifiability_label": "5", "helpfulness_label": "1"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "2", "verifiability_label": "2", "helpfulness_label": "1"}
+{"actionability_label": "3", "grounding_specificity_label": "5", "verifiability_label": "5", "helpfulness_label": "5"}
+{"actionability_label": "2", "grounding_specificity_label": "2", "verifiability_label": "Not Verifiable", "helpfulness_label": "1"}
+{"actionability_label": "Explicit", "grounding_specificity_label": "Full", "verifiability_label": "Verifiable", "helpfulness_label": "5"}

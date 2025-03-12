@@ -71,7 +71,7 @@ annotators_unique_id_batch_id_map_inv ={
 
 
 ## Create a prompt for each row in the dataset
-def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat'):
+def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat', finetuning_type='adapters'):
     aspects = [ 'actionability', 'grounding_specificity', 'verifiability', 'helpfulness']
     review_point = row['review_point']
 
@@ -110,6 +110,8 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         labels_dict = json.dumps(labels_dict, indent=4)
 
 
+    # if finetuning_type == 'baseline':
+    #     assert prompt_type == 'chat', 'Baseline model only supports chat prompt type'
 
     if prompt_type == 'chat':
         prompt = []
@@ -124,11 +126,27 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
         prompt.append({'role': 'system', 'content': SYSTEM_CONTENT})
 
         ################### USER CONTENT ###################
-        if generation_type == 'score_only':
-            USER_CONTENT = SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+        if finetuning_type != 'baseline':
+            if generation_type == 'score_only':
+                USER_CONTENT = SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+            else:
+                USER_CONTENT = SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
         else:
-            USER_CONTENT = SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+            if generation_type == 'score_only':
+                USER_CONTENT = BASE_MODEL_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+            else:
+                USER_CONTENT = BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
+
+
+
+
         prompt.append({'role': 'user', 'content': USER_CONTENT})
+
+
+
+
 
         ################### LABEL CONTENT ###################
         if task == 'train':
@@ -150,10 +168,20 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
 
 {aspect_definitions}
 '''
-        if generation_type == 'score_only':
-            prompt += INSTRUCTION_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+        
+        ################### USER CONTENT ###################
+        if finetuning_type != 'baseline':
+            if generation_type == 'score_only':
+                prompt += INSTRUCTION_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+            else:
+                prompt += INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
         else:
-            prompt += INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+            if generation_type == 'score_only':
+                prompt += INSTRUCTION_BASE_MODEL_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point)
+            else:
+                prompt += INSTRUCTION_BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
 
         prompt += '''\n\n###Output:\n'''
         

@@ -13,6 +13,12 @@ def get_args():
 def add_args(parser: argparse.ArgumentParser):
 
     parser.add_argument(
+    "--max_num_seqs",
+    type=int,
+    default=1,
+    help="",)
+
+    parser.add_argument(
     "--training_aspects",
     type=str,
     default="all",

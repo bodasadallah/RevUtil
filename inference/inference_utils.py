@@ -17,6 +17,54 @@ import json
 
 known_keys = ['actionability_rationale', 'actionability_label', 'grounding_specificity_rationale' 'grounding_specificity_label', 'verifiability_rationale', 'verifiability_label', 'helpfulness_rationale', 'helpfulness_label']
 
+
+def replace_category_names(text):
+    category_mapping = {
+        "1: Unverifiable": 1,
+        "2: Borderline Verifiable": 2,
+        "3: Somewhat Verifiable": 3,
+        "4: Mostly Verifiable": 4,
+        "5: Fully Verifiable": 5,
+        "X: No Claim": "X",
+
+        "1: Unactionable": 1,
+        "2: Borderline Actionable": 2,
+        "3: Somewhat Actionable": 3,
+        "4: Mostly Actionable": 4,
+        "5: Highly Actionable": 5,
+
+        "1: Not Grounded": 1,
+        "2: Weakly Grounded and Not Specific": 2,
+        "3: Weakly Grounded and Specific": 3,
+        "4: Fully Grounded and Under-Specific": 4,
+        "5: Fully Grounded and Specific": 5,
+
+        "1: Not Helpful at All": 1,
+        "2: Barely Helpful": 2,
+        "3: Somewhat Helpful": 3,
+        "4: Mostly Helpful": 4,
+        "5: Highly Helpful": 5
+    }
+
+    # Normalize dictionary for case-insensitive matching
+    category_mapping_lower = {k.lower(): v for k, v in category_mapping.items()}
+    partial_mapping_lower = {k.split(": ", 1)[-1].lower(): v for k, v in category_mapping.items()}
+
+    def replace_match(match):
+        matched_text = match.group(0).lower()  # Normalize case
+        return str(category_mapping_lower.get(matched_text, partial_mapping_lower.get(matched_text, match.group(0))))
+
+    # Replace full matches first (case-insensitive)
+    pattern = re.compile(r'\b(?:' + '|'.join(map(re.escape, category_mapping_lower.keys())) + r')\b', re.IGNORECASE)
+    text = pattern.sub(replace_match, text)
+
+    # Replace partial matches (case-insensitive)
+    pattern_partial = re.compile(r'\b(?:' + '|'.join(map(re.escape, partial_mapping_lower.keys())) + r')\b', re.IGNORECASE)
+    text = pattern_partial.sub(replace_match, text)
+
+    return text
+
+
 def escape_inner_quotes(text):
     """Finds specified rationale fields and escapes only internal double quotes."""
     fields = [
@@ -37,12 +85,33 @@ def escape_inner_quotes(text):
     
     return text
 def extract_dict(text):
+
+    # text = text.replace("\n", " ")  # Remove newlines
+    # text = text.replace("\\'", "'")  # Fix incorrectly escaped single quotes
+    # text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
+    # text = text.replace("\\\\'", "\\\"")
+    # text = text.replace("'", '"')
+
+    text = replace_category_names(text)  # Replace category names with numbers
+    ## remove double spaces
+    text = re.sub(' +', ' ', text)
+    ## remove ``` from the text
+    text = text.replace('```', '')
+    text = text.replace("-", "")  # Remove leading hyphens
     text = text.replace("\n", " ")  # Remove newlines
     text = text.replace("\\'", "'")  # Fix incorrectly escaped single quotes
     text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
     text = text.replace("\\\\'", "\\\"")
-    text = text.replace("'", '"')
+    text = text.replace("'", '"')  # Replace single quotes with double quotes
+    ## if text begin with comma or space, remove it
+    if text[0] == ',' or text[0] == ' ':
+        text = text[1:]
+    ## if the text doesn't begin with {, then add it
+    if text[0] != '{':
+        text = '{' + text + '}'
+
     text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
+
 
 
     match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block

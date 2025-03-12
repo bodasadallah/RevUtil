@@ -292,19 +292,94 @@ PROMPT_HEADER = '''You are an expert in evaluating peer review comments with res
 SCORE_ONLY_PROMPT_TAIL = '''
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
 Review Point: {review_point}'''
+
 SCORE_AND_RATIONALE_PROMPT_TAIL = '''
-Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale.
+Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale. 
 Review Point: {review_point}'''
+
+
+BASE_MODEL_SCORE_ONLY_PROMPT_TAIL = '''
+Evaluate the review based on the given definitions of the aspect(s) above. Output only the score. The possbile values for scores are 1-5 and X.
+
+Generate the output in JSON format with the following format:
+
+   "actionability_label": "",
+   "grounding_specificity_label": "",
+   "verifiability_label": "",
+   "helpfulness_label": ""
+
+
+Review Point: {review_point}'''
+
+BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL ='''
+Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale. The possbile values for scores are 1-5 and X.
+
+Generate the output in JSON format with the following format:
+
+   "actionability_rationale": "",
+   "actionability_label": "",
+   "grounding_specificity_rationale": "",
+   "grounding_specificity_label": "",
+   "verifiability_rationale": "",
+   "verifiability_label": "",
+   "helpfulness_rationale": "",
+   "helpfulness_label": ""
+
+
+Review Point: {review_point}'''
+
+
+INSTRUCTION_BASE_MODEL_SCORE_ONLY_PROMPT_TAIL = '''
+###Instruction:
+Evaluate the review based on the given definitions of the aspect(s) above. Output only the score. The possbile values for scores are 1-5 and X. 
+
+Generate the output in JSON format with the following format:
+
+   "actionability_label": "",
+   "grounding_specificity_label": "",
+   "verifiability_label": "",
+   "helpfulness_label": ""
+
+
+###Review Point:
+{review_point}'''
+
+INSTRUCTION_BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL ='''
+###Instruction:
+Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale. The possbile values for scores are 1-5 and X.
+
+Generate the output in JSON format with the following format:
+
+   "actionability_rationale": "",
+   "actionability_label": "",
+   "grounding_specificity_rationale": "",
+   "grounding_specificity_label": "",
+   "verifiability_rationale": "",
+   "verifiability_label": "",
+   "helpfulness_rationale": "",
+   "helpfulness_label": ""
+
+
+###Review Point:
+{review_point}'''
+
+
+
+
+
+
 
 INSTRUCTION_SCORE_ONLY_PROMPT_TAIL = '''
 ###Instruction:
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
+
 ###Review Point:
 {review_point}'''
 
 INSTRUCTION_SCORE_AND_RATIONALE_PROMPT_TAIL = '''
 ###Instruction:
 Evaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale.
+
 ###Review Point:
 {review_point}'''
 
