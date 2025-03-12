@@ -80,7 +80,7 @@ if __name__ == "__main__":
             # tensor_parallel_size = 1,
             tensor_parallel_size = args.tensor_parallel_size,
             gpu_memory_utilization=0.90,
-            # max_num_seqs=1
+            max_num_seqs=args.max_num_seqs,
             )
 
     sampling_params = SamplingParams(
