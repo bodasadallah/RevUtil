@@ -40,7 +40,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     export HF_HOME=$PARENT_PATH/huggingface
 else
     CHECKPOINT_PARENT_PATH="/l/users/abdelrahman.sadallah/review_evaluation"
-    export CUDA_VISIBLE_DEVICES=1
+    export CUDA_VISIBLE_DEVICES=0,1
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 fi
@@ -66,7 +66,7 @@ GENERATION_TYPE="score_rationale"
 PROMPT_TYPE="instruction"
 STEP="843"
 FINETUNING_TYPE="adapters"
-MAX_NUM_SEQS=1
+MAX_NUM_SEQS=8
 
 ####### DATA CONFIG ########
 DATASET_NAME="boda/review_evaluation_automatic_labels"
