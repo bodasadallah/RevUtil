@@ -61,12 +61,12 @@ WRITE_PATH="evalute_outputs"
 # "score_only"
 # "score_rationale"
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME="Uni-SMART/SciLitLLM"
+FULL_MODEL_NAME=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 GENERATION_TYPE="score_rationale"
-PROMPT_TYPE="instruction"
-STEP="843"
-FINETUNING_TYPE="adapters"
-MAX_NUM_SEQS=8
+PROMPT_TYPE="chat"
+STEP="0"
+FINETUNING_TYPE="baseline"
+MAX_NUM_SEQS=32
 
 ####### DATA CONFIG ########
 DATASET_NAME="boda/review_evaluation_automatic_labels"
@@ -74,10 +74,10 @@ DATASET_SPLIT="test"
 ASPECT="all"
 TRAINING_aspects="all"
 
-# DATASET_NAME="boda/review_evaluation_human_annotation"
-# DATASET_SPLIT="gold"
-# TRAINING_aspects="all"
-# ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+DATASET_NAME="boda/review_evaluation_human_annotation"
+DATASET_SPLIT="gold"
+TRAINING_aspects="all"
+ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
 
 
 

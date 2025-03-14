@@ -1,0 +1,37 @@
+********************actionability********************
+f1: 0.0
+kappa: nan
+kappa_linear: nan
+kappa_quadratic: nan
+spearman: nan
+original_len: 1000
+filtered_len: 0
+--------------------------------------------------
+********************grounding_specificity********************
+f1: 0.0
+kappa: nan
+kappa_linear: nan
+kappa_quadratic: nan
+spearman: nan
+original_len: 1000
+filtered_len: 0
+--------------------------------------------------
+********************verifiability********************
+f1: 0.0
+kappa: nan
+kappa_linear: nan
+kappa_quadratic: nan
+spearman: nan
+f1_X: 0.0
+original_len: 1000
+filtered_len: 0
+--------------------------------------------------
+********************helpfulness********************
+f1: 0.0
+kappa: nan
+kappa_linear: nan
+kappa_quadratic: nan
+spearman: nan
+original_len: 1000
+filtered_len: 0
+--------------------------------------------------

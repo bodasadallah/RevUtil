@@ -86,45 +86,43 @@ def escape_inner_quotes(text):
     return text
 def extract_dict(text):
 
-    # text = text.replace("\n", " ")  # Remove newlines
-    # text = text.replace("\\'", "'")  # Fix incorrectly escaped single quotes
-    # text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
-    # text = text.replace("\\\\'", "\\\"")
-    # text = text.replace("'", '"')
-
     text = replace_category_names(text)  # Replace category names with numbers
     ## remove double spaces
     text = re.sub(' +', ' ', text)
     ## remove ``` from the text
-    text = text.replace('```', '')
+    # text = text.replace('```', '')
     text = text.replace("-", "")  # Remove leading hyphens
     text = text.replace("\n", " ")  # Remove newlines
     text = text.replace("\\'", "'")  # Fix incorrectly escaped single quotes
     text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
     text = text.replace("\\\\'", "\\\"")
+    text = text.replace("\\\\", "\\")
     text = text.replace("'", '"')  # Replace single quotes with double quotes
     ## if text begin with comma or space, remove it
     if text[0] == ',' or text[0] == ' ':
         text = text[1:]
-    ## if the text doesn't begin with {, then add it
-    if text[0] != '{':
-        text = '{' + text + '}'
-
+    # ## if the text doesn't begin with {, then add it
+    # if text[0] != '{':
+    #     text = '{' + text + '}'
     text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
-
-
-
-    match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
-    if match:
-        dict_str = match.group()  # Get extracted dictionary string
-        
-        try:
-            return json.loads(dict_str)  # Convert to Python dictionary safely
-        except json.JSONDecodeError as e:
-            print(f"Parsing error: {e}\nProblematic string: {dict_str}")
-            return None
-    
-    return None  # Return None if no dictionary found
+    dict_str  = "" 
+    if "```json" in text:
+        match = re.search(r'```json\s*(\{.*?\})\s*```', text, re.DOTALL)
+        if match:
+            dict_str = match.group(0)
+            ## remove the ```json  and ``` from the text
+            dict_str = dict_str.replace('```json', '')
+            dict_str = dict_str.replace('```', '')
+    else:
+        match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
+        if match:
+            dict_str = match.group()  # Get extracted dictionary string
+            
+    try:
+        return json.loads(dict_str)  # Convert to Python dictionary safely
+    except json.JSONDecodeError as e:
+        print(f"Parsing error: {e}\nProblematic string: {dict_str}")
+        return None
 
 # # Example usage
 # input_text = """{"actionability_rationale": "The review comment suggests that the authors should show the gradient conflicts ratio for AlphaNets trained with alpha-divergence in "Table 8" to provide insights. While the action is explicit, it lacks concrete guidance on how to implement this suggestion, such as specifying which parts of the paper should include this information or how to present the gradient conflicts ratio. The authors are given a clear direction but without detailed instructions on execution, making the comment somewhat actionable.", "actionability_label": "3"}"""
