@@ -34,7 +34,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
         PARENT_PATH="/mnt/data/users/boda"
     fi
     CHECKPOINT_PARENT_PATH="$CHECKPOINT_PARENT_PATH/review_rewrite_chekpoints"
-    export CUDA_VISIBLE_DEVICES=1
+    export CUDA_VISIBLE_DEVICES=0
     export TRITON_CACHE_DIR=$PARENT_PATH/
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
@@ -74,10 +74,10 @@ DATASET_SPLIT="test"
 ASPECT="all"
 TRAINING_aspects="all"
 
-DATASET_NAME="boda/review_evaluation_human_annotation"
-DATASET_SPLIT="gold"
-TRAINING_aspects="all"
-ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+# DATASET_NAME="boda/review_evaluation_human_annotation"
+# DATASET_SPLIT="gold"
+# TRAINING_aspects="all"
+# ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
 
 
 
