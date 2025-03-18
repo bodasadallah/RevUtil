@@ -25,7 +25,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     if [[ "$HOSTNAME" == "ws006601" ]]; then
         PARENT_PATH="/home/abdelrahman.sadallah"
     else 
-        PARENT_PATH="/mnt/data/users/boda"
+        PARENT_PATH="/mnt/data/users/$USER"
     fi
 
     OUTPUTPATH="$PARENT_PATH/review_rewrite_chekpoints"  # You can change this default if needed

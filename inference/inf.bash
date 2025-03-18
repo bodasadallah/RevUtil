@@ -30,8 +30,8 @@ if [[ "$HOSTNAME" == *ws* ]]; then
         CHECKPOINT_PARENT_PATH="/home/abdelrahman.sadallah"
         PARENT_PATH="/home/abdelrahman.sadallah"
     else 
-        CHECKPOINT_PARENT_PATH="/mnt/data/users/boda"
-        PARENT_PATH="/mnt/data/users/boda"
+        CHECKPOINT_PARENT_PATH="/mnt/data/users/$USER"
+        PARENT_PATH="/mnt/data/users/$USER"
     fi
     CHECKPOINT_PARENT_PATH="$CHECKPOINT_PARENT_PATH/review_rewrite_chekpoints"
     export CUDA_VISIBLE_DEVICES=1
@@ -39,7 +39,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
 else
-    CHECKPOINT_PARENT_PATH="/l/users/abdelrahman.sadallah/review_evaluation"
+    CHECKPOINT_PARENT_PATH="/l/users/$USER/review_evaluation"
     export CUDA_VISIBLE_DEVICES=0,1
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
