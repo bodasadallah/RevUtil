@@ -1,0 +1,60 @@
+Aspect: actionability
+Correlation between length and fine_tuning_output: 0.33596622143930654
+Pearson correlation between length and fine_tuning_output: 0.3359662214393066
+Spearman correlation between length and fine_tuning_output: 0.31662061300857935
+
+Correlation between length and chatgpt_output: 0.270814699473806
+Pearson correlation between length and chatgpt_output: 0.27081469947380604
+Spearman correlation between length and chatgpt_output: 0.2651878319669066
+
+Correlation between length and gold: 0.36909214037423393
+Pearson correlation between length and gold: 0.36909214037423393
+Spearman correlation between length and gold: 0.39469569089711803
+
+
+
+Aspect: grounding_specificity
+Correlation between length and fine_tuning_output: 0.304747834721713
+Pearson correlation between length and fine_tuning_output: 0.30474783472171313
+Spearman correlation between length and fine_tuning_output: 0.25997596648945787
+
+Correlation between length and chatgpt_output: 0.30897134505766677
+Pearson correlation between length and chatgpt_output: 0.30897134505766677
+Spearman correlation between length and chatgpt_output: 0.2645404008694584
+
+Correlation between length and gold: 0.3691286966788688
+Pearson correlation between length and gold: 0.3691286966788684
+Spearman correlation between length and gold: 0.36812211488906704
+
+
+
+Aspect: verifiability
+Correlation between length and fine_tuning_output: 0.10510679163740151
+Pearson correlation between length and fine_tuning_output: 0.10510679163740143
+Spearman correlation between length and fine_tuning_output: 0.09659618553565755
+
+Correlation between length and chatgpt_output: 0.6714925496978419
+Pearson correlation between length and chatgpt_output: 0.6714925496978421
+Spearman correlation between length and chatgpt_output: 0.6486309535929619
+
+Correlation between length and gold: 0.7412145741865414
+Pearson correlation between length and gold: 0.7412145741865417
+Spearman correlation between length and gold: 0.7543306476293777
+
+
+
+Aspect: helpfulness
+Correlation between length and fine_tuning_output: 0.28243041707900945
+Pearson correlation between length and fine_tuning_output: 0.2824304170790095
+Spearman correlation between length and fine_tuning_output: 0.2862610186698345
+
+Correlation between length and chatgpt_output: 0.42567121663330487
+Pearson correlation between length and chatgpt_output: 0.425671216633305
+Spearman correlation between length and chatgpt_output: 0.41444664612777826
+
+Correlation between length and gold: 0.5123350603888861
+Pearson correlation between length and gold: 0.5123350603888872
+Spearman correlation between length and gold: 0.5142159391817285
+
+
+

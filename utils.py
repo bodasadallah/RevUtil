@@ -194,15 +194,24 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
 
     
 
-row = {'review_point': 'I think the author should provide more examples to support their argument.', 'chatgpt_actionability_score': 1.0, 'chatgpt_actionability_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_grounding_specificity_score': 1.0, 'chatgpt_grounding_specificity_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_verifiability_score': 1.0, 'chatgpt_verifiability_rationale': 'The author should provide more examples to support their argument.', 'chatgpt_helpfulness_score': 1.0, 'chatgpt_helpfulness_rationale': 'The author should provide more examples to support their argument.'}
-pr = get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type = 'instruction')
+row = {'review_point': 'POINT', 
+       'chatgpt_actionability_score': 1, 
+       'chatgpt_actionability_rationale': 'ACTIONABILITY RAIONALE', 
+       'chatgpt_grounding_specificity_score': 2, 
+       'chatgpt_grounding_specificity_rationale': 'GROUNDING SPECIFICITY RATIONALE', 
+       'chatgpt_verifiability_score': 'X',
+       'chatgpt_verifiability_rationale': 'VERIFIABILITY RATIONALE', 
+       'chatgpt_helpfulness_score': 5, 
+       'chatgpt_helpfulness_rationale': 'HELPFULNESS RATIONALE'}
+pr = get_prompt(row,aspect= 'all',task='evaluation', generation_type='score_rationale', prompt_type = 'chat', finetuning_type='baseline')
 
 with open('prompt.txt', 'w') as f:
-    if isinstance(pr, list):
-        for item in pr:
+    write = pr['text']
+    if isinstance(write, list):
+        for item in write:
             f.write("%s\n" % item)
     else:
-        f.write(pr['text'])
+        f.write(write)
 
 
 

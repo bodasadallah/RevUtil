@@ -102,8 +102,8 @@ def extract_dict(text):
     if text[0] == ',' or text[0] == ' ':
         text = text[1:]
     # ## if the text doesn't begin with {, then add it
-    # if text[0] != '{':
-    #     text = '{' + text + '}'
+    if text[0] != '{':
+        text = '{' + text + '}'
     text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
     dict_str  = "" 
     if "```json" in text:
@@ -160,7 +160,12 @@ def extract_predictions(model_outputs):
             'actionability_label': str(extracted_dict.get('actionability_label', None)),
             'grounding_specificity_label':  str(extracted_dict.get('grounding_specificity_label', None)),
             'verifiability_label':  str(extracted_dict.get('verifiability_label', None)),
-            'helpfulness_label':  str(extracted_dict.get('helpfulness_label', None))
+            'helpfulness_label':  str(extracted_dict.get('helpfulness_label', None)),
+            ### rationale keys
+            'actionability_rationale':  str(extracted_dict.get('actionability_rationale', None)),
+            'grounding_specificity_rationale':  str(extracted_dict.get('grounding_specificity_rationale', None)),
+            'verifiability_rationale':  str(extracted_dict.get('verifiability_rationale', None)),
+            'helpfulness_rationale':  str(extracted_dict.get('helpfulness_rationale', None))
         }
 
         extracted_data.append(parsed_result)

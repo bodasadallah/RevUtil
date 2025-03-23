@@ -1,0 +1,133 @@
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_score': '1'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '4', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_score': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verdict_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verdict_label': '5'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '4', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '4', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '2'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '2'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_score': '4'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'Subjective opinions or disagreements', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_score': '5'}"}
+{"generated_text": "{'claim_label': '4', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_score': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_score': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': 'Yes', 'verifiability_score': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'Yes', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': 'Subjective opinions or disagreements', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '1', 'verdict_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'X', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '5'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': '3'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': 'No Claim', 'verifiability_label': 'X'}"}
+{"generated_text": "{'claim_label': '1', 'verifiability_label': '1'}"}
+{"generated_text": "{'claim_label': '3', 'verifiability_label': '4'}"}
