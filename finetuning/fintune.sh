@@ -39,6 +39,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     export HF_HOME=$PARENT_PATH/huggingface
     export CUDA_VISIBLE_DEVICES=0,1
 
+########################## CSCC ###########################
 else
     OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
         ## if the output path don't exist, create it

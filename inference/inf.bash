@@ -38,9 +38,11 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     export TRITON_CACHE_DIR=$PARENT_PATH/
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
+
+########################## CSCC ###########################
 else
     CHECKPOINT_PARENT_PATH="/l/users/$USER/review_evaluation"
-    export CUDA_VISIBLE_DEVICES=0,1
+    export CUDA_VISIBLE_DEVICES=0,1,2,3
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 fi
@@ -61,18 +63,18 @@ WRITE_PATH="evalute_outputs"
 # "score_only"
 # "score_rationale"
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
-GENERATION_TYPE="score_rationale"
-PROMPT_TYPE="chat"
-STEP="0"
-FINETUNING_TYPE="baseline"
-MAX_NUM_SEQS=32
+FULL_MODEL_NAME=meta-llama/Llama-3.1-8B
+GENERATION_TYPE="score_only"
+PROMPT_TYPE="instruction"
+STEP="350"
+FINETUNING_TYPE="adapters"
+MAX_NUM_SEQS=16
 
 ####### DATA CONFIG ########
 DATASET_NAME="boda/review_evaluation_automatic_labels"
 DATASET_SPLIT="test"
-ASPECT="all"
-TRAINING_aspects="all"
+ASPECT="actionability"
+TRAINING_aspects="actionability"
 
 # DATASET_NAME="boda/review_evaluation_human_annotation"
 # DATASET_SPLIT="gold"

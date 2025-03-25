@@ -58,6 +58,7 @@ if __name__ == "__main__":
         model_name,
         args.generation_type,
         args.prompt_type,
+        args.training_aspects,
         "step-"+args.step,
         dataset_name,)
     
