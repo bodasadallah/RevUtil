@@ -3,13 +3,13 @@
 # model_name_or_path: Uni-SMART/SciLitLLM
 # model_name_or_path: meta-llama/Llama-3.1-8B
 # model_name_or_path: WestlakeNLP/DeepReviewer-7B
-model_name_or_path:  WestlakeNLP/DeepReviewer-7B
+model_name_or_path:  meta-llama/Llama-3.1-8B
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
 
 ################ ASPECT #################
-aspect: all
+aspect: actionability
 
 # Data training arguments
 dataset_mixer:
@@ -18,11 +18,11 @@ dataset_splits:
 - train
 - test
 dataset_configs:
-- all
+- actionability
 preprocessing_num_workers: 24
 
 prompt_type: instruction
-generation_type: score_rationale
+generation_type: score_instruction
 task: train
 
 ### Do we only train on completion? 
@@ -72,7 +72,7 @@ logging_strategy: steps
 lr_scheduler_type: cosine
 max_seq_length: 4096
 max_steps: -1
-num_train_epochs: 5
+num_train_epochs: 3
 overwrite_output_dir: true
 ## Auto find batch size
 auto_find_batch_size: false

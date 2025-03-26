@@ -34,7 +34,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
         PARENT_PATH="/mnt/data/users/$USER"
     fi
     CHECKPOINT_PARENT_PATH="$CHECKPOINT_PARENT_PATH/review_rewrite_chekpoints"
-    export CUDA_VISIBLE_DEVICES=0
+    export CUDA_VISIBLE_DEVICES=0,1
     export TRITON_CACHE_DIR=$PARENT_PATH/
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
@@ -63,23 +63,23 @@ WRITE_PATH="evalute_outputs"
 # "score_only"
 # "score_rationale"
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME=meta-llama/Llama-3.1-8B
-GENERATION_TYPE="score_only"
+FULL_MODEL_NAME=WestlakeNLP/DeepReviewer-7B
+GENERATION_TYPE="score_rationale"
 PROMPT_TYPE="instruction"
-STEP="350"
+STEP="1686"
 FINETUNING_TYPE="adapters"
 MAX_NUM_SEQS=16
 
 ####### DATA CONFIG ########
-DATASET_NAME="boda/review_evaluation_automatic_labels"
-DATASET_SPLIT="test"
-ASPECT="actionability"
-TRAINING_aspects="actionability"
-
-# DATASET_NAME="boda/review_evaluation_human_annotation"
-# DATASET_SPLIT="gold"
+# DATASET_NAME="boda/review_evaluation_automatic_labels"
+# DATASET_SPLIT="test"
+# ASPECT="all"
 # TRAINING_aspects="all"
-# ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
+
+DATASET_NAME="boda/review_evaluation_human_annotation"
+DATASET_SPLIT="gold"
+TRAINING_aspects="all"
+ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
 
 
 

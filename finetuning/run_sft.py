@@ -49,12 +49,18 @@ import os
 parent_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
 sys.path.append(parent_dir)
 import utils
-
+### get dataaset token from .env
+from dotenv import load_dotenv
+load_dotenv()
+HF_TOKEN = os.getenv('HF_TOKEN')
 
 logger = logging.getLogger(__name__)
 
 
 def main():
+
+    from huggingface_hub import login
+    login(HF_TOKEN)
 
     ## Set CUDA_VISIBLE_DEVICES = int(os.environ[“LOCAL_RANK”]) in your main worker function
     # os.environ["CUDA_VISIBLE_DEVICES"] = str(int(os.environ["LOCAL_RANK"]))
