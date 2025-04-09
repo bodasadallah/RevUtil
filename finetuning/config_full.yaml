@@ -1,15 +1,10 @@
 # Model arguments
-# meta-llama/Llama-3.1-8B
-# model_name_or_path: Uni-SMART/SciLitLLM
-# model_name_or_path: meta-llama/Llama-3.1-8B
-# model_name_or_path: WestlakeNLP/DeepReviewer-7B
-model_name_or_path:  meta-llama/Llama-3.1-8B
 model_revision: main
 torch_dtype: bfloat16
 attn_implementation: flash_attention_2
 
 ################ ASPECT #################
-aspect: actionability
+# aspect: actionability
 
 # Data training arguments
 dataset_mixer:
@@ -17,12 +12,12 @@ dataset_mixer:
 dataset_splits:
 - train
 - test
-dataset_configs:
-- actionability
+# dataset_configs:
+# - actionability
 preprocessing_num_workers: 24
 
 prompt_type: instruction
-generation_type: score_instruction
+# generation_type: score_instruction
 task: train
 
 ### Do we only train on completion? 
@@ -39,9 +34,9 @@ dataset_name: review_evaluation_automatic_labels
 # LoRA arguments
 load_in_4bit: false
 # use_peft: true
-lora_r: 16
+lora_r: 32
 lora_alpha: 16
-lora_dropout: 0.05
+lora_dropout: 0.1
 lora_target_modules:
 - q_proj
 - k_proj
@@ -57,22 +52,23 @@ dataset_kwargs:
   add_special_tokens: true  # We already wrap <bos> and <eos> in the chat template
   append_concat_token: true # No need to add <eos> across samples
 
-do_eval: false
-eval_strategy: epoch
-gradient_accumulation_steps: 2
+do_eval: true
+eval_strategy: steps
+eval_steps: 10
+gradient_accumulation_steps: 4
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: true
 hub_model_id: boda/review_evaluation_all
 hub_strategy: every_save
-learning_rate: 2.0e-05
+learning_rate: 5.0e-05
 log_level: info
-logging_steps: 10
+logging_steps: 5
 logging_strategy: steps
 lr_scheduler_type: cosine
-max_seq_length: 4096
+max_seq_length: 3072
 max_steps: -1
-num_train_epochs: 3
+num_train_epochs: 1
 overwrite_output_dir: true
 ## Auto find batch size
 auto_find_batch_size: false
@@ -81,9 +77,9 @@ per_device_train_batch_size: 4
 remove_unused_columns: true
 report_to:
 - wandb
-wandb_project: review_evaluation
-save_strategy: "epoch"
-save_steps: 100
+wandb_project: review_evaluation_paper
+save_strategy: "steps"
+save_steps: 20
 save_total_limit: 3
 seed: 42
 warmup_ratio: 0.1

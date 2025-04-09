@@ -77,7 +77,7 @@ MAX_NUM_SEQS=16
 # TRAINING_aspects="all"
 
 DATASET_NAME="boda/review_evaluation_human_annotation"
-DATASET_SPLIT="gold"
+DATASET_SPLIT="all"
 TRAINING_aspects="all"
 ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
 
@@ -89,7 +89,8 @@ ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
 if [[ "$DATASET_NAME" == *"automatic"* ]]; then
     GOLD_LABEL_FORMAT="chatgpt_ASPECT_score"
 else
-    GOLD_LABEL_FORMAT="ASPECT_label"
+    # GOLD_LABEL_FORMAT="ASPECT_label"
+    GOLD_LABEL_FORMAT="ASPECT"
 fi
 
 

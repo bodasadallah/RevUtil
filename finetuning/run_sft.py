@@ -69,6 +69,10 @@ def main():
     model_args, data_args, training_args = parser.parse()
 
     aspect = model_args.aspect
+
+    ####### maybe change later? #####
+    dataset_configs =[aspect]
+
     generation_type = data_args.generation_type
     prompt_type = data_args.prompt_type
     model = model_args.model_name_or_path.split("/")[-1]
@@ -77,7 +81,10 @@ def main():
     print(training_args.output_dir)
 
     WANDB_RUN_NAME = f"{model}_{generation_type}_{prompt_type}_{aspect}"
-    wandb.init(project=model_args.wandb_project,name=WANDB_RUN_NAME)
+
+
+    if training_args.local_rank == 0:
+        wandb.init(project=model_args.wandb_project, name=WANDB_RUN_NAME)
     # Set seed for reproducibility
     set_seed(training_args.seed)
 
@@ -117,7 +124,7 @@ def main():
     raw_datasets = get_datasets(
         data_args,
         splits=data_args.dataset_splits,
-        configs=data_args.dataset_configs,
+        configs=dataset_configs,
         # columns_to_keep=["prompt"],
         columns_to_keep=[],
 
@@ -158,14 +165,12 @@ def main():
 
     model = model_args.model_name_or_path
     # For ChatML we need to add special tokens and resize the embedding layer
-    if "<|im_start|>" in tokenizer.chat_template and "gemma-tokenizer-chatml" not in tokenizer.name_or_path:
-        model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, **model_kwargs)
-        model, tokenizer = setup_chat_format(model, tokenizer)
-        model_kwargs = None
+    # if "<|im_start|>" in tokenizer.chat_template and "gemma-tokenizer-chatml" not in tokenizer.name_or_path:
+    #     model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, **model_kwargs)
+    #     model, tokenizer = setup_chat_format(model, tokenizer)
+    #     model_kwargs = None
 
 
-
-    logger.info("Applying Prompt Template")
 
     train_dataset = raw_datasets["train"].map(
         utils.get_prompt,
@@ -178,7 +183,7 @@ def main():
         num_proc=data_args.preprocessing_num_workers,
         remove_columns=column_names,
         desc=f"Applying {prompt_type} prompt template",
-        load_from_cache_file = False,
+        # load_from_cache_file = False,
     )
     eval_dataset = raw_datasets["test"].map(
         utils.get_prompt,
@@ -191,7 +196,7 @@ def main():
         num_proc=data_args.preprocessing_num_workers,
         remove_columns=column_names,
         desc=f"Applying {prompt_type} prompt template",
-        load_from_cache_file = False,
+        # load_from_cache_file = False,
     )
 
     #####################
@@ -267,7 +272,6 @@ def main():
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
     training_args.model_init_kwargs = model_kwargs
     training_args.dataset_text_field = "text"
-    training_args.packing = training_args.packing
     ########################
     # Initialize the Trainer
     ########################
@@ -303,15 +307,19 @@ def main():
     # Training loop
     ###############
     logger.info("*** Train ***")
-    checkpoint = None
+
+    # checkpoint = None
+    
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
     elif last_checkpoint is not None:
         checkpoint = last_checkpoint
         print("----------------- last_checkpoint",last_checkpoint)
+    else:
+        checkpoint = None
 
 
-    checkpoint = None
+    # checkpoint = None
     print("---------------------- checkpoint",checkpoint)
 
 
@@ -362,7 +370,11 @@ def main():
         trainer.push_to_hub(**kwargs)
 
     logger.info("*** Training complete ***")
-    wandb.finish()
+
+
+    # Finish wandb run
+    if trainer.accelerator.is_main_process:
+        wandb.finish()
 
 if __name__ == "__main__":
     main()

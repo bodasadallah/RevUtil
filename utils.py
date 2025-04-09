@@ -25,8 +25,8 @@ import json
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
     "6158bb338b6122275bc191e3": ["TxZsPCly"],
-    "6740484e188a64793529ee77": ["LbMNie2g", "tpuEIMI7", "x8G3vam1", "JMHUapmO", "s46d5sbV", "BXzyXMPh","T5yf801Z"],
-    "6686ebe474531e4a1975636f": ["ZGOQesrg", "nZ3mMZhw", "sBdHWtl1", "qDjzAPQZ", "hgdl9t28", "DFou9r7M", "HXjcIUXf"],
+    "6740484e188a64793529ee77": ["LbMNie2g", "tpuEIMI7", "x8G3vam1", "JMHUapmO", "s46d5sbV", "BXzyXMPh","T5yf801Z","xT364YSG", "cYVX6CPX"],
+    "6686ebe474531e4a1975636f": ["ZGOQesrg", "nZ3mMZhw", "sBdHWtl1", "qDjzAPQZ", "hgdl9t28", "DFou9r7M", "HXjcIUXf", "KfBeSZkz","qhBkNx6n"],
     "66cc9c5dc9e1102dc1e40bab": ["2B7nNvBS", "aAISOUiD"],
     "60916bcb7a32838a66b8cb82": ["3O1LNSAk"],
     "67294835e2705b67a725c994": ["9BW3mEvI"],
@@ -34,34 +34,14 @@ annotators_unique_id_batch_id_map = {
     "6686f834fd4c9f0bdb7bc8b8": ["fZav2G06", "FrNoCAp2"],
     "6715f821d59317137a6a123b": ["DVRTnFRi", "mw4PwQRk"]
 }
-annotators_unique_id_batch_id_map_inv ={
-    "boda": "boda",
-    "TxZsPCly": "6158bb338b6122275bc191e3",
-    "LbMNie2g": "6740484e188a64793529ee77",
-    "tpuEIMI7": "6740484e188a64793529ee77",
-    "x8G3vam1": "6740484e188a64793529ee77",
-    "JMHUapmO": "6740484e188a64793529ee77",
-    "s46d5sbV": "6740484e188a64793529ee77",
-    "BXzyXMPh": "6740484e188a64793529ee77",
-    "ZGOQesrg": "6686ebe474531e4a1975636f",
-    "nZ3mMZhw": "6686ebe474531e4a1975636f",
-    "sBdHWtl1": "6686ebe474531e4a1975636f",
-    "qDjzAPQZ": "6686ebe474531e4a1975636f",
-    "hgdl9t28": "6686ebe474531e4a1975636f",
-    "DFou9r7M": "6686ebe474531e4a1975636f",
-    "2B7nNvBS": "66cc9c5dc9e1102dc1e40bab",
-    "aAISOUiD": "66cc9c5dc9e1102dc1e40bab",
-    "3O1LNSAk": "60916bcb7a32838a66b8cb82",
-    "9BW3mEvI": "67294835e2705b67a725c994",
-    "pGkwDdmV": "66f8522292767238ed42ebbd",
-    "fZav2G06": "6686f834fd4c9f0bdb7bc8b8",
-    "FrNoCAp2": "6686f834fd4c9f0bdb7bc8b8",
-    "DVRTnFRi": "6715f821d59317137a6a123b",
-    "mw4PwQRk": "6715f821d59317137a6a123b",
-    'HXjcIUXf': '6686ebe474531e4a1975636f',
-    'T5yf801Z': '6740484e188a64793529ee77',
-}
 
+annotators_unique_id_batch_id_map_inv = {}
+for annotator, batch_ids in annotators_unique_id_batch_id_map.items():
+    if isinstance(batch_ids, list):
+        for batch_id in batch_ids:
+            annotators_unique_id_batch_id_map_inv[batch_id] = annotator
+    else:
+        annotators_unique_id_batch_id_map_inv[batch_ids] = annotator
 
 
 
