@@ -185,13 +185,13 @@ row = {'review_point': 'POINT',
        'chatgpt_helpfulness_rationale': 'HELPFULNESS RATIONALE'}
 pr = get_prompt(row,aspect= 'all',task='evaluation', generation_type='score_rationale', prompt_type = 'chat', finetuning_type='baseline')
 
-with open('prompt.txt', 'w') as f:
-    write = pr['text']
-    if isinstance(write, list):
-        for item in write:
-            f.write("%s\n" % item)
-    else:
-        f.write(write)
+# with open('prompt.txt', 'w') as f:
+#     write = pr['text']
+#     if isinstance(write, list):
+#         for item in write:
+#             f.write("%s\n" % item)
+#     else:
+#         f.write(write)
 
 
 
@@ -233,31 +233,51 @@ def get_stats(pred, gold, aspect):
 
     original_len = len(pred)
     ### Filter out the labels that are not in the possible labels
-    possible_labels = [ '1', '2', '3', '4', '5', 'X']
+    possible_labels = [ '1', '2', '3', '4', '5'] if aspect != 'verifiability' else ['1', '2', '3', '4', '5', 'X']
     filtered_pred = []
     filtered_gold = []
     for i in range(len(pred)):
+
         if pred[i] in possible_labels and gold[i] in possible_labels:
             filtered_pred.append(pred[i])
             filtered_gold.append(gold[i])
+
+
+
+    ### Filter out the labels that are not in the possible labels   
     pred = filtered_pred
     gold = filtered_gold
 
     filtered_len = len(pred)
 
+
+
     if aspect in ['actionability', 'grounding_specificity', 'helpfulness']:
-        stats_dict['accuracy'] = accuracy_score(pred, gold)
+
+
+        gold = [int(x) for x in gold]
+
+
+        pred = [int(x) for x in pred]
+
+        # stats_dict['accuracy'] = accuracy_score(pred, gold)
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
-        stats_dict['kappa'] = cohen_kappa_score(pred, gold)
-        stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
+        # stats_dict['kappa'] = cohen_kappa_score(pred, gold)
+        # stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
         stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
         stats_dict['spearman'] = stats.spearmanr(pred, gold)
+        stats_dict['pearson'] = stats.pearsonr(pred, gold)
 
     elif aspect == 'verifiability':
         new_pred = []
         new_gold = []
         new_pred_X = []
         new_gold_X = []
+
+        # print('pred:', pred)
+        # print('gold:', gold)
+
+
         for x, y in zip(pred, gold):
             x = str(x)
             y = str(y)
@@ -271,17 +291,25 @@ def get_stats(pred, gold, aspect):
                 new_pred_X.append(x)
                 new_gold_X.append(y)
             else:
+                x = int(x)
+                y = int(y)
                 new_pred.append(x)
                 new_gold.append(y)
         gold = new_gold
         pred = new_pred
-        stats_dict['accuracy'] = accuracy_score(pred, gold)
-        stats_dict['f1'] = f1_score(pred, gold, average="micro")
+
+        # print(new_gold_X)
+        # print(new_pred_X)
+        
+
+        # stats_dict['accuracy'] = accuracy_score(pred, gold)
+        # stats_dict['f1'] = f1_score(pred, gold, average="micro")
         stats_dict['kappa'] = cohen_kappa_score(pred, gold)
-        stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
+        # stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
         stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
         stats_dict['spearman'] = stats.spearmanr(pred, gold)
-        stats_dict['accuracy_X'] = accuracy_score(new_pred_X, new_gold_X)
+        stats_dict['pearson'] = stats.pearsonr(pred, gold)
+        # stats_dict['accuracy_X'] = accuracy_score(new_pred_X, new_gold_X)
         stats_dict['f1_X'] = f1_score(new_pred_X, new_gold_X, average="micro")
 
     elif aspect in ["professional_tone", 'valid_point', 'addressed_to_author']:

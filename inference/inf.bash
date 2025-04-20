@@ -42,7 +42,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
 ########################## CSCC ###########################
 else
     CHECKPOINT_PARENT_PATH="/l/users/$USER/review_evaluation"
-    export CUDA_VISIBLE_DEVICES=0,1,2,3
+    export CUDA_VISIBLE_DEVICES=2,3
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 fi
@@ -63,36 +63,20 @@ WRITE_PATH="evalute_outputs"
 # "score_only"
 # "score_rationale"
 ###### MODEL CONFIG ########
-FULL_MODEL_NAME=WestlakeNLP/DeepReviewer-7B
-GENERATION_TYPE="score_rationale"
-PROMPT_TYPE="instruction"
-STEP="1686"
-FINETUNING_TYPE="adapters"
-MAX_NUM_SEQS=16
 
-####### DATA CONFIG ########
-# DATASET_NAME="boda/review_evaluation_automatic_labels"
-# DATASET_SPLIT="test"
-# ASPECT="all"
-# TRAINING_aspects="all"
+# "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+# meta-llama/Llama-3.1-8B
+# "WestlakeNLP/DeepReviewer-7B"
+# "meta-llama/Llama-3.1-8B-Instruct"
+# "meta-llama/Llama-3.1-8B"
+# "allenai/scitulu-7b"
+# "Uni-SMART/SciLitLLM"
 
-DATASET_NAME="boda/review_evaluation_human_annotation"
-DATASET_SPLIT="all"
+# PROMPT_TYPE="chat"
+STEP="0"
+FINETUNING_TYPE="baseline"
+MAX_NUM_SEQS=32
 TRAINING_aspects="all"
-ASPECT="actionability,grounding_specificity,verifiability,helpfulness"
-
-
-
-
-
-### if dataset name have automatic labels then the gold label format should be "chatgpt_ASPECT_score", else "ASPECT_label"
-if [[ "$DATASET_NAME" == *"automatic"* ]]; then
-    GOLD_LABEL_FORMAT="chatgpt_ASPECT_score"
-else
-    # GOLD_LABEL_FORMAT="ASPECT_label"
-    GOLD_LABEL_FORMAT="ASPECT"
-fi
-
 
 ## Determine the write path based on the finetuning type
 if [ "$FINETUNING_TYPE" == "adapters" ]; then
@@ -106,21 +90,77 @@ else
     echo "Base Model Evaluation"
 fi
 
-python  vllm_inf.py \
---step $STEP \
---max_num_seqs $MAX_NUM_SEQS \
---training_aspects $TRAINING_aspects \
---finetuning_type $FINETUNING_TYPE \
---checkpoint_parent_path $CHECKPOINT_PARENT_PATH \
---prompt_type $PROMPT_TYPE \
---generation_type $GENERATION_TYPE \
---full_model_name  $FULL_MODEL_NAME \
---tensor_parallel_size $GPUS \
---output_path $WRITE_PATH \
---max_new_tokens 1024 \
---temperature 0.1 \
---dataset_config $ASPECT \
---dataset_split $DATASET_SPLIT \
---gold_label_format $GOLD_LABEL_FORMAT \
---dataset_name $DATASET_NAME \
+
+# MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B")
+
+MODELS=("WestlakeNLP/DeepReviewer-7B" )
+DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
+DATASET_SPLITS=("gold,silver,hard,full" "test")
+DATASET_CONFIGS=("actionability,grounding_specificity,verifiability,helpfulness" "all")
+GENERATION_TYPES=("score_only" "score_rationale")
+PROMPT_TYPE="chat"
+
+
+# MODELS=( "chatgpt" )
+# GENERATION_TYPES=("score_only" "score_rationale")
+# DATASETS=("boda/review_evaluation_human_annotation")
+# DATASET_CONFIGS=("combined_main_aspects")
+# DATASET_SPLITS=("full")
+
+
+
+for MODEL in "${MODELS[@]}"; do
+    for GENERATION_TYPE in "${GENERATION_TYPES[@]}"; do
+        for i in "${!DATASETS[@]}"; do
+            DATASET_NAME=${DATASETS[$i]}
+            DATASET_SPLIT=${DATASET_SPLITS[$i]}
+            ASPECT=${DATASET_CONFIGS[$i]}
+
+            ################ For chatgpt #############
+            # PROMPT_TYPE="instruction"
+
+            ### if the model name is  "meta-llama/Llama-3.1-8B" then make prompt type "instruction" don't do that for "meta-llama/Llama-3.1-8B-Instruct"
+            if [[ "$MODEL" == *"Llama-3.1-8B"* && "$MODEL" != *"Instruct"* ]]; then
+                PROMPT_TYPE="instruction"
+            fi
+
+
+            echo "PROMPT_TYPE: $PROMPT_TYPE"
+            echo "MODEL: $MODEL"
+            echo "DATASET_NAME: $DATASET_NAME"
+            echo "DATASET_SPLIT: $DATASET_SPLIT"
+            echo "ASPECT: $ASPECT"
+            echo "GENERATION_TYPE: $GENERATION_TYPE"
+
+            ### if dataset name have automatic labels then the gold label format should be "chatgpt_ASPECT_score", else "ASPECT_label"
+            if [[ "$DATASET_NAME" == *"automatic"* ]]; then
+                GOLD_LABEL_FORMAT="chatgpt_ASPECT_score"
+            else
+                # GOLD_LABEL_FORMAT="ASPECT_label"
+                GOLD_LABEL_FORMAT="ASPECT"
+            fi
+
+
+
+            python  vllm_inf.py \
+            --step $STEP \
+            --max_num_seqs $MAX_NUM_SEQS \
+            --training_aspects $TRAINING_aspects \
+            --finetuning_type $FINETUNING_TYPE \
+            --checkpoint_parent_path $CHECKPOINT_PARENT_PATH \
+            --prompt_type $PROMPT_TYPE \
+            --generation_type $GENERATION_TYPE \
+            --full_model_name  $MODEL \
+            --tensor_parallel_size $GPUS \
+            --output_path $WRITE_PATH \
+            --max_new_tokens 2048 \
+            --temperature 0 \
+            --dataset_config $ASPECT \
+            --dataset_split $DATASET_SPLIT \
+            --gold_label_format $GOLD_LABEL_FORMAT \
+            --dataset_name $DATASET_NAME \
+
+        done
+    done
+done
 

@@ -1,0 +1,45 @@
+{
+    "all_test": {
+        "actionability": {
+            "total_stats": {
+                "f1": 0.251,
+                "kappa_quadratic": 0.131,
+                "spearman": 0.149,
+                "pearson": 0.162,
+                "original_len": 1000,
+                "filtered_len": 830
+            }
+        },
+        "grounding_specificity": {
+            "total_stats": {
+                "f1": 0.236,
+                "kappa_quadratic": 0.124,
+                "spearman": 0.185,
+                "pearson": 0.157,
+                "original_len": 1000,
+                "filtered_len": 746
+            }
+        },
+        "verifiability": {
+            "total_stats": {
+                "kappa": 0.102,
+                "kappa_quadratic": 0.173,
+                "spearman": 0.198,
+                "pearson": 0.173,
+                "f1_X": 0.033,
+                "original_len": 1000,
+                "filtered_len": 580
+            }
+        },
+        "helpfulness": {
+            "total_stats": {
+                "f1": 0.16,
+                "kappa_quadratic": 0.139,
+                "spearman": 0.234,
+                "pearson": 0.237,
+                "original_len": 1000,
+                "filtered_len": 840
+            }
+        }
+    }
+}

@@ -1,7 +1,4 @@
-import os
-from vllm import LLM, SamplingParams
-from openai import OpenAI, AsyncOpenAI
-from dotenv import load_dotenv
+
 import json
 
 import re
@@ -85,6 +82,7 @@ def escape_inner_quotes(text):
     
     return text
 def extract_dict(text):
+    original  = text
 
     text = replace_category_names(text)  # Replace category names with numbers
     ## remove double spaces
@@ -97,36 +95,55 @@ def extract_dict(text):
     text = text.replace('\\"s', "'s")  # Fix incorrect escaped possessive 's
     text = text.replace("\\\\'", "\\\"")
     text = text.replace("\\\\", "\\")
-    text = text.replace("'", '"')  # Replace single quotes with double quotes
+
+
+    # text = text.replace("'", '"')  # Replace single quotes with double quotes
+
+
+    text = text.replace("[", "")  # Remove square brackets
+    text = text.replace("]", "")  # Remove square brackets
     ## if text begin with comma or space, remove it
     if text[0] == ',' or text[0] == ' ':
         text = text[1:]
-    # ## if the text doesn't begin with {, then add it
+
+
+    text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
+
+    text = text.replace("\\\\", "\\") # Fix double backslashes
+    dict_str  = "" 
+    if "```" in text:
+        text = text + '#'
+        match = re.search(r"```(?:json)?\s*(.*?)(```)?#", text, re.DOTALL)
+
+
+
+        if match:
+            text = match.group(0)
+            ## remove the ```json  and ``` from the text
+            text = text.replace('```json', '')
+            text = text.replace('```', '')
+            text = text.replace('#', '') 
+
+    text = text.strip()  # Remove leading and trailing whitespace
+
+    if not text:
+        return None
+    
     if text[0] != '{':
         text = '{' + text + '}'
-    text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
-    dict_str  = "" 
-    if "```json" in text:
-        match = re.search(r'```json\s*(\{.*?\})\s*```', text, re.DOTALL)
-        if match:
-            dict_str = match.group(0)
-            ## remove the ```json  and ``` from the text
-            dict_str = dict_str.replace('```json', '')
-            dict_str = dict_str.replace('```', '')
-    else:
-        match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
-        if match:
-            dict_str = match.group()  # Get extracted dictionary string
-            
+    match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
+    if match:
+        dict_str = match.group()  # Get extracted dictionary string
+        
     try:
         return json.loads(dict_str)  # Convert to Python dictionary safely
     except json.JSONDecodeError as e:
         print(f"Parsing error: {e}\nProblematic string: {dict_str}")
         return None
 
-# # Example usage
-# input_text = """{"actionability_rationale": "The review comment suggests that the authors should show the gradient conflicts ratio for AlphaNets trained with alpha-divergence in "Table 8" to provide insights. While the action is explicit, it lacks concrete guidance on how to implement this suggestion, such as specifying which parts of the paper should include this information or how to present the gradient conflicts ratio. The authors are given a clear direction but without detailed instructions on execution, making the comment somewhat actionable.", "actionability_label": "3"}"""
-# print(extract_dict(input_text))
+# Example usage
+input_text = """```json\n{\n  \"actionability_rationale\": \"The review point states a lack of novelty and points out prior work on adversarial attacks. While it identifies a *related* area (video-text models), it doesn't explicitly *recommend* an action or suggest a *specific* improvement. It's more of a statement of fact.\",\n  \"actionability_label\": \"1: Unactionable\",\n  \"grounding_specificity_rationale\": \"The review point mentions \\\"many NLP models and image-text models\\\" and \\\"prior work on adversarial attacks.\\\" The reviewer also mentions \\\"video-text models\\\" as the target area. While it names the *types* of models and the *area* of application, it doesn't pinpoint a *specific* model, paper, or aspect within these categories. The grounding is implied but not explicit.\",\n  \"grounding_specificity_label\": \"3: Weakly Grounded and Specific\",\n  \"verifiability_rationale\": \"The review point contains a claim: \\\"Lack of novelty\\\". This is a statement of opinion or judgment about the work. The reviewer *summarizes* related work in the related work section of the paper. This provides some justification for their claim. However, they don't provide *new* evidence or *specific* examples of how these attacks are applied to NLP or image-text models to demonstrate the lack of novelty in the *video-text* context.\",\n  \"verifiability_label\": \"3: Somewhat Verifiable\",\n  \"helpfulness_rationale\": \"The review point is more of a statement of the authors' perception of the novelty of their work. While it identifies a relevant area of research, it doesn't directly guide the authors on *how* to improve their work. It's more of a negative comment rather than a constructive suggestion.\",\n  \"helpfulness_label\": \"2: Barely Helpful\"\n}\n```"""
+print(extract_dict(input_text))
 
 
 
@@ -171,6 +188,12 @@ def extract_predictions(model_outputs):
         extracted_data.append(parsed_result)
     
     return extracted_data
+
+
+
+
+
+
 
 aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness']
 def get_gold_labels(raw_data, dataset_config,aspect_row_name='chatgpt_ASPECT_score'):
