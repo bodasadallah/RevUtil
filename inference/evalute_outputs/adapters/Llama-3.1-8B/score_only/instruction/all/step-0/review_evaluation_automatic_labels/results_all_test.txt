@@ -2,43 +2,47 @@
     "all_test": {
         "actionability": {
             "total_stats": {
-                "f1": 0.561,
                 "kappa_quadratic": 0.724,
                 "spearman": 0.73,
                 "pearson": 0.725,
+                "tau": 0.654,
                 "original_len": 1000,
-                "filtered_len": 1000
+                "filtered_len": 1000,
+                "sucess_rate": 1.0
             }
         },
         "grounding_specificity": {
             "total_stats": {
-                "f1": 0.647,
                 "kappa_quadratic": 0.636,
                 "spearman": 0.618,
                 "pearson": 0.636,
+                "tau": 0.576,
                 "original_len": 1000,
-                "filtered_len": 1000
+                "filtered_len": 1000,
+                "sucess_rate": 1.0
             }
         },
         "verifiability": {
             "total_stats": {
-                "kappa": 0.384,
+                "f1_X": 0.599,
                 "kappa_quadratic": 0.64,
                 "spearman": 0.634,
                 "pearson": 0.646,
-                "f1_X": 0.599,
+                "tau": 0.588,
                 "original_len": 1000,
-                "filtered_len": 1000
+                "filtered_len": 1000,
+                "sucess_rate": 1.0
             }
         },
         "helpfulness": {
             "total_stats": {
-                "f1": 0.632,
                 "kappa_quadratic": 0.712,
                 "spearman": 0.704,
                 "pearson": 0.715,
+                "tau": 0.654,
                 "original_len": 1000,
-                "filtered_len": 1000
+                "filtered_len": 1000,
+                "sucess_rate": 1.0
             }
         }
     }

@@ -2,43 +2,47 @@
     "all_test": {
         "actionability": {
             "total_stats": {
-                "f1": 0.306,
-                "kappa_quadratic": 0.241,
-                "spearman": 0.259,
-                "pearson": 0.264,
+                "kappa_quadratic": 0.236,
+                "spearman": 0.253,
+                "pearson": 0.257,
+                "tau": 0.21,
                 "original_len": 1000,
-                "filtered_len": 854
+                "filtered_len": 857,
+                "sucess_rate": 0.857
             }
         },
         "grounding_specificity": {
             "total_stats": {
-                "f1": 0.377,
-                "kappa_quadratic": 0.379,
+                "kappa_quadratic": 0.38,
                 "spearman": 0.372,
                 "pearson": 0.388,
+                "tau": 0.318,
                 "original_len": 1000,
-                "filtered_len": 878
+                "filtered_len": 881,
+                "sucess_rate": 0.881
             }
         },
         "verifiability": {
             "total_stats": {
-                "kappa": 0.104,
-                "kappa_quadratic": 0.256,
-                "spearman": 0.265,
-                "pearson": 0.264,
                 "f1_X": 0.23,
+                "kappa_quadratic": 0.253,
+                "spearman": 0.262,
+                "pearson": 0.261,
+                "tau": 0.225,
                 "original_len": 1000,
-                "filtered_len": 922
+                "filtered_len": 925,
+                "sucess_rate": 0.925
             }
         },
         "helpfulness": {
             "total_stats": {
-                "f1": 0.377,
-                "kappa_quadratic": 0.363,
-                "spearman": 0.376,
-                "pearson": 0.373,
+                "kappa_quadratic": 0.362,
+                "spearman": 0.374,
+                "pearson": 0.372,
+                "tau": 0.323,
                 "original_len": 1000,
-                "filtered_len": 938
+                "filtered_len": 941,
+                "sucess_rate": 0.941
             }
         }
     }

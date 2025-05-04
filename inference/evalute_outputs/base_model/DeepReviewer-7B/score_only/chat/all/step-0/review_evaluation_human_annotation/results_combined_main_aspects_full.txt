@@ -1,0 +1,164 @@
+{
+    "combined_main_aspects_full": {
+        "actionability": {
+            "Annotator1": {
+                "kappa_quadratic": 0.217,
+                "spearman": 0.226,
+                "pearson": 0.219,
+                "tau": 0.187,
+                "original_len": 1430,
+                "filtered_len": 1265,
+                "sucess_rate": 0.885
+            },
+            "Annotator2": {
+                "kappa_quadratic": 0.19,
+                "spearman": 0.209,
+                "pearson": 0.204,
+                "tau": 0.178,
+                "original_len": 1430,
+                "filtered_len": 1265,
+                "sucess_rate": 0.885
+            },
+            "boda": {
+                "kappa_quadratic": 0.184,
+                "spearman": 0.189,
+                "pearson": 0.191,
+                "tau": 0.16,
+                "original_len": 1430,
+                "filtered_len": 1265,
+                "sucess_rate": 0.885
+            },
+            "total_stats": {
+                "kappa_quadratic": 0.197,
+                "spearman": 0.208,
+                "pearson": 0.205,
+                "tau": 0.175,
+                "original_len": 1430.0,
+                "filtered_len": 1265.0,
+                "sucess_rate": 0.885,
+                "krippendorff_alpha": 0.561
+            }
+        },
+        "grounding_specificity": {
+            "Annotator1": {
+                "kappa_quadratic": 0.247,
+                "spearman": 0.262,
+                "pearson": 0.285,
+                "tau": 0.225,
+                "original_len": 1430,
+                "filtered_len": 1276,
+                "sucess_rate": 0.892
+            },
+            "Annotator2": {
+                "kappa_quadratic": 0.18,
+                "spearman": 0.229,
+                "pearson": 0.242,
+                "tau": 0.199,
+                "original_len": 1430,
+                "filtered_len": 1276,
+                "sucess_rate": 0.892
+            },
+            "boda": {
+                "kappa_quadratic": 0.276,
+                "spearman": 0.293,
+                "pearson": 0.301,
+                "tau": 0.253,
+                "original_len": 1430,
+                "filtered_len": 1276,
+                "sucess_rate": 0.892
+            },
+            "total_stats": {
+                "kappa_quadratic": 0.234,
+                "spearman": 0.261,
+                "pearson": 0.276,
+                "tau": 0.226,
+                "original_len": 1430.0,
+                "filtered_len": 1276.0,
+                "sucess_rate": 0.892,
+                "krippendorff_alpha": 0.391
+            }
+        },
+        "verifiability": {
+            "Annotator1": {
+                "f1_X": 0.07,
+                "kappa_quadratic": 0.157,
+                "spearman": 0.213,
+                "pearson": 0.229,
+                "tau": 0.182,
+                "original_len": 1430,
+                "filtered_len": 1334,
+                "sucess_rate": 0.933
+            },
+            "Annotator2": {
+                "f1_X": 0.167,
+                "kappa_quadratic": 0.235,
+                "spearman": 0.292,
+                "pearson": 0.3,
+                "tau": 0.245,
+                "original_len": 1430,
+                "filtered_len": 1334,
+                "sucess_rate": 0.933
+            },
+            "boda": {
+                "f1_X": 0.162,
+                "kappa_quadratic": 0.214,
+                "spearman": 0.278,
+                "pearson": 0.277,
+                "tau": 0.235,
+                "original_len": 1430,
+                "filtered_len": 1334,
+                "sucess_rate": 0.933
+            },
+            "total_stats": {
+                "f1_X": 0.133,
+                "kappa_quadratic": 0.202,
+                "spearman": 0.261,
+                "pearson": 0.269,
+                "tau": 0.221,
+                "original_len": 1430.0,
+                "filtered_len": 1334.0,
+                "sucess_rate": 0.933,
+                "krippendorff_alpha": 0.273
+            }
+        },
+        "helpfulness": {
+            "Annotator1": {
+                "kappa_quadratic": 0.298,
+                "spearman": 0.291,
+                "pearson": 0.302,
+                "tau": 0.246,
+                "original_len": 1430,
+                "filtered_len": 1364,
+                "sucess_rate": 0.954
+            },
+            "Annotator2": {
+                "kappa_quadratic": 0.222,
+                "spearman": 0.231,
+                "pearson": 0.239,
+                "tau": 0.197,
+                "original_len": 1430,
+                "filtered_len": 1364,
+                "sucess_rate": 0.954
+            },
+            "boda": {
+                "kappa_quadratic": 0.281,
+                "spearman": 0.285,
+                "pearson": 0.287,
+                "tau": 0.241,
+                "original_len": 1430,
+                "filtered_len": 1364,
+                "sucess_rate": 0.954
+            },
+            "total_stats": {
+                "kappa_quadratic": 0.267,
+                "spearman": 0.269,
+                "pearson": 0.276,
+                "tau": 0.228,
+                "original_len": 1430.0,
+                "filtered_len": 1364.0,
+                "sucess_rate": 0.954,
+                "krippendorff_alpha": 0.469
+            }
+        }
+    }
+}

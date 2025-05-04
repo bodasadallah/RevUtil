@@ -22,6 +22,7 @@ import string
 from transformers import GenerationConfig
 import torch
 import json
+import krippendorff
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
     "6158bb338b6122275bc191e3": ["TxZsPCly"],
@@ -228,6 +229,23 @@ class LLMSampleCB(WandbCallback):
 
 
 
+def get_alpha_scores(annotations_plus_predictions, aspect):
+    possible_labels = ['1', '2', '3', '4', '5'] if aspect != 'verifiability' else ['1', '2', '3', '4', '5', 'X']
+    assert len(annotations_plus_predictions) == 4, 'There should be 4 annotators'
+
+    # Filter out entries where any of the four labels is not in the possible labels
+    filtered_annotations = []
+    for aa in annotations_plus_predictions:
+        if all(label in possible_labels for label in aa):
+            filtered_annotations.append([int(label) if label != "X" else 0 for label in aa])
+
+    if not filtered_annotations:
+        raise ValueError("No valid annotations found after filtering.")
+
+    alpha = krippendorff.alpha(filtered_annotations, level_of_measurement='ordinal')
+
+    return alpha
+
 def get_stats(pred, gold, aspect):
     stats_dict = {}
 
@@ -241,47 +259,22 @@ def get_stats(pred, gold, aspect):
         if pred[i] in possible_labels and gold[i] in possible_labels:
             filtered_pred.append(pred[i])
             filtered_gold.append(gold[i])
-
-
-
     ### Filter out the labels that are not in the possible labels   
     pred = filtered_pred
     gold = filtered_gold
-
     filtered_len = len(pred)
-
-
-
     if aspect in ['actionability', 'grounding_specificity', 'helpfulness']:
-
-
         gold = [int(x) for x in gold]
-
-
         pred = [int(x) for x in pred]
-
-        # stats_dict['accuracy'] = accuracy_score(pred, gold)
-        stats_dict['f1'] = f1_score(pred, gold, average="micro")
-        # stats_dict['kappa'] = cohen_kappa_score(pred, gold)
-        # stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
-        stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
-        stats_dict['spearman'] = stats.spearmanr(pred, gold)
-        stats_dict['pearson'] = stats.pearsonr(pred, gold)
-
     elif aspect == 'verifiability':
         new_pred = []
         new_gold = []
         new_pred_X = []
         new_gold_X = []
-
-        # print('pred:', pred)
-        # print('gold:', gold)
-
-
         for x, y in zip(pred, gold):
             x = str(x)
             y = str(y)
-            
+        
             if x in ['X', 'x', 'NO CLAIM']: x = 'X'
             if y in ['X', 'x', 'NO CLAIM']: y = 'X'
 
@@ -297,26 +290,20 @@ def get_stats(pred, gold, aspect):
                 new_gold.append(y)
         gold = new_gold
         pred = new_pred
-
-        # print(new_gold_X)
-        # print(new_pred_X)
-        
-
-        # stats_dict['accuracy'] = accuracy_score(pred, gold)
-        # stats_dict['f1'] = f1_score(pred, gold, average="micro")
-        stats_dict['kappa'] = cohen_kappa_score(pred, gold)
-        # stats_dict['kappa_linear'] = cohen_kappa_score(pred, gold, weights='linear')
-        stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
-        stats_dict['spearman'] = stats.spearmanr(pred, gold)
-        stats_dict['pearson'] = stats.pearsonr(pred, gold)
-        # stats_dict['accuracy_X'] = accuracy_score(new_pred_X, new_gold_X)
         stats_dict['f1_X'] = f1_score(new_pred_X, new_gold_X, average="micro")
 
     elif aspect in ["professional_tone", 'valid_point', 'addressed_to_author']:
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
 
+
+
+    stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
+    stats_dict['spearman'] = stats.spearmanr(pred, gold)
+    stats_dict['pearson'] = stats.pearsonr(pred, gold)
+    stats_dict['tau'] = stats.kendalltau(pred, gold)
     stats_dict['original_len'] = original_len
     stats_dict['filtered_len'] = filtered_len
+    stats_dict['sucess_rate'] = filtered_len / original_len
     
     return stats_dict
 

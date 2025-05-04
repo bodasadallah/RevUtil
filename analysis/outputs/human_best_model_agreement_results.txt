@@ -1,0 +1,90 @@
+Agreement Statistics for actionability
+ Total number of samples: 1208
+ Agreement Statistics for <class 'type'>
+{
+    "kappa_quadratic": 0.5500873317579369,
+    "spearman": [
+        0.6038110910202752,
+        6.6394666711455835e-121
+    ],
+    "pearson": [
+        0.6299145816993267,
+        1.523497350010008e-134
+    ],
+    "tau": [
+        0.5456804682302572,
+        1.164082513621029e-103
+    ],
+    "original_len": 1208,
+    "filtered_len": 1208,
+    "sucess_rate": 1.0
+}
+--------------------------------------------------
+Agreement Statistics for grounding_specificity
+ Total number of samples: 1243
+ Agreement Statistics for <class 'type'>
+{
+    "kappa_quadratic": 0.562919248431489,
+    "spearman": [
+        0.5455034346645979,
+        2.710243390976306e-97
+    ],
+    "pearson": [
+        0.6169360756834463,
+        3.005290524936835e-131
+    ],
+    "tau": [
+        0.5217562058621811,
+        2.2589483139984036e-86
+    ],
+    "original_len": 1243,
+    "filtered_len": 1243,
+    "sucess_rate": 1.0
+}
+--------------------------------------------------
+Agreement Statistics for verifiability
+ Total number of samples: 1023
+ Agreement Statistics for <class 'type'>
+{
+    "f1_X": 0.4769736842105263,
+    "kappa_quadratic": 0.38884442013787024,
+    "spearman": [
+        0.6213976442738678,
+        5.056162260786635e-78
+    ],
+    "pearson": [
+        0.6718428936479776,
+        1.502913655204005e-95
+    ],
+    "tau": [
+        0.5650434452856723,
+        1.359894400269719e-64
+    ],
+    "original_len": 1023,
+    "filtered_len": 1023,
+    "sucess_rate": 1.0
+}
+--------------------------------------------------
+Agreement Statistics for helpfulness
+ Total number of samples: 1111
+ Agreement Statistics for <class 'type'>
+{
+    "kappa_quadratic": 0.5539471536286107,
+    "spearman": [
+        0.617113168883763,
+        1.40440055660567e-117
+    ],
+    "pearson": [
+        0.6460708511624754,
+        2.9064646606105305e-132
+    ],
+    "tau": [
+        0.5553973575320902,
+        2.9081974893850314e-102
+    ],
+    "original_len": 1111,
+    "filtered_len": 1111,
+    "sucess_rate": 1.0
+}
+--------------------------------------------------
+==================================================

@@ -74,8 +74,8 @@ WRITE_PATH="evalute_outputs"
 
 # PROMPT_TYPE="chat"
 STEP="0"
-FINETUNING_TYPE="baseline"
-MAX_NUM_SEQS=32
+FINETUNING_TYPE="adapters"
+MAX_NUM_SEQS=16
 TRAINING_aspects="all"
 
 ## Determine the write path based on the finetuning type
@@ -93,10 +93,16 @@ fi
 
 # MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B")
 
-MODELS=("WestlakeNLP/DeepReviewer-7B" )
-DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
-DATASET_SPLITS=("gold,silver,hard,full" "test")
-DATASET_CONFIGS=("actionability,grounding_specificity,verifiability,helpfulness" "all")
+MODELS=("deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
+
+# DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
+# DATASET_SPLITS=("gold,silver,hard,full" "full" "test")
+# DATASET_CONFIGS=("actionability,grounding_specificity,verifiability,helpfulness" "combined_main_aspects" "all")
+
+DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
+DATASET_SPLITS=("full" "test")
+DATASET_CONFIGS=("combined_main_aspects" "all")
+
 GENERATION_TYPES=("score_only" "score_rationale")
 PROMPT_TYPE="chat"
 
@@ -116,8 +122,7 @@ for MODEL in "${MODELS[@]}"; do
             DATASET_SPLIT=${DATASET_SPLITS[$i]}
             ASPECT=${DATASET_CONFIGS[$i]}
 
-            ################ For chatgpt #############
-            # PROMPT_TYPE="instruction"
+            PROMPT_TYPE="instruction"
 
             ### if the model name is  "meta-llama/Llama-3.1-8B" then make prompt type "instruction" don't do that for "meta-llama/Llama-3.1-8B-Instruct"
             if [[ "$MODEL" == *"Llama-3.1-8B"* && "$MODEL" != *"Instruct"* ]]; then

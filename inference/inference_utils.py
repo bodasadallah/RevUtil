@@ -97,7 +97,6 @@ def extract_dict(text):
     text = text.replace("\\\\", "\\")
 
 
-    # text = text.replace("'", '"')  # Replace single quotes with double quotes
 
 
     text = text.replace("[", "")  # Remove square brackets
@@ -106,17 +105,11 @@ def extract_dict(text):
     if text[0] == ',' or text[0] == ' ':
         text = text[1:]
 
-
-    text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
-
     text = text.replace("\\\\", "\\") # Fix double backslashes
     dict_str  = "" 
     if "```" in text:
         text = text + '#'
         match = re.search(r"```(?:json)?\s*(.*?)(```)?#", text, re.DOTALL)
-
-
-
         if match:
             text = match.group(0)
             ## remove the ```json  and ``` from the text
@@ -129,21 +122,38 @@ def extract_dict(text):
     if not text:
         return None
     
-    if text[0] != '{':
+    # if text[0] != '{':
+    #     text = '{' + text + '}'
+
+    # if
+    if '{' not in text:
         text = '{' + text + '}'
-    match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
-    if match:
-        dict_str = match.group()  # Get extracted dictionary string
-        
+
+
+    ############ Some cases doesn't work with replacing the quotes, so trying both ways
+    text2 = text
     try:
+        text = text.replace("'", '"')  # Replace single quotes with double quotes
+        text = escape_inner_quotes(text)  # Fix quotes inside rationale fields
+        match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
+        if match:
+            dict_str = match.group()  # Get extracted dictionary string
         return json.loads(dict_str)  # Convert to Python dictionary safely
-    except json.JSONDecodeError as e:
-        print(f"Parsing error: {e}\nProblematic string: {dict_str}")
-        return None
+    except json.JSONDecodeError:
+        print("Replacing quotes didn't work, trying without replacing quotes.")
+        text = text2  # Revert to original text
+        match = re.search(r'\{.*?\}', text, re.DOTALL)  # Extract first {...} block
+        if match:
+            dict_str = match.group()  # Get extracted dictionary string
+        try:
+            return json.loads(dict_str)  # Convert to Python dictionary safely
+        except json.JSONDecodeError as e:
+            print(f"Parsing error: {e}\nProblematic string: {dict_str}")
+            return None
 
 # Example usage
-input_text = """```json\n{\n  \"actionability_rationale\": \"The review point states a lack of novelty and points out prior work on adversarial attacks. While it identifies a *related* area (video-text models), it doesn't explicitly *recommend* an action or suggest a *specific* improvement. It's more of a statement of fact.\",\n  \"actionability_label\": \"1: Unactionable\",\n  \"grounding_specificity_rationale\": \"The review point mentions \\\"many NLP models and image-text models\\\" and \\\"prior work on adversarial attacks.\\\" The reviewer also mentions \\\"video-text models\\\" as the target area. While it names the *types* of models and the *area* of application, it doesn't pinpoint a *specific* model, paper, or aspect within these categories. The grounding is implied but not explicit.\",\n  \"grounding_specificity_label\": \"3: Weakly Grounded and Specific\",\n  \"verifiability_rationale\": \"The review point contains a claim: \\\"Lack of novelty\\\". This is a statement of opinion or judgment about the work. The reviewer *summarizes* related work in the related work section of the paper. This provides some justification for their claim. However, they don't provide *new* evidence or *specific* examples of how these attacks are applied to NLP or image-text models to demonstrate the lack of novelty in the *video-text* context.\",\n  \"verifiability_label\": \"3: Somewhat Verifiable\",\n  \"helpfulness_rationale\": \"The review point is more of a statement of the authors' perception of the novelty of their work. While it identifies a relevant area of research, it doesn't directly guide the authors on *how* to improve their work. It's more of a negative comment rather than a constructive suggestion.\",\n  \"helpfulness_label\": \"2: Barely Helpful\"\n}\n```"""
-print(extract_dict(input_text))
+# input_text = """\"actionability_rationale\": \"The comment implies an action for the authors to consider. It suggests adding more downstream search methods, which would make the paper more comprehensive.\",\n\"actionability_label\": \"Somewhat Actionable\",\n\"grounding_specificity_rationale\": \"The comment refers to a specific part of the paper, which is the downstream search method section. It is grounded in the fact that the author is questioning the limited options provided for downstream searches.\",\n\"grounding_specificity_label\": \"Fully Grounded and Specific\",\n\"verifiability_rationale\": \"The comment is based on the author's experience and knowledge of other papers in the field. It is not directly verifiable, but it is a common practice to include multiple downstream search methods for a comprehensive study.\",\n\"verifiability_label\": \"Not Verifiable\",\n\"helpfulness_rationale\": \"The comment provides a suggestion that could improve the paper, making it more valuable for the authors. However, it is not very specific in terms of how to implement the suggested change.\",\n\"helpfulness_label\": \"Somewhat Helpful\"\n\nOutput:\n{\"actionability_rationale\": \"The comment implies an action for the authors to consider. It suggests adding more downstream search methods, which would make the paper more comprehensive.\", \"actionability_label\": \"Somewhat Actionable\", \"grounding_specificity_rationale\": \"The comment refers to a specific part of the paper, which is the downstream search method section. It is grounded in the fact that the author is questioning the limited options provided for downstream searches.\", \"grounding_specificity_label\": \"Fully Grounded and Specific\", \"verifiability_rationale\": \"The comment is based on the author\\u0027s experience and knowledge of other papers in the field. It is not directly verifiable, but it is a common practice to include multiple downstream search methods for a comprehensive study.\", \"verifiability_label\": \"Not Verifiable\", \"helpfulness_rationale\": \"The comment provides a suggestion that could improve the paper, making it more valuable for the authors. However, it is not very specific in terms of how to implement the suggested change.\", \"helpfulness_label\": \"Somewhat Helpful\"}s"""
+# print(extract_dict(input_text))
 
 
 

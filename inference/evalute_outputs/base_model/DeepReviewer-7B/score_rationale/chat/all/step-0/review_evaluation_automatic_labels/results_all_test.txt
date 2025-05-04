@@ -2,43 +2,47 @@
     "all_test": {
         "actionability": {
             "total_stats": {
-                "f1": 0.302,
-                "kappa_quadratic": 0.237,
-                "spearman": 0.255,
-                "pearson": 0.253,
+                "kappa_quadratic": 0.193,
+                "spearman": 0.209,
+                "pearson": 0.21,
+                "tau": 0.175,
                 "original_len": 1000,
-                "filtered_len": 913
+                "filtered_len": 893,
+                "sucess_rate": 0.893
             }
         },
         "grounding_specificity": {
             "total_stats": {
-                "f1": 0.375,
-                "kappa_quadratic": 0.356,
-                "spearman": 0.356,
-                "pearson": 0.364,
+                "kappa_quadratic": 0.323,
+                "spearman": 0.32,
+                "pearson": 0.327,
+                "tau": 0.275,
                 "original_len": 1000,
-                "filtered_len": 811
+                "filtered_len": 799,
+                "sucess_rate": 0.799
             }
         },
         "verifiability": {
             "total_stats": {
-                "kappa": 0.055,
-                "kappa_quadratic": 0.225,
-                "spearman": 0.215,
-                "pearson": 0.232,
-                "f1_X": 0.206,
+                "f1_X": 0.248,
+                "kappa_quadratic": 0.277,
+                "spearman": 0.279,
+                "pearson": 0.288,
+                "tau": 0.239,
                 "original_len": 1000,
-                "filtered_len": 902
+                "filtered_len": 886,
+                "sucess_rate": 0.886
             }
         },
         "helpfulness": {
             "total_stats": {
-                "f1": 0.348,
-                "kappa_quadratic": 0.316,
-                "spearman": 0.327,
-                "pearson": 0.326,
+                "kappa_quadratic": 0.342,
+                "spearman": 0.362,
+                "pearson": 0.36,
+                "tau": 0.309,
                 "original_len": 1000,
-                "filtered_len": 900
+                "filtered_len": 881,
+                "sucess_rate": 0.881
             }
         }
     }

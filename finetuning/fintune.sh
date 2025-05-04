@@ -48,7 +48,7 @@ else
     fi
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
-    export CUDA_VISIBLE_DEVICES=0,1,2,3
+    export CUDA_VISIBLE_DEVICES=2,3
 fi
 
 

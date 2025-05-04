@@ -1,0 +1,93 @@
+Agreement Statistics for actionability
+ Total number of samples: 764
+ Agreement Statistics for definitions_incontext_learning
+{
+    "kappa": 0.1828673763804597,
+    "kappa_quadratic": 0.4285982530223391,
+    "spearman": [
+        0.5303009246877487,
+        1.2535471659410072e-56
+    ],
+    "pearson": [
+        0.5495755709369192,
+        1.661531895594257e-61
+    ],
+    "tau": [
+        0.4534842273233371,
+        2.2317064407784397e-51
+    ],
+    "original_len": 764,
+    "filtered_len": 764
+}
+--------------------------------------------------
+==================================================
+Agreement Statistics for grounding_specificity
+ Total number of samples: 671
+ Agreement Statistics for definitions_incontext_learning
+{
+    "kappa": 0.2107421898806695,
+    "kappa_quadratic": 0.4060660847293238,
+    "spearman": [
+        0.46157225734921775,
+        1.0398687120265527e-36
+    ],
+    "pearson": [
+        0.5063051293364275,
+        5.709324674094083e-45
+    ],
+    "tau": [
+        0.4132776466890077,
+        9.725349915569161e-35
+    ],
+    "original_len": 671,
+    "filtered_len": 671
+}
+--------------------------------------------------
+==================================================
+Agreement Statistics for verifiability
+ Total number of samples: 838
+ Agreement Statistics for definitions_incontext_learning
+{
+    "f1_X": 0.5181518151815182,
+    "kappa": 0.07158635727031071,
+    "kappa_quadratic": 0.3202252312266406,
+    "spearman": [
+        0.5140371664875114,
+        2.047612051041699e-37
+    ],
+    "pearson": [
+        0.5454853467915503,
+        8.356030325403763e-43
+    ],
+    "tau": [
+        0.45479870840278813,
+        2.684001871835873e-34
+    ],
+    "original_len": 838,
+    "filtered_len": 838
+}
+--------------------------------------------------
+==================================================
+Agreement Statistics for helpfulness
+ Total number of samples: 811
+ Agreement Statistics for definitions_incontext_learning
+{
+    "kappa": 0.14342950123254716,
+    "kappa_quadratic": 0.4921853676489659,
+    "spearman": [
+        0.5509739428246848,
+        1.4087728984545167e-65
+    ],
+    "pearson": [
+        0.5829920900021236,
+        5.231831563213597e-75
+    ],
+    "tau": [
+        0.48726697463411184,
+        1.3827423304839348e-59
+    ],
+    "original_len": 811,
+    "filtered_len": 811
+}
+--------------------------------------------------
+==================================================

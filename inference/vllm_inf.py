@@ -9,12 +9,13 @@ from tqdm import tqdm
 import pandas as pd
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
-from utils import get_prompt, get_stats
+from utils import get_prompt, get_stats, get_alpha_scores
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 from inference_utils import extract_predictions
 import json
 import ast
+
 ### get dataaset token from .env
 from dotenv import load_dotenv
 load_dotenv()
@@ -268,6 +269,10 @@ def write_stats_to_file(label_dict, results_file_name):
                     stat_dict = process_stat_dict(stat_dict)
                     results_dict[key][aspect][annotator] = stat_dict
 
+
+                ### Calulating Krippendorff's alpha
+
+
                 # Calculate the average stat_dict across annotators
                 average_stat_dict = {}
                 num_annotators = len(annotations)
@@ -280,8 +285,17 @@ def write_stats_to_file(label_dict, results_file_name):
                 for metric in average_stat_dict:
                     average_stat_dict[metric] /= num_annotators
 
+                # Calculate Krippendorff's alpha
+                annotations_plus_predictions = list(annotations.values()) + [preds]
+                alpha = get_alpha_scores(annotations_plus_predictions, aspect)
+                average_stat_dict['krippendorff_alpha'] = alpha
+
+                average_stat_dict = process_stat_dict(average_stat_dict)
+
                 results_dict[key][aspect]['total_stats'] = average_stat_dict
           
+            ############## if the gold label is not a dict, we only have one label ##############
+            ################### This happens for evlauation against the Test set ##################
             else:
                 stat_dict = get_stats(preds, gold, aspect)
 
@@ -301,11 +315,12 @@ def process_stat_dict(stat_dict):
     for k, v in stat_dict.items():
         if 'accuracy' in k:
             continue
-        if 'spearman' in k or 'pearson' in k:
-            v = v[0]
+        if 'spearman' in k or 'pearson' in k or 'tau' in k:
+            v = v[0] if isinstance(v, tuple) else v
         if isinstance(v, float):
             v = round(v, 3)
         processed_stat_dict[k] = v
+
     return processed_stat_dict
 
 
