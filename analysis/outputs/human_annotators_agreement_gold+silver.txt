@@ -1,0 +1,228 @@
+Aspect: actionability
+Number of data points: 1207
+===================== PAIRWISE AGREEMENT =====================
+Annotator 1: boda
+Annotator 2: Annotator_X
+{
+    "kappa_quadratic": 0.802,
+    "alpha_pairwise": 0.773,
+    "spearman": 0.775,
+    "pearson": 0.808,
+    "tau": 0.715,
+    "original_len": 1207,
+    "filtered_len": 1207,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: boda
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.704,
+    "alpha_pairwise": 0.562,
+    "spearman": 0.611,
+    "pearson": 0.722,
+    "tau": 0.537,
+    "original_len": 1207,
+    "filtered_len": 1207,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: Annotator_X
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.649,
+    "alpha_pairwise": 0.526,
+    "spearman": 0.587,
+    "pearson": 0.681,
+    "tau": 0.51,
+    "original_len": 1207,
+    "filtered_len": 1207,
+    "sucess_rate": 1.0
+}
+
+===================== AVERAGE AGREEMENT =====================
+{
+    "kappa_quadratic": 0.718,
+    "alpha_pairwise": 0.62,
+    "spearman": 0.658,
+    "pearson": 0.737,
+    "tau": 0.587,
+    "original_len": 1207.0,
+    "filtered_len": 1207.0,
+    "sucess_rate": 1.0
+}Krippendorff's alpha: 0.6164212427663027
+
+============================================================
+
+Aspect: grounding_specificity
+Number of data points: 1243
+===================== PAIRWISE AGREEMENT =====================
+Annotator 1: boda
+Annotator 2: Annotator_X
+{
+    "kappa_quadratic": 0.496,
+    "alpha_pairwise": 0.408,
+    "spearman": 0.462,
+    "pearson": 0.528,
+    "tau": 0.434,
+    "original_len": 1243,
+    "filtered_len": 1243,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: boda
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.491,
+    "alpha_pairwise": 0.406,
+    "spearman": 0.425,
+    "pearson": 0.504,
+    "tau": 0.394,
+    "original_len": 1243,
+    "filtered_len": 1243,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: Annotator_X
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.565,
+    "alpha_pairwise": 0.471,
+    "spearman": 0.477,
+    "pearson": 0.571,
+    "tau": 0.442,
+    "original_len": 1243,
+    "filtered_len": 1243,
+    "sucess_rate": 1.0
+}
+
+===================== AVERAGE AGREEMENT =====================
+{
+    "kappa_quadratic": 0.517,
+    "alpha_pairwise": 0.428,
+    "spearman": 0.455,
+    "pearson": 0.534,
+    "tau": 0.423,
+    "original_len": 1243.0,
+    "filtered_len": 1243.0,
+    "sucess_rate": 1.0
+}Krippendorff's alpha: 0.42985090662326997
+
+============================================================
+
+Aspect: verifiability
+Number of data points: 1023
+===================== PAIRWISE AGREEMENT =====================
+Annotator 1: boda
+Annotator 2: Annotator_X
+{
+    "f1_X": 0.603,
+    "kappa_quadratic": 0.626,
+    "alpha_pairwise": 0.536,
+    "spearman": 0.575,
+    "pearson": 0.639,
+    "tau": 0.504,
+    "original_len": 1023,
+    "filtered_len": 1023,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: boda
+Annotator 2: Annotator_Y
+{
+    "f1_X": 0.124,
+    "kappa_quadratic": 0.736,
+    "alpha_pairwise": 0.675,
+    "spearman": 0.679,
+    "pearson": 0.743,
+    "tau": 0.616,
+    "original_len": 1023,
+    "filtered_len": 1023,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: Annotator_X
+Annotator 2: Annotator_Y
+{
+    "f1_X": 0.097,
+    "kappa_quadratic": 0.632,
+    "alpha_pairwise": 0.544,
+    "spearman": 0.577,
+    "pearson": 0.65,
+    "tau": 0.516,
+    "original_len": 1023,
+    "filtered_len": 1023,
+    "sucess_rate": 1.0
+}
+
+===================== AVERAGE AGREEMENT =====================
+{
+    "f1_X": 0.275,
+    "kappa_quadratic": 0.665,
+    "alpha_pairwise": 0.585,
+    "spearman": 0.61,
+    "pearson": 0.677,
+    "tau": 0.545,
+    "original_len": 1023.0,
+    "filtered_len": 1023.0,
+    "sucess_rate": 1.0
+}Krippendorff's alpha: 0.38604409721174937
+
+============================================================
+
+Aspect: helpfulness
+Number of data points: 1111
+===================== PAIRWISE AGREEMENT =====================
+Annotator 1: boda
+Annotator 2: Annotator_X
+{
+    "kappa_quadratic": 0.685,
+    "alpha_pairwise": 0.623,
+    "spearman": 0.627,
+    "pearson": 0.688,
+    "tau": 0.555,
+    "original_len": 1111,
+    "filtered_len": 1111,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: boda
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.663,
+    "alpha_pairwise": 0.61,
+    "spearman": 0.611,
+    "pearson": 0.664,
+    "tau": 0.537,
+    "original_len": 1111,
+    "filtered_len": 1111,
+    "sucess_rate": 1.0
+}
+
+Annotator 1: Annotator_X
+Annotator 2: Annotator_Y
+{
+    "kappa_quadratic": 0.645,
+    "alpha_pairwise": 0.572,
+    "spearman": 0.579,
+    "pearson": 0.648,
+    "tau": 0.513,
+    "original_len": 1111,
+    "filtered_len": 1111,
+    "sucess_rate": 1.0
+}
+
+===================== AVERAGE AGREEMENT =====================
+{
+    "kappa_quadratic": 0.664,
+    "alpha_pairwise": 0.602,
+    "spearman": 0.606,
+    "pearson": 0.667,
+    "tau": 0.535,
+    "original_len": 1111.0,
+    "filtered_len": 1111.0,
+    "sucess_rate": 1.0
+}Krippendorff's alpha: 0.6023693764267498
+
+============================================================
+

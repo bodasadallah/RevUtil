@@ -1,0 +1,1293 @@
+title,decision,human_review,gpt_review,human_weakness_text,gpt_weakness_text
+understanding html with large language models,rejected,"Summary Of The Paper:
+This work addresses the problem of using large language models for understanding HTML.
+Unlike prior work which attempt to solve this problem using dedicated architectures and training procedures and/or large HTML corpora, this work employs large language models pretrained on natural language text and evaluates their performance on three HTML understanding tasks - Semantic Classification of HTML elements, Description Generation for HTML inputs, and Autonomous Web Navigation of HTML pages, thus potentially eliminating the need for dedicated architectures and training procedures.
+Further, using only a small HTML corpus for finetuning a pretrained LM, the work reports encouraging results compared to LMs trained exclusively on the task dataset.
+The key question asked by this work is can off-the-shelf LLM trained on a large text corpus be used in tasks that require some level of understanding of HTML.
+As canonical tasks in HTML understanding, the work looks at three tasks.
+In Semantic Classification, the ask from the model is to classify a salient HTML element into one of a set of role categories that are commonly used in automated form-filling applications.
+E.g. address, email, password.
+In Description Generation, the ask from the model is to, given a HTML snippet as the input, extract a small text sequence from the snippet as the natural language description of the snippet.
+In Autonomous Web Navigation, the ask from the model is to, given a HTML page and a natural language command as the input, identify the appropriate HTML elements and the actions on those elements that would satisfy the command.
+The work tests the idea of using pre-trained LLM for the three canonical tasks with several pretrained LLMs with different architecture encoder-only, encoder-decoder, or decoder-only, different model size, and training data.
+Best results are obtained with encoder-decoder architectures with bi-directional attention.
+The input to the models is the raw HTML text sequence.
+However, when the sequence is too big to fit into the context window of LLM, a snippet of appropriate size is extracted using a heuristic algorithm.
+The work uses MiniWoB benchmark (demonstrations like email forwarding and social media interactions) for Autonomous Web Navigation task, a new dataset consisting of URLs from the real shopping websites for Semantic Classification, and a dataset derived from CommonCrawl for Description Generation.
+Strength And Weaknesses:
+Strengths:
+1.That pre-trained natural language LLM can be effective for tasks involving HTML pages is interesting and can potentially find use in several interesting practical applications.
+2.As no retraining of LLM with large HTML datasets is necessary, models for tasks involving HTML pages can be developed quickly and less expensively.
+3.That raw HTML text can be used as input without needing parsing is an advantage.
+4.Experimental results are very encouraging and validate the claim that pretrained LLMs can be effective for the three tasks.
+Weaknesses:
+1.It is claimed that these three tasks require understanding of both structure and content of the web-page.
+While it is easy to see that textual content plays a key role in each of the three tasks, the role played by the structure of the web-page is not clear.
+It can be argued that no significant HTML structure analysis or understanding is needed for these tasks.
+For example, in Semantic Classification, what is most important for classifying HTML element 'input' into, say, 'username' is the value of its two attributes, 'type' and 'id'.
+As these attributes are in the close neighbourhood of 'input', parsing of HTML is not strictly necessary.
+Therefore, it might a good idea to do some experiments that demonstrate unequivocally the need for HTML structure analysis or understanding in these tasks.
+One such experiment could be to map all HTML tags in the web-page except the salient tags to the same token (say, ***) so that the input is now a sequence of salient tags, and ***.
+2.There is not much novelty in the methodological aspects of the work.
+Clarity, Quality, Novelty And Reproducibility:
+The submission is well written and easy to understand.
+The three canonical tasks are described well and the adaptation of the various LLM for building models for these tasks are well explained.
+The proposed solution is simple and appears to be effective for the tasks considered and the datasets chosen.
+There is not much novelty in methodological aspects and the work is primarily empirical in nature.
+Experiments are designed well and should be easy to reproduce.
+Datasets used in the experiments have been promised to be released.
+The work should be interesting for practitioners.
+Summary Of The Review:
+This work asks the question can off-the-shelf LLM trained on natural language text be used effectively for tasks that involve HTML pages.
+It proposes three tasks as canonical tasks in understanding HTML.
+It employs a variety of LLM to build models for the three tasks using a small amount of HTML data for fine tuning.
+It shows that LLM does help these tasks significantly.
+One key question not answered in this context is how much of HTML structure analysis and understanding is truly required for these questions.
+","Summary of the Paper:
+This paper explores the application of Large Language Models (LLMs) for understanding HTML, a crucial aspect for tasks such as web automation, crawling, and browser-assisted retrieval.
+Despite the significant capabilities of LLMs in various natural language tasks, their potential in parsing raw HTML has been relatively unexplored.
+This study introduces HTML understanding models, which are fine-tuned LLMs, and examines their performance across three tasks: Semantic Classification of HTML elements, Description Generation from HTML inputs, and Autonomous Web Navigation through HTML pages.
+The results demonstrate that fine-tuned LLMs, particularly T5-based models with their bidirectional encoder-decoder architecture, significantly outperform models trained solely on task-specific datasets.
+Moreover, the study contributes a large-scale HTML dataset distilled from CommonCrawl to encourage further research.
+The findings highlight that LLMs pre-trained on natural language corpora can effectively transfer to HTML understanding tasks, achieving remarkable accuracy and sample efficiency without the need for specialized neural network architectures.
+Strengths and Weaknesses:
+Strengths:
+The paper addresses an under-explored yet critical area of leveraging LLMs for HTML understanding, relevant for web-based automation and information retrieval.
+Demonstrates significant improvements in accuracy and sample efficiency over existing models by fine-tuning pre-trained LLMs on HTML understanding tasks.
+The comprehensive experiments across different models, tasks, and a novel dataset contribute valuable insights to the field.
+Open-sourcing the large-scale HTML dataset distilled from CommonCrawl is a significant contribution that will likely spur further research.
+Weaknesses:
+The paper could benefit from a more detailed discussion on the limitations and challenges faced during the snippet extraction process and how they impact model performance.
+A comparison with state-of-the-art models in related fields, such as document understanding or web page segmentation, might have provided a broader context.
+The ethical considerations of automating web navigation tasks, especially in terms of privacy and security, were not discussed.
+Clarity, Quality, Novelty, and Reproducibility:
+Clarity: The paper is well-written, with a clear structure that guides the reader through the objectives, methodology, results, and conclusions.
+Quality: The research is of high quality, with rigorous experimentation and a significant dataset contribution.
+Novelty: The approach of fine-tuning pre-trained LLMs for HTML understanding tasks is novel, especially the application across diverse tasks like semantic classification, description generation, and web navigation.
+Reproducibility: With the detailed methodology, open-sourced dataset, and clear descriptions of the fine-tuning process, the study appears highly reproducible.
+Summary of the Review:
+The paper presents a novel approach to HTML understanding using fine-tuned Large Language Models, demonstrating impressive performance improvements across several tasks.
+The research is significant for its potential applications in web automation and information retrieval.
+The open-source dataset further contributes to the field's advancement.
+Despite minor weaknesses in discussing limitations and ethical considerations, the paper's quality, novelty, and clarity make it a valuable addition to the literature.
+","Weaknesses:
+1.It is claimed that these three tasks require understanding of both structure and content of the web-page.
+While it is easy to see that textual content plays a key role in each of the three tasks, the role played by the structure of the web-page is not clear.
+It can be argued that no significant HTML structure analysis or understanding is needed for these tasks.
+For example, in Semantic Classification, what is most important for classifying HTML element 'input' into, say, 'username' is the value of its two attributes, 'type' and 'id'.
+As these attributes are in the close neighbourhood of 'input', parsing of HTML is not strictly necessary.
+Therefore, it might a good idea to do some experiments that demonstrate unequivocally the need for HTML structure analysis or understanding in these tasks.
+One such experiment could be to map all HTML tags in the web-page except the salient tags to the same token (say, ***) so that the input is now a sequence of salient tags, and ***.
+2.There is not much novelty in the methodological aspects of the work.
+One key question not answered in this context is how much of HTML structure analysis and understanding is truly required for these questions.
+","The paper could benefit from a more detailed discussion on the limitations and challenges faced during the snippet extraction process and how they impact model performance.
+A comparison with state-of-the-art models in related fields, such as document understanding or web page segmentation, might have provided a broader context.
+The ethical considerations of automating web navigation tasks, especially in terms of privacy and security, were not discussed.
+Despite minor weaknesses in discussing limitations and ethical considerations, the paper's quality, novelty, and clarity make it a valuable addition to the literature.
+"
+webbrain: learning to generate factually correct articles for queries by grounding on large web corpus,rejected,"Summary Of The Paper:
+This paper introduces a new task called Web-Brain which aims to generate short factual articles for queries by mining supporting evidence from Web.
+The paper also proposes a new large scale dataset with English Wikipedia.
+The paper also provides a new framework called ReGen based on SPLADE and FiD.
+The model is evaluated with both n-gram overlapping metrics and factual correctness metrics.
+The paper analyze the impact of retrieval, number of references in a quantitative way.
+The paper also did both human and automatic evaluation.
+Strength And Weaknesses:
+Strength
+The paper introduces WebBrain, which lets the model retrieve supporting evidence and generate factual articles given a factual query.
+The proposed dataset is somewhat similar to the Wizard of Wikipedia (Dinan et al., 2018).
+The newly proposed dataset is interesting and large-scale.
+The authors crawled and cleaned Wikipedia.
+The proposed task and corresponding dataset are very interesting and worthy of future research.
+The paper proposes a new retrieval-augmented generation framework based on SPLADE and FiD.
+The proposed methods achieve the best results over automatic and human evaluation.
+The experiment section is very comprehensive.
+The authors conduct an ablation study with different retrieval models and show the impact of the different numbers of retrieved references.
+The paper also checks the impact of a number of references.
+Those results are clearly represented in tables or charts with detailed explanations.
+The paper shows the case study, human evaluation, and reference mark correction strategy in the appendix.
+Weaknesses
+The paper uses n-gram overlapping metrics for automatic evaluation.
+The paper needs to include some newer metrics such as BERTscore (Zhang et al., 2019), and BARTScore (Yuan et al., 2021) which can check semantic similarity.
+Most of the experiment analyses are in quantitative way.
+I would like to see more qualitative analysis.
+Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2019). Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675.
+Yuan, W., Neubig, G., & Liu, P. (2021). Bartscore: Evaluating generated text as text generation. Advances in Neural Information Processing Systems, 34, 27263-27277.
+Dinan, E., Roller, S., Shuster, K., Fan, A., Auli, M., & Weston, J. (2018). Wizard of Wikipedia: Knowledge-powered conversational agents. arXiv preprint arXiv:1811.01241.
+Clarity, Quality, Novelty And Reproducibility:
+Some parts of the paper are not very clear.
+The steps to create WebBrain-R and WebBrain-G is unclear.
+The paper attached the implementation details in the appendix.
+It also provides examples from the dataset for readers to check.
+However, it does not provide any code for reproduction.
+It shows the limitation and system demonstration in the Appendix.
+Summary Of The Review:
+Overall, the paper proposes a new interesting task with a corresponding large-scale Wikipedia-based dataset.
+The experiment part is quite comprehensive.
+","Summary of the Paper:
+This paper introduces a new NLP task, WEB BRAIN, which aims at generating short factual articles in response to queries by mining supporting evidence from the web.
+The authors construct the WebBrain-Raw dataset from English Wikipedia articles and their references, making it significantly larger than existing datasets for similar tasks.
+They analyze the performance of state-of-the-art NLP techniques on WEB BRAIN and propose a new framework, ReGen, which improves the generation of factually correct content through enhanced evidence retrieval and task-specific pre-training.
+Their empirical results demonstrate that ReGen outperforms all baselines in both automatic and human evaluations.
+Strengths and Weaknesses:
+The paper presents a clear, technically sound, and experimentally rigorous approach.
+The introduction of the WebBrain-Raw dataset is a notable strength, providing a valuable resource for the research community.
+The proposed ReGen framework's emphasis on factual correctness through improved retrieval and pre-training is innovative and addresses a significant challenge in generating content based on web-sourced evidence.
+However, the paper lacks a thorough discussion on the limitations of their approach, potential biases in the dataset, and the scalability of their solution to other languages or domains.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is well-written, making it easy to understand the proposed task, methodology, and the significance of the results.
+The research quality is high, with thorough experimentation and a clear presentation of results.
+The novelty lies in the task formulation and the ReGen framework, contributing new insights into factual content generation from web sources.
+The authors' commitment to releasing the WebBrain-Raw dataset and the detailed description of the ReGen framework enhance the reproducibility of their work.
+Summary of the Review:
+Overall, this paper makes a significant contribution to the field of NLP by introducing a challenging new task and a corresponding large-scale dataset.
+The proposed ReGen framework effectively addresses the task, demonstrating superior performance over existing methods.
+While the paper is strong in most aspects, further discussion on its limitations and broader applicability would strengthen its impact.
+","Most of the experiment analyses are in quantitative way.
+Some parts of the paper are not very clear.
+However, it does not provide any code for reproduction.
+","However, the paper lacks a thorough discussion on the limitations of their approach, potential biases in the dataset, and the scalability of their solution to other languages or domains.
+While the paper is strong in most aspects, further discussion on its limitations and broader applicability would strengthen its impact.
+"
+pre-trained language models can be fully zero-shot learners,rejected,"Summary Of The Paper:
+The authors propose a new language model named non parametric prompting PLM for natural language understanding specially for zero-shot learning.
+It is an important topic because these days many word-class associations are being produced by end users and previous models heavily depend on unlabeled data and human effort.
+The authors showed that the proposed method outperforms state-of-the-art in terms of text classification accuracy and GLUE benchmarks on four different datasets including AG news, DBPedia, IMDB. and Amazon.
+Strength And Weaknesses:
+The authors put significant effort on proving effectiveness of their method in a variety of NLP tasks.
+However, I wanted to see significant test results to make sure that the improvements are not random.
+Clarity, Quality, Novelty And Reproducibility:
+The paper was well written and easy to follow.
+I would require authors to add the github link for the code.
+Summary Of The Review:
+Overall, zero shot learning is an interesting topic in natural language processing as so many new categories and topics are being produced on the web.
+The authors proposed a simple and easy to implement method for pre trained language models to minimize human effort in terms of labeling and building training data.
+Overall I am satisfied with the current draft of the paper and request to move forward with discussion.
+","Summary of the Paper:
+The paper introduces Nonparametric Prompting (NPPrompt), a novel approach for fully zero-shot language understanding with pre-trained language models (PLMs), without requiring labeled data, additional raw corpus for fine-tuning, or manual construction of prompts.
+NPPrompt leverages PLM embeddings to find relevant words for labels and uses these to generate predictions for various NLP tasks such as text classification, text entailment, similar text retrieval, and paraphrasing.
+The method outperforms existing zero-shot approaches by significant margins on standard benchmarks.
+Strengths and Weaknesses:
+Strengths:
+1.Novelty: NPPrompt introduces a novel approach for fully zero-shot learning, leveraging PLMs without additional data requirements. 2.Performance: Demonstrates superior performance over existing methods across diverse NLP tasks, indicating broad applicability. 3.Methodological Rigor: The paper provides a clear and detailed explanation of the methodology, supported by extensive experiments.
+Weaknesses:
+1.Reproducibility: While the paper mentions experiments and results, detailed settings for reproducibility (e.g., hyperparameters, computational resources) could be better emphasized.
+2.Comparison with Baselines: The paper could benefit from a deeper analysis of why NPPrompt outperforms baselines, including insights into cases where it might not perform as expected.
+3.Generalization to other languages or domains: The paper primarily focuses on English; extending and evaluating the approach for other languages or specific domains could provide further insights.
+Clarity, Quality, Novelty, and Reproducibility:
+- The paper is clearly written and structured, making it accessible to readers.
+- The quality of research is high, with rigorous experimentation and a novel contribution to the field. - The novelty of the method is one of the paper's strengths, presenting a new pathway for zero-shot learning in NLP.
+Reproducibility could be enhanced with more detailed experimental settings and access to code or datasets.
+Summary of the Review:
+This work is a significant contribution to the field of NLP, introducing a novel approach for zero-shot learning that leverages the inherent capabilities of PLMs without additional data requirements.
+The method shows impressive performance across a range of tasks, indicating its potential impact.
+However, improvements in documenting reproducibility and extending analyses could further strengthen the paper.
+","Strength And Weaknesses:
+","1.Reproducibility: While the paper mentions experiments and results, detailed settings for reproducibility (e.g., hyperparameters, computational resources) could be better emphasized.
+2.Comparison with Baselines: The paper could benefit from a deeper analysis of why NPPrompt outperforms baselines, including insights into cases where it might not perform as expected.
+3.Generalization to other languages or domains: The paper primarily focuses on English; extending and evaluating the approach for other languages or specific domains could provide further insights.
+"
+leveraging large language models for multiple choice question answering,accepted,"Summary Of The Paper:
+The authors identify a better method to prompt LLMs for multiple-choice question answering.
+Instead of (the usual) comparing the probability of producing each answer, they present all options to the model and then identify the right option by producing just the letter that identifies the answer.
+Strength And Weaknesses:
+Strengths: The authors explain their approach well.
+They also discuss the (somewhat surprising) variance between different models in their ability to separate the letter from the answer.
+(They call this Multiple Choice Symbol Binding.)
+The approach is evaluated on a wide range of (20) datasets.
+Weaknesses: The approach is not new, just discussed and evaluated.
+The authors differentiate their suggested prompting from “prompt engineering”, which they seem to define as fine-tuning of prompts to increase model performance.
+However, I’m not convinced that these are fundamentally different, and would include research such as theirs in the general domain of prompt engineering.
+Clarity, Quality, Novelty And Reproducibility:
+The paper is well written and I believe the experiments are verifiable with the given information, i.e.
+it should be possible to reproduce them.
+Regarding novelty, I am less convinced.
+The authors mention others having used the MCP approach.
+So the main addition here is the systematic discussion and wide range of experiments.
+Summary Of The Review:
+The authors discuss an alternative (but not novel) way to prompt LLMs for better results on multiple-choice tasks.
+The prompt is well-motivated and thoroughly discussed with a good range of experiments that support the author's arguments.
+However, it is not novel: it is a fairly obvious way to prompt and has been tried before.
+","Summary of the Paper
+The paper proposes an innovative approach to multiple choice question answering (MCQA) tasks using large language models (LLMs), specifically focusing on improving the presentation of questions and answer choices to the LLM.
+It introduces a method termed ""multiple choice symbol binding"" (MCSB), allowing the model to more effectively associate answer choices with their corresponding symbols (e.g., ""A"", ""B"", ""C""), which significantly enhances its performance on MCQA tasks across 20 diverse datasets.
+The authors claim that this approach not only simplifies the computational process but also yields accuracy improvements, thereby narrowing the gap with state-of-the-art (SOTA) methods without requiring task-specific tuning.
+Strengths and Weaknesses
+Strengths:
+- The paper is well-structured, making it easy to follow the authors' thought process and the logical progression of their work.
+- Novelty in addressing the MCQA task by changing the interaction pattern between the question-answering model and the input data.
+- Comprehensive evaluation across 20 diverse datasets demonstrates the method's effectiveness and generalizability.
+- The provision of code and detailed methodological descriptions supports the reproducibility of the results.
+Weaknesses:
+- The paper could benefit from a more in-depth discussion of the limitations of the proposed MCSB approach, including potential biases introduced by symbol binding.
+- Comparison with state-of-the-art methods focuses primarily on performance metrics, with less emphasis on computational efficiency and scalability.
+- The impact of MCSB's effectiveness across languages or domains (beyond the datasets tested) remains unclear.
+Clarity, Quality, Novelty, and Reproducibility
+The paper is clearly written and structured, presenting a novel approach to MCQA tasks that contribute to the field's understanding of leveraging LLMs in a more efficient and effective manner.
+The quality of research is high, demonstrated by rigorous experimental design and thorough evaluation.
+The novelty of the MCSB method and its impact on LLM performance in MCQA tasks are well-articulated.
+Reproducibility is supported by the availability of code and detailed experimental setup.
+Summary of the Review
+This paper presents an innovative and effective approach to improving LLMs' performance on MCQA tasks through MCSB.
+The method's generalizability and potential to simplify computational processes in MCQA tasks are significant contributions to the field.
+While the paper is of high quality and novelty, further exploration of its limitations and a broader comparison with existing methods could strengthen its impact.
+","Weaknesses: The approach is not new, just discussed and evaluated.
+The authors differentiate their suggested prompting from “prompt engineering”, which they seem to define as fine-tuning of prompts to increase model performance.
+However, I’m not convinced that these are fundamentally different, and would include research such as theirs in the general domain of prompt engineering.
+",
+words are all you need? language as an approximation for human similarity judgments,accepted,"Summary Of The Paper:
+The authors make the observation that representations learned by DL models produce proximity scores very different from human evaluations.
+They introduce a simple and scalable technique to make the human and model produced similarity scores closer.
+Essentially, text descriptions or tags for various input data points (across modalities) are passed through LLMs (or word-frequency methods) and the resulting representations used for proximity scores.
+Stacked representations combining the existing model and the text description representation is shown to consistently match human similarity metrics better.
+Strength And Weaknesses:
+Strengths:
+I think this is a well-motivated problem. Learned representations are often used as features in the small-data regimen or sometimes directly for getting proximity scores in an AI setting.
+This paper address the human interpretability of these representations by (i) confirming that human similarities and proximity scores from models can vary a lot,
+(ii) text-descriptions or tags can be leveraged and stacking these representations with the model-learned representations can help.
+I also appreciate that the technique is scalable and in many cases not that much of an overhead to implement.
+I appreciate the arguments in the related text that leverage cognitive science literature.
+In addition, the paper is easy to follow.
+Weaknesses:
+The paper doesn't have too many weaknesses.
+I was wondering if we could get some numbers on if the stacked representations help in additional downstream tasks like say classification (i.e. does the performance on imagenet improve if you use imagenet + text). However, I understand that this can be significant undertaking and do not want to base my review on this experiment but it is a potential future direction.
+Clarity, Quality, Novelty And Reproducibility:
+The paper presents a straightforward but well-motivated idea.
+Having representations match human similarity judgement is indeed useful.
+Implementing this technique would require (i) ability to acquire free-text or tag values which are domain-dependent but not prohibitively expensive, (ii) ability to obtain LLM representations which are straightforward since high quality implementations and libraries exist for these now. Reproducibility is not an issue.
+Summary Of The Review:
+Well motivated problem
+Clearly described technique that is scalable, easy to implement
+Techniques like these that are easy to implement and help with interpretability are of great use in the small-data regimen (where the bulk of us are).
+I would like to see this paper at ICLR.
+","Summary of the Paper
+This paper evaluates the effectiveness of pre-trained deep neural networks (DNNs) in approximating human similarity judgments across images, audio, and video modalities, revealing a substantial gap between DNN and human performances.
+To bridge this gap, the authors introduce language-based methods for similarity approximation, leveraging an adaptive tag collection pipeline (STEP-Tag) for efficient data gathering.
+They further enhance approximation accuracy by combining language embeddings with DNN embeddings (""stacked"" methods), demonstrating superior performance across all tested modalities.
+The study provides a comprehensive guide for researchers on approximating human similarity judgments efficiently, supported by a large dataset of 206,339 human judgments and a detailed analysis of various modeling approaches.
+Strengths and Weaknesses
+Strengths:
+Comprehensive Evaluation: The evaluation of 611 pre-trained models across three distinct modalities presents a thorough and broad analysis, showcasing the extensive work undertaken.
+Innovative Language-based Methods: The introduction of language-based methods for similarity approximation, alongside the novel STEP-Tag pipeline, represents a significant contribution to the field, particularly in terms of efficiency and scalability.
+High-Quality Dataset: The large dataset of human judgments collected and released provides a valuable resource for future research, enhancing reproducibility and further study.
+Practical Guide for Researchers: The concise guide based on experimental results is a practical tool for researchers facing limitations in judgment collection or model access, facilitating more effective research design.
+Weaknesses:
+Model-Specific Analysis Limitations: The paper's focus on pre-trained models might limit its applicability to domains where such models are not available or suitable.
+Additionally, the performance gap noted between human judgments and DNNs might be model-specific rather than a general limitation of DNNs.
+Potential Bias in Language Data: The reliance on language-based methods might introduce biases related to language use and representation, which the paper does not fully address in terms of potential impacts on similarity judgments.
+Ethical Considerations: While the paper briefly mentions the risk of embedding human biases in ML datasets, a deeper analysis of ethical implications, especially concerning the use of language data and the broader societal impacts of these biases, would strengthen the paper.
+Clarity, Quality, Novelty, and Reproducibility
+Clarity and Quality: The paper is well-structured and clear, with a strong emphasis on methodological rigor and comprehensive data analysis.
+The quality of the research is evident in the extensive dataset and detailed experimental setup.
+Novelty: The novel use of language-based methods and the STEP-Tag pipeline for approximating human similarity judgments is a significant and innovative contribution to the field.
+Reproducibility: With the release of the dataset and detailed descriptions of the methodologies and models used, the study sets a high standard for reproducibility.
+Summary of the Review
+The paper presents a comprehensive and innovative approach to approximating human similarity judgments using pre-trained DNNs and novel language-based methods.
+The strengths lie in the extensive model evaluation, the innovative methodology for data collection, and the practical guide for researchers.
+However, the study could be improved by addressing potential biases introduced through language data and by expanding the discussion on the ethical implications of their findings.
+Overall, the contributions are significant, providing valuable insights and resources for the NLP and broader AI research community.
+","The paper doesn't have too many weaknesses.
+I was wondering if we could get some numbers on if the stacked representations help in additional downstream tasks like say classification (i.e. does the performance on imagenet improve if you use imagenet + text). However, I understand that this can be significant undertaking and do not want to base my review on this experiment but it is a potential future direction.
+","Model-Specific Analysis Limitations: The paper's focus on pre-trained models might limit its applicability to domains where such models are not available or suitable.
+Additionally, the performance gap noted between human judgments and DNNs might be model-specific rather than a general limitation of DNNs.
+Potential Bias in Language Data: The reliance on language-based methods might introduce biases related to language use and representation, which the paper does not fully address in terms of potential impacts on similarity judgments.
+Ethical Considerations: While the paper briefly mentions the risk of embedding human biases in ML datasets, a deeper analysis of ethical implications, especially concerning the use of language data and the broader societal impacts of these biases, would strengthen the paper.
+However, the study could be improved by addressing potential biases introduced through language data and by expanding the discussion on the ethical implications of their findings.
+"
+pretrained language model in continual learning: a comparative study,accepted,"Summary Of The Paper:
+This paper conducts an empirical study on the catastrophic forgetting of pretrained language models.
+On two continual learning settings (class incremental and task incremental), the paper evaluates multiple pre-trained models on different data sets, to see how severe the catastrophic forgetting issue is for these pre-trained models.
+Then the paper also tests the effectiveness of multiple continual learning methods on such pre-trained models and draws some conclusions.
+Main Review:
+Although the authors have conducted quite a lot of experiments, the phenomena shown in experiment results is hardly surprising to me.
+It is not surprising that the pre-trained language models would have forgetting issues when fine-tuned on downstream tasks.
+It is also not surprising that rehearsal-based methods perform the best for pre-trained models.
+Moreover, the paper draws a conclusion that BERT is the most robust one and is a good option if a continual learning process is going to be conducted.
+Based on this, the authors provide a few analyses on BERT’s ‘secret’ for continual learning.
+However, compared with other pre-trained models, I don’t see that BERT is significantly better than others given the figures and tables.
+I feel from the figures and tables, BERT and other models look similar.
+The authors didn’t give a comprehensive explanation on how they read such information or a concrete quantitative comparison to support this claim.
+Summary Of The Review:
+A thorough empirical analysis with unsurprising conclusions
+","Summary of the Paper:
+This paper conducts a comprehensive comparative study on the interaction between pre-trained language models (PLMs) and continual learning (CL) methods in NLP.
+It evaluates five PLMs and four CL methods across three benchmarks in task- and class-incremental settings.
+The study uncovers performance differences across PLMs and CL methods and provides layer-wise and task-wise probing analyses to understand PLMs' susceptibility to forgetting.
+It identifies the strengths and limitations of various combinations, leading to several research questions that guide future CL technique design.
+Strengths and Weaknesses:
+Strengths:
+The paper provides an extensive comparative analysis across multiple PLMs and CL methods, contributing significantly to understanding their interactions.
+Layer-wise and task-wise probing analyses offer deep insights into how different layers of PLMs are affected by CL, revealing critical aspects of model susceptibility to forgetting.
+The methodology for benchmarking and analysis is rigorous and well-designed, covering a comprehensive range of settings and metrics.
+Weaknesses:
+The paper primarily focuses on quantitative analysis and could benefit from more qualitative examples to illustrate the practical impact of the findings.
+While the study is extensive, it covers only a subset of available PLMs and CL methods, potentially limiting the generalizability of the conclusions.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is clearly written and well-structured, with high-quality research and novel insights into the interaction between PLMs and CL methods in NLP.
+The detailed methodology and provision of code and datasets support the potential for reproducibility and further research.
+Summary of the Review:
+The paper offers valuable contributions to the NLP and CL communities by thoroughly analyzing the performance of different PLMs and CL methods.
+Its rigorous benchmarking approach and novel layer-wise probing analysis provide deep insights and open up new research avenues.
+While expanding the range of PLMs and CL methods studied could further enhance its impact, the paper's clarity, quality, and potential for reproducibility make it a significant contribution to the field.
+","The authors didn’t give a comprehensive explanation on how they read such information or a concrete quantitative comparison to support this claim.
+","The paper primarily focuses on quantitative analysis and could benefit from more qualitative examples to illustrate the practical impact of the findings.
+While the study is extensive, it covers only a subset of available PLMs and CL methods, potentially limiting the generalizability of the conclusions.
+"
+exploring extreme parameter compression for pre-trained language models,accepted,"Summary Of The Paper:
+This paper explores extreme parameter compression for pre-trained language model, especially BERT.
+It introduces and compares several tensor decomposition methods and proposes to leverage Tucker decomposition as the final solution.
+The compressed BERT model achieves much smaller size with promising performance.
+Main Review:
+Large scale pre-trained language models have demonstrated their effectiveness.
+However the large model size makes it difficult to deploy and compressing such models have drawn a lot of interest.
+This paper aims to compress PLMs to extremely small size mainly from the perspective of decomposition.
+It introduces several decomposition methods and makes a comprehensive comparison among them from the perspective of compressing Transformer layers.
+The Tucker decomposition is chosen to be the final solution due to its compression ratio.
+The motivation is clear and the methods are technically sound.
+Though the introduced decomposition methods are not new, the adaption to the Transformer layers and corresponding analysis are comprehensive.
+The experimental results demonstrate the effectiveness of the method.
+Especially, the compressed model size is really competitive.
+Some weaknesses:
+The authors do not include embedding layer and prediction layer size in experiments, while only report the Transformer encoder size.
+I know that this can make the size of compressed model really amazing (e.g., 1.8M) and the compression ratio amazing (e.g., 86M/12.3M=7) but is not fair as the whole model including the embedding layer are used when deploying.
+If the embedding layer is added, the model size will increase a lot, and the compression ratio will decrease, which make the experimental results less surprising.
+But this should be made clear.
+The authors name a lot of related works, but compare only very few of them in the experiments.
+Some other method(s) are missing in the related works.
+For example: [1]
+Some typos:
+Section 5.1, ""...are not exactly equal to the the raw weights..."", duplicate ""the""?
+Section 6.2, ""...outperforms ALBERT - the latter needs...while the latter does not..."", two ""latter""?
+reference: [1] Xu, Jin, et al. ""NAS-BERT: Task-Agnostic and Adaptive-Size BERT Compression with Neural Architecture Search.""
+Summary Of The Review:
+The paper presents extreme compression on pre-trained language models.
+Though the introduced methods are not new, the adaptation to the Transformer layers and the analysis are interesting, and the experiments are convincing.
+Though there exist some weaknesses, I think the paper is of good quality, if the authors could mitigate them.
+","Summary of the Paper
+The paper proposes a novel approach to achieve larger compression ratios for pre-trained language models (PLMs), specifically focusing on BERT.
+It identifies tensor decomposition, particularly Tucker decomposition, as a parameter-efficient method for compression.
+The study introduces two decomposition and reconstruction protocols to enhance the effectiveness and efficiency of Tucker decomposition in parameter compression.
+The compressed BERT models, with significantly reduced parameters, achieve comparable or slightly better performance than the original BERT on the GLUE benchmark.
+Additionally, a tiny version of BERT, with less than 2M parameters (excluding the embedding layer) and 2.7 times faster inference, achieves 96.7% of BERT-base's performance.
+The paper also examines the synergy of the proposed method with knowledge distillation, indicating its orthogonality to existing compression techniques.
+Strengths and Weaknesses
+Strengths:
+The paper tackles the significant issue of PLM size, making a compelling case for the need for more efficient, smaller models without compromising performance.
+It introduces an innovative application of Tucker decomposition for PLM compression, which is both novel and technically sound.
+The empirical results are impressive, especially the achievement of a tiny BERT variant that retains most of the performance of the full model while being significantly smaller and faster.
+Weaknesses:
+The discussion on the scalability of the proposed approach as the sets produced by the decomposition grow larger is somewhat lacking.
+There might be concerns about the reliability of probabilistic inference in such cases.
+While the paper provides a good comparison with existing methods, it could benefit from a deeper theoretical discussion on why Tucker decomposition outperforms other techniques in this specific application.
+Clarity, Quality, Novelty, and Reproducibility
+The paper is well-written and clear, making it accessible to readers familiar with PLMs and tensor decomposition techniques.
+The research is of high quality, employing rigorous experimental methodologies and providing a comprehensive comparison with baseline models.
+The novelty lies in applying Tucker decomposition to compress PLMs efficiently, which is a relatively unexplored area.
+The experiments appear reproducible, with sufficient details on the implementation and evaluation settings.
+Summary of the Review
+The paper presents a significant contribution to the field of NLP by proposing an effective method for compressing PLMs using Tucker decomposition.
+Its approach not only preserves the performance of the original models on benchmark tasks but also improves inference speed, addressing a critical need for more efficient NLP models.
+While the paper is strong in its empirical evaluation, further exploration into the theoretical underpinnings of its method and its scalability would enhance its contribution.
+","Though the introduced decomposition methods are not new, the adaption to the Transformer layers and corresponding analysis are comprehensive.
+The authors do not include embedding layer and prediction layer size in experiments, while only report the Transformer encoder size.
+I know that this can make the size of compressed model really amazing (e.g., 1.8M) and the compression ratio amazing (e.g., 86M/12.3M=7) but is not fair as the whole model including the embedding layer are used when deploying.
+If the embedding layer is added, the model size will increase a lot, and the compression ratio will decrease, which make the experimental results less surprising.
+But this should be made clear.
+The authors name a lot of related works, but compare only very few of them in the experiments.
+Some other method(s) are missing in the related works.
+For example: [1]
+Though the introduced methods are not new, the adaptation to the Transformer layers and the analysis are interesting, and the experiments are convincing.
+",
+recitation-augmented language models,accepted,"Summary Of The Paper:
+This paper presents a new prompt engineering algorithm for few-shot open-domain question answering with pretrained language models.
+The key idea is that instead of asking language models to directly generate answers to factoid questions, ask it to first generate a paragraph of text which will contain the answer (""recitation"").
+After recitation is complete, language models are instructed (via prompt examples) to use their recitation to answer the question.
+The paper additionally adopts several tricks to improve the performance of their system, including ""self consistency"" (generating through multiple recitations and taking majority vote), multiple recitations (for multi-hop questions).
+Finally, the authors explore fine-tuning a model to generate diverse recitations via passage hints.
+The authors use synthetic data generated by the frozen LM to achieve this goal.
+The authors conduct experiments on Natural Questions, TriviaQA and HotpotQA, and find performance improvements over standard prompting techniques.
+Strength And Weaknesses:
+Strengths
+This is an interesting idea, and an exciting way to incorporate the ideas of ""chain-of-thought"" prompting and ""self-consistency"" for open-domain QA tasks where the answer is a factoid.
+The authors observe 2-6% improvements over standard direct prompting across all 3 tasks / 3 models.
+This is quite good and surprising for me --- I had thought the model would be able to answer the factoid question directly if it's able to generate a much longer paragraph containing the answer.
+It is interesting that the method requires multiple recitation paths to work (in Figure 4 performance is lower than standard prompting with just one recitation path).
+However, I think of this as a strength of the proposed method, since you cannot really use multiple paths if you are generating a direct answer (since the answer is so short, sampling doesn't make sense).
+The authors perform several insightful analysis experiments discussing robustness to prompts, comparison to BM25 retrieval, and an error analysis.
+Weaknessess
+The paper would be much stronger with experiments on GPT3, Instruct-GPT3 (davinci-002), and larger language models (larger in-house LMs?).
+It's not really clear from the paper whether recitation helps with larger scale, which I think is important for the generalizability of the method [1].
+This could work both ways --- I'm suspecting larger LMs will be better at both recitation and directly performing QA.
+I think experiments on InstructGPT [4], T0 [3] or FLAN [2, 7] will be especially interesting, since it's been fine-tuned on instructions / examples / human preferences.
+A major advantage of retrieval augmented systems is their applicability on (1) tail distribution information; (2) generalization to information which was not present in the model's training set (like COVID for BERT).
+I think these are important limitations of the proposed method, and (1) is not really discussed (2 is just mentioned in the conclusion).
+Are most of the correct recitations cases which were seen often during training?
+Overall, the performance of closed-book models in this paper seems to significantly lag behind recent few-shot retrieval-augmented systems [5, 6].
+For instance, ATLAS [5] gets 42% on NQ with 64 examples and a smaller model, while the best number in this paper is 32% (5-10x larger model).
+While I agree that setting up retrieval is technically cumbersome, there are very good retrieval APIs available, which were utilized in [6] without any extra LM fine-tuning.
+Note that I do think it's incredible that closed book LMs are doing so well, but practically (from a performance stand-point) it may be better to just retrieve some text from the web rather than ask an LM to generate it with few-shot examples.
+Also, retrieval augmented LMs often have lesser parameters [5], so it's unclear which is a better method from an efficiency perspective.
+I have mixed thoughts about the passage hints fine-tuning experiments, since it requires fine-tuning a large LM on Wikipedia data.
+Perhaps the performance gains are because of the dedicated fine-tuning on Wikipedia data for the recitation LM model (which makes it overfit to Wikipedia)?
+Did you remove the passages from the test set questions while doing this fine-tuning?
+Also I don't think enough experiments are done in the paper to justify its added complexity over vanilla LM-Recitation.
+I would suggest moving it to the appendix, or performing experiments on all 3 datasets / models to show its benefit.
+[1] - https://twitter.com/_jasonwei/status/1526589104758042624
+[2] - https://arxiv.org/abs/2109.01652
+[3] - https://arxiv.org/abs/2110.08207
+[4] - https://arxiv.org/abs/2203.02155
+[5] - https://arxiv.org/abs/2208.03299
+[6] - https://arxiv.org/abs/2203.05115
+[7] - https://arxiv.org/abs/2210.11416
+Minor
+This paper is relevant to https://arxiv.org/abs/2004.05483 and https://arxiv.org/pdf/2110.08387.pdf, it would be great to cite them.
+In Table 4 (LM-Recitation_5), why is the number for different from Table 1 (Recite and answer)?
+(16.34 in Table 1 vs 14.16 in Table 4)
+Clarity, Quality, Novelty And Reproducibility:
+Clarity - Very clear
+Quality - Very thorough experiments overall except for the experiments on passage hints.
+I would have liked other models being tested (weakness #1), but the experiments on the current set of tasks look good to me.
+Novelty - Good novelty.
+The idea has similarity to chain-of-thought prompting, self-consistency prompting, and self-talk, but overall I think the idea is pretty new (especially in the context of large LMs and QA).
+Reproducibility - Should be fully reproducible except the experiments on the in-house LM.
+Summary Of The Review:
+The paper has interesting ideas and surprising results, but I have two main concerns - (1) the paper does not evaluate the method on larger LMs which are available; (2) I don't think there's justification that this method is a replacement for retrieval in any way (weakness #2, #3).
+I am currently leaning reject, but will be happy to move to the accept range if weakness #1 is addressed via experiments on GPT3-170B and InstructGPT3-170B.
+After rebuttal: Thanks to the authors for the very detailed response!
+I've decided to raise my score to 6 (accept range) due to the improvements shown on Codex.
+I would still suggest the authors to take a more balanced take in their conclusion, mentioning that while there are improvements over direct generation, there is still a gap behind retrieval-augmentation on NQ.
+","Summary of the Paper:
+This paper introduces RECITation-augmented gEneration (RECITE), a novel paradigm aimed at enhancing Large Language Models' (LLMs) ability to generate accurate factual knowledge without relying on external document retrieval.
+Unlike traditional retrieval-augmented models, RECITE generates answers by first reciting relevant passages from its internal knowledge base before producing final answers.
+The study demonstrates RECITE's superior performance over existing methods in closed-book question answering (CBQA) tasks across various LLMs and datasets.
+Strengths and Weaknesses:
+Strengths include the innovative approach to leveraging internal knowledge for generating answers, the comprehensive evaluation across different models and datasets, and the clear demonstration of RECITE's effectiveness in improving CBQA task performance.
+Weaknesses might include the potential for enhanced biases due to the reliance on internal model knowledge and the lack of consideration for time-sensitive information updating.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is clearly written, with a well-structured methodology and detailed experimental setup that facilitates reproducibility.
+The concept of recitation-augmented generation is novel, addressing the limitations of both direct generation and retrieval-augmented methods in LLMs.
+The extensive experiments and comparisons underline the quality and novelty of the research.
+Summary of the Review:
+RECITE represents a significant advancement in leveraging LLMs for knowledge-intensive tasks, offering a promising direction for enhancing factual accuracy without external data reliance.
+The approach is innovative, well-executed, and backed by compelling experimental evidence.
+Despite potential limitations, the paper's contributions to the field are substantial.
+","Weaknessess
+The paper would be much stronger with experiments on GPT3, Instruct-GPT3 (davinci-002), and larger language models (larger in-house LMs?).
+It's not really clear from the paper whether recitation helps with larger scale, which I think is important for the generalizability of the method [1].
+This could work both ways --- I'm suspecting larger LMs will be better at both recitation and directly performing QA.
+I think experiments on InstructGPT [4], T0 [3] or FLAN [2, 7] will be especially interesting, since it's been fine-tuned on instructions / examples / human preferences.
+A major advantage of retrieval augmented systems is their applicability on (1) tail distribution information; (2) generalization to information which was not present in the model's training set (like COVID for BERT).
+I think these are important limitations of the proposed method, and (1) is not really discussed (2 is just mentioned in the conclusion).
+Are most of the correct recitations cases which were seen often during training?
+Overall, the performance of closed-book models in this paper seems to significantly lag behind recent few-shot retrieval-augmented systems [5, 6].
+For instance, ATLAS [5] gets 42% on NQ with 64 examples and a smaller model, while the best number in this paper is 32% (5-10x larger model).
+While I agree that setting up retrieval is technically cumbersome, there are very good retrieval APIs available, which were utilized in [6] without any extra LM fine-tuning.
+Note that I do think it's incredible that closed book LMs are doing so well, but practically (from a performance stand-point) it may be better to just retrieve some text from the web rather than ask an LM to generate it with few-shot examples.
+Also, retrieval augmented LMs often have lesser parameters [5], so it's unclear which is a better method from an efficiency perspective.
+","Weaknesses might include the potential for enhanced biases due to the reliance on internal model knowledge and the lack of consideration for time-sensitive information updating.
+"
+p-adapters: robustly extracting factual information from language models with diverse prompts,accepted,"Summary Of The Paper:
+This paper addresses the problem of robustness for extracting factual information from large language models.
+It first describes and motivates the problem of inconsistent predictions of large language models on fact-seeking prompts when these prompts are perturbed or rephrased.
+It then proposes a few different methods for addressing this inconsistency that operate on the same portion of the language-model, namely, between the input token embeddings and the first hidden layer of the language model.
+The work evaluates the performance of the variants using a pooled collection of fact-seeking prompts (e.g., LAMA, LPAQA and ParaSel).
+The results employ a consistency metric and show that different interventions in the input embeddings cause large differences in inter-prompt consistency.
+Main Review:
+Strengths of the paper:
+The problem of extracting factual and consistent information from large language models is of high interest to the NLP community.
+Given how LLMs dominate NLP at the moment, making sure these models are robust and consistent is a timely problem, The paper is overall well written, with only a couple of confusing parts (see below),
+The proposed architecture for intervening between the input embeddings and the first hidden layer of the language model is quite comprehensive.
+I enjoyed seeing the different options, and in particular, thought the use of the MoE for relation classification to be quite insightful,
+The experimental analysis of the work is well executed, and demonstrated convincingly which interventions were most useful in make predictions more accurate and consistent,
+I liked the analysis in Figure 6, showing the importance of the subject entity on the precision of the fact extraction task,
+Weaknesses of the paper:
+The main weakness in this work is one that relates to the overall goal of fact extraction from language models.
+The “Oracle'' results from Table 1 are thought provoking: with perfect knowledge regarding the predicate/relation of test examples, and a subsequent 100% consistent response, the LLM is only able to obtain ~50% correct responses from T-Rex, which is an admittedly limited evaluation (41 “head” predicates, mostly of well known entities).
+While I understand that this work is clearly focused on the consistency issue, not necessarily correctness, it puts into question whether fact extraction from LMs is a worthwhile pursuit.
+I would have liked for the paper to dig a little deeper into this headroom question from the previous point.
+Would it be possible to conduct a sampled qualitative evaluation of errors of the Oracle model in the ID cases?
+Are the errors due to unseen triples during training time (e.g., not in Wikipedia), or maybe there are issues with model capacity (maybe a 10x version of the LM would be able to recall the prompted fact)?
+In terms of writing, the most confusing section in the paper is Section 4.1.
+After re-reading it twice, I was still not able to ascertain: (1) what data was used to train the models, and (2) what data was used to evaluate the models.
+The section makes reference to LAMA’s T-REX, LPAQA, ParaRel, as well as augmentations using BERT lexical replacements, as well as data from “Shin et al, 2020”.
+The section also talks about examples from these sources as well as templates (presumably filled in with WikiData triples?).
+I really think this section needs to be rewritten and the training, eval and test datasets should be much more precisely described.
+I would also encourage authors to release the exact datasets and splits to allow others to reproduce/improve on this work.
+But even with a data release, a precise description of how this data was constructed is very important.
+For the MoE and Oracle layers, the description in the paper is insufficient to determine the outputs presented to the first layer of the model.
+The depiction in Figure 2 hints that the entire sequence is rewritten using the fixed-length learned embeddings, and perhaps the subject or MASK embeddings are preserved?
+But actually sub-section 4.2 never formally describes how the embeddings are used to create the continuous prompts?
+Are they prepended/appended to the original inputs?
+Or do they rewrite the original inputs?
+Do either the MASK or subject tokens get copied?
+The LAMA benchmarks have one unfortunate characteristic: since it was constructed for BERT-style single token prediction, it has stripped down the original datasets (see the original version of T-Rex, which contains over 600 unique predicates vs. the 41 from LAMA: https://hadyelsahar.github.io/t-rex/ and https://aclanthology.org/L18-1544.pdf ).
+I wonder if a more comprehensive version of this would be to evaluate on a larger sequence-to-sequence model like BART https://arxiv.org/abs/1910.13461 or T5 https://arxiv.org/abs/1910.10683 (both available as HuggingFace models).
+Given that this work leverages frozen LLMs, it seems that training and evaluation could be done relatively cheaply even for larger models with proper decoders.
+Other comments:
+With respect to the MoE solution, the paper claims that the model does not use a weighted combination and opts to use the top-1 predicted relation.
+I wonder if authors have tried using a weighted combination instead?
+If the relation classifier is trained with cross-entropy softmax loss, most of the weights will be close to one-hot (similar to top-1) except when the model is uncertain.
+Therefore combining prompt embeddings may yield some benefit over top-1.
+Does this make sense?
+Note sure this is a good idea, but: given that the LLM is frozen, it seems plausible that the continuous prompt embeddings learned in some of the models resemble existing embeddings from the original vocabulary.
+As such, would it make sense to attempt to “decode” the continuous prompt embeddings into the existing vocabulary?
+One could use a greedy decoding strategy of extracting the nearest neighbor (via dot product or cosine distance) from each continuous prompt embedding to the vocabulary input embedding table.
+Have the authors tried inspecting the continuous prompts in this way?
+I wonder if the output is informative or whether these prompts are modeling purely latent variables.
+Typo in Figure 1 “Canada si” -> “Canada is”,
+Typo in page 6: “Cannonical” -> “canonical”
+Summary Of The Review:
+The problem of extracting factual and consistent information from large language models is of high interest to the NLP community, and this work in particular should be of interest to the ICLR community.
+Overall, this work was well-written throughout (easy to follow in most places except for a few rough parts detailed above).
+The experimentation work was also of high quality, with interesting results.
+To highlight a few findings: (1) the use of a relation-classification MoE and its consistently high performance on consistency metric seems promising, (2) the analysis demonstrating the importance of the “subject” is correct fact prediction, and (3) analysis demonstrating the negatives effects of uniformizing objects in train/test sets, which is strong indication that LLMs still do not generalize well to unseen objects.
+","Summary of the Paper:
+This paper introduces P-Adapters, a novel approach for extracting factual information from Large Language Models (LLMs) more consistently across varied natural language prompts.
+By positioning lightweight models between the LLM's embedding layer and its first attention layer, P-Adapters transform embeddings based on the natural language prompts into continuous prompts that the LLM can interpret more effectively.
+This technique is compared with Mixture of Experts (MoE) models, which also aim to improve the consistency of factual extraction but require additional annotations.
+The study demonstrates that P-Adapters achieve a significant improvement in precision and consistency over baseline methods that directly use natural language prompts, without necessitating extra annotation efforts for mapping natural language prompts to their continuous counterparts.
+Strengths and Weaknesses:
+Strengths:
+- The methodology presents a significant innovation in handling variability in natural language prompts for querying LLMs, offering a practical solution to improve the robustness of factual information extraction without additional annotation costs.
+- Experimental results show clear benefits in terms of precision and consistency, with P-Adapters outperforming baseline approaches by a notable margin across different settings, including out-of-distribution scenarios.
+- The paper is well-organized, articulating the problem, proposed solution, and results in a coherent and comprehensible manner, contributing positively to its clarity and overall quality of research.
+Weaknesses:
+- While the paper shows the effectiveness of P-Adapters in improving precision and consistency, there is limited discussion on the potential scalability and adaptability of the proposed method to LLMs beyond BERT and RoBERTa or to languages other than English.
+- The empirical evaluation primarily focuses on the quantitative benefits of P-Adapters, with less emphasis on the qualitative analysis of why certain prompts work better and how P-Adapters manage to improve upon them.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is clearly written, detailing the methodology, experimental setup, and results with sufficient clarity to enable reproducibility.
+The approach is novel, addressing the inconsistency problem in querying LLMs with natural language prompts in a unique and effective way.
+The authors provide a comprehensive comparison with existing methods, demonstrating the quality and novelty of their contributions.
+Additionally, they mention that the code and data used for experiments will be made available, supporting the paper's reproducibility.
+Summary of the Review:
+The paper introduces a promising approach to enhance the consistency and precision of factual information extraction from LLMs using P-Adapters.
+By innovatively transforming natural language prompts into continuous prompts, the authors address a significant challenge in NLP, making a notable contribution to the field.
+Despite some limitations in the scope of evaluation and qualitative analysis, the paper stands out for its clear presentation, novelty, and potential impact on the usage of LLMs as knowledge bases.
+","Weaknesses of the paper:
+The main weakness in this work is one that relates to the overall goal of fact extraction from language models.
+The “Oracle'' results from Table 1 are thought provoking: with perfect knowledge regarding the predicate/relation of test examples, and a subsequent 100% consistent response, the LLM is only able to obtain ~50% correct responses from T-Rex, which is an admittedly limited evaluation (41 “head” predicates, mostly of well known entities).
+While I understand that this work is clearly focused on the consistency issue, not necessarily correctness, it puts into question whether fact extraction from LMs is a worthwhile pursuit.
+I would have liked for the paper to dig a little deeper into this headroom question from the previous point.
+Would it be possible to conduct a sampled qualitative evaluation of errors of the Oracle model in the ID cases?
+Are the errors due to unseen triples during training time (e.g., not in Wikipedia), or maybe there are issues with model capacity (maybe a 10x version of the LM would be able to recall the prompted fact)?
+In terms of writing, the most confusing section in the paper is Section 4.1.
+After re-reading it twice, I was still not able to ascertain: (1) what data was used to train the models, and (2) what data was used to evaluate the models.
+The section makes reference to LAMA’s T-REX, LPAQA, ParaRel, as well as augmentations using BERT lexical replacements, as well as data from “Shin et al, 2020”.
+The section also talks about examples from these sources as well as templates (presumably filled in with WikiData triples?).
+I really think this section needs to be rewritten and the training, eval and test datasets should be much more precisely described.
+I would also encourage authors to release the exact datasets and splits to allow others to reproduce/improve on this work.
+But even with a data release, a precise description of how this data was constructed is very important.
+For the MoE and Oracle layers, the description in the paper is insufficient to determine the outputs presented to the first layer of the model.
+The depiction in Figure 2 hints that the entire sequence is rewritten using the fixed-length learned embeddings, and perhaps the subject or MASK embeddings are preserved?
+But actually sub-section 4.2 never formally describes how the embeddings are used to create the continuous prompts?
+Are they prepended/appended to the original inputs?
+Or do they rewrite the original inputs?
+Do either the MASK or subject tokens get copied?
+The LAMA benchmarks have one unfortunate characteristic: since it was constructed for BERT-style single token prediction, it has stripped down the original datasets (see the original version of T-Rex, which contains over 600 unique predicates vs. the 41 from LAMA: https://hadyelsahar.github.io/t-rex/ and https://aclanthology.org/L18-1544.pdf ).
+I wonder if a more comprehensive version of this would be to evaluate on a larger sequence-to-sequence model like BART https://arxiv.org/abs/1910.13461 or T5 https://arxiv.org/abs/1910.10683 (both available as HuggingFace models).
+Given that this work leverages frozen LLMs, it seems that training and evaluation could be done relatively cheaply even for larger models with proper decoders.
+","Despite some limitations in the scope of evaluation and qualitative analysis, the paper stands out for its clear presentation, novelty, and potential impact on the usage of LLMs as knowledge bases.
+"
+"same pre-training loss, better downstream: implicit bias matters for language models",rejected,"Summary Of The Paper:
+Practitioners tend to gauge the downstream performance of large language models by comparing their pretraining losses.
+However, this paper shows that when the pretraining loss is near convergence, downstream performance can vary depending on the training methods, despite near identical pretraining loss.
+While there isn’t necessarily a correlation between the pretraining loss and downstream performance, the “flatness” of the solution, as characterized by the trace of the Hessian, does correlate with downstream performance.
+This observation is then formalized and proved on a synthetic language task.
+Strength And Weaknesses:
+This work seeks to better understand an important question in representation learning: how does pretraining performance correlate with downstream performance?
+This question is adequately answered in controlled settings where we observe the non-correlation between pretraining loss and downstream performance and the correlation between solution flatness and downstream performance.
+The investigation is both well-motivated and nicely executed.
+In addition, a theoretical result is provided in support of the empirical observations.
+It is, however, unclear what the practical implications of this work are.
+First of all, current large language models are not in the saturation regime, and it is hard to estimate when they will be as datasets grow with model size in tandem.
+Second, while this paper points that pretraining loss is not a reliable indicator of downstream performance, a simple remedy is to evaluate on downstream tasks during pretraining and compare models accordingly, which is likely already done in practice.
+Finally, this paper does not demonstrate if the insight gleaned in this work can lead to additional “flatness regularization” that induces better downstream performance on real datasets.
+It is understandable that large-scale experiments are expensive and are not expected, but given the rather empirical motivation of the paper, some validation on real data seems desirable.
+Clarity, Quality, Novelty And Reproducibility:
+The paper is well-written and presents novel results.
+Summary Of The Review:
+Interesting empirical observations and theoretical result.
+However, more empirical results on real data, especially on how the discovered insight can enable better downstream performance, would strength this work given the rather empirical motivation.
+","Summary of the Paper:
+The paper challenges the conventional wisdom linking pre-training loss with downstream performance in language modeling.
+It uncovers that while pre-training loss correlates with downstream performance, the flatness of the model—measured by the trace of the Hessian of the loss function—exhibits a stronger correlation.
+By manipulating model size, training duration, and algorithms, the authors demonstrate that models with identical pre-training losses can have significantly different downstream performances.
+They attribute this variance to the implicit biases of training algorithms, favoring models that generalize better to new tasks.
+Through theoretical analysis and empirical evidence, the paper shows that stochastic gradient descent (SGD) inherently prefers flatter minima, which are associated with better transferability to downstream tasks.
+Strengths and Weaknesses:
+Strengths:
+The paper provides a fresh perspective on evaluating language models by focusing on the model's flatness rather than just pre-training loss.
+It combines theoretical insights with empirical evidence, offering a comprehensive analysis of the impact of training algorithms' implicit biases on model performance.
+The findings have practical implications for designing and training language models more efficiently, emphasizing the quality of the training process over simplistic loss metrics.
+Weaknesses:
+The experiments are conducted on simplified datasets, which may limit the generalizability of the findings to more complex, real-world datasets.
+While the paper introduces the concept of flatness, it does not provide concrete guidelines on how to achieve or measure flatness in practical settings.
+Clarity, Quality, Novelty, and Reproducibility:
+Clarity: The paper is well-written, with clear explanations of the theoretical background, methodology, and significance of the findings.
+Quality: The research is of high quality, combining theoretical proofs with rigorous empirical testing to validate the hypotheses.
+Novelty: The focus on the flatness of models and the exploration of training algorithms' implicit biases present novel insights into language model evaluation and training.
+Reproducibility: The authors make an effort to ensure reproducibility by detailing the implementation of algorithms and dataset generation, along with providing code in supplementary materials.
+Summary of the Review:
+This paper makes a significant contribution to the field of language modeling by challenging the conventional reliance on pre-training loss as a metric for evaluating model performance.
+By highlighting the importance of model flatness and the implicit biases of training algorithms, it opens new avenues for research and development in language model training methodologies.
+While the study's reliance on simplified datasets may raise questions about the applicability of its findings to more complex tasks, its combination of theoretical and empirical analyses offers valuable insights.
+The clarity, novelty, and quality of the research are commendable, making it a valuable addition to the literature.
+","It is, however, unclear what the practical implications of this work are.
+First of all, current large language models are not in the saturation regime, and it is hard to estimate when they will be as datasets grow with model size in tandem.
+Second, while this paper points that pretraining loss is not a reliable indicator of downstream performance, a simple remedy is to evaluate on downstream tasks during pretraining and compare models accordingly, which is likely already done in practice.
+Finally, this paper does not demonstrate if the insight gleaned in this work can lead to additional “flatness regularization” that induces better downstream performance on real datasets.
+It is understandable that large-scale experiments are expensive and are not expected, but given the rather empirical motivation of the paper, some validation on real data seems desirable.
+However, more empirical results on real data, especially on how the discovered insight can enable better downstream performance, would strength this work given the rather empirical motivation.
+",
+knowledge-in-context: towards knowledgeable semi-parametric language models,accepted,"Summary Of The Paper:
+This paper tackles the problem of zero-shot task generalization to unseen tasks using a semi-parametric approach.
+In order to achieve this, they construct 6 different knowledge-rich external memory consisting of Dictionary, Commonsense, Entity, Event, Script, and Causality.
+Like previous work, they perform multitask prompted fine-tuning on 40+ NLP tasks but while retrieving from external knowledge sources to perform the task.
+Since there are six knowledge sources, they train a MoE layer that dynamically routes to which source to retrieve the external knowledge from. This approach coined Knowledge-in-Context (KiC) enables a 770M LM to easily outperform LMs that are 4-39x larger by a significant margin.
+Strength And Weaknesses:
+The strength of the paper is that it utilizes a novel semi-parametric language model architecture that retrieves from multiple knowledge sources dynamically via an MoE layer.
+This simple yet effective approach boosts zero-shot task generalization results significantly.
+Dividing the knowledge sources into 6 different resources helps in different aspects of solving NLP tasks, which can be decided at a instance level.
+The weakness is that it does not show any computational comparison compared to prior multitask prompted finetuning approaches.
+Initial thought is that the proposed method might require much more computation (fine-tuning stage) since the MoE layer has to be trained to be able to dynamically select which knowledge source to route to AND also train the underlying LM.
+Clarity, Quality, Novelty And Reproducibility:
+The paper is very easy to read will clear explantations in the technical parts such as the explanations regarding the MoE layer.
+I think the proposed method is very novel in the sense that they utilized a MoE layer to retrieve from multiple external sources and that they utilized this to tackle the important task of generalizing to unseen tasks.
+Summary Of The Review:
+This paper suggests a novel semiparametric architecture, retrieving from multiple fine-grained to coarse-grained knowledge sources to solve unseen tasks and achieving significant performance enhancement compared to previous approaches while having a much smaller number of parameters.
+Thus, I highly recommend this paper be accepted at this conference.
+","Summary of the Paper:
+This paper introduces Knowledge-in-Context (KiC), a novel semi-parametric language model that augments a parametric text-to-text transformer model with a diverse, knowledge-rich external memory.
+KiC employs six types of knowledge: entity, dictionary, commonsense, event, script, and causality, to enhance the model's ability to perform across 40+ diverse natural language processing tasks.
+The model adaptively selects relevant knowledge for each input instance, showcasing emergent abilities at a smaller scale compared to fully-parametric models.
+KiC achieves superior zero-shot performance on unseen tasks with significantly fewer parameters, demonstrating its effectiveness and efficiency.
+Strengths and Weaknesses:
+Strengths:
+Novelty and Impact: KiC introduces a unique approach to integrating external knowledge into language models, addressing the limitations of fully-parametric models in adaptability and scalability.
+This could significantly impact areas requiring rapid adaptation to new knowledge.
+Technical Quality: The model design is robust, leveraging a diverse set of knowledge sources and an innovative instance-adaptive knowledge selector.
+The experiments are comprehensive, covering a wide range of tasks and demonstrating significant improvements.
+Clarity and Reproducibility: The paper is well-organized, with clear explanations of the methodology and experimental setup.
+The inclusion of implementation details and a commitment to releasing code further enhance its reproducibility.
+Weaknesses:
+Limitations in Knowledge Coverage: While KiC covers a broad range of knowledge types, the scalability of adding new knowledge types or updating existing ones remains unclear.
+Potential for Bias: The reliance on external knowledge sources, especially those automatically extracted, may introduce biases or inaccuracies that could affect the model's outputs.
+Clarity, Quality, Novelty, and Reproducibility:
+Clarity: The paper is well-written, providing clear explanations of the model architecture, knowledge integration mechanism, and experimental results.
+Quality: The research is of high quality, presenting a thorough analysis of the model's performance across a diverse set of tasks.
+Novelty: KiC's approach to integrating external knowledge into a semi-parametric model is novel and represents a significant contribution to the field.
+Reproducibility: The detailed description of the experimental setup and the promise to release code make this work highly reproducible.
+Summary of the Review:
+The Knowledge-in-Context (KiC) model represents a significant advance in semi-parametric language modeling, effectively leveraging external knowledge to enhance performance across a broad range of tasks.
+Its innovative approach to knowledge integration and the ability to adaptively select relevant knowledge for each input instance are particularly noteworthy.
+While there are limitations related to the scalability of knowledge coverage and potential biases, the overall impact, technical quality, and novelty of the work are commendable.
+The clarity of presentation and commitment to reproducibility further strengthen this submission.
+","Strength And Weaknesses:
+The weakness is that it does not show any computational comparison compared to prior multitask prompted finetuning approaches.
+Initial thought is that the proposed method might require much more computation (fine-tuning stage) since the MoE layer has to be trained to be able to dynamically select which knowledge source to route to AND also train the underlying LM.
+","Limitations in Knowledge Coverage: While KiC covers a broad range of knowledge types, the scalability of adding new knowledge types or updating existing ones remains unclear.
+Potential for Bias: The reliance on external knowledge sources, especially those automatically extracted, may introduce biases or inaccuracies that could affect the model's outputs.
+While there are limitations related to the scalability of knowledge coverage and potential biases, the overall impact, technical quality, and novelty of the work are commendable.
+The clarity of presentation and commitment to reproducibility further strengthen this submission.
+"
+recursion of thought: divide and conquer reasoning with language models,rejected,"Summary Of The Paper:
+This work proposed a model-agnostic framework, Recursion of Thought (RoT), to release the capacity constraint by the maximum size of a single context in language models.
+RoT teaches a language model to divide and conquer complex problems by recursively creating multiple contexts; therefore, a complex problem could be solved by utilizing multiple contexts.
+This work also conducts extensive experiments on arithmetic and algorithmic reasoning tasks to show the power of RoT in helping language models solve problems that require hundreds of thousands of tokens.
+Overall, the proposed framework (RoT) is novel and well-motivated, and the authors have conducted multiple experiments which demonstrate the great power of RoT on much more complex arithmetic and algorithmic reasoning problems.
+One important point missing from this work is how to systematically construct subproblems given any problem in order to teach the model learn the recursion of thoughts.
+Still, I think this work has great potential to allow language models to achieve better reasoning abilities.
+Strength And Weaknesses:
+Strength:
+[+] The proposed framework (RoT) is novel and well-motivated.
+[+] The work has conducted multiple experiments which demonstrate the great power of RoT on much more complex arithmetic and algorithmic reasoning problems.
+Weakness:
+[-] The training of RoT requires (non-trivial) human inputs to design proper subproblems.
+More specifically, I wonder
+what is the limitation of the problems that RoT could solve: for example,
+Does RoT have the ability to learn backtrack?
+Some problems may require people to modify the earlier part of the answer based on the new observed information.
+Does RoT have the ability to learn a problem where its subproblems have different structures (as recursion usually requires the same structure in the subproblems)?
+What is the performance of RoT on (maybe small-scale) NP-hard algorithmic problems that may not have the divide-and-conquer structure such as TSP？
+how to design proper subproblems in order to use RoT to train the models?
+What are the criteria of the subproblems for RoT?
+What kinds of structures do they need to have？
+Are there systematic approaches to design subproblems for reasoning tasks in general?
+Clarity, Quality, Novelty And Reproducibility:
+This work has a good and clear presentation of its idea, its specific methodology, and its experiment settings.
+The quality and originality of the work should meet or exceed the conference standard.
+My main concern is on how to properly train the RoT framework as it requires people to feed it with hand-designed subproblems.
+Therefore, it would be great if the authors could explain the limitation of the problems that RoT could solve and how to design proper subproblems in order to use RoT to train the models.
+Summary Of The Review:
+This work proposed a novel model-agnostic framework, Recursion of Thought (RoT), to release the capacity constraint by the maximum size of a single context in language models.
+RoT teaches a language model to divide and conquer complex problems by recursively creating multiple contexts; therefore, a complex problem could be solved by utilizing multiple contexts.
+It then conducts extensive experiments on arithmetic and algorithmic reasoning tasks to show the power of RoT in helping language models solve problems that require hundreds of thousands of tokens.
+The proposed framework (RoT) is novel and well-motivated, and this work has a good and clear presentation of its idea, its specific methodology, and its experiment settings. The quality and originality of the work should meet or exceed the conference standard.
+My main concern is on how to properly train the RoT framework as the training of RoT requires (non-trivial) human inputs to design proper subproblems.
+Still, I think this work has great potential to allow language models to achieve better reasoning abilities.
+","Summary of the Paper:
+The paper introduces Recursion of Thought (RoT), a novel framework for enhancing the reasoning capabilities of language models (LMs) by enabling them to divide and conquer complex problems recursively.
+By generating multiple contexts, RoT overcomes the context size limitation inherent in state-of-the-art LMs like GPT-3 and PaLM.
+The framework is model-agnostic and has been shown to dramatically improve the performance of both large-scale pre-trained models and tiny, randomly initialized models on arithmetic and algorithmic reasoning tasks, achieving near-perfect accuracy on problems that require generating hundreds of thousands of tokens.
+Strengths and Weaknesses:
+Strengths:
+RoT addresses a critical limitation in LMs regarding context size and demonstrates a significant improvement in solving complex reasoning tasks.
+The framework is model-agnostic, allowing its application across various models, including Transformers and LSTMs.
+The paper provides extensive experiments and comparisons, showing that RoT can enable even small models to perform complex reasoning at a level that may be challenging even for humans.
+Weaknesses:
+The approach requires supervised learning for each task, potentially limiting its applicability to problems where such detailed supervision is feasible.
+The paper does not explore the generalizability of models trained with RoT to tasks or problem sizes not seen during training.
+Despite its potential, the approach's dependence on recursive problem-solving may not be suitable for all types of reasoning tasks.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is well-structured, presenting a clear methodology and comprehensive experimental results.
+The quality of research is high, supported by rigorous experiments and a broad application of the proposed framework.
+The novelty of the approach lies in addressing the context size limitation by leveraging recursive problem-solving, a significant step forward in the field.
+The inclusion of source code for reproducing experiments enhances the paper's reproducibility.
+Summary of the Review:
+This paper presents a promising approach to overcoming the context size limitations of current language models.
+The Recursion of Thought framework not only demonstrates the potential for dramatically improved performance in complex reasoning tasks but also opens new avenues for research in natural language processing and artificial intelligence.
+While there are limitations, such as the need for task-specific supervision, the strengths and contributions of this work significantly outweigh its weaknesses.
+","One important point missing from this work is how to systematically construct subproblems given any problem in order to teach the model learn the recursion of thoughts.
+[-] The training of RoT requires (non-trivial) human inputs to design proper subproblems.
+My main concern is on how to properly train the RoT framework as it requires people to feed it with hand-designed subproblems.
+Therefore, it would be great if the authors could explain the limitation of the problems that RoT could solve and how to design proper subproblems in order to use RoT to train the models.
+My main concern is on how to properly train the RoT framework as the training of RoT requires (non-trivial) human inputs to design proper subproblems.
+","The approach requires supervised learning for each task, potentially limiting its applicability to problems where such detailed supervision is feasible.
+The paper does not explore the generalizability of models trained with RoT to tasks or problem sizes not seen during training.
+Despite its potential, the approach's dependence on recursive problem-solving may not be suitable for all types of reasoning tasks.
+While there are limitations, such as the need for task-specific supervision, the strengths and contributions of this work significantly outweigh its weaknesses.
+"
+thrust: adaptively propels large language models with external knowledge,rejected,"Summary Of The Paper:
+This work aims to improve the efficiency and robustness of knowledge augmented LM.
+The intuition is for LM to decide when an external knowledge source is needed.
+A metric Thrust is developed for this decision, based on the relationship between the query embedding and the clusters of instance embeddings.
+representation learning (the detail of which is not clear)
+k-means clustering on training instance embeddings (the training data is not formally defined)
+the Thrust score of a query is computed based on its distance to cluster centers and the length of individual instance embeddings.
+(the intuition is given in Figure 2, but I have hard time connecting that with the given formula)
+(I assume some procedure ""adaptively"" filter queries by their Thrust score, but I cannot find the description.)
+Experiment is conducted with several LMs (T5, GPT-J, OPT, UnifiedQA) under zero-shot and transfer-learning setttings for QA and classification tasks.
+Retrieval is conducted to the top 25%, 50% or 75% queries based on the Thrust score.
+Strength And Weaknesses:
+Overall the idea of this work is novel, but the description is very hard to follow.
+The lack of formal definitions, make it hard to understand how thrust is computed e.g., ""casting a set of instances ( the training data ) into the representation space "" The writing is mostly sloppy, e.g., c_0 is used before it is defined
+The experiment result also need more explanations.
+For example in Table 3 it is good to see that using knowledge 25% of the time is as good as using it 75% of the time for many tasks.
+However, one might wonder why only the result of UnifiedQA is shown?
+why not also compare to the case using knowledge 100% of the time?
+Clarity, Quality, Novelty And Reproducibility:
+This paper is very unclear.
+Summary Of The Review:
+This paper is very unclear.
+","Summary of the Paper:
+This paper presents an innovative approach, titled ""THRUST: Adaptively Propels Large Language Models with External Knowledge,"" focusing on enhancing the efficiency and effectiveness of large pre-trained language models (PTLMs) by selectively utilizing external knowledge.
+The core of this approach is the Instance-Level Adaptive Propulsion of External Knowledge (IAPEK), which evaluates the necessity of external knowledge for each instance using a novel metric called Thrust.
+Thrust is based on estimating the distribution of seen instances and deciding on the use of external knowledge accordingly.
+The study demonstrates that this method significantly improves cost-efficiency in knowledge retrieval and utilization across a variety of NLP tasks, achieving an average performance improvement of 26% on 88% of evaluated tasks.
+Strengths and Weaknesses:
+Strengths:
+Innovation and Relevance: The methodology addresses a crucial limitation of PTLMs, which is the opaque and static nature of their encoded knowledge.
+By introducing a selective approach to external knowledge utilization, it paves the way for more efficient and effective NLP solutions.
+Empirical Evidence: Extensive experimentation validates the approach's effectiveness, showcasing significant improvements in performance across diverse tasks.
+Reproducibility: The promise to release code and data after acceptance encourages reproducibility and further research.
+Weaknesses:
+Lack of Comparison: The paper does not thoroughly compare its approach with existing methods in the domain of external knowledge utilization, which could have strengthened the argument for its novelty and effectiveness.
+Potential for Bias: The reliance on the novel metric Thrust for determining the necessity of external knowledge could introduce bias if the metric itself is not universally applicable across different types of tasks and domains.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is well-written, presenting a novel approach to a significant problem in NLP.
+The research is of high quality, supported by rigorous experimentation.
+However, the novelty is somewhat diminished by the lack of comparison with existing methods.
+The commitment to releasing code and data post-acceptance is commendable and will aid in reproducibility.
+Summary of the Review:
+This paper introduces a novel and impactful approach to optimizing the use of external knowledge in large language models, addressing a critical issue of efficiency and effectiveness.
+The proposed method, supported by extensive empirical evidence, marks a significant advancement in the field.
+However, a more comprehensive comparison with existing methods could have further highlighted its novelty and superiority.
+The commitment to open-source principles enhances the paper's value to the research community.
+","Overall the idea of this work is novel, but the description is very hard to follow.
+The lack of formal definitions, make it hard to understand how thrust is computed e.g., ""casting a set of instances ( the training data ) into the representation space "" The writing is mostly sloppy, e.g., c_0 is used before it is defined
+The experiment result also need more explanations.
+For example in Table 3 it is good to see that using knowledge 25% of the time is as good as using it 75% of the time for many tasks.
+However, one might wonder why only the result of UnifiedQA is shown?
+why not also compare to the case using knowledge 100% of the time?
+This paper is very unclear.
+This paper is very unclear.
+",
+cramming: training a language model on a single gpu in one day,rejected,"Summary Of The Paper:
+In this paper, the authors study the performance of transformer models on downstream tasks as the total computational budget is decreased.
+This process, known as cramming in the paper, turns the problem of training these enormous language models in a new direction from the typical scenario used in industrial labs that train models on a seemingly endless supply of resources.
+The author's place and exception small limit on the total computation that is allowed to train a transformer model from scratch to the total FLOPs available on a single GPU in 24 hours.
+By considering the scaling laws of large model transformers the authors mainly investigate training setups that keep the total number of parameters in the model constant but reduce the cost of performing a gradient update.
+By enumerating a small number of interesting features of the transformer training design space the authors demonstrate that cramming can achieve interesting and sometimes comparable results with larger models using more computation in particular settings and for particular datasets.
+Strength And Weaknesses:
+Strengths:
+The motivation for the study proposed in the paper is interesting for a number of reasons.
+The volume of computation required by many modern transformer models has been prohibitively expensive and therefore out of reach for most researchers for quite a while.
+By studying the implications of constraining the computational resources on the ability of the model to perform well on certain tasks the authors could provide a way for researchers with limited budgets to participate and utilize these models in fundamentally new ways.
+The trend in the paper to consider modifications that mainly reduce the gradient update cost without significantly impacting the total number of parameters in the model, based on the scaling laws, provides an interesting and unifying theme throughout.
+The persistence of the scaling laws to influence the performance of the model on tasks is reinforced through empirical evidence throughout and yields interesting insights.
+Performance evaluation on a shoe-string budget of FLOPs compare to other prominent models is impressive.
+Weaknesses:
+Similar studies were conducted on a single node with 8 GPUs as noted by the authors. Though that setup had considerably more computational resources the total volume of computation was still a fraction of the amount used by many large research institutions. In light of that work, the scenario presented in this paper may seem somewhat derivative and only marginally interesting.
+It is not clear if or how the observations made in the cramming regime may be used to make more informed decisions regarding the training process in the normal training setting.
+Clarity, Quality, Novelty And Reproducibility:
+The writing is clear and the presentation of issues motivating the current work is adequately articulated in the text.
+While I am not an expert in the transformer field I feel the authors did a good job explaining the connection between the scaling laws and the downstream performance of the models under consideration.
+The novelty of the work pertains to the training strategies used to reduce computational costs without removing the total number of model parameters.
+Although previous works looked at training with limited resources the author's study and extreme training scenario that is likely to be more pertinent and representative of the resources available to typical, non-institutional, researchers.
+Summary Of The Review:
+Overall I find the motivation for the work and claims made by the authors to be an interesting departure from the traditional language training papers that use exorbitant computational resources.
+It seems more practical to answer questions about how researchers can do more with less when it comes to allocating resources for training transformer models.
+My remarks should be taken with a grain of salt as I am not an expert in this particular area but I would feel more inclined to experiment with transformer models if I felt I could train them to a reasonable level of ability on my modest desktop setup.
+I believe this sentiment represents the spirit of the paper and the results should be of interest to other members of the research community that are hesitant to participate in this research area because of the perceived computational overheads.
+","Summary of the Paper:
+This paper investigates the feasibility of training a transformer-based language model from scratch on a single GPU within a day, aiming to achieve performance close to BERT's.
+By re-analyzing and modifying the pretraining pipeline components, the study examines the challenges of scaling down, identifies modifications that enhance performance in this constrained setting, and evaluates the impact of these changes on downstream tasks.
+The findings indicate that performance in such a limited compute environment closely follows the scaling laws observed in larger-compute settings.
+The research contributes to the understanding of efficient language model training and opens up opportunities for further academic inquiries with modest computational resources.
+Strengths and Weaknesses:
+Strengths:
+Innovative Approach: The paper creatively addresses the challenge of resource-efficient language model training, providing a valuable perspective opposite to the prevailing trend of scaling up.
+Comprehensive Analysis: It thoroughly investigates various components of the training pipeline and their impact on model performance, offering deep insights into efficient training strategies.
+Empirical Evidence: The study is well-supported by empirical results, showing that models trained under these constraints can achieve respectable performance on downstream tasks, close to that of BERT.
+Weaknesses:
+Limited Scope: The research mainly focuses on transformer architectures and the MLM objective, which may overlook potential benefits from other models or training objectives.
+Generalization of Findings: While the study provides valuable insights into scaling down, the specific modifications and their impacts might not generalize across different datasets, tasks, or larger computational settings.
+Clarity, Quality, Novelty, and Reproducibility:
+Clarity: The paper is well-structured and clear, with a detailed explanation of the methodology and findings.
+However, the complexity of some descriptions might require prior knowledge in the field for full comprehension.
+Quality: The research is of high quality, with a rigorous experimental setup and analysis that contribute to the understanding of efficient language model training.
+Novelty: The study introduces novel insights into scaling down language models effectively, challenging the prevalent scaling-up paradigm and offering a new direction for research with limited computational resources.
+Reproducibility: The paper includes a reproducibility statement and provides sufficient details for others to replicate the experiments, which is crucial for validating and building upon the findings.
+Summary of the Review:
+The paper presents an insightful investigation into training transformer-based language models with limited computational resources, demonstrating that it is possible to achieve performance close to BERT's under such constraints.
+The research's strengths lie in its innovative approach, comprehensive analysis, and empirical support, though its scope and generalizability of findings could be expanded.
+Overall, the study makes a significant contribution to the field of efficient language model training and opens up new avenues for research with modest computational budgets.
+","Similar studies were conducted on a single node with 8 GPUs as noted by the authors. Though that setup had considerably more computational resources the total volume of computation was still a fraction of the amount used by many large research institutions. In light of that work, the scenario presented in this paper may seem somewhat derivative and only marginally interesting.
+It is not clear if or how the observations made in the cramming regime may be used to make more informed decisions regarding the training process in the normal training setting.
+","Limited Scope: The research mainly focuses on transformer architectures and the MLM objective, which may overlook potential benefits from other models or training objectives.
+Generalization of Findings: While the study provides valuable insights into scaling down, the specific modifications and their impacts might not generalize across different datasets, tasks, or larger computational settings.
+However, the complexity of some descriptions might require prior knowledge in the field for full comprehension.
+"
+mapping language models to grounded conceptual spaces,accepted,"Summary Of The Paper:
+This works aims at investigating whether large language models (LMs) pretrained only on texts, can implicitly learn grounded concepts of the world beyond texts.
+Specifically, the authors test whether the LMs can map some conceptual domains (e.g., direction, color) to grounded world representations (e.g., textualized grid world, RGB representation of colors).
+The authors give a rather small number of examples as prompts to the models in an in-context learning setup.
+They find that large LMs like GPT-3 can often output the correct concept for the grounded world representations, even though it’s likely that the model hasn’t seen the grounded world representations in its pretraining.
+They conclude that the text-only LMs may already learn the grounded representations implicitly, without explicit from-scratch training like in the visual language models.
+Main Review:
+I think this paper investigates a very interesting problem.
+The experiments are rather thorough, with different levels of controls (e.g., semantic-invariant transformations to the world representations, generalization to unseen worlds or unseen concepts).
+The writing is clear and structured as well.
+However, I think the concerns that some readers might raise and complain include:
+(1) Metric.
+Is the top-3 accuracy meaningful for the task, especially for the spatial and cardinal problems where the concept space is very small, and for GPT-3 that knows to output in-domain words only?
+Is the substring metric suitable for the color problem, especially in the “unseen concept” setup?
+For example, if “light blue” is a seen concept and “dark blue” is the test-time unseen concept, then answering the seen concept “light blue” in the unseen concept setup would result in a perfect accuracy.
+Would that defeat the purpose of testing generalization to unseen concepts, like in Table 2?
+(2) Conclusion drawn from the results.
+The authors argue that if the LM successfully generates the correct concept based on the grounded representation (likely “unseen” in the pretraining data), it means that the model knows to ground the concept to the non-text world.
+However, is it possible that the model doesn’t understand the relationship between the concepts and the grounded representations, but instead utilizes a similarity between the test grounded representation and the grounded representations in the in-context prompts?
+For example, upon seeing the test representation (e.g., [0,1,0,0] in the spatial domain, or RGB (140, 0, 255) in the color domain), the model can use a simple strategy: copying the concept of a bunch of most similar representations in the in-line prompt examples (e.g., [0, 1, 0, 0, 0], or RGB (145, 0, 255)).
+This strategy would not involve the concept of “left” or “pink”, and is robust to the rotation transformation (while not robust to the random transformation, if each point in the world was transformed independently).
+This would align with the results in Table 1.
+To check whether this hypothesis is (partially) true, we can look at experiments like:
+A: Test on some real unseen concepts.
+This was done in the paper, like in spatial and cardinal columns in Table 2, Table 9, 10, 11 (in the appendix).
+But the performance is not very strong in these cases even for GPT-3 (top-1 accuracy).
+B: Test with fewer prompts.
+This is to prevent the model from memorizing similarity with the prompting examples too much.
+This was also done in the paper (Figure 6 in the appendix).
+Again, the performance is not strong, if the number of prompts goes below 20 or 60.
+C: Replace all of the concept names with concepts in an unrelated domain (e.g., substituting all “left” and “right” with “apple” and “orange”).
+If the performance is above baseline in this setup, should we conclude that the LM implicitly learns to map fruit concepts to the grounded spatial world?
+This was not done in the paper and may be a good control experiment.
+(3) Though the paper investigates an interesting problem, the overall takeaway of this work is not very clear to me.
+How is the analysis useful for future work?
+(4) Some details in the paper should be checked.
+For example, in Section 2.1, the authors say that all models are pretrained on the 40GB OPENAI-WT dataset, but this is not true for GPT-3?
+Also for the color experiments, it is not clear whether 60 or 6+57 or 70 (as mentioned in B.1.1 in the appendix) prompts were used.
+Summary Of The Review:
+Overall I think this work investigates an interesting problem, but the main argument needs to be justified more carefully (as mentioned in (1), (2) above).
+Also, the takeaway and impact of the work are not very clear to me, other than showing the somewhat inscrutable power of GPT-3.
+","Summary of the Paper
+This paper explores the capability of large pre-trained language models (LMs) to map learned linguistic structures onto grounded conceptual spaces without direct observation of the physical world.
+It investigates whether the rich conceptual structure learned from text is reflective of the conceptual structure of the non-linguistic world by teaching LMs to map linguistic concepts (e.g., colors, directions) onto representations in a simplified, textual ""grid world.""
+Through experiments with generative LMs of varying sizes, including GPT-2 and GPT-3, the study demonstrates that while smaller models struggle with this task, the largest model, GPT-3, shows an ability to not only learn but also generalize grounded concepts to new, unseen instances.
+This suggests that large text-only LMs could be grounded in a data-efficient manner, leveraging their inherent conceptual knowledge.
+Strengths and Weaknesses
+Strengths:
+Novel Approach:The paper proposes an innovative method to explore grounding in LMs without the need for direct sensory input, suggesting a pathway to grounding LMs in more abstract, conceptual spaces.
+Significant Empirical Evaluation:The thorough evaluation across several LMs and conceptual domains (colors, directions) provides strong evidence of the varying abilities of LMs to understand and generalize grounded concepts.
+Insightful Analysis:Error analysis and investigation into the models' performances offer valuable insights into how LMs may leverage linguistic structures to understand grounded concepts.
+Weaknesses:
+Limited Scope of Grounded Concepts:The paper focuses on relatively simple and easily text-representable concepts like colors and directions, which might not fully capture the complexity of grounding in more abstract or nuanced concepts.
+Dependency on Textual Representations:The approach relies on the assumption that textual representations can sufficiently capture the essence of grounded concepts, which may not always be the case, especially for more complex sensory experiences.
+Clarity, Quality, Novelty, and Reproducibility
+Clarity:The paper is well-written, with clear explanations of the methodology, experiments, and findings.
+Quality and Rigor:The research is of high quality, with rigorous experimental design and thorough analysis of results.
+Novelty:The paper contributes novel insights into the possibility of grounding LMs in conceptual spaces using only textual information.
+Reproducibility:Detailed descriptions of the experimental setup and access to model details enhance the reproducibility of the results.
+Summary of the Review
+The paper presents an intriguing exploration of grounding language models in conceptual spaces without direct sensory input.
+It significantly contributes to our understanding of how large LMs can leverage their linguistic knowledge to understand and generalize grounded concepts.
+While the study is limited by its focus on simple, text-representable concepts and assumes the sufficiency of textual representations for grounding, its innovative approach, rigorous evaluation, and insightful analysis make a valuable contribution to the field.
+The findings suggest that large text-only models like GPT-3 might be capable of being grounded in a data-efficient manner, opening new avenues for research into grounding LMs.
+",,"Limited Scope of Grounded Concepts:The paper focuses on relatively simple and easily text-representable concepts like colors and directions, which might not fully capture the complexity of grounding in more abstract or nuanced concepts.
+Dependency on Textual Representations:The approach relies on the assumption that textual representations can sufficiently capture the essence of grounded concepts, which may not always be the case, especially for more complex sensory experiences.
+"
+capturing structural locality in non-parametric language models,accepted,"Summary Of The Paper:
+The paper is about modelling structural locality in non-parametric language models.
+The key hypothesis is in modelling not only the co-occurrence characteristics but also structural characteristics such as locality.
+The paper explains the key claims via case studies conducted on source code data and Wikipedia datasets.
+The model paradigm is based on non-parametric language models.
+A key difference between the non-parametric model and the parametric counterpart is that in the non-parametric model the model parameters are not only determined by the model architecture but also the underlying data.
+Structural locality, which is different from just co-occurrence counts, models the structural relationships between pairs of items, e.g., whether they belong to the same or different directory in the case of source code.
+The optimisation model is presented in Equation 7 where the authors need a small sample set emanating from the same domain to train the model.
+The authors then conduct experiments to demonstrate that the method improves upon existing works.
+Both qualitative and quantitative experimental results are shown.
+Main Review:
+The paper models structural information into the non-parametric language models.
+While the results demonstrate that the method improves upon the existing methods, there are some weaknesses too.
+Strengths:
+The model or the loss function developed by the authors that incorporate structural information is novel.
+The authors have also clearly explained the model.
+Results demonstrate that the method improves upon existing methods.
+Weaknesses:
+While there are clear strengths, one weakness is that one may need to define structural properties in different types of datasets that one might use.
+For instance, it is clear that the model works for source codes and Wikipedia because associated structural information can be mined from the data.
+It is unclear how does the method generalise across different tasks and datasets, i.e., beyond two datasets.
+While the authors have addressed these limitations towards the end of the paper, the question is will the work be useful only to a small set of audience, or people from different domains can manually or automatically build such prior knowledge and incorporate it in this model.
+The key advantages are clear from the paper, this seems to be the weakness that is hard to defend.
+One possible way to improve the argument so that we could obtain Wikidata-type structure for most datasets is to exploit entity detection and linking including automatically learning their relation (vector) information in a completely unsupervised way.
+The authors must note that I am simply giving ideas on how to strongly defend this weakness of the model.
+In terms of experiments, these can be further improved by conducting some downstream application tasks.
+Can the model be useful for document classification tasks?
+Currently, it is very difficult to gauge the usefulness of the model through the limited experiments presented in the paper which mainly revolves around perplexity analysis and table 5 in the appendix has additional token prediction results.
+Summary Of The Review:
+Overall, the paper indeed has some merits.
+The paper can be made stronger by considering some comments mentioned above.
+","Summary of the Paper:
+This paper introduces a novel approach to enhance non-parametric language models by leveraging structural locality, a feature inherent in datasets organized into local hierarchies.
+The authors propose a method to incorporate locality information into these models, aiming to improve the likelihood of retrieving examples from local neighborhoods.
+This is demonstrated through experiments on Java source code and Wikipedia text, showing that the introduction of locality features improves model performance.
+The analysis provides insights into why traditional contextual similarity metrics may fall short in capturing the essence of locality structures.
+Strengths and Weaknesses:
+Strengths:
+Innovative approach: The paper presents a unique method to integrate structural locality into language models, addressing a gap in current modeling approaches.
+Empirical evidence: Demonstrated improvements on two diverse datasets underscore the method's effectiveness and general applicability.
+Significant contribution: This work sheds light on the limitations of existing similarity metrics in capturing locality, potentially influencing future research directions in language modeling.
+Weaknesses:
+Limited domain analysis: While the paper provides insights into Java and Wikipedia datasets, the exploration of other domains where structural locality could play a crucial role is missing.
+Model complexity: The introduction of locality features adds complexity to the model, which might pose challenges in understanding and implementation for some practitioners.
+Clarity, Quality, Novelity, and Reproducibility:
+The paper is well-written, clearly presenting the methodology, experiments, and findings.
+The quality of research is high, with thorough experimentation and analysis.
+The novelty lies in the use of structural locality within non-parametric language models, a direction not extensively explored previously.
+The inclusion of source code and detailed experiment setups enhances the paper's reproducibility.
+Summary of the Review:
+The paper makes a compelling case for the inclusion of structural locality in enhancing non-parametric language models, supported by experiments across two domains.
+Its strengths lie in its novel approach and the significant improvements demonstrated.
+However, the exploration of additional domains and the complexity introduced by the locality features are areas that could be addressed further.
+Overall, the paper presents a valuable contribution to the field of NLP, offering new insights and methodologies for future research.
+","While the results demonstrate that the method improves upon the existing methods, there are some weaknesses too.
+Weaknesses:
+While there are clear strengths, one weakness is that one may need to define structural properties in different types of datasets that one might use.
+For instance, it is clear that the model works for source codes and Wikipedia because associated structural information can be mined from the data.
+It is unclear how does the method generalise across different tasks and datasets, i.e., beyond two datasets.
+While the authors have addressed these limitations towards the end of the paper, the question is will the work be useful only to a small set of audience, or people from different domains can manually or automatically build such prior knowledge and incorporate it in this model.
+The key advantages are clear from the paper, this seems to be the weakness that is hard to defend.
+One possible way to improve the argument so that we could obtain Wikidata-type structure for most datasets is to exploit entity detection and linking including automatically learning their relation (vector) information in a completely unsupervised way.
+The authors must note that I am simply giving ideas on how to strongly defend this weakness of the model.
+In terms of experiments, these can be further improved by conducting some downstream application tasks.
+Can the model be useful for document classification tasks?
+Currently, it is very difficult to gauge the usefulness of the model through the limited experiments presented in the paper which mainly revolves around perplexity analysis and table 5 in the appendix has additional token prediction results.
+","Limited domain analysis: While the paper provides insights into Java and Wikipedia datasets, the exploration of other domains where structural locality could play a crucial role is missing.
+Model complexity: The introduction of locality features adds complexity to the model, which might pose challenges in understanding and implementation for some practitioners.
+However, the exploration of additional domains and the complexity introduced by the locality features are areas that could be addressed further.
+"
+using document similarity methods to create parallel datasets for code translation,rejected,"Summary Of The Paper:
+This paper mines noisy parallel datasets of code by calculating the similarity between two non-parallel sets of documents.
+The authors first show that the document similarity methods can indeed align parallel documents and find that the word movers distance (WMD) is the most effective one.
+Then, the authors show the high tolerance of models trained with noisy datasets.
+Based on the two findings, the authors finally apply the proposed method to a large, non-parallel code dataset, and observe a performance boost of using a noisy parallel dataset compared to randomly paired datasets.
+Main Review:
+Strengths
+The paper is easy to follow.
+Although I am not super familiar with code translation, I can catch most of the points.
+The proposed method is simple and easy to use.
+The experiments are relatively thorough, covering different types of document similarity methods, programming languages, model architectures, and evaluation metrics.
+The results seem to be convincing.
+Weaknesses
+My main doubt is the results presented in ""Section 5.3 RQ3: TRANSLATING BETWEEN A WIDER SET OF PROGRAMMING LANGUAGES"".
+The authors report CA@5 scores here but in the other place, BLEU/CodeBLEU/EM is used.
+So, what is the intuition that uses different metrics?
+BLEU can also handle multi-reference evaluation.
+It would be nice if the authors could add these results in the author response.
+The research is somewhat superficial.
+The authors only show the models can tolerate certain noises but do not propose any simple heuristics to alleviate the impact of noises.
+For example, penalizing the noises (i.e., the targets not belonging to the source) during model training (fine-tuning). [1] might inspire the authors.
+[1] Wu, Lijun, Jinhua Zhu, Di He, Fei Gao, Tao Qin, Jianhuang Lai, and Tie-Yan Liu.
+Machine translation with weakly paired documents.
+In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 4375-4384. 2019.
+Typos
+Section 3 Proposed Method: curated -> created
+Summary Of The Review:
+This paper is interesting, but the research is somewhat superficial.
+","Summary of the Paper:
+This paper introduces a novel approach to creating parallel datasets for code translation by using document similarity methods to pair similar code snippets from monolingual corpora.
+This method enables the use of supervised machine learning techniques for code translation without the need for manually curated parallel corpora, thus addressing a significant limitation in the field.
+The paper demonstrates that models trained on these automatically generated datasets can achieve performance comparable to those trained on manually curated datasets, even in the presence of noise.
+It extends the potential for code translation across a broader range of programming languages and highlights the noise tolerance of models trained on these datasets.
+Strengths and Weaknesses:
+Strengths:
+Innovative approach to generating parallel code datasets, addressing a significant gap in resources for code translation tasks.
+Empirical validation demonstrates the effectiveness of the method across various programming languages, expanding the applicability of code translation techniques.
+The study thoroughly explores the impact of noise on model performance, providing insights into the robustness of machine learning models in this domain.
+Weaknesses:
+The reliance on document similarity methods may introduce biases based on the chosen method, potentially affecting the generalizability of the approach.
+Limited exploration of the impact of different levels of noise across more diverse programming languages and contexts.
+The reproducibility of the results may be challenging due to the complexity of the setup and potential variability in the document similarity measures.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is well-structured, clearly presenting its objectives, methodology, experiments, and findings.
+The research is of high quality, employing rigorous experimental setups and analyses to validate the proposed approach.
+The novelty lies in the method for generating parallel datasets for code translation, a significant contribution to the field.
+However, reproducibility might require access to specific datasets and clarity on the document similarity measures used.
+Summary of the Review:
+The paper presents a significant contribution to the field of code translation by proposing a novel method for generating parallel datasets using document similarity methods.
+This approach addresses a critical bottleneck in the field and opens new avenues for research and application in code translation across a wider range of programming languages.
+The study's thorough empirical validation and exploration of the noise tolerance of models add to its strength.
+However, the potential for bias introduced by document similarity methods and challenges in reproducing the results warrant further investigation.
+","The research is somewhat superficial.
+The authors only show the models can tolerate certain noises but do not propose any simple heuristics to alleviate the impact of noises.
+For example, penalizing the noises (i.e., the targets not belonging to the source) during model training (fine-tuning). [1] might inspire the authors.
+","However, the potential for bias introduced by document similarity methods and challenges in reproducing the results warrant further investigation.
+"
+out-of-distribution detection and selective generation for conditional language models,accepted,"Summary Of The Paper:
+The paper addresses the out-of-domain (OOD) detection for conditional generation tasks.
+It proposes an OOD score, which is based on the Mahalanobis Distance (MD) to the input and output embeddings of the language model.
+The MD-based OOD score is computed in relative to a background Gaussian model.
+Furthermore, the combined OOD score and perplexity correlates well with generation quality, and can be used for selective generation and early rejection based on OOD score.
+The proposed approaches are validated on summarization and translation tasks.
+Strength And Weaknesses:
+Strength:
+(1) It addresses an interesting OOD problem for conditional generation, where OOD errors can get easily accumulated via auto-regressive generation.
+(2) It proposes an effective OOD score. The score is based on the MD to the input and output embeddings of the language model. Relative MD is used to measure the inference time deviation from training data and a background distribution model.
+(3) The OOD score in combination with perplexity provides a good metric for selective generation of near-domain samples with quality control. It correlates well with generation quality. It is simple to deploy to address the domain shift issue at inference time.
+(4) Experiments and results are well-explained. Analysis is comprehensive. The analysis of the correlation of perplexity and generation quality with OOD score changes is insightful.
+Weaknesses:
+(1) Novelty is limited as MD-based OOD metrics have been widely studied and used, though this paper used it in a different setting (non-classification).
+(2) It is not compared with other common OOD detection strategies, such as threshold based, energy based, contrastive based approaches. (3) It’s not clear how the proposed method generalizes to other tasks and model structures.
+(4) It is unclear why the embeddings from the final layers are chosen.
+(5) It is unclear how the background data is selected, and how well the background Gaussian is expected to generalize.
+It seems fitting the background Gaussian is nontrivial and the proposed method is not as light-weight as it claimed to be.
+More importantly, what if we know nothing about the OOD? It seems the background Gaussian would fail to work when there is no good definition of background data.
+Clarity, Quality, Novelty And Reproducibility:
+Clarity is good.
+Experiments are well-explained.
+Analysis is comprehensive.
+However, there is too much important material in the Appendix. Would suggest to improve the paper structure and format.
+Novelty is limited.
+It addresses an interesting OOD problem in conditional generation.
+The proposed approaches are effective. However, MD-based OOD metrics have been extensively studied and used.
+Reproducibility is limited.
+The OOD score fitting and computation are nontrivial.
+Though the experiment settings and results are thoroughly explained, it is relatively challenging to reproduce all of them due to lack of necessary implementation details.
+Summary Of The Review:
+The problem is interesting, the proposed approach is effective, and experiments and analysis are comprehensive.
+Novelty is a bit limited, lack of comparison with other common OOD approaches, and the generalization of the proposed approach is questionable.
+","Summary of the Paper:
+The paper presents a method for out-of-distribution (OOD) detection and selective generation for conditional language models (CLMs), focusing on improving the safety and reliability of CLMs in practical applications like abstractive summarization and translation.
+By identifying and abstaining from low-quality, OOD examples, the method enables CLMs to produce higher-quality outputs.
+The approach uses embeddings from CLMs to accurately detect OOD examples and combines perplexity scores with a newly introduced OOD score for selective generation.
+This combination allows for the adjustment of output quality based on the distributional shift of the input,  demonstrating significant improvement over baseline methods in both summarization and translation tasks.
+Strengths and Weaknesses:
+Strengths:
+The methodology introduces a practical and effective solution for OOD detection in CLMs without requiring a separate detection model.
+The paper provides a comprehensive evaluation framework that includes human quality ratings, addressing a critical need in the community.
+The combined use of perplexity and the novel OOD score for selective generation is innovative and demonstrates a significant improvement over existing methods.
+Weaknesses:
+The approach's dependency on specific embeddings and the potential for its performance to vary across different models or tasks is not extensively discussed.
+While the method shows improvements, the real-world applicability and scalability of the proposed solution could be further explored, particularly in more diverse or adversarial settings.
+Clarity, Quality, Novelity, and Reproducibility:
+The paper is well-written, presenting a clear and logical progression of ideas.
+The research is of high quality, leveraging both theoretical insights and empirical evaluations.
+The novelty of the approach lies in its effective combination of perplexity scores and OOD detection for improving CLM outputs.
+The provided details and evaluation framework contribute to the paper's reproducibility, although additional information on the implementation and potential limitations would further enhance it.
+Summary of the Review:
+This paper introduces an innovative method for enhancing the safety and reliability of conditional language models through OOD detection and selective generation.
+It addresses a critical gap in the field, providing both theoretical contributions and practical improvements.
+Despite some areas for further exploration, the paper's strengths in novelty, methodological clarity, and potential impact make a compelling case for its acceptance.
+","Weaknesses:
+(1) Novelty is limited as MD-based OOD metrics have been widely studied and used, though this paper used it in a different setting (non-classification).
+(2) It is not compared with other common OOD detection strategies, such as threshold based, energy based, contrastive based approaches. (3) It’s not clear how the proposed method generalizes to other tasks and model structures.
+(4) It is unclear why the embeddings from the final layers are chosen.
+(5) It is unclear how the background data is selected, and how well the background Gaussian is expected to generalize.
+It seems fitting the background Gaussian is nontrivial and the proposed method is not as light-weight as it claimed to be.
+More importantly, what if we know nothing about the OOD? It seems the background Gaussian would fail to work when there is no good definition of background data.
+However, there is too much important material in the Appendix. Would suggest to improve the paper structure and format.
+Novelty is limited.
+The proposed approaches are effective. However, MD-based OOD metrics have been extensively studied and used.
+Reproducibility is limited.
+The OOD score fitting and computation are nontrivial.
+Though the experiment settings and results are thoroughly explained, it is relatively challenging to reproduce all of them due to lack of necessary implementation details.
+Novelty is a bit limited, lack of comparison with other common OOD approaches, and the generalization of the proposed approach is questionable.
+","The approach's dependency on specific embeddings and the potential for its performance to vary across different models or tasks is not extensively discussed.
+While the method shows improvements, the real-world applicability and scalability of the proposed solution could be further explored, particularly in more diverse or adversarial settings.
+"
+interactively generating explanations for transformer language models,rejected,"Summary Of The Paper:
+This paper aims to model explanation and task prediction such that task performances are not (or less) traded off for interpretability.
+It proposes a novel framework for transformer models where classification and explanation generation are based on shared prototype embeddings which are learnt from training data by a combination of losses.
+The framework is also compatible with settings that requires human in the loop for extra supervision on prototype learning.
+Experiment results show that adding the proposed ProtoTrex benefit task performances on 3 sentiment classification tasks.
+Main Review:
+This paper seems motivated by a prior NeurIPS 19 work ""This Looks Like That..."" in the sense that the architecture and loss designs are sourced from there.
+The nice thing about this paper is that it focuses on NLP tasks, so the framework could potentially benefit the explanation community.
+The early part of this paper is very straightforward and intuitive.
+Related works have limited coverage.
+The explanation generation part is vague.
+The experiment section is weak.
+Analysis on generated explanation is also weak.
+The architecture relies on using prototypes which are nicely discussed in this paper.
+The problem if improving interpretability without trading off downstream task F1 is interesting since the trade-off was common among prior works.
+However a couple confusing points still.
+There are many lines of explanation works, such as those use prompt engineering, information bottleneck, and purely generative approaches.
+This paper has limited coverage on these topics.
+Touching different approaches is important here since the way ProtoTrex handle explanation might not easily extend to all other cases.
+Even though this design was from the NeurIPS 19 paper, but in the task of NLP, how does the prototype embeddings compare against the label-wise weights in the final classification layer?
+This is to imagine that, without the use of the complicated loss in Eq 1, how does simply treating the label-wise embeddings as prototypes perform?
+The explanation generation (sec 3.5) needs elaboration.
+It seems this paper uses prototype embedding to find a training example as it nearest neighbor, and then use this data point as explanation to its prediction.
+This design has certain limitations: a) not context/example dependent; b) this is hardly generation, instead, it is more in line with salience-based explanation works.
+Tab2 indeed shows some examples with explanation that partially depends on the input example.
+But no idea how they were generated.
+Tab 1b is confusing.
+I don't understand what each number means.
+This paper very briefly went over some statements without getting into details.
+I don't see a solid explanation evaluation in this paper.
+Tab 1c shows rationale performances however these numbers are quite low compared with prior works (e.g. Paranjape's work at EMNLP 20).
+And not sure if rationale performances are based on token or sentence selection.
+Either way, this evaluation has nothing to do with generation.
+And when it comes to generative explanations, ideally, there should be some human-based evaluation over a subset of testing data.
+But no such thing in this paper.
+Summary Of The Review:
+I think the architecture has novelty when it comes to NLP tasks.
+And this work could benefit the explanation community.
+However, I found the experiment results are confusing.
+To the best degree, it offers marginal improvement over the best baselines in terms of task F1.
+When it comes performance of explanation, I only see confusing numbers, thus no conclusion can be made.
+Analysis on generated explanation is another weak point since it's absent.
+","Summary of the Paper:
+This paper introduces Prototypical-Transformer Explanation (Proto-Trex) Networks, a novel approach to enhancing the interpretability of transformer language models (LMs) through prototype networks incorporated directly into the model architecture.
+Proto-Trex Networks provide case-based reasoning explanations by outputting prototypical examples for specific model predictions, aiming to increase the model's transparency and reduce bias.
+The paper also presents an interactive prototype learning setup, iProto-Trex, allowing user feedback to refine and improve the model's explanations and decisions.
+Experimental results show that Proto-Trex networks perform comparably to non-interpretable baselines while offering significant improvements in interpretability and user trust.
+Strengths and Weaknesses:
+Strengths:
+Introduces an innovative approach to interpretability in transformer LMs, enhancing transparency without sacrificing performance.
+The interactive learning setup (iProto-Trex) leverages user feedback to refine explanations and model accuracy, demonstrating a novel way to bridge human insights and AI.
+Provides comprehensive experimental evaluation, demonstrating the effectiveness of Proto-Trex networks across multiple datasets and against various baselines.
+Weaknesses:
+The complexity of the Proto-Trex architecture might pose challenges for widespread adoption, especially in resource-constrained environments.
+While promising, the evaluation of user interactions and their impact on model performance and interpretability could benefit from further in-depth studies involving a broader range of participants.
+Clarity, Quality, Novelty, and Reproducibility:
+The paper is well-written, presenting a clear and concise explanation of the Proto-Trex and iProto-Trex frameworks.
+The research is of high quality, contributing novel insights into interpretability in NLP.
+The proposed methods are novel, offering a practical approach to improving the transparency of transformer LMs.
+The experiments are well-designed, and the paper provides sufficient detail for reproducibility, though the complexity of the models might pose some challenges.
+Summary of the Review:
+The paper presents an innovative approach to enhancing the interpretability of transformer language models through prototype networks and interactive learning.
+It demonstrates the effectiveness of Proto-Trex networks in providing interpretable and accurate model predictions, supported by comprehensive experimental evaluations. While the complexity of the proposed methods might challenge their adoption, the paper significantly contributes to the field of NLP by offering a novel solution to the interpretability problem in deep learning models.
+","This paper seems motivated by a prior NeurIPS 19 work ""This Looks Like That..."" in the sense that the architecture and loss designs are sourced from there.
+Related works have limited coverage.
+The explanation generation part is vague.
+The experiment section is weak.
+Analysis on generated explanation is also weak.
+However a couple confusing points still.
+There are many lines of explanation works, such as those use prompt engineering, information bottleneck, and purely generative approaches.
+This paper has limited coverage on these topics.
+Touching different approaches is important here since the way ProtoTrex handle explanation might not easily extend to all other cases.
+The explanation generation (sec 3.5) needs elaboration.
+It seems this paper uses prototype embedding to find a training example as it nearest neighbor, and then use this data point as explanation to its prediction.
+This design has certain limitations: a) not context/example dependent; b) this is hardly generation, instead, it is more in line with salience-based explanation works.
+Tab2 indeed shows some examples with explanation that partially depends on the input example.
+But no idea how they were generated.
+Tab 1b is confusing.
+I don't understand what each number means.
+This paper very briefly went over some statements without getting into details.
+I don't see a solid explanation evaluation in this paper.
+Tab 1c shows rationale performances however these numbers are quite low compared with prior works (e.g. Paranjape's work at EMNLP 20).
+And not sure if rationale performances are based on token or sentence selection.
+Either way, this evaluation has nothing to do with generation.
+And when it comes to generative explanations, ideally, there should be some human-based evaluation over a subset of testing data.
+But no such thing in this paper.
+","The complexity of the Proto-Trex architecture might pose challenges for widespread adoption, especially in resource-constrained environments.
+While promising, the evaluation of user interactions and their impact on model performance and interpretability could benefit from further in-depth studies involving a broader range of participants.
+"
+samoe: parameter efficient moe language models via self-adaptive expert combination,rejected,"Summary Of The Paper:
+This paper proposes a new MoE model Architecture to improve the parameter efficiency of MoE by learning a soft combination of a global set of expert layers.
+Strength And Weaknesses:
+Weaknesses:
+(1).This paper carried out analysis first and listed three challenges from analysis.
+However, I did not know which MoE model does this paper study. In Figure 1, it shows “MoE” but I don’t know which MoE model is used to carry out experiments.
+There are plenty of MoE models such as Gshard (Lepikhin et al., 2020), Switch Transformer (Fedus et al., 2021), Base Layers (Lewis et al., 2021), HASH Layers (Roller et al., 2021), and etc.
+Different MoE models may lead to different conclusions.
+The author needs to announce which model they used for analysis and add citations.
+(2).This article used only one MoE model to draw analysis conclusions, which I cannot agree with.
+Because different MoE models may have different performance, analysis conclusions need to conduct experiments with at least two representative MoE models when talking about common challenges with MoE models.
+(3).I am very suspicious about the expert pool method proposed in this article.
+How to choose the size of the expert pool. I speculate that the amount of experts required by a MoE model may be related to the diversity of the dataset.
+Table 1 in BASE layers paper [1] shows similar words usually gathered to the same expert unit.
+However, this article only uses one dataset for pretraining, and does not use multiple datasets to test the required expert pool size.
+(4).Followed by the third problem, this paper selected the Pile dataset as the pre-training dataset.
+However, the Pile dataset is full of duplicate documents (see [2] page 2), and this paper does not perform additional de-duplication processing.
+Because the dataset selected in the article has a lot of repetition and the tokens are not diverse, the size of the expert pool does not need to be large.
+The conclusion is likely to change when changing to a different (diverse) pre-training dataset.
+(5).As a MoE model, it is basically necessary to control the number of flos and compare it with the dense models and sparse models with the same number of flops, but this paper does not report total training flops number and total train computer (PF-days).
+In addition, this paper doesn’t compare it with a dense model with the same amount of flops in table 1.
+(6).I also have some questions about the experimental results of table 2.
+When we compared SaMoE (350M-128E) with dense model (350M), SaMoE should have more flops since it needs additional all2all communication cost.
+However, I notice usually a dense model (350M) could get a score of 70.2 on piqa.
+This SaMoE with more flops achieves a score 68.9.
+(7).Minor suggestion: usually we reported pretraining perplexity instead of validation loss in figure 3.
+References:
+[1]. Lewis, Mike, et al. ""Base layers: Simplifying training of large, sparse models."" International Conference on Machine Learning. PMLR, 2021.
+[2]. Zhang, Susan, et al. ""Opt: Open pre-trained transformer language models."" arXiv preprint arXiv:2205.01068 (2022).
+Clarity, Quality, Novelty And Reproducibility:
+Quality:
+Due to the above weaknesses, this paper does not have a high quality.
+Summary Of The Review:
+This paper proposes a new MoE model.
+However, in the analysis part, it only carried out analysis experiments with one MoE model, which is hard to tell if findings applied to all MoE models.
+In addition, this paper proposes to have a fixed number of global MoE layers, which is probably not suitable when a pre-training dataset has very diverse tokens.
+It happens that this paper selects the Pile as the pretraining dataset, and Pile is widely considered to contain many repeated sentences. (see [2] page 2).
+","Summary of the Paper
+The authors address the parameter inefficiency problem in Mixture-of-Experts (MoE) models, identifying poor gradient flow in MoE layers as the main issue.
+They propose SaMoE, a novel architecture that utilizes a soft combination of a global set of expert layers to improve parameter efficiency significantly.
+Their experiments on billion-scale GPT-3 style models demonstrate that SaMoE reduces total parameters by up to 5.2× while achieving superior accuracy compared to baseline MoE models.
+The paper contributes an in-depth analysis of MoE inefficiencies and presents a scalable solution that maintains high model quality with fewer parameters.
+Strengths and Weaknesses
+Strengths:
+Clarity and Methodological Rigor: The paper is well-structured, presenting a clear problem statement, detailed methodology, and extensive experimental results.
+The proposed solution is innovative, addressing a significant issue in the scaling of MoE models.
+Significant Parameter Efficiency: SaMoE achieves remarkable reductions in parameter count while maintaining or even improving model performance on various tasks.
+This advancement could make large-scale language models more accessible and cost-effective.
+Comprehensive Evaluation: The authors conduct thorough experiments, including ablation studies and comparisons with several baselines and MoE configurations.
+They demonstrate SaMoE's superiority across multiple benchmarks, providing a solid foundation for the claims.
+Weaknesses:
+Limited Discussion on Limitations and Broader Impact: While the paper extensively discusses the technical aspects and benefits of SaMoE, it lacks a detailed discussion on potential limitations, broader impacts, and ethical considerations of deploying such models.
+Reproducibility Concerns: Though the paper states that the code will be open-sourced, the lack of detailed hyperparameter settings in the main text could hinder reproducibility. A dedicated section for reproducibility, including data preprocessing and model initialization details, would enhance the paper's value.
+Clarity, Quality, Novelty, and Reproducibility
+Clarity: The paper is well-written, with a logical flow that facilitates understanding of complex concepts.
+The use of figures and tables effectively illustrates the methodology and results.
+Quality: The research is of high quality, demonstrating a deep understanding of MoE models and presenting a novel approach to improving their parameter efficiency.
+Novelty: SaMoE introduces a unique method for combining expert layers, distinguishing it from previous works on MoE models.
+The self-adaptive expert combination mechanism is a novel contribution to the field.
+Reproducibility: Given the promise to open-source the code, the paper meets the reproducibility criterion.
+However, detailed hyperparameter settings and training procedures in the supplementary material or the main text would further strengthen this aspect.
+Summary of the Review
+The paper introduces SaMoE, a novel MoE architecture that significantly improves parameter efficiency by adopting a soft combination of global expert layers.
+This work stands out for its methodological rigor, extensive experimentation, and the significant reductions in parameter counts while maintaining high model performance.
+The novelty of the self-adaptive expert combination and the thorough evaluation solidify the paper's contributions to the field of NLP and large-scale language models.
+Despite minor weaknesses in discussing broader impacts and limitations, the paper presents a compelling advancement in making large-scale MoE models more efficient and accessible.
+",,"Limited Discussion on Limitations and Broader Impact: While the paper extensively discusses the technical aspects and benefits of SaMoE, it lacks a detailed discussion on potential limitations, broader impacts, and ethical considerations of deploying such models.
+"

@@ -1,0 +1,77 @@
+{
+    "all_test": {
+        "actionability": {
+            "total_stats": {
+                "kappa_quadratic": 0.733,
+                "alpha_pairwise": 0.736,
+                "spearman": 0.737,
+                "pearson": 0.734,
+                "tau": 0.65,
+                "original_len": 1000,
+                "filtered_len": 934,
+                "sucess_rate": 0.934,
+                "rouge_score_correct": 0.494,
+                "rouge_score_uncorrect": 0.412,
+                "bert_score_correct": 0.781,
+                "bert_score_uncorrect": 0.736,
+                "num_correct_samples": 791,
+                "num_uncorrect_samples": 143
+            }
+        },
+        "grounding_specificity": {
+            "total_stats": {
+                "kappa_quadratic": 0.691,
+                "alpha_pairwise": 0.683,
+                "spearman": 0.687,
+                "pearson": 0.693,
+                "tau": 0.631,
+                "original_len": 1000,
+                "filtered_len": 934,
+                "sucess_rate": 0.934,
+                "rouge_score_correct": 0.546,
+                "rouge_score_uncorrect": 0.386,
+                "bert_score_correct": 0.795,
+                "bert_score_uncorrect": 0.732,
+                "num_correct_samples": 732,
+                "num_uncorrect_samples": 202
+            }
+        },
+        "verifiability": {
+            "total_stats": {
+                "f1_X": 0.512,
+                "kappa_quadratic": 0.613,
+                "alpha_pairwise": 0.605,
+                "spearman": 0.624,
+                "pearson": 0.63,
+                "tau": 0.559,
+                "original_len": 1000,
+                "filtered_len": 934,
+                "sucess_rate": 0.934,
+                "rouge_score_correct": 0.51,
+                "rouge_score_uncorrect": 0.356,
+                "bert_score_correct": 0.772,
+                "bert_score_uncorrect": 0.684,
+                "num_correct_samples": 737,
+                "num_uncorrect_samples": 197
+            }
+        },
+        "helpfulness": {
+            "total_stats": {
+                "kappa_quadratic": 0.652,
+                "alpha_pairwise": 0.645,
+                "spearman": 0.645,
+                "pearson": 0.652,
+                "tau": 0.591,
+                "original_len": 1000,
+                "filtered_len": 934,
+                "sucess_rate": 0.934,
+                "rouge_score_correct": 0.464,
+                "rouge_score_uncorrect": 0.384,
+                "bert_score_correct": 0.773,
+                "bert_score_uncorrect": 0.734,
+                "num_correct_samples": 901,
+                "num_uncorrect_samples": 33
+            }
+        }
+    }
+}

@@ -42,7 +42,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
 ########################## CSCC ###########################
 else
     CHECKPOINT_PARENT_PATH="/l/users/$USER/review_evaluation"
-    export CUDA_VISIBLE_DEVICES=2,3
+    export CUDA_VISIBLE_DEVICES=0,1,2,3
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
 fi
@@ -74,8 +74,8 @@ WRITE_PATH="evalute_outputs"
 
 # PROMPT_TYPE="chat"
 STEP="0"
-FINETUNING_TYPE="adapters"
-MAX_NUM_SEQS=16
+FINETUNING_TYPE="baseline"
+MAX_NUM_SEQS=32
 TRAINING_aspects="all"
 
 ## Determine the write path based on the finetuning type
@@ -92,27 +92,39 @@ fi
 
 
 # MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B")
-
-MODELS=("deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
-
 # DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
 # DATASET_SPLITS=("gold,silver,hard,full" "full" "test")
 # DATASET_CONFIGS=("actionability,grounding_specificity,verifiability,helpfulness" "combined_main_aspects" "all")
 
+# DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
+# DATASET_SPLITS=("full" "test")
+# DATASET_CONFIGS=("combined_main_aspects" "all")
+
+# GENERATION_TYPES=("score_only" "score_rationale")
+# PROMPT_TYPE="chat"
+
+
+# MODELS=( "prometheus-eval/prometheus-7b-v2.0" "chatgpt" "Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B" )
+# MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B" )
+
+MODELS=( "flowaicom/Flow-Judge-v0.1" "AtlaAI/Selene-1-Mini-Llama-3.1-8B"   )
+GENERATION_TYPES=("score_rationale")
 DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
 DATASET_SPLITS=("full" "test")
 DATASET_CONFIGS=("combined_main_aspects" "all")
 
-GENERATION_TYPES=("score_only" "score_rationale")
-PROMPT_TYPE="chat"
 
+# MODELS=( ""meta-llama/Llama-3.1-8B-Instruct"" )
+# GENERATION_TYPES=("score_rationale")
+# DATASETS=("boda/human_vs_llm_reviews" "boda/human_vs_llm_reviews")
+# DATASET_CONFIGS=("human" "llm")
+# DATASET_SPLITS=("test" "test")
 
-# MODELS=( "chatgpt" )
-# GENERATION_TYPES=("score_only" "score_rationale")
-# DATASETS=("boda/review_evaluation_human_annotation")
-# DATASET_CONFIGS=("combined_main_aspects")
-# DATASET_SPLITS=("full")
-
+# MODELS=( "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" )
+# GENERATION_TYPES=("score_rationale")
+# DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
+# DATASET_SPLITS=("full" "test")
+# DATASET_CONFIGS=("combined_main_aspects" "all")
 
 
 for MODEL in "${MODELS[@]}"; do
@@ -122,14 +134,18 @@ for MODEL in "${MODELS[@]}"; do
             DATASET_SPLIT=${DATASET_SPLITS[$i]}
             ASPECT=${DATASET_CONFIGS[$i]}
 
-            PROMPT_TYPE="instruction"
-
-            ### if the model name is  "meta-llama/Llama-3.1-8B" then make prompt type "instruction" don't do that for "meta-llama/Llama-3.1-8B-Instruct"
-            if [[ "$MODEL" == *"Llama-3.1-8B"* && "$MODEL" != *"Instruct"* ]]; then
+            if [ "$FINETUNING_TYPE" == "baseline" ]; then
+                PROMPT_TYPE="chat"
+            elif [ "$FINETUNING_TYPE" == "adapters" ]; then
                 PROMPT_TYPE="instruction"
             fi
 
 
+            ### if the model name is "meta-llama/Llama-3.1-8B" then make prompt type "instruction" don't do that for "meta-llama/Llama-3.1-8B-Instruct"
+            ### or the model is chatgpt
+            if [[ (("$MODEL" == *"Llama-3.1-8B"* && "$MODEL" != *"Instruct"*) || "$MODEL" == "chatgpt" || "$MODEL" == *"prometheus"*) && "$MODEL" != *"Selene"* ]]; then
+                PROMPT_TYPE="instruction"
+            fi
             echo "PROMPT_TYPE: $PROMPT_TYPE"
             echo "MODEL: $MODEL"
             echo "DATASET_NAME: $DATASET_NAME"
@@ -144,9 +160,6 @@ for MODEL in "${MODELS[@]}"; do
                 # GOLD_LABEL_FORMAT="ASPECT_label"
                 GOLD_LABEL_FORMAT="ASPECT"
             fi
-
-
-
             python  vllm_inf.py \
             --step $STEP \
             --max_num_seqs $MAX_NUM_SEQS \
@@ -158,7 +171,7 @@ for MODEL in "${MODELS[@]}"; do
             --full_model_name  $MODEL \
             --tensor_parallel_size $GPUS \
             --output_path $WRITE_PATH \
-            --max_new_tokens 2048 \
+            --max_new_tokens 1024 \
             --temperature 0 \
             --dataset_config $ASPECT \
             --dataset_split $DATASET_SPLIT \

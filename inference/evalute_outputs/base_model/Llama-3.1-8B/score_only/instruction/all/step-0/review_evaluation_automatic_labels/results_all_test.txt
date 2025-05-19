@@ -30,8 +30,8 @@
                 "pearson": 0.16,
                 "tau": 0.116,
                 "original_len": 1000,
-                "filtered_len": 972,
-                "sucess_rate": 0.972
+                "filtered_len": 973,
+                "sucess_rate": 0.973
             }
         },
         "helpfulness": {

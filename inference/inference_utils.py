@@ -62,6 +62,45 @@ def replace_category_names(text):
     return text
 
 
+expected_keys = [
+    "actionability_rationale",
+    "actionability_label",
+    "grounding_specificity_rationale",
+    "grounding_specificity_label",
+    "verifiability_rationale",
+    "verifiability_label",
+    "helpfulness_rationale",
+    "helpfulness_label"
+]
+
+import json
+import re
+
+import json
+
+def extract_valid_json(text):
+    label_keys = [
+        "actionability_label",
+        "grounding_specificity_label",
+        "verifiability_label",
+        "helpfulness_label"
+    ]
+
+    # Initialize result with None values
+    result = {key: None for key in label_keys}
+
+    # Match patterns like: "key": "1", "key": 1, or "key": "X"
+    pattern = r'"(' + '|'.join(label_keys) + r')"\s*:\s*"?(X|\d+)"?'
+
+    matches = re.findall(pattern, text)
+
+    for key, val in matches:
+        result[key] = str(val)  # Always store as string for valid JSON output
+
+    return json.dumps(result, indent=2)
+
+
+
 def escape_inner_quotes(text):
     """Finds specified rationale fields and escapes only internal double quotes."""
     fields = [
@@ -96,11 +135,15 @@ def extract_dict(text):
     text = text.replace("\\\\'", "\\\"")
     text = text.replace("\\\\", "\\")
 
-
-
-
     text = text.replace("[", "")  # Remove square brackets
     text = text.replace("]", "")  # Remove square brackets
+
+    ############## For Prometheus2 #################
+    # text = text.replace("[", '"')  # Replace single quotes with double quotes
+    # text = text.replace("]", '"')  # Replace single quotes with double quotes
+
+
+
     ## if text begin with comma or space, remove it
     if text[0] == ',' or text[0] == ' ':
         text = text[1:]
@@ -122,13 +165,33 @@ def extract_dict(text):
     if not text:
         return None
     
-    # if text[0] != '{':
-    #     text = '{' + text + '}'
+    ############# Comment for Prometheus2 ##############
+    if text[0] != '{':
+        text = '{' + text + '}'
 
-    # if
+
+    ################## cut the text if there is two newlines. This is for Prmetheus2 #########
+    # if '\n\n' in text:
+    #     halfs = text = text.split('\n\n', 1)
+    #     text = halfs[0] if "actionability_label" in halfs[0] else halfs[1]
+
     if '{' not in text:
         text = '{' + text + '}'
 
+
+    text = text.replace(" }  { ", ',')  # Remove newlines between dictionaries
+
+
+    text = text.replace("\n", ' ')  # Remove newlines
+
+    # print(f"Text after processing: {text} \n\n\n\n\n\n\n")
+
+    
+
+    ############################# Prometheus2 ##########################
+    # text = extract_valid_json(text)
+    # text = text.replace('\\', '')  # Remove single quotes
+    # print(f"Text after processing: {text} \n\n\n")
 
     ############ Some cases doesn't work with replacing the quotes, so trying both ways
     text2 = text
@@ -152,8 +215,29 @@ def extract_dict(text):
             return None
 
 # Example usage
-# input_text = """\"actionability_rationale\": \"The comment implies an action for the authors to consider. It suggests adding more downstream search methods, which would make the paper more comprehensive.\",\n\"actionability_label\": \"Somewhat Actionable\",\n\"grounding_specificity_rationale\": \"The comment refers to a specific part of the paper, which is the downstream search method section. It is grounded in the fact that the author is questioning the limited options provided for downstream searches.\",\n\"grounding_specificity_label\": \"Fully Grounded and Specific\",\n\"verifiability_rationale\": \"The comment is based on the author's experience and knowledge of other papers in the field. It is not directly verifiable, but it is a common practice to include multiple downstream search methods for a comprehensive study.\",\n\"verifiability_label\": \"Not Verifiable\",\n\"helpfulness_rationale\": \"The comment provides a suggestion that could improve the paper, making it more valuable for the authors. However, it is not very specific in terms of how to implement the suggested change.\",\n\"helpfulness_label\": \"Somewhat Helpful\"\n\nOutput:\n{\"actionability_rationale\": \"The comment implies an action for the authors to consider. It suggests adding more downstream search methods, which would make the paper more comprehensive.\", \"actionability_label\": \"Somewhat Actionable\", \"grounding_specificity_rationale\": \"The comment refers to a specific part of the paper, which is the downstream search method section. It is grounded in the fact that the author is questioning the limited options provided for downstream searches.\", \"grounding_specificity_label\": \"Fully Grounded and Specific\", \"verifiability_rationale\": \"The comment is based on the author\\u0027s experience and knowledge of other papers in the field. It is not directly verifiable, but it is a common practice to include multiple downstream search methods for a comprehensive study.\", \"verifiability_label\": \"Not Verifiable\", \"helpfulness_rationale\": \"The comment provides a suggestion that could improve the paper, making it more valuable for the authors. However, it is not very specific in terms of how to implement the suggested change.\", \"helpfulness_label\": \"Somewhat Helpful\"}s"""
+# input_text = """{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n\n{\n  \"helpfulness_rationale\": \"The review is highly helpful as it identifies specific issues and provides clear explanations for the suggested changes. It also asks for clarification on certain points, which encourages further discussion and improvement. The review's suggestions are well-reasoned and actionable, making it very beneficial for the authors.\",\n  \"helpfulness_label\": \"5\"\n}\n\n{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n\n{\n  \"helpfulness_rationale\": \"The review is highly helpful as it identifies specific issues and provides clear explanations for the suggested changes. It also asks for clarification on certain points, which encourages further discussion and improvement. The review's suggestions are well-reasoned and actionable, making it very beneficial for the authors.\",\n  \"helpfulness_label\": \"5\"\n}\n{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n"""
 # print(extract_dict(input_text))
+
+# import json
+# lines = []
+# with open('/home/abdelrahman.sadallah/mbzuai/review_rewrite/inference/evalute_outputs/base_model/Flow-Judge-v0.1/score_rationale/chat/all/step-0/review_evaluation_human_annotation/raw_outputs_combined_main_aspects_full.jsonl', 'r') as f:
+#     for line in f:
+#         lines.append(json.loads(line))
+
+# cnt = 0
+# keys_cnt = 0
+# for line in lines:
+#     line = line['generated_text']
+#     if extract_dict(line):
+#         cnt += 1
+#         keys_cnt += sum(1 for value in extract_dict(line).values() if value is not None)
+#     else:
+#         print(f"^^^^^^^^^^^^^^6Invalid JSON:^^^^^^^^^^^ \n {line} \n\n\n")
+#         print(extract_dict(line))
+#         # break
+
+# print(f"Number of lines with valid JSON: {cnt}")
+# print(f"Number of keys in valid JSON: {keys_cnt}")
 
 
 
@@ -179,7 +263,11 @@ def extract_predictions(model_outputs):
                 'actionability_label': None,
                 'grounding_specificity_label': None,
                 'verifiability_label': None,
-                'helpfulness_label': None
+                'helpfulness_label': None,
+                'actionability_rationale': None,
+                'grounding_specificity_rationale': None,
+                'verifiability_rationale': None,
+                'helpfulness_rationale': None
             })
             continue
 

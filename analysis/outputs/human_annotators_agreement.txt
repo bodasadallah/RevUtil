@@ -9,7 +9,8 @@ Annotator 2: Annotator_X
     "pearson": 0.701,
     "tau": 0.613,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: boda
@@ -20,7 +21,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.625,
     "tau": 0.494,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: Annotator_X
@@ -31,7 +33,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.58,
     "tau": 0.455,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 ===================== AVERAGE AGREEMENT =====================
@@ -41,7 +44,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.635,
     "tau": 0.521,
     "original_len": 1430.0,
-    "filtered_len": 1430.0
+    "filtered_len": 1430.0,
+    "sucess_rate": 1.0
 }Krippendorff's alpha: 0.5611197448852019
 
 ============================================================
@@ -57,7 +61,8 @@ Annotator 2: Annotator_X
     "pearson": 0.434,
     "tau": 0.373,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: boda
@@ -68,7 +73,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.473,
     "tau": 0.388,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: Annotator_X
@@ -79,7 +85,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.451,
     "tau": 0.373,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 ===================== AVERAGE AGREEMENT =====================
@@ -89,7 +96,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.453,
     "tau": 0.378,
     "original_len": 1430.0,
-    "filtered_len": 1430.0
+    "filtered_len": 1430.0,
+    "sucess_rate": 1.0
 }Krippendorff's alpha: 0.3912389200140617
 
 ============================================================
@@ -106,7 +114,8 @@ Annotator 2: Annotator_X
     "pearson": 0.497,
     "tau": 0.41,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: boda
@@ -118,7 +127,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.572,
     "tau": 0.474,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: Annotator_X
@@ -130,7 +140,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.454,
     "tau": 0.343,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 ===================== AVERAGE AGREEMENT =====================
@@ -141,7 +152,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.508,
     "tau": 0.409,
     "original_len": 1430.0,
-    "filtered_len": 1430.0
+    "filtered_len": 1430.0,
+    "sucess_rate": 1.0
 }Krippendorff's alpha: 0.2728684502378117
 
 ============================================================
@@ -157,7 +169,8 @@ Annotator 2: Annotator_X
     "pearson": 0.545,
     "tau": 0.426,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: boda
@@ -168,7 +181,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.538,
     "tau": 0.441,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 Annotator 1: Annotator_X
@@ -179,7 +193,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.471,
     "tau": 0.361,
     "original_len": 1430,
-    "filtered_len": 1430
+    "filtered_len": 1430,
+    "sucess_rate": 1.0
 }
 
 ===================== AVERAGE AGREEMENT =====================
@@ -189,7 +204,8 @@ Annotator 2: Annotator_Y
     "pearson": 0.518,
     "tau": 0.409,
     "original_len": 1430.0,
-    "filtered_len": 1430.0
+    "filtered_len": 1430.0,
+    "sucess_rate": 1.0
 }Krippendorff's alpha: 0.4688263743182143
 
 ============================================================

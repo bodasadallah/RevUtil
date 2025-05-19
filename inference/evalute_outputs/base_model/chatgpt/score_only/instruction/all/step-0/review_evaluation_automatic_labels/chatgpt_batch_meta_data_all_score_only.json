@@ -1,0 +1,6 @@
+{
+    "batch_id": "batch_681e4ec00b648190bfe77c6006aa1778",
+    "aspect": "all",
+    "batch_input_file_id": "file-5YWDkGr1z66u5qT2tuwaCv",
+    "batch_file_path": "evalute_outputs/base_model/chatgpt/score_only/instruction/all/step-0/review_evaluation_automatic_labels/chatgpt_batch_input_all_score_only.jsonl"
+}

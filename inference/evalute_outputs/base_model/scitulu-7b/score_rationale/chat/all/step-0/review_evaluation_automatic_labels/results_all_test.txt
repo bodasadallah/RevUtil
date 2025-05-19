@@ -2,47 +2,75 @@
     "all_test": {
         "actionability": {
             "total_stats": {
-                "kappa_quadratic": 0.145,
-                "spearman": 0.169,
-                "pearson": 0.18,
-                "tau": 0.144,
+                "kappa_quadratic": 0.128,
+                "alpha_pairwise": 0.089,
+                "spearman": 0.148,
+                "pearson": 0.159,
+                "tau": 0.127,
                 "original_len": 1000,
-                "filtered_len": 877,
-                "sucess_rate": 0.877
+                "filtered_len": 841,
+                "sucess_rate": 0.841,
+                "rouge_score_correct": 0.189,
+                "rouge_score_uncorrect": 0.198,
+                "bert_score_correct": 0.617,
+                "bert_score_uncorrect": 0.601,
+                "num_correct_samples": 550,
+                "num_uncorrect_samples": 291
             }
         },
         "grounding_specificity": {
             "total_stats": {
-                "kappa_quadratic": 0.141,
-                "spearman": 0.211,
-                "pearson": 0.177,
-                "tau": 0.188,
+                "kappa_quadratic": 0.127,
+                "alpha_pairwise": 0.01,
+                "spearman": 0.191,
+                "pearson": 0.16,
+                "tau": 0.171,
                 "original_len": 1000,
-                "filtered_len": 792,
-                "sucess_rate": 0.792
+                "filtered_len": 757,
+                "sucess_rate": 0.757,
+                "rouge_score_correct": 0.221,
+                "rouge_score_uncorrect": 0.231,
+                "bert_score_correct": 0.611,
+                "bert_score_uncorrect": 0.604,
+                "num_correct_samples": 435,
+                "num_uncorrect_samples": 322
             }
         },
         "verifiability": {
             "total_stats": {
-                "f1_X": 0.03,
-                "kappa_quadratic": 0.185,
-                "spearman": 0.207,
-                "pearson": 0.185,
-                "tau": 0.179,
+                "f1_X": 0.033,
+                "kappa_quadratic": 0.17,
+                "alpha_pairwise": 0.185,
+                "spearman": 0.196,
+                "pearson": 0.171,
+                "tau": 0.169,
                 "original_len": 1000,
-                "filtered_len": 620,
-                "sucess_rate": 0.62
+                "filtered_len": 589,
+                "sucess_rate": 0.589,
+                "rouge_score_correct": 0.177,
+                "rouge_score_uncorrect": 0.175,
+                "bert_score_correct": 0.592,
+                "bert_score_uncorrect": 0.57,
+                "num_correct_samples": 338,
+                "num_uncorrect_samples": 251
             }
         },
         "helpfulness": {
             "total_stats": {
-                "kappa_quadratic": 0.147,
-                "spearman": 0.25,
-                "pearson": 0.251,
-                "tau": 0.216,
+                "kappa_quadratic": 0.141,
+                "alpha_pairwise": -0.061,
+                "spearman": 0.238,
+                "pearson": 0.24,
+                "tau": 0.206,
                 "original_len": 1000,
-                "filtered_len": 887,
-                "sucess_rate": 0.887
+                "filtered_len": 851,
+                "sucess_rate": 0.851,
+                "rouge_score_correct": 0.169,
+                "rouge_score_uncorrect": 0.154,
+                "bert_score_correct": 0.601,
+                "bert_score_uncorrect": 0.587,
+                "num_correct_samples": 423,
+                "num_uncorrect_samples": 428
             }
         }
     }

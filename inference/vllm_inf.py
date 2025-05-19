@@ -9,7 +9,7 @@ from tqdm import tqdm
 import pandas as pd
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
-from utils import get_prompt, get_stats, get_alpha_scores
+from utils import get_prompt, get_stats, get_alpha_scores, evaluate_rationale
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
 from inference_utils import extract_predictions
@@ -58,7 +58,7 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
 
     model_name = 'gpt-4o'
 
-
+    print(chatgpt_batch_meta_data_path)
     try:
         batch_data = json.load(open(chatgpt_batch_meta_data_path, 'r'))
     except:
@@ -127,7 +127,8 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
                                 task='evaluation',
                                 generation_type=args.generation_type, 
                                 prompt_type=args.prompt_type,
-                                finetuning_type=args.finetuning_type)
+                                finetuning_type=args.finetuning_type,
+                                model=args.full_model_name)
             
             processed_data.append(prompt['text'])
 
@@ -157,7 +158,7 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
 
 
         ############################## Uncomment to work ##############################
-        ### upload the batch file
+        ## upload the batch file
         # batch_input_file = client.files.create(
         # file=open(batch_file_path, "rb"),
         # purpose="batch")
@@ -202,15 +203,24 @@ def vllm_inferece(args, raw_data,raw_outputs_name, sampling_params,llm, enable_l
                                 task='evaluation',
                                 generation_type=args.generation_type, 
                                 prompt_type=args.prompt_type,
-                                finetuning_type=args.finetuning_type)
+                                finetuning_type=args.finetuning_type,
+                                model=args.full_model_name)
             
+            ###################### prometheus prompt ######################
+            if 'prometheus' in  args.full_model_name:
+                
+                ABS_SYSTEM_PROMPT =  "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
+                prompt['text']  =    [{'role': 'user', 'content':  ABS_SYSTEM_PROMPT + "\n\n"  + prompt['text']}]
+
             processed_data.append(prompt['text'])
 
         print('Total number of prompts:', len(processed_data))
         print('Example prompt:', processed_data[0])
 
 
-        if args.prompt_type == 'chat':
+        if args.prompt_type == 'chat' or  'prometheus' in  args.full_model_name:
+
+            print('***************************Using chat prompt***************************')
             outputs = llm.chat(
             messages=processed_data,
             chat_template=DEFAULT_CHAT_TEMPLATE if model_name == 'scitulu-7b' else None,
@@ -297,9 +307,29 @@ def write_stats_to_file(label_dict, results_file_name):
             ############## if the gold label is not a dict, we only have one label ##############
             ################### This happens for evlauation against the Test set ##################
             else:
-                stat_dict = get_stats(preds, gold, aspect)
+                stat_dict = process_stat_dict(get_stats(preds, gold, aspect))
 
-                results_dict[key][aspect]['total_stats'] = process_stat_dict(stat_dict)
+                gold_rationales = d.get('gold_data_rationale', None)
+                preds_rationales = d.get('preds_rationale', None)
+                rouge_score = "-"
+                bert_score = "-"
+
+                # print('The gold rationales:', gold_rationales[0])
+                # print('The preds rationales:', preds_rationales[0])
+                if gold_rationales:
+
+                    rationale_results = evaluate_rationale(gold_rationales, preds_rationales, pred_scores = preds, 
+                                                                gold_scores = gold, aspect = aspect)
+
+                # Add all keys from rationale_results to stat_dict
+                if rationale_results:
+                    for k, value in rationale_results.items():
+                        stat_dict[k] = value
+
+
+                stat_dict = process_stat_dict(stat_dict)
+
+                results_dict[key][aspect]['total_stats'] = stat_dict
 
     with open(results_file_name, 'w') as f:
         f.write(json.dumps(results_dict, indent=4))
@@ -313,8 +343,8 @@ def write_stats_to_file(label_dict, results_file_name):
 def process_stat_dict(stat_dict):
     processed_stat_dict = {}
     for k, v in stat_dict.items():
-        if 'accuracy' in k:
-            continue
+        # if 'accuracy' in k:
+        #     continue
         if 'spearman' in k or 'pearson' in k or 'tau' in k:
             v = v[0] if isinstance(v, tuple) else v
         if isinstance(v, float):
@@ -456,6 +486,20 @@ if __name__ == "__main__":
                 gold_data = raw_data[gold_data_name]
 
 
+                gold_data_rationale = []
+                preds_rationale = []
+                if 'automatic' in args.dataset_name:
+                    print('The dataset is automatic, so we need to get the rationale')
+                    
+                    rationale_key = gold_data_name.replace('score', 'rationale')
+                    # print('The rationale key is:', rationale_key)
+                    gold_data_rationale = raw_data[rationale_key]
+                    # print('The gold data rationale:', gold_data_rationale[0])
+                    preds_rationale = [p[f'{aspect}_rationale'] for p in predictions]
+                    # print('The preds rationale:', preds_rationale[0])
+                    assert len(preds_rationale) == len(gold_data_rationale), 'The number of predictions and gold rationales do not match'
+
+
 
                 ## convert the gold data to string
                 gold_data = [str(g) for g in gold_data]
@@ -469,7 +513,7 @@ if __name__ == "__main__":
                 print('Total number of predictions:', len(preds))
                 assert len(preds) == len(gold_data), 'The number of predictions and gold labels do not match'
 
-                label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, 'aspect': aspect})
+                label_dict[f'{config}_{split}'].append({'gold': gold_data, 'preds': preds, 'aspect': aspect, 'gold_data_rationale': gold_data_rationale, 'preds_rationale': preds_rationale})
 
             predictions_name = os.path.join(save_dir, f'predictions_{config}_{split}.jsonl')
             with open(predictions_name, 'w') as f:

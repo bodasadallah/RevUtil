@@ -52,7 +52,7 @@ for annotator, batch_ids in annotators_unique_id_batch_id_map.items():
 
 
 ## Create a prompt for each row in the dataset
-def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat', finetuning_type='adapters'):
+def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat', finetuning_type='adapters', model = ''):
     aspects = [ 'actionability', 'grounding_specificity', 'verifiability', 'helpfulness']
     review_point = row['review_point']
 
@@ -164,10 +164,41 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
                 prompt += INSTRUCTION_BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
 
 
+
+#         if 'prometheus' in model:
+#             ABS_SYSTEM_PROMPT = "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
+#             INSTRUCTION = INSTRUCTION_BASE_MODEL_SCORE_ONLY_PROMPT_TAIL.format(review_point=review_point) if generation_type == 'score_only' else INSTRUCTION_BASE_MODEL_SCORE_AND_RATIONALE_PROMPT_TAIL.format(review_point=review_point)
+
+#             # INSTRUCTION = INSTRUCTION.replace('###Instruction:', '')
+#             prompt  = '''###Task Description:
+# {prompt_header}
+
+# ###Score Rubrics:
+# {rubric}
+
+
+# {instruction}
+
+
+# ###Feedback:
+# '''
+            
+#             prompt = prompt.format(prompt_header= PROMPT_HEADER, 
+#                                     instruction= INSTRUCTION,
+#                                     rubric= aspect_definitions,)
+#             prompt = [{'role': 'user', 'content':  ABS_SYSTEM_PROMPT + "\n\n"  + prompt}]
+            
+#         else:
+
+        if 'prometheus' in model:
+            prompt += "Make sure to provide a score for each aspect.\n"
+
+            
         prompt += '''\n\n###Output:\n'''
         
         if task == 'train':
             prompt += str(labels_dict)
+
 
 
     row['text'] = prompt
@@ -184,15 +215,16 @@ row = {'review_point': 'POINT',
        'chatgpt_verifiability_rationale': 'VERIFIABILITY RATIONALE', 
        'chatgpt_helpfulness_score': 5, 
        'chatgpt_helpfulness_rationale': 'HELPFULNESS RATIONALE'}
-pr = get_prompt(row,aspect= 'all',task='evaluation', generation_type='score_rationale', prompt_type = 'chat', finetuning_type='baseline')
-
-# with open('prompt.txt', 'w') as f:
-#     write = pr['text']
-#     if isinstance(write, list):
-#         for item in write:
-#             f.write("%s\n" % item)
-#     else:
-#         f.write(write)
+pr = get_prompt(row,aspect= 'all',task='evaluation', generation_type='score_rationale', prompt_type = 'instruction', finetuning_type='baseline', model="prometheus-eval/prometheus-7b-v2.0")
+ABS_SYSTEM_PROMPT =  "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
+pr['text']  =    [{'role': 'user', 'content':  ABS_SYSTEM_PROMPT + "\n\n"  + pr['text']}]
+with open('prompt.txt', 'w') as f:
+    write = pr['text']
+    if isinstance(write, list):
+        for item in write:
+            f.write("%s\n" % item)
+    else:
+        f.write(write)
 
 
 
@@ -231,7 +263,7 @@ class LLMSampleCB(WandbCallback):
 
 def get_alpha_scores(annotations_plus_predictions, aspect):
     possible_labels = ['1', '2', '3', '4', '5'] if aspect != 'verifiability' else ['1', '2', '3', '4', '5', 'X']
-    assert len(annotations_plus_predictions) == 4, 'There should be 4 annotators'
+    assert len(annotations_plus_predictions) >= 2, 'There should be 4 annotators'
 
     # Filter out entries where any of the four labels is not in the possible labels
     filtered_annotations = []
@@ -291,6 +323,12 @@ def get_stats(pred, gold, aspect):
         gold = new_gold
         pred = new_pred
         stats_dict['f1_X'] = f1_score(new_pred_X, new_gold_X, average="micro")
+        # stats_dict['kappa_X'] = cohen_kappa_score( new_gold_X , new_pred_X, weights='quadratic')
+        # stats_dict['alpha_X'] = krippendorff.alpha([new_gold_X, new_pred_X], level_of_measurement='ordinal')
+        # stats_dict['spearman_X'] = stats.spearmanr(new_pred_X, new_gold_X)
+        # stats_dict['pearson_X'] = stats.pearsonr(new_pred_X, new_gold_X)
+        # stats_dict['accuracy_X'] = accuracy_score(new_gold_X, new_pred_X)
+        
 
     elif aspect in ["professional_tone", 'valid_point', 'addressed_to_author']:
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
@@ -298,6 +336,7 @@ def get_stats(pred, gold, aspect):
 
 
     stats_dict['kappa_quadratic'] = cohen_kappa_score(pred, gold, weights='quadratic')
+    stats_dict['alpha_pairwise'] = krippendorff.alpha([pred, gold], level_of_measurement='ordinal')
     stats_dict['spearman'] = stats.spearmanr(pred, gold)
     stats_dict['pearson'] = stats.pearsonr(pred, gold)
     stats_dict['tau'] = stats.kendalltau(pred, gold)
@@ -307,6 +346,107 @@ def get_stats(pred, gold, aspect):
     
     return stats_dict
 
+
+
+from rouge_score import rouge_scorer
+from bert_score import score
+
+scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+
+
+def evaluate_rationale(gold_rationales, pred_rationales, pred_scores, gold_scores, aspect):
+    rouge_score_correct = 0.0
+    bert_score_correct = 0.0
+    rouge_score_uncorrect = 0.0
+    bert_score_uncorrect = 0.0
+
+    # Define valid labels
+    possible_labels = ['1', '2', '3', '4', '5'] if aspect != 'verifiability' else ['1', '2', '3', '4', '5', 'X']
+    # Filter out invalid entries
+    zipped_scores_rationales = list(zip(pred_scores, pred_rationales, gold_scores, gold_rationales))
+
+    filtered_scores_rationales = []
+    for p_s, p_r, g_s, g_r in zipped_scores_rationales:
+        if (
+            str(p_s) in possible_labels and
+            str(g_s) in possible_labels and
+            isinstance(p_r, str) and p_r.strip() and
+            isinstance(g_r, str) and g_r.strip()
+        ):
+            filtered_scores_rationales.append((p_s, p_r, g_s, g_r))
+
+    # Unzip the filtered data back into separate lists
+    if filtered_scores_rationales:
+        pred_scores, pred_rationales, gold_scores, gold_rationales = zip(*filtered_scores_rationales)
+        pred_scores = [10 if score == 'X' else int(score) for score in pred_scores]
+        gold_scores = [10 if score == 'X' else int(score) for score in gold_scores]
+    else:
+        pred_scores, pred_rationales, gold_scores, gold_rationales = [], [], [], []
+
+    # Assert that the lengths of scores and rationales are the same
+    assert len(gold_rationales) == len(pred_rationales), "Mismatch in lengths of gold and predicted rationales"
+    assert len(gold_scores) == len(pred_scores), "Mismatch in lengths of gold and predicted scores"
+    assert len(gold_rationales) == len(gold_scores), "Mismatch in lengths of gold rationales and scores"
+
+
+    # Remove None values and their corresponding entries in the other arrays
+    correct_data = [
+        (g_r, p_r, g_s, p_s)
+        for g_r, p_r, g_s, p_s in zip(gold_rationales, pred_rationales, gold_scores, pred_scores)
+        if g_r is not None and p_r is not None
+    ]
+
+    # Separate correct and uncorrect rationales
+    correct_rationales = [
+        (g_r, p_r) for g_r, p_r, g_s, p_s in correct_data if abs(g_s - p_s) <= 1
+    ]
+    uncorrect_rationales = [
+        (g_r, p_r) for g_r, p_r, g_s, p_s in correct_data if abs(g_s - p_s) > 1
+    ]
+
+    # Calculate scores for correct rationales
+    if correct_rationales:
+        gold_rationales_correct, pred_rationales_correct = zip(*correct_rationales)
+        for i in tqdm(range(len(gold_rationales_correct)), desc="Evaluating Correct rationales"):
+            gold_rationale = gold_rationales_correct[i]
+            pred_rationale = pred_rationales_correct[i]
+
+            # Calculate ROUGE scores
+            rouge_scores = scorer.score(gold_rationale, pred_rationale)
+            rouge_score_correct += rouge_scores['rougeL'].fmeasure
+
+        # Calculate BERT score directly using the score function
+        P, R, F1 = score(pred_rationales_correct, gold_rationales_correct, lang="en", model_type="bert-base-uncased")
+        bert_score_correct = F1.mean().item()
+
+        rouge_score_correct /= len(gold_rationales_correct)
+
+    # Calculate scores for uncorrect rationales
+    if uncorrect_rationales:
+        gold_rationales_uncorrect, pred_rationales_uncorrect = zip(*uncorrect_rationales)
+        for i in tqdm(range(len(gold_rationales_uncorrect)), desc="Evaluating Wrong rationales"):
+            gold_rationale = gold_rationales_uncorrect[i]
+            pred_rationale = pred_rationales_uncorrect[i]
+
+            # Calculate ROUGE scores
+            rouge_scores = scorer.score(gold_rationale, pred_rationale)
+            rouge_score_uncorrect += rouge_scores['rougeL'].fmeasure
+
+        # Calculate BERT score directly using the score function
+        P, R, F1 = score(pred_rationales_uncorrect, gold_rationales_uncorrect, lang="en", model_type="bert-base-uncased")
+        bert_score_uncorrect = F1.mean().item()
+
+        rouge_score_uncorrect /= len(gold_rationales_uncorrect)
+        results = {
+            "rouge_score_correct": rouge_score_correct,
+            "rouge_score_uncorrect": rouge_score_uncorrect,
+            "bert_score_correct": bert_score_correct,
+            "bert_score_uncorrect": bert_score_uncorrect,
+            "num_correct_samples": len(correct_rationales),
+            "num_uncorrect_samples": len(uncorrect_rationales)
+        }
+
+        return results
 
 
 

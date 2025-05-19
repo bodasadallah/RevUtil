@@ -2,8 +2,8 @@ Agreement Statistics for actionability
  Total number of samples: 1208
  Agreement Statistics for definitions_incontext_learning
 {
-    "kappa": 0.2718068755464057,
     "kappa_quadratic": 0.5436436980253927,
+    "alpha_pairwise": 0.45047852153115575,
     "spearman": [
         0.6283283806639848,
         1.1193859300228327e-133
@@ -17,7 +17,8 @@ Agreement Statistics for actionability
         2.3507925118011588e-114
     ],
     "original_len": 1208,
-    "filtered_len": 1208
+    "filtered_len": 1208,
+    "sucess_rate": 1.0
 }
 --------------------------------------------------
 ==================================================
@@ -25,8 +26,8 @@ Agreement Statistics for grounding_specificity
  Total number of samples: 1243
  Agreement Statistics for definitions_incontext_learning
 {
-    "kappa": 0.3041386625274868,
     "kappa_quadratic": 0.5168793442878186,
+    "alpha_pairwise": 0.411454727415856,
     "spearman": [
         0.5458511587329753,
         1.9368924025754344e-97
@@ -40,7 +41,8 @@ Agreement Statistics for grounding_specificity
         7.079794546858841e-88
     ],
     "original_len": 1243,
-    "filtered_len": 1243
+    "filtered_len": 1243,
+    "sucess_rate": 1.0
 }
 --------------------------------------------------
 ==================================================
@@ -49,8 +51,8 @@ Agreement Statistics for verifiability
  Agreement Statistics for definitions_incontext_learning
 {
     "f1_X": 0.5331325301204819,
-    "kappa": 0.1002889898059639,
     "kappa_quadratic": 0.3682270074727364,
+    "alpha_pairwise": 0.15101115314741198,
     "spearman": [
         0.5644116201006875,
         2.2154095306134675e-59
@@ -64,7 +66,8 @@ Agreement Statistics for verifiability
         5.645340279789487e-53
     ],
     "original_len": 1023,
-    "filtered_len": 1023
+    "filtered_len": 1023,
+    "sucess_rate": 1.0
 }
 --------------------------------------------------
 ==================================================
@@ -72,8 +75,8 @@ Agreement Statistics for helpfulness
  Total number of samples: 1111
  Agreement Statistics for definitions_incontext_learning
 {
-    "kappa": 0.17158318794866656,
     "kappa_quadratic": 0.5441679519120497,
+    "alpha_pairwise": 0.45487737652340565,
     "spearman": [
         0.6084385321964498,
         1.792033389039739e-113
@@ -87,7 +90,8 @@ Agreement Statistics for helpfulness
         6.745416949450806e-100
     ],
     "original_len": 1111,
-    "filtered_len": 1111
+    "filtered_len": 1111,
+    "sucess_rate": 1.0
 }
 --------------------------------------------------
 ==================================================
