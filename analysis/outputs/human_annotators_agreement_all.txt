@@ -166,7 +166,7 @@ Annotator 2: Annotator_Y
     "original_len": 1430.0,
     "filtered_len": 1430.0,
     "sucess_rate": 1.0
-}Krippendorff's alpha: 0.2728684502378117
+}Krippendorff's alpha: 0.4583749679198683
 
 ============================================================
 

@@ -48,68 +48,60 @@ else
     fi
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
-    export CUDA_VISIBLE_DEVICES=2,3
+    export CUDA_VISIBLE_DEVICES=0,1,2,3
 fi
 
 
 
+export CUDA_LAUNCH_BLOCKING=1
 # get the number of GPUs and store them into variable
-GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
+export GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
 echo "GPUS: $GPUS"
 
-# GENERATION_TYPE="score_only"
 ## Use adapter or full model tuning
 USE_PEFT=true
-### 
-ASPECT="all"
-GENERATION_TYPE="score_rationale"
-export CUDA_LAUNCH_BLOCKING=1
+GENERATION_TYPE="score_only"
+# ASPECTS=(  "actionability" "grounding_specificity" "verifiability" "helpfulness" )
+ASPECTS=("all")
 
-
-# "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-# meta-llama/Llama-3.1-8B
-# "WestlakeNLP/DeepReviewer-7B"
-# "meta-llama/Llama-3.1-8B-Instruct"
-# "meta-llama/Llama-3.1-8B"
-# "allenai/scitulu-7b"
-# "Uni-SMART/SciLitLLM"
 
 # List of models to iterate over
-# MODELS=( "deepseek-ai/DeepSeek-R1-Distill-Llama-8B" )
-# MODELS=( "Uni-SMART/SciLitLLM" "allenai/scitulu-7b")
-MODELS=( "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
+MODELS=(  "meta-llama/Meta-Llama-3-70B-Instruct")
 
+for A in "${ASPECTS[@]}"; do
 
-for MODEL_NAME_OR_PATH in "${MODELS[@]}"; do
-    echo "Finetuning Model: $MODEL_NAME_OR_PATH"
+    ASPECT=$A
+    echo "Processing Aspect: $ASPECT"
+    for MODEL_NAME_OR_PATH in "${MODELS[@]}"; do
+        echo "Finetuning Model: $MODEL_NAME_OR_PATH"
 
-    ## if USE_PEFT is true, then append "adapters" to the output path
-    if [ "$USE_PEFT" = true ]; then
-        MODEL_OUTPUTPATH="$OUTPUTPATH/adapters"
-        echo "Using adapters"
-        echo "MODEL_OUTPUTPATH: $MODEL_OUTPUTPATH"
-    else
-        MODEL_OUTPUTPATH="$OUTPUTPATH/full"
-        echo "Using full model"
-        echo "MODEL_OUTPUTPATH: $MODEL_OUTPUTPATH"
+        ## if USE_PEFT is true, then append "adapters" to the output path
+        if [ "$USE_PEFT" = true ]; then
+            MODEL_OUTPUTPATH="$OUTPUTPATH/adapters/"
+            echo "Using adapters"
+            echo "MODEL_OUTPUTPATH: $MODEL_OUTPUTPATH"
+        else
+            MODEL_OUTPUTPATH="$OUTPUTPATH/full/"
+            echo "Using full model"
+            echo "MODEL_OUTPUTPATH: $MODEL_OUTPUTPATH"
+        fi
 
-    fi
+        ## if the model output path doesn't exist, create it
+        if [ ! -d "$MODEL_OUTPUTPATH" ]; then
+            mkdir -p $MODEL_OUTPUTPATH
+        fi
 
-    ## if the model output path doesn't exist, create it
-    if [ ! -d "$MODEL_OUTPUTPATH" ]; then
-        mkdir -p $MODEL_OUTPUTPATH
-    fi
+        echo "OUTPUTPATH is set to: $MODEL_OUTPUTPATH"
 
-    echo "OUTPUTPATH is set to: $MODEL_OUTPUTPATH"
-
-    ACCELERATE_LOG_LEVEL=info accelerate launch \
-    --config_file deepspeed_zero3.yaml --num_processes=$GPUS \
-    run_sft.py \
-    config_full.yaml \
-    --output_dir=$MODEL_OUTPUTPATH \
-    --use_peft=$USE_PEFT \
-    --aspect=$ASPECT \
-    --model_name_or_path=$MODEL_NAME_OR_PATH \
-    --generation_type=$GENERATION_TYPE 
+        ACCELERATE_LOG_LEVEL=info accelerate launch \
+        --config_file deepspeed_zero3.yaml --num_processes=$GPUS \
+        run_sft.py \
+        config_full.yaml \
+        --output_dir=$MODEL_OUTPUTPATH \
+        --use_peft=$USE_PEFT \
+        --aspect=$ASPECT \
+        --model_name_or_path=$MODEL_NAME_OR_PATH \
+        --generation_type=$GENERATION_TYPE 
+    done
 done

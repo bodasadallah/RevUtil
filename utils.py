@@ -23,6 +23,7 @@ from transformers import GenerationConfig
 import torch
 import json
 import krippendorff
+import numpy as np
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
     "6158bb338b6122275bc191e3": ["TxZsPCly"],
@@ -97,7 +98,15 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
     if prompt_type == 'chat':
         prompt = []
         ################## SYSTEM CONTENT ###################
-        SYSTEM_CONTENT = PROMPT_HEADER
+        if 'paper_text' in row:
+            paper_text = row['paper_text']
+            SYSTEM_CONTENT = PROMPT_HEADER_PAPER_TEXT.format(paper_text=paper_text)
+            # print('========================= Using paper text in the prompt ===============================')
+        else:
+            SYSTEM_CONTENT = PROMPT_HEADER 
+            # print('========================= Using normal prompt without context ===============================')
+
+
         DEFINITIONS = ''
         for aspect in considered_aspects:
             aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
@@ -139,6 +148,15 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
     ####### If we want to generate instruction prompt, we need to return in in the text column
     elif prompt_type == 'instruction':
         prompt_header = PROMPT_HEADER
+
+        if 'paper_text' in row:
+            paper_text = row['paper_text']
+            prompt_header = PROMPT_HEADER_PAPER_TEXT.format(paper_text=paper_text)
+            print('========================= Using paper text in the prompt ===============================')
+        else:
+            prompt_header = PROMPT_HEADER 
+            print('========================= Using normal prompt without context ===============================')
+
         aspect_definitions = ''
         for aspect in considered_aspects:
             aspect_definition = ASPECTS_NO_EXAMPLES[aspect]
@@ -269,7 +287,10 @@ def get_alpha_scores(annotations_plus_predictions, aspect):
     filtered_annotations = []
     for aa in annotations_plus_predictions:
         if all(label in possible_labels for label in aa):
-            filtered_annotations.append([int(label) if label != "X" else 0 for label in aa])
+            # filtered_annotations.append([int(label) if label != "X" else 0 for label in aa])
+            ## as we already consider the cases where one annotation is X in the F1 score, here we don't need to treat them as 
+            filtered_annotations.append([int(label) if label != "X" else np.nan for label in aa])
+
 
     if not filtered_annotations:
         raise ValueError("No valid annotations found after filtering.")

@@ -1,6 +1,6 @@
 {
-    "batch_id": "batch_67fd4591ecc48190948279ab3bec9658",
+    "batch_id": "batch_68583c5c0cac8190b4e80d1fd46fc62a",
     "aspect": "all",
-    "batch_input_file_id": "file-8izxYcNp2ThPFHHMBXRg7C",
+    "batch_input_file_id": "file-BLzbbtQXgCZEZKUPLD3E89",
     "batch_file_path": "evalute_outputs/base_model/chatgpt/score_only/instruction/all/step-0/review_evaluation_human_annotation/chatgpt_batch_input_all_score_only.jsonl"
 }

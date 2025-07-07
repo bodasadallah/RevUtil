@@ -57,6 +57,36 @@ HF_TOKEN = os.getenv('HF_TOKEN')
 logger = logging.getLogger(__name__)
 
 
+
+############################ Code to name checkpoints based on the number of examples seen ############################
+from transformers import TrainerCallback, TrainerControl, TrainerState, TrainingArguments
+import os
+import shutil
+import torch
+
+class ExampleCheckpointRenamerCallback(TrainerCallback):
+    def __init__(self, effective_batch_size):
+        self.effective_batch_size = effective_batch_size
+
+    def on_step_end(self, args: TrainingArguments, state: TrainerState, control: TrainerControl, **kwargs):
+        # Only run on main process (rank 0)
+        if not args.process_index == 0:
+            return control
+
+        # Compute total examples seen across all GPUs
+        total_examples_seen = state.global_step * self.effective_batch_size
+
+        if control.should_save:
+            original_ckpt = os.path.join(args.output_dir, f"checkpoint-{state.global_step}")
+            renamed_ckpt = os.path.join(args.output_dir, f"checkpoint-{total_examples_seen}-examples")
+            if os.path.exists(original_ckpt):
+                shutil.move(original_ckpt, renamed_ckpt)
+                print(f"Renamed checkpoint: {original_ckpt} → {renamed_ckpt}")
+
+        return control
+
+########################################################################################
+
 def main():
 
     from huggingface_hub import login
@@ -264,9 +294,11 @@ def main():
 
         collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
+    # ### Callback to rename checkpoints based on the number of examples seen
+    # gpus = int(os.getenv("GPUS"))
+    # effective_batch_size = training_args.per_device_train_batch_size * training_args.gradient_accumulation_steps * gpus
+    # callbacks = [ExampleCheckpointRenamerCallback(effective_batch_size=effective_batch_size)]
 
-
-    
 
 
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
@@ -283,6 +315,7 @@ def main():
         tokenizer=tokenizer,
         peft_config=get_peft_config(model_args),
         data_collator=collator if model_args.train_on_completion_only else None,
+        # callbacks=callbacks
     )
 
     ####### callback for logging samples to wandb ##########
@@ -319,7 +352,8 @@ def main():
         checkpoint = None
 
 
-    # checkpoint = None
+    ## No resume from checkpoint if training_args.resume_from_checkpoint is None
+    checkpoint = None
     print("---------------------- checkpoint",checkpoint)
 
 

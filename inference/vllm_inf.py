@@ -157,8 +157,8 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
                 f.write('\n')
 
 
-        ############################## Uncomment to work ##############################
-        ## upload the batch file
+        # ############################# Uncomment to work ##############################
+        # # upload the batch file
         # batch_input_file = client.files.create(
         # file=open(batch_file_path, "rb"),
         # purpose="batch")
@@ -258,8 +258,18 @@ def write_stats_to_file(label_dict, results_file_name):
             results_dict[key][aspect] = {}
 
             ### check if the gold label is dict, then we do pair-wise comparison
-            if type(ast.literal_eval(gold[0])) == dict:
+
+            is_dict = False
+            try:
+                if type(ast.literal_eval(gold[0])) == dict:
+                    is_dict = True
+            except Exception as e:
+                print('Could not evaluate the gold label, it is not a dict')
+                is_dict = False
+
+            if is_dict:
                 print('The gold label is a dict, doing pair-wise comparison')
+
 
                 annotations = {}
                 for i in range(len(gold)):
@@ -429,6 +439,7 @@ if __name__ == "__main__":
                 tensor_parallel_size = args.tensor_parallel_size,
                 gpu_memory_utilization=0.95,
                 max_num_seqs=args.max_num_seqs,
+                max_model_len= 8196
                 )
 
     sampling_params = SamplingParams(
@@ -450,6 +461,11 @@ if __name__ == "__main__":
 
             ### Load the data
             raw_data = datasets.load_dataset(args.dataset_name, config, split=split, token=HF_TOKEN)
+
+            # Remove the "paper_text" column from the dataset if it exists
+            if "paper_text" in raw_data.column_names:
+                print('Removing the paper_text column from the dataset')
+                raw_data = raw_data.remove_columns("paper_text")
 
             ##################### INFERENCE THE MODEL ########################
 
@@ -479,7 +495,7 @@ if __name__ == "__main__":
                 print(e)
 
             label_dict[f'{config}_{split}'] = []    
-            aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if (config == 'all' or config == 'combined_main_aspects') else [config]
+            aspects = [ 'actionability', 'grounding_specificity','verifiability', 'helpfulness'] if (config in  ['all','combined_main_aspects','context_experiment_with_paper_text']) else [config]
             for aspect in aspects:
                 print('Extracting predictions for', aspect)
                 gold_data_name = args.gold_label_format.replace('ASPECT', aspect)

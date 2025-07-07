@@ -289,6 +289,13 @@ A statement is considered a normal (non-claim) statement if it meets these crite
 ################################################## FINETUNING PROMPTS ##################################################
 
 PROMPT_HEADER = '''You are an expert in evaluating peer review comments with respect to different aspects. These aspects are aimed to maximize the utilization of the review comments for the authors. The primary purpose of the review is to help/guide authors in improving their drafts. Keep this in mind while evaluating the review point. Whenever you encounter a borderline case, think: “Will this review point help authors improve their draft?”. There is no correlation between the aspect score and the length of the review point.'''
+PROMPT_HEADER_PAPER_TEXT = '''You are an expert in evaluating peer review comments with respect to different aspects. These aspects are aimed to maximize the utilization of the review comments for the authors. The primary purpose of the review is to help/guide authors in improving their drafts. Keep this in mind while evaluating the review point. Whenever you encounter a borderline case, think: “Will this review point help authors improve their draft?”. There is no correlation between the aspect score and the length of the review point.
+The review point is about a paper with the following text:
+{paper_text}
+
+ASPECTS DEFINITIONS:
+
+'''
 SCORE_ONLY_PROMPT_TAIL = '''
 Evaluate the review based on the given definitions of the aspect(s) above. Output only the score.
 Review Point: {review_point}'''
