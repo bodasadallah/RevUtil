@@ -52,26 +52,9 @@ GPUS=$(echo $CUDA_VISIBLE_DEVICES | awk -F',' '{print NF}')
 export CUDA_LAUNCH_BLOCKING=1
 echo "GPUS: $GPUS"
 
-# WRITE_PATH="evalute_outputs"
-WRITE_PATH="evalute_outputs_time_check"
+WRITE_PATH="evaluate_outputs"
 
 
-# deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
-# "meta-llama/Llama-3.1-8B"
-# "allenai/scitulu-7b"
-# "Uni-SMART/SciLitLLM"
-
-# "score_only"
-# "score_rationale"
-###### MODEL CONFIG ########
-
-# "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-# meta-llama/Llama-3.1-8B
-# "WestlakeNLP/DeepReviewer-7B"
-# "meta-llama/Llama-3.1-8B-Instruct"
-# "meta-llama/Llama-3.1-8B"
-# "allenai/scitulu-7b"
-# "Uni-SMART/SciLitLLM"
 
 # PROMPT_TYPE="chat"
 STEP="0"

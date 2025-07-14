@@ -8,7 +8,10 @@ batch_data
 batch_output
 main_data
 debug_inf_code.ipynb
-
+archive
+*.csv
+outputs
+evaluate_outputs
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

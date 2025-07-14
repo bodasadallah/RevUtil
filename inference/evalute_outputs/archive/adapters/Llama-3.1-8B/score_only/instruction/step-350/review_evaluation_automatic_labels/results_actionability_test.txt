@@ -1,9 +1,0 @@
-********************actionability********************
-f1: 0.655
-kappa: 0.541
-kappa_linear: 0.694
-kappa_quadratic: 0.807
-spearman: 0.81
-original_len: 1000
-filtered_len: 1000
---------------------------------------------------

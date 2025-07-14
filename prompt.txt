@@ -1,7 +1,0 @@
-{'role': 'user', 'content': 'You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance.\n\n###Task Description:\nYou are an expert in 
-.
-.
-.
-.
-.
-\n\n\n\n###Instruction:\nEvaluate the review based on the given definitions of the aspect(s) above. Generate a rationale and use it to output the score. Escape the double qoutes inside the rationale. The possbile values for scores are 1-5 and X.\n\nGenerate the output in JSON format with the following format:\n\n   "actionability_rationale": "",\n   "actionability_label": "",\n   "grounding_specificity_rationale": "",\n   "grounding_specificity_label": "",\n   "verifiability_rationale": "",\n   "verifiability_label": "",\n   "helpfulness_rationale": "",\n   "helpfulness_label": ""\n\n\n###Review Point:\nPOINTMake sure to provide a score for each aspect.\n\n\n###Output:\n'}

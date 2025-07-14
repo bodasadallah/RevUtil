@@ -1,8 +1,0 @@
-{
-    "batch_id": "batch_67b973a59bdc81908ca99133ff5a6847",
-    "aspect": "verifiability_extraction",
-    "prompt_type": "definitions_incontext_learning",
-    "batch_input_file_id": "file-EbGfSfKdbSuuEfza5CRQ3i",
-    "batch_file_path": "batch_data/verifiability_extraction_gold_batch_input.jsonl",
-    "data_type": "gold"
-}

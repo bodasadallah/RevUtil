@@ -1,8 +1,0 @@
-{
-    "batch_id": "batch_67b97394ea948190b485988434198cd0",
-    "aspect": "actionability",
-    "prompt_type": "definitions_incontext_learning",
-    "batch_input_file_id": "file-1ASK44efB81hCtGVWNyPpM",
-    "batch_file_path": "batch_data/actionability_gold_batch_input.jsonl",
-    "data_type": "gold"
-}
