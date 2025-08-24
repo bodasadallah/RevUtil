@@ -4,8 +4,8 @@
 
 <p align="center">
   <a href=""><img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/boda/review_evaluation_human_annotation"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Synthetic"></a>
-  <a href="https://huggingface.co/datasets/boda/review_evaluation_automatic_labels"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Human"></a>
+  <a href="https://huggingface.co/datasets/boda/review_utility_human_annotation"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Synthetic"></a>
+  <a href="https://huggingface.co/datasets/boda/review_utility_automatic_labels"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Human"></a>
   <a href="https://github.com/bodasadallah/review_rewrite/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-lightgrey.svg" alt="License"></a>
 
 </p>
@@ -37,7 +37,7 @@
 ## 📚 Dataset
 
 ### 🧑‍🔬 RevUtil Human
-<img src="assets/hf_logo.png" alt="HF Logo" width="20"/> [`boda/review_evaluation_human_annotation`](https://huggingface.co/datasets/boda/review_evaluation_human_annotation)  
+<img src="assets/hf_logo.png" alt="HF Logo" width="20"/> [`boda/review_utility_human_annotation`](https://huggingface.co/datasets/boda/review_utility_human_annotation)  
  
 The dataset contains **1,430** review comments annotated by three human raters.
 
@@ -58,7 +58,7 @@ The dataset contains **1,430** review comments annotated by three human raters.
 ---
 
 ### 🤖 RevUtil Synthetic  
-<img src="assets/hf_logo.png" alt="HF Logo" width="20"/> [`boda/review_evaluation_automatic_labels`](https://huggingface.co/datasets/boda/review_evaluation_automatic_labels)  
+<img src="assets/hf_logo.png" alt="HF Logo" width="20"/> [`boda/review_utility_automatic_labels`](https://huggingface.co/datasets/boda/review_utility_automatic_labels)  
 Synthetic dataset generated using **GPT-4o** with 10k examples (9k train / 1k test).
 
 **Key columns:**
@@ -99,7 +99,7 @@ Synthetic dataset generated using **GPT-4o** with 10k examples (9k train / 1k te
 ## 📚 Dataset
 
 ### 🧑‍🔬 Human-Annotated Dataset  
-📂 [`boda/review_evaluation_human_annotation`](https://huggingface.co/datasets/boda/review_evaluation_human_annotation)  
+📂 [`boda/review_utility_human_annotation`](https://huggingface.co/datasets/boda/review_utility_human_annotation)  
 The dataset contains **1,430** review comments annotated by three human raters.
 
 **Key columns:**
@@ -119,7 +119,7 @@ The dataset contains **1,430** review comments annotated by three human raters.
 ---
 
 ### 🤖 Synthetic Dataset  
-📂 [`boda/review_evaluation_automatic_labels`](https://huggingface.co/datasets/boda/review_evaluation_automatic_labels)  
+📂 [`boda/review_utility_automatic_labels`](https://huggingface.co/datasets/boda/review_utility_automatic_labels)  
 Synthetic dataset generated using **GPT-4o** with 10k examples (9k train / 1k test).
 
 **Key columns:**
@@ -180,7 +180,7 @@ bash inf.bash
 ### 🗃 Dataset Configurations
 
 ```bash
-DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
+DATASETS=("boda/review_utility_human_annotation" "boda/review_utility_automatic_labels")
 DATASET_SPLITS=("full" "test")
 DATASET_CONFIGS=("combined_main_aspects" "all")
 ```
