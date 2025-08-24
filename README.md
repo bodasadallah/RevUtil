@@ -1,5 +1,4 @@
-# The Good, the Bad and the Constructive:  
-**Automatically Measuring Peer Review's Utility for Authors**
+# The Good, the Bad and the Constructive: Automatically Measuring Peer Review's Utility for Authors
 
 ---
 
@@ -12,6 +11,7 @@
 </p>
 
 ### :fire: News
+* [21-08-2025] Our paper got accepted to the **Main conference of EMNLP**. 
 <!---
 -->
 
