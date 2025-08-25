@@ -30,7 +30,7 @@
 
 ## 🖼️ System Overview
 
-![System Overview](assets/full_system_page-0001.png)
+![System Overview](assets/system_overview.jpg)
 
 ---
 
