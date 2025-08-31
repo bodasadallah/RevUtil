@@ -51,10 +51,7 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
     sys.path.append(parent_dir)
     dotenv.load_dotenv()
 
-    client = OpenAI(api_key=os.environ.get("review_evaluation_mbzuai"))
-
-    ############3 USING PERSONAL KEY ######################
-    # client = OpenAI(api_key=os.environ.get("GPT4_KEY"))
+    client = OpenAI(api_key=os.environ.get("KEY"))
 
     model_name = 'gpt-4o'
 
@@ -89,13 +86,7 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
         chatgpt_response['custom_id'] = chatgpt_response['custom_id'].astype(str)
         for i  in range(len(inputs)):
             id = inputs[i]['custom_id']
-
-            # print('Processing the id:', id)
-            # print(chatgpt_response['custom_id'])
             chatgpt_row = chatgpt_response[chatgpt_response['custom_id']==str(id)]
-
-            # print('The shape of the row is:', chatgpt_row.shape)
-            # print('The row is:', chatgpt_row)
 
             ## if the row is not found, then it was failed, then skip it
             if chatgpt_row.shape[0] == 0:
@@ -144,8 +135,6 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
             
             lines.append(line)
 
-        ############## for debugging purposes, remove this later ##############
-        # lines = lines[:5]
             
         print(f'sample of the prompts is {lines[0]}')
 
@@ -157,38 +146,36 @@ def chatgpt_inference(args, raw_data,raw_outputs_name,save_dir, temperature=0.0)
                 f.write('\n')
 
 
-        # ############################# Uncomment to work ##############################
-        # # upload the batch file
-        # batch_input_file = client.files.create(
-        # file=open(batch_file_path, "rb"),
-        # purpose="batch")
+        # upload the batch file
+        batch_input_file = client.files.create(
+        file=open(batch_file_path, "rb"),
+        purpose="batch")
 
-        # ### create the batch request
-        # batch_input_file_id = batch_input_file.id
+        ### create the batch request
+        batch_input_file_id = batch_input_file.id
 
-        # batch_data = client.batches.create(
-        #     input_file_id=batch_input_file_id,
-        #     endpoint="/v1/chat/completions",
-        #     completion_window="24h",
-        #     metadata={
-        #     "description": f"batch file for  {aspect} {mode} model gpt-4o, temperature {temperature} for Evaluation",
-        #     })
+        batch_data = client.batches.create(
+            input_file_id=batch_input_file_id,
+            endpoint="/v1/chat/completions",
+            completion_window="24h",
+            metadata={
+            "description": f"batch file for  {aspect} {mode} model gpt-4o, temperature {temperature} for Evaluation",
+            })
         
-        # batch_metadata = {
-        #     "batch_id": batch_data.id,
-        #     "aspect": aspect,
-        #     "batch_input_file_id": batch_input_file_id,
-        #     "batch_file_path": batch_file_path,
-        # }
+        batch_metadata = {
+            "batch_id": batch_data.id,
+            "aspect": aspect,
+            "batch_input_file_id": batch_input_file_id,
+            "batch_file_path": batch_file_path,
+        }
 
-        # with open(f"{chatgpt_batch_meta_data_path}", 'w') as f:
-        #     json.dump(batch_metadata, f, indent=4)
+        with open(f"{chatgpt_batch_meta_data_path}", 'w') as f:
+            json.dump(batch_metadata, f, indent=4)
             
-        # print(f"Batch file for {aspect}, {mode} is created and uploaded to the server")
+        print(f"Batch file for {aspect}, {mode} is created and uploaded to the server")
 
 
 
-    
 
 def vllm_inferece(args, raw_data,raw_outputs_name, sampling_params,llm, enable_lora, LORA_PATH, model_name):
 
@@ -258,7 +245,6 @@ def write_stats_to_file(label_dict, results_file_name):
             results_dict[key][aspect] = {}
 
             ### check if the gold label is dict, then we do pair-wise comparison
-
             is_dict = False
             try:
                 if type(ast.literal_eval(gold[0])) == dict:
@@ -290,9 +276,6 @@ def write_stats_to_file(label_dict, results_file_name):
                     results_dict[key][aspect][annotator] = stat_dict
 
 
-                ### Calulating Krippendorff's alpha
-
-
                 # Calculate the average stat_dict across annotators
                 average_stat_dict = {}
                 num_annotators = len(annotations)
@@ -321,11 +304,8 @@ def write_stats_to_file(label_dict, results_file_name):
 
                 gold_rationales = d.get('gold_data_rationale', None)
                 preds_rationales = d.get('preds_rationale', None)
-                rouge_score = "-"
-                bert_score = "-"
 
-                # print('The gold rationales:', gold_rationales[0])
-                # print('The preds rationales:', preds_rationales[0])
+
                 if gold_rationales:
 
                     rationale_results = evaluate_rationale(gold_rationales, preds_rationales, pred_scores = preds, 
@@ -515,16 +495,10 @@ if __name__ == "__main__":
                     # print('The preds rationale:', preds_rationale[0])
                     assert len(preds_rationale) == len(gold_data_rationale), 'The number of predictions and gold rationales do not match'
 
-
-
                 ## convert the gold data to string
                 gold_data = [str(g) for g in gold_data]
                 print('Total number of gold labels:', len(gold_data))
                 preds = [p[f'{aspect}_label'] for p in predictions]
-
-                # ###########3 remove after debugging ###############################33
-                # gold_data = gold_data[:len(preds)]
-                # ######################################333333
 
                 print('Total number of predictions:', len(preds))
                 assert len(preds) == len(gold_data), 'The number of predictions and gold labels do not match'
@@ -536,8 +510,6 @@ if __name__ == "__main__":
                 print('Saving the predictions to', predictions_name)
                 for prediction in predictions:
                     f.write(json.dumps(prediction) + "\n")
-
-
 
 
     configs_name= '_'.join(configs)

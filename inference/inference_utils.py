@@ -1,15 +1,6 @@
 
 import json
-
 import re
-
-
-import re
-import ast
-
-
-import re
-import json
 
 
 known_keys = ['actionability_rationale', 'actionability_label', 'grounding_specificity_rationale' 'grounding_specificity_label', 'verifiability_rationale', 'verifiability_label', 'helpfulness_rationale', 'helpfulness_label']
@@ -121,7 +112,6 @@ def escape_inner_quotes(text):
     
     return text
 def extract_dict(text):
-    original  = text
 
     text = replace_category_names(text)  # Replace category names with numbers
     ## remove double spaces
@@ -141,8 +131,6 @@ def extract_dict(text):
     ############## For Prometheus2 #################
     # text = text.replace("[", '"')  # Replace single quotes with double quotes
     # text = text.replace("]", '"')  # Replace single quotes with double quotes
-
-
 
     ## if text begin with comma or space, remove it
     if text[0] == ',' or text[0] == ' ':
@@ -169,7 +157,6 @@ def extract_dict(text):
     if text[0] != '{':
         text = '{' + text + '}'
 
-
     ################## cut the text if there is two newlines. This is for Prmetheus2 #########
     # if '\n\n' in text:
     #     halfs = text = text.split('\n\n', 1)
@@ -178,15 +165,9 @@ def extract_dict(text):
     if '{' not in text:
         text = '{' + text + '}'
 
-
     text = text.replace(" }  { ", ',')  # Remove newlines between dictionaries
 
-
     text = text.replace("\n", ' ')  # Remove newlines
-
-    # print(f"Text after processing: {text} \n\n\n\n\n\n\n")
-
-    
 
     ############################# Prometheus2 ##########################
     # text = extract_valid_json(text)
@@ -213,33 +194,6 @@ def extract_dict(text):
         except json.JSONDecodeError as e:
             print(f"Parsing error: {e}\nProblematic string: {dict_str}")
             return None
-
-# Example usage
-# input_text = """{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n\n{\n  \"helpfulness_rationale\": \"The review is highly helpful as it identifies specific issues and provides clear explanations for the suggested changes. It also asks for clarification on certain points, which encourages further discussion and improvement. The review's suggestions are well-reasoned and actionable, making it very beneficial for the authors.\",\n  \"helpfulness_label\": \"5\"\n}\n\n{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n\n{\n  \"helpfulness_rationale\": \"The review is highly helpful as it identifies specific issues and provides clear explanations for the suggested changes. It also asks for clarification on certain points, which encourages further discussion and improvement. The review's suggestions are well-reasoned and actionable, making it very beneficial for the authors.\",\n  \"helpfulness_label\": \"5\"\n}\n{\n  \"actionability_rationale\": \"The review clearly identifies specific areas for improvement and provides detailed explanations for the suggested changes. It explicitly asks why certain options were chosen over others, which is a concrete action for the authors to consider. The review also suggests alternative approaches, making it highly actionable.\",\n  \"actionability_label\": \"5\"\n}\n\n{\n  \"grounding_specificity_rationale\": \"The review precisely identifies the specific parts of the paper that need attention. It mentions the use of the 'and' operator and the 'element-wise max' function, providing a clear context for these suggestions. The review also references the 'or' operator and 'element-wise min' function, showing a good understanding of the paper's content and structure.\",\n  \"grounding_specificity_label\": \"5\"\n}\n\n{\n  \"verifiability_rationale\": \"The review provides a logical explanation for its suggestions, comparing the current approach to alternative methods and explaining why the chosen options might be better. It also asks for clarification on why certain options were preferred, which invites further discussion and justification. The review's claims are based on clear reasoning and comparisons, making it verifiable.\",\n  \"verifiability_label\": \"5\"\n}\n"""
-# print(extract_dict(input_text))
-
-# import json
-# lines = []
-# with open('/home/abdelrahman.sadallah/mbzuai/review_rewrite/inference/evalute_outputs/base_model/Flow-Judge-v0.1/score_rationale/chat/all/step-0/review_evaluation_human_annotation/raw_outputs_combined_main_aspects_full.jsonl', 'r') as f:
-#     for line in f:
-#         lines.append(json.loads(line))
-
-# cnt = 0
-# keys_cnt = 0
-# for line in lines:
-#     line = line['generated_text']
-#     if extract_dict(line):
-#         cnt += 1
-#         keys_cnt += sum(1 for value in extract_dict(line).values() if value is not None)
-#     else:
-#         print(f"^^^^^^^^^^^^^^6Invalid JSON:^^^^^^^^^^^ \n {line} \n\n\n")
-#         print(extract_dict(line))
-#         # break
-
-# print(f"Number of lines with valid JSON: {cnt}")
-# print(f"Number of keys in valid JSON: {keys_cnt}")
-
-
 
 def extract_predictions(model_outputs):
     """
@@ -312,5 +266,3 @@ def get_gold_labels(raw_data, dataset_config,aspect_row_name='chatgpt_ASPECT_sco
         gold_labels.append(row_data)
 
     return gold_labels
-
-

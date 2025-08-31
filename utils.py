@@ -1,21 +1,11 @@
 
-from datasets import load_dataset, load_from_disk
 import re
-
 import wandb
-
 from prompt import *
-import pandas as pd
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score,cohen_kappa_score, accuracy_score
+from sklearn.metrics import  f1_score,cohen_kappa_score
 from scipy import stats
 import numpy as np
-import ast
 from tqdm import tqdm
-import pandas as pd
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score,cohen_kappa_score
-import numpy as np
-# from prompts import PROMPTS
-import re
 from transformers.integrations import WandbCallback
 import random
 import string
@@ -24,6 +14,11 @@ import torch
 import json
 import krippendorff
 import numpy as np
+
+
+
+############################### HUMAN ANNOTATOR DATA    ########################################
+
 annotators_unique_id_batch_id_map = {
     "boda" : "boda",
     "6158bb338b6122275bc191e3": ["TxZsPCly"],
@@ -36,7 +31,6 @@ annotators_unique_id_batch_id_map = {
     "6686f834fd4c9f0bdb7bc8b8": ["fZav2G06", "FrNoCAp2"],
     "6715f821d59317137a6a123b": ["DVRTnFRi", "mw4PwQRk"]
 }
-
 annotators_unique_id_batch_id_map_inv = {}
 for annotator, batch_ids in annotators_unique_id_batch_id_map.items():
     if isinstance(batch_ids, list):
@@ -44,13 +38,12 @@ for annotator, batch_ids in annotators_unique_id_batch_id_map.items():
             annotators_unique_id_batch_id_map_inv[batch_id] = annotator
     else:
         annotators_unique_id_batch_id_map_inv[batch_ids] = annotator
+#####################################################################################################
 
 
 
 
-
-
-
+######################################### PROMPT UTILS ########################################################
 
 ## Create a prompt for each row in the dataset
 def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', prompt_type='chat', finetuning_type='adapters', model = ''):
@@ -221,62 +214,11 @@ def get_prompt(row,aspect= 'all',task='train', generation_type='score_only', pro
 
     row['text'] = prompt
     return row
-
-    
-
-row = {'review_point': 'POINT', 
-       'chatgpt_actionability_score': 1, 
-       'chatgpt_actionability_rationale': 'ACTIONABILITY RAIONALE', 
-       'chatgpt_grounding_specificity_score': 2, 
-       'chatgpt_grounding_specificity_rationale': 'GROUNDING SPECIFICITY RATIONALE', 
-       'chatgpt_verifiability_score': 'X',
-       'chatgpt_verifiability_rationale': 'VERIFIABILITY RATIONALE', 
-       'chatgpt_helpfulness_score': 5, 
-       'chatgpt_helpfulness_rationale': 'HELPFULNESS RATIONALE'}
-pr = get_prompt(row,aspect= 'all',task='evaluation', generation_type='score_rationale', prompt_type = 'instruction', finetuning_type='baseline', model="prometheus-eval/prometheus-7b-v2.0")
-ABS_SYSTEM_PROMPT =  "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
-pr['text']  =    [{'role': 'user', 'content':  ABS_SYSTEM_PROMPT + "\n\n"  + pr['text']}]
-with open('prompt.txt', 'w') as f:
-    write = pr['text']
-    if isinstance(write, list):
-        for item in write:
-            f.write("%s\n" % item)
-    else:
-        f.write(write)
+#####################################################################################################################
 
 
 
-#### Callback to log samples during training
-class LLMSampleCB(WandbCallback):
-    def __init__(self, trainer, test_dataset, num_samples=10, max_new_tokens=256, log_model="checkpoint"):
-        "A CallBack to log samples a wandb.Table during training"
-        super().__init__()
-        self._log_model = log_model
-        self.sample_dataset = test_dataset.select(range(num_samples))
-        self.model, self.tokenizer = trainer.model, trainer.tokenizer
-        self.gen_config = GenerationConfig.from_pretrained(trainer.model.name_or_path,
-                                                            max_new_tokens=max_new_tokens)
-    def generate(self, prompt):
-        tokenized_prompt = self.tokenizer(prompt, return_tensors='pt')['input_ids'].cuda()
-        with torch.inference_mode():
-            output = self.model.generate(tokenized_prompt, generation_config=self.gen_config)
-        return self.tokenizer.decode(output[0][len(tokenized_prompt[0]):], skip_special_tokens=True)
-
-    def samples_table(self, examples):
-        "Create a wandb.Table to store the generations"
-        records_table = wandb.Table(columns=["prompt", "generation"] + list(self.gen_config.to_dict().keys()))
-        for example in tqdm(examples, leave=False):
-            prompt = example["text"]
-            generation = self.generate(prompt=prompt)
-            records_table.add_data(prompt, generation, *list(self.gen_config.to_dict().values()))
-        return records_table
-        
-    def on_evaluate(self, args, state, control,  **kwargs):
-        "Log the wandb.Table after calling trainer.evaluate"
-        super().on_evaluate(args, state, control, **kwargs)
-        records_table = self.samples_table(self.sample_dataset)
-        self._wandb.log({"sample_predictions":records_table})
-
+###################################################### Evaluation Utils ########################################################
 
 
 def get_alpha_scores(annotations_plus_predictions, aspect):
@@ -298,6 +240,10 @@ def get_alpha_scores(annotations_plus_predictions, aspect):
     alpha = krippendorff.alpha(filtered_annotations, level_of_measurement='ordinal')
 
     return alpha
+
+
+
+
 
 def get_stats(pred, gold, aspect):
     stats_dict = {}
@@ -344,12 +290,6 @@ def get_stats(pred, gold, aspect):
         gold = new_gold
         pred = new_pred
         stats_dict['f1_X'] = f1_score(new_pred_X, new_gold_X, average="micro")
-        # stats_dict['kappa_X'] = cohen_kappa_score( new_gold_X , new_pred_X, weights='quadratic')
-        # stats_dict['alpha_X'] = krippendorff.alpha([new_gold_X, new_pred_X], level_of_measurement='ordinal')
-        # stats_dict['spearman_X'] = stats.spearmanr(new_pred_X, new_gold_X)
-        # stats_dict['pearson_X'] = stats.pearsonr(new_pred_X, new_gold_X)
-        # stats_dict['accuracy_X'] = accuracy_score(new_gold_X, new_pred_X)
-        
 
     elif aspect in ["professional_tone", 'valid_point', 'addressed_to_author']:
         stats_dict['f1'] = f1_score(pred, gold, average="micro")
@@ -371,10 +311,7 @@ def get_stats(pred, gold, aspect):
 
 from rouge_score import rouge_scorer
 from bert_score import score
-
 scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
-
-
 def evaluate_rationale(gold_rationales, pred_rationales, pred_scores, gold_scores, aspect):
     rouge_score_correct = 0.0
     bert_score_correct = 0.0
@@ -469,132 +406,10 @@ def evaluate_rationale(gold_rationales, pred_rationales, pred_scores, gold_score
 
         return results
 
+#################################################################################################################################################
 
 
-
-
-
-
-
-
-
-def labels_stats(df,compare_to_human = False, stats_path = None):
-    aspects = ['actionability','politeness','verifiability','specificity']
-
-
-    def convert_human_labels_to_int(x):
-        x = str(x)
-        if '.0' in x:
-            return x.replace('.0','')
-    ## convert df columns type to string
-
-    for column in df.columns:
-
-        if 'human' in column:
-            df[column] = df[column].apply(convert_human_labels_to_int)
-        
-        df[column] = df[column].astype(str)
-
-    with open(stats_path, 'w') as f:
-
-        print('Number of points:', len(df))
-        f.write(f'Number of points: {len(df)}\n')
-        print('Number of reviews:', len(df['review_id'].unique()))
-        f.write(f'Number of reviews: {len(df["review_id"].unique())}\n')
-
-
-        num_llm_labels = len(df.loc[df['llm_actionability'].isin(['0','1','-1'])])
-        num_human_labels = len(df.loc[df['human_actionability'].isin(['0','1','-1'])])
-                             
-        print('Number of reviews with LLM labels:',num_llm_labels )
-        f.write(f'Number of reviews with LLM labels: {num_llm_labels}\n')
-        print('Number of reviews with human labels:', num_human_labels)
-        f.write(f'Number of reviews with human labels: {num_human_labels}\n')
-
-        print('Number of reviews with both human and LLM labels:', len(df.loc[df['llm_actionability'].isin(['0','1','-1']) & df['human_actionability'].isin(['0','1','-1'])]))
-        f.write(f'Number of reviews with both human and LLM labels: {len(df.loc[df["llm_actionability"].isin(["0","1","-1"]) & df["human_actionability"].isin(["0","1","-1"])])}\n')
-
-        print('-'*100)
-        f.write('-'*100 + '\n')
-        for aspect in aspects:
-            
-            human_labels = []
-            llm_labels = []
-            llm_key = f'llm_{aspect}'
-            human_key = f'human_{aspect}'
-
-            aspect_llm_labels = len(df.loc[df[llm_key].isin(['0','1','-1'])])
-            aspect_human_labels = len(df.loc[df[human_key].isin(['0','1','-1'])])
-            labels = ['-1', '0', '1']
-
-            print('\n')
-            f.write('\n')
-            print(f'Stats for {aspect} aspect\n')
-            f.write(f'Stats for {aspect} aspect\n')
-
-            print(f'LLM labels: {aspect_llm_labels}')
-            f.write(f'LLM labels: {aspect_llm_labels}\n')
-
-            print(f'Human labels: {aspect_human_labels}')
-            f.write(f'Human labels: {aspect_human_labels}\n')
-
-            # only consider rows that have valid labels  of 0,1,-1 for both human and llm
-            curr_df = df.loc[df[llm_key].isin(['0','1','-1']) & df[human_key].isin(['0','1','-1'])]
-
-
-            print(f'Number of points that have labels for both human and LLM: {len(curr_df)}')
-            f.write(f'Number of points that have labels for both human and LLM: {len(curr_df)}\n')
-
-            for label in labels:
-                print(f'LLM {label} labels: {len(curr_df[curr_df[llm_key] == label])}')
-                f.write(f'LLM {label} labels: {len(curr_df[curr_df[llm_key] == label])}\n')
-            #     llm_labels.append(len(curr_df[curr_df[llm_key] == label]))
-
-            for label in labels:
-                print(f'Human {label} labels: {len(curr_df[curr_df[human_key] == label])}')
-                f.write(f'Human {label} labels: {len(curr_df[curr_df[human_key] == label])}\n')
-            #     human_labels.append(len(curr_df[curr_df[human_key] == label]))
-
-            # f.write(str(curr_df[human_key].value_counts()))
-
-
-            if compare_to_human:
-
-                ## Calcualte the F1 score
-
-                f1 = f1_score(curr_df[human_key], curr_df[llm_key], labels=labels, average='micro')
-                kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key])
-                linear_kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key],weights='linear')
-                quadratic_kappa_score = cohen_kappa_score(curr_df[human_key], curr_df[llm_key],weights='quadratic')
-
-                print(f'Kappa score for {aspect} aspect:', kappa_score)
-                f.write(f'Kappa score for {aspect} aspect: {kappa_score}\n')
-
-                print(f'Linear Kappa score for {aspect} aspect:', linear_kappa_score)
-                f.write(f'Linear Kappa score for {aspect} aspect: {linear_kappa_score}\n')
-                
-                print(f'Quadratic Kappa score for {aspect} aspect:', quadratic_kappa_score)
-                f.write(f'Quadratic Kappa score for {aspect} aspect: {quadratic_kappa_score}\n')
-
-                print(f'F1 score for {aspect} aspect:', f1)
-                f.write(f'F1 score for {aspect} aspect: {f1}\n')
-
-                print('Confusion matrix for LLM labels:')
-                f.write('Confusion matrix for LLM labels:\n')
-
-                cf = confusion_matrix(curr_df[human_key], curr_df[llm_key], labels=labels)
-                print(np.array2string(cf, separator=', '))
-                f.write(np.array2string(cf, separator=', '))
-
-                print(f'Confusion matrix for {aspect} aspect')
-                ConfusionMatrixDisplay(cf, display_labels=labels ).plot()
-                
-            print('-'*100)
-
-        
-
-
-
+###################################### DATA SEGMENATION UTILS ######################################################
 def merge_short_sentences(paragpraphs):
     ret = []
     res = ''
@@ -647,14 +462,9 @@ def filter_reviews(df, review_field, exclude_short = True, exclude_long = False)
 
         num_points_after += len(splitted_review)
         df.at[i, 'split_review'] = splitted_review
-
-
-
     print('Number of the reviews after filtering:', num_points_after)
 
     return df
-
-
 
 def clean_text(text):
 
@@ -684,10 +494,12 @@ def clean_text(text):
     
     return text
 
+#################################################################################################################################################
 
 
 
 
+############################ ARGILLA UTILS ####################################
 def generate_username_password_list(n, username_length=8, password_length=12):
     """
     Generates a list of N usernames and passwords.
@@ -711,7 +523,6 @@ def generate_username_password_list(n, username_length=8, password_length=12):
 
     return user_list
 
-
 def save_to_file(user_list, filename="user_credentials.txt"):
     """
     Saves the list of usernames and passwords to a file.
@@ -722,8 +533,6 @@ def save_to_file(user_list, filename="user_credentials.txt"):
     with open(filename, "w") as file:
         for user in user_list:
             file.write(f"{user['username']}, {user['password']}\n")
-
-
 
 def read_from_file(filename="user_credentials.txt"):
     """

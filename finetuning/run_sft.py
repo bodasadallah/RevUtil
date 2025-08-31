@@ -92,9 +92,6 @@ def main():
     from huggingface_hub import login
     login(HF_TOKEN)
 
-    ## Set CUDA_VISIBLE_DEVICES = int(os.environ[“LOCAL_RANK”]) in your main worker function
-    # os.environ["CUDA_VISIBLE_DEVICES"] = str(int(os.environ["LOCAL_RANK"]))
-
     parser = H4ArgumentParser((ModelArguments, DataArguments, SFTConfig))
     model_args, data_args, training_args = parser.parse()
 
@@ -194,13 +191,6 @@ def main():
     )
 
     model = model_args.model_name_or_path
-    # For ChatML we need to add special tokens and resize the embedding layer
-    # if "<|im_start|>" in tokenizer.chat_template and "gemma-tokenizer-chatml" not in tokenizer.name_or_path:
-    #     model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, **model_kwargs)
-    #     model, tokenizer = setup_chat_format(model, tokenizer)
-    #     model_kwargs = None
-
-
 
     train_dataset = raw_datasets["train"].map(
         utils.get_prompt,
@@ -294,11 +284,6 @@ def main():
 
         collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
 
-    # ### Callback to rename checkpoints based on the number of examples seen
-    # gpus = int(os.getenv("GPUS"))
-    # effective_batch_size = training_args.per_device_train_batch_size * training_args.gradient_accumulation_steps * gpus
-    # callbacks = [ExampleCheckpointRenamerCallback(effective_batch_size=effective_batch_size)]
-
 
 
     ### In the previous version on SFTTRAINER this used to be passed directly to the trainer, now it's part of the config
@@ -318,9 +303,6 @@ def main():
         # callbacks=callbacks
     )
 
-    ####### callback for logging samples to wandb ##########
-    # wandb_callback = utils.LLMSampleCB(trainer, eval_dataset, num_samples=5, max_new_tokens=256)
-    # trainer.add_callback(wandb_callback)
 
 
     train_dataloader = trainer.get_train_dataloader()
@@ -376,8 +358,6 @@ def main():
         "model_name" : model_args.model_name_or_path,
         "dataset_name" : aspect,
     }
-    # for arg in [model_args, data_args, training_args]:
-    #     kwargs.update(asdict(arg))
 
     if trainer.accelerator.is_main_process:
         trainer.create_model_card(**kwargs)

@@ -25,14 +25,8 @@ export NCCL_P2P_LEVEL=NVL
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == *ws* ]]; then
 
-    ### if the machine name is ws006601 then set the parent path to  /home/abdelrahman.sadallah
-    if [[ "$HOSTNAME" == "ws006601" ]]; then
-        CHECKPOINT_PARENT_PATH="/home/abdelrahman.sadallah"
-        PARENT_PATH="/home/abdelrahman.sadallah"
-    else 
-        CHECKPOINT_PARENT_PATH="/mnt/data/users/$USER"
-        PARENT_PATH="/mnt/data/users/$USER"
-    fi
+    ## Define the parent path based on the hostname
+
     CHECKPOINT_PARENT_PATH="$CHECKPOINT_PARENT_PATH/review_rewrite_chekpoints"
     export CUDA_VISIBLE_DEVICES=0,1
     export TRITON_CACHE_DIR=$PARENT_PATH/
@@ -41,7 +35,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
 
 ########################## CSCC ###########################
 else
-    CHECKPOINT_PARENT_PATH="/l/users/$USER/review_evaluation"
+    ## Define the parent path based on the hostname
     export CUDA_VISIBLE_DEVICES=0,1,2,3
     export TRITON_CACHE_DIR="/l/users/$USER/"
     export HF_CACHE_DIR="/l/users/$USER/hugging_face"
@@ -56,7 +50,6 @@ WRITE_PATH="evaluate_outputs"
 
 
 
-# PROMPT_TYPE="chat"
 STEP="0"
 FINETUNING_TYPE="adapters"
 MAX_NUM_SEQS=16
@@ -75,28 +68,11 @@ else
 fi
 
 
-# MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B")
-# DATASETS=("boda/review_evaluation_human_annotation" "boda/review_evaluation_human_annotation" "boda/review_evaluation_automatic_labels")
-# DATASET_SPLITS=("gold,silver,hard,full" "full" "test")
-# DATASET_CONFIGS=("actionability,grounding_specificity,verifiability,helpfulness" "combined_main_aspects" "all")
-
-# DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
-# DATASET_SPLITS=("full" "test")
-# DATASET_CONFIGS=("combined_main_aspects" "all")
-
-# GENERATION_TYPES=("score_only" "score_rationale")
 
 
-
-# MODELS=( "prometheus-eval/prometheus-7b-v2.0" "chatgpt" "Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B" )
-# MODELS=("Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B" )
-
-# "meta-llama/Llama-3.2-3B-Instruct"
-#  "meta-llama/Llama-3.1-8B-Instruct" 
-MODELS=( "meta-llama/Llama-3.2-3B-Instruct" "deepseek-ai/DeepSeek-R1-Distill-Llama-70B")
-
+MODELS=( "prometheus-eval/prometheus-7b-v2.0" "chatgpt" "Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B" )
 GENERATION_TYPES=("score_only")
-DATASETS=("boda/review_evaluation_human_annotation"  "boda/review_evaluation_automatic_labels")
+DATASETS=("boda/RevUtil_human"  "boda/RevUtil_synthetic")
 DATASET_SPLITS=("full" "test")
 DATASET_CONFIGS=("combined_main_aspects" "all")
 
@@ -107,7 +83,6 @@ for MODEL in "${MODELS[@]}"; do
     for GENERATION_TYPE in "${GENERATION_TYPES[@]}"; do
         for i in "${!DATASETS[@]}"; do
         
-
             # for S in $(seq 144 -16 16); do
             for S in 0; do
 

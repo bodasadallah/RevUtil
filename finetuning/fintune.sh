@@ -1,32 +1,19 @@
 #!/bin/bash
 
-#SBATCH --job-name=NLP804 # Job name
-#SBATCH --error=logs/%j%x.err # error file
-#SBATCH --output=logs/%j%x.out # output log file
-#SBATCH --nodes=1                   # Run all processes on a single node    
-#SBATCH --ntasks=1                  # Run on a single CPU
-#SBATCH --mem=256GB                  # Total RAM to be used
-#SBATCH --cpus-per-task=8          # Number of CPU cores
-#SBATCH --gres=gpu:1                # Number of GPUs (per node)
-#SBATCH --qos=gpu-8 
-#SBATCH -p gpu                      # Use the gpu partition
-##SBATCH --nodelist=ws-l6-017
+### SLURM FLAGS
 
 
 export NCCL_P2P_LEVEL=NVL
 export WANDB_LOG_MODEL=false
+
+
 ##################### TRAINING CONF ################
 # Get the hostname
 HOSTNAME=$(hostname)
 # Check if "ws" is in the hostname
 if [[ "$HOSTNAME" == *ws* ]]; then
 
-    ### if the machine name is ws006601 then set the parent path to  /home/abdelrahman.sadallah
-    if [[ "$HOSTNAME" == "ws006601" ]]; then
-        PARENT_PATH="/home/abdelrahman.sadallah"
-    else 
-        PARENT_PATH="/mnt/data/users/$USER"
-    fi
+    ## Define the parent path based on the hostname
 
     OUTPUTPATH="$PARENT_PATH/review_rewrite_chekpoints"  # You can change this default if needed
     
@@ -34,6 +21,8 @@ if [[ "$HOSTNAME" == *ws* ]]; then
     if [ ! -d "$OUTPUTPATH" ]; then
         mkdir -p $OUTPUTPATH
     fi
+
+
     export TRITON_CACHE_DIR=$PARENT_PATH
     export HF_CACHE_DIR=$PARENT_PATH/huggingface
     export HF_HOME=$PARENT_PATH/huggingface
@@ -41,7 +30,7 @@ if [[ "$HOSTNAME" == *ws* ]]; then
 
 ########################## CSCC ###########################
 else
-    OUTPUTPATH="/l/users/abdelrahman.sadallah/review_evaluation"  # You can change this default if needed
+    OUTPUTPATH=  ## Define the parent path based on the hostname
         ## if the output path don't exist, create it
     if [ ! -d "$OUTPUTPATH" ]; then
         mkdir -p $OUTPUTPATH
@@ -67,7 +56,7 @@ ASPECTS=("all")
 
 
 # List of models to iterate over
-MODELS=(  "meta-llama/Meta-Llama-3-70B-Instruct")
+MODELS=("prometheus-eval/prometheus-7b-v2.0" "chatgpt" "Uni-SMART/SciLitLLM" "WestlakeNLP/DeepReviewer-7B" "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B" "meta-llama/Llama-3.1-8B-Instruct" "allenai/scitulu-7b" "meta-llama/Llama-3.1-8B")
 
 for A in "${ASPECTS[@]}"; do
 
