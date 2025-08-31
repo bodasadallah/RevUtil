@@ -4,17 +4,20 @@
 
 <p align="center">
   <a href=""><img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/boda/RevUtil_human"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Synthetic"></a>
-  <a href="https://huggingface.co/datasets/boda/RevUtil_synthetic"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Human"></a>
+  <a href="https://huggingface.co/datasets/boda/RevUtil_human"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Human"></a>
+  <a href="https://huggingface.co/datasets/boda/RevUtil_synthetic"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Synthetic"></a>
+  <a href="https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_only"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue" alt="RevUtil Llama Score Only"></a>
+  <a href="https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_rationale"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue" alt="RevUtil Llama Score + Rationale"></a>
   <a href="https://github.com/bodasadallah/review_rewrite/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-lightgrey.svg" alt="License"></a>
-
 </p>
-
 ### :fire: News
 
+- [31-08-2025] Released our best **RevUtil fine-tuned models** on Hugging Face:
+
+  - [RevUtil_Llama-3.1-8B-Instruct_score_only](https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_only)
+  - [RevUtil_Llama-3.1-8B-Instruct_score_rationale](https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_rationale)
+
 - [21-08-2025] Our paper got accepted to the **Main conference of EMNLP**.
-<!---
--->
 
 ## 📝 Abstract
 
