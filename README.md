@@ -10,6 +10,7 @@
   <a href="https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_rationale"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue" alt="RevUtil Llama Score + Rationale"></a>
   <a href="https://github.com/bodasadallah/review_rewrite/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-lightgrey.svg" alt="License"></a>
 </p>
+
 ### :fire: News
 
 - [31-08-2025] Released our best **RevUtil fine-tuned models** on Hugging Face:
@@ -139,7 +140,17 @@ All scripts and notebooks for performance breakdown and visualization are includ
 
 ## 📎 Citation
 
-_Coming soon after publication!_
+```bibtex
+@article{sadallah2025goodbadconstructiveautomatically,
+      title={The Good, the Bad and the Constructive: Automatically Measuring Peer Review's Utility for Authors}, 
+      author={Abdelrahman Sadallah and Tim Baumgärtner and Iryna Gurevych and Ted Briscoe},
+      year={2025},
+      eprint={2509.04484},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2509.04484}, 
+}
+```
 
 ## License
 
