@@ -3,7 +3,7 @@
 ---
 
 <p align="center">
-  <a href=""><img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://www.arxiv.org/abs/2509.04484"><img src="https://img.shields.io/badge/arXiv-2509.04484-b31b1b.svg" alt="arXiv"></a>
   <a href="https://huggingface.co/datasets/boda/RevUtil_human"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Human"></a>
   <a href="https://huggingface.co/datasets/boda/RevUtil_synthetic"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow" alt="RevUtil Synthetic"></a>
   <a href="https://huggingface.co/boda/RevUtil_Llama-3.1-8B-Instruct_score_only"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue" alt="RevUtil Llama Score Only"></a>
