@@ -72,6 +72,7 @@ google-api-core
 google-auth
 googleapis-common-protos
 grpcio
+gradio
 h11
 hjson
 httpcore
@@ -290,8 +291,6 @@ urllib3
 uvicorn
 uvloop
 virtualenv
-vllm
-vllm-flash-attn
 wandb
 watchfiles
 wcwidth
@@ -302,7 +301,6 @@ websockets
 widgetsnbextension
 word2number
 wrapt
-xformers
 xgrammar
 XlsxWriter
 xxhash
